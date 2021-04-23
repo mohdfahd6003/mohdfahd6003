@@ -11,6 +11,9 @@ const {repeatText, bleedText, bleedYesText, bleedNoText, bleedNoSecondText,bleed
 let dummyData = require('../data.json');
 const displayTemplate = require('../commonAPL.json');
 
+
+let bleedImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dressing_Gauze_Pad_3_Adult.jpg';
+
 class BleedControl extends Control {
     constructor() {
         super();
@@ -19,7 +22,6 @@ class BleedControl extends Control {
 
 
     canHandle(input) {
-        console.log('Inside bleed control');
         if (InputUtil.isIntent(input, 'bleedIntent')) {
             return true;
         } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
@@ -54,12 +56,9 @@ class BleedControl extends Control {
         if (act instanceof RequestValueAct) {
             if (InputUtil.isIntent(input, 'bleedIntent')) {
                 BleedControl.state = 'first';
-                console.log('state is', BleedControl.state);
-                console.log('Input request', JSON.stringify());
                 let resp = bleedText;
                 responseBuilder.addPromptFragment(resp);
                 responseBuilder.addRepromptFragment(repeatText);
-                let bleedImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dressing_Gauze_Pad_3_Adult.jpg';
                 dummyData.content.primaryText = 'I cut myself';
                 dummyData.content.bodyText = resp;
                 dummyData.content.mainImage = bleedImage;
@@ -78,7 +77,6 @@ class BleedControl extends Control {
                 BleedControl.state = 'unknown';
                 responseBuilder.addPromptFragment(resp);
                 responseBuilder.addRepromptFragment(repeatText);
-                let bleedImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dressing_Gauze_Pad_3_Adult.jpg' ;
                 dummyData.content.primaryText = 'I cut myself';
                 dummyData.content.bodyText = resp;
                 dummyData.content.mainImage = bleedImage;
@@ -101,7 +99,6 @@ class BleedControl extends Control {
                 }
                 responseBuilder.addPromptFragment(resp);
                 responseBuilder.addRepromptFragment(repeatText);
-                let bleedImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dressing_Gauze_Pad_3_Adult.jpg';
                 dummyData.content.primaryText = 'I cut myself';
                 dummyData.content.bodyText = resp;
                 dummyData.content.mainImage = bleedImage;
