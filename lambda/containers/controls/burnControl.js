@@ -16,13 +16,11 @@ let burnImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Burn_under_Runnin
 class BurnControl extends Control {
     constructor() {
         super();
-        //Intial state is unknown
         this.state = 'unknown';
     }
 
 
     canHandle(input) {
-        // Which intent to respond to based on the state
         console.log('Inside burn control');
         console.log('state is ', BurnControl.state);
         if (InputUtil.isIntent(input, 'burnIntent')) {
@@ -43,7 +41,7 @@ class BurnControl extends Control {
 
     }
     handle(input, resultBuilder) {
-        // Things to do if it matches intents and states
+
 
         resultBuilder.addAct(
 
@@ -54,18 +52,14 @@ class BurnControl extends Control {
 
     }
     canTakeInitiative() {
-        // Used mostly for built in ListContol types
         return false;
     }
     renderAct(act, input, responseBuilder) {
-        // Rendering will push the content into the device
         if (act instanceof RequestValueAct) {
-            //checking for each path
             if (InputUtil.isIntent(input, 'burnIntent')) {
                 BurnControl.state = 'burn';
                 responseBuilder.addPromptFragment(burnText);
                 responseBuilder.addRepromptFragment(repeatText);
-                //APL content
                 dummyData.content.primaryText = 'burning';
                 dummyData.content.bodyText = burnText;
                 dummyData.content.mainImage = burnImage;
@@ -77,14 +71,11 @@ class BurnControl extends Control {
                 });
             } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
                 BurnControl.state = 'unknown';
-                //Adding voice
                 responseBuilder.addPromptFragment(burnYesText);
                 responseBuilder.addRepromptFragment(repeatText);
-                // Adding APL
                 dummyData.content.primaryText = 'burning';
                 dummyData.content.bodyText = burnYesText;
                 dummyData.content.mainImage = burnImage;
-                // Using custom tempalte and passing the data
                 responseBuilder.addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
                     document: displayTemplate,
@@ -97,11 +88,9 @@ class BurnControl extends Control {
                 BurnControl.state = 'unknown';
                 responseBuilder.addPromptFragment(burnNoText);
                 responseBuilder.addRepromptFragment(repeatText);
-                // APL contents
                 dummyData.content.primaryText = 'burning';
                 dummyData.content.bodyText = burnNoText;
                 dummyData.content.mainImage = burnImage;
-                // Loding the templete and passing the data
                 responseBuilder.addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
                     document: displayTemplate,

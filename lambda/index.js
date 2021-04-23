@@ -23,20 +23,16 @@ const SecondContainer = require('./containers/secondContainer.js')
 
 
 class RootContainer extends ContainerControl {
-    // Container to hold the first and second containers
     constructor(props) {
         super(props);
         this.addChild(new FirstContainer({ 'id': 'first' }));
         this.addChild(new SecondContainer({ 'id': 'second' }));
     }
-    // Request delegation kept as default behaviour
 
 }
 
 class AhaManager extends ControlManager {
-    // Added control structure as open branching structure
     createControlTree() {
-        //Root container to choose from first or second
         const root = new RootContainer("root");
         return root;
     }

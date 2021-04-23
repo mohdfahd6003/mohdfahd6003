@@ -14,13 +14,11 @@ const displayTemplate = require('../commonAPL.json');
 class BleedControl extends Control {
     constructor() {
         super();
-        //Intial state is unknown
         this.state = 'unknown';
     }
 
 
     canHandle(input) {
-        // Which intent to respond to based on the state
         console.log('Inside bleed control');
         if (InputUtil.isIntent(input, 'bleedIntent')) {
             return true;
@@ -40,7 +38,6 @@ class BleedControl extends Control {
 
     }
     handle(input, resultBuilder) {
-        // Things to do if it matches intents and states
 
         resultBuilder.addAct(
 
@@ -51,20 +48,17 @@ class BleedControl extends Control {
 
     }
     canTakeInitiative() {
-        // Used mostly for built in ListContol types
         return false;
     }
     renderAct(act, input, responseBuilder) {
-        // Rendering will push the content into the device
         if (act instanceof RequestValueAct) {
-            //checking for each path
             if (InputUtil.isIntent(input, 'bleedIntent')) {
                 BleedControl.state = 'first';
                 console.log('state is', BleedControl.state);
+                console.log('Input request', JSON.stringify());
                 let resp = bleedText;
                 responseBuilder.addPromptFragment(resp);
                 responseBuilder.addRepromptFragment(repeatText);
-                //APL content
                 let bleedImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dressing_Gauze_Pad_3_Adult.jpg';
                 dummyData.content.primaryText = 'I cut myself';
                 dummyData.content.bodyText = resp;
@@ -76,24 +70,18 @@ class BleedControl extends Control {
 
                 });
             } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-                // First yes path
                 let resp = bleedYesText;
                 console.log('YesIntent state is', BleedControl.state);
-                // Second yes path
                 if (BleedControl.state === 'second') {
                     resp = bleedYesSecondText;
                 }
-                // Not to continue after yes
                 BleedControl.state = 'unknown';
-                //Adding voice
                 responseBuilder.addPromptFragment(resp);
                 responseBuilder.addRepromptFragment(repeatText);
-                // Adding APL
                 let bleedImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dressing_Gauze_Pad_3_Adult.jpg' ;
                 dummyData.content.primaryText = 'I cut myself';
                 dummyData.content.bodyText = resp;
                 dummyData.content.mainImage = bleedImage;
-                // Using custom tempalte and passing the data
                 responseBuilder.addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
                     document: displayTemplate,
@@ -104,24 +92,19 @@ class BleedControl extends Control {
 
             } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
                 let resp = bleedNoText;
-                // First no path
                 if (BleedControl.state === 'first') {
                     BleedControl.state = 'second';
 
                 } else if (BleedControl.state === 'second') {
-                    // Second no path
                     BleedControl.state = 'unknown';
                     resp = bleedNoSecondText;
                 }
-                // voice outputs
                 responseBuilder.addPromptFragment(resp);
                 responseBuilder.addRepromptFragment(repeatText);
-                // APL contents
                 let bleedImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dressing_Gauze_Pad_3_Adult.jpg';
                 dummyData.content.primaryText = 'I cut myself';
                 dummyData.content.bodyText = resp;
                 dummyData.content.mainImage = bleedImage;
-                // Loding the templete and passing the data
                 responseBuilder.addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
                     document: displayTemplate,

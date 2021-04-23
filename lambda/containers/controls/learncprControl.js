@@ -14,13 +14,10 @@ const displayTemplate = require('../commonAPL.json');
 class learnCPRControl extends Control {
 
     canHandle(input) {
-        // only one intent and no states involved
-        console.log('Inside learnCPR control');
         return InputUtil.isIntent(input, 'learnCPRIntent');
 
     }
     handle(input, resultBuilder) {
-        // Just dummy response . Added content in rendering
         resultBuilder.addAct(
 
             new RequestValueAct(this, {
@@ -33,14 +30,12 @@ class learnCPRControl extends Control {
         return false;
     }
     renderAct(act, input, responseBuilder) {
-        // rendering part
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(learnCPRText + repeatText);
             responseBuilder.addRepromptFragment(repeatText);
             dummyData.content.primaryText = 'learn CPR';
             dummyData.content.bodyText = learnCPRText;
             dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Fainting_Man.jpg';
-            // APL directive for rendering
             responseBuilder.addDirective({
                 type: 'Alexa.Presentation.APL.RenderDocument',
                 document: displayTemplate,

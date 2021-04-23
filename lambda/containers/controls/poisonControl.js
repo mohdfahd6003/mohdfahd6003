@@ -16,7 +16,6 @@ class PoisonControl extends Control {
 
     canHandle(input) {
         console.log('Inside stroke control');
-        // only warning signs of a heart attack matches here
         return InputUtil.isIntent(input, 'poisonIntent');
 
     }
@@ -32,15 +31,12 @@ class PoisonControl extends Control {
     }
     renderAct(act, input, responseBuilder) {
         if (act instanceof RequestValueAct) {
-            // speak content
             responseBuilder.addPromptFragment(poisonText);
             responseBuilder.addRepromptFragment(repeatText);
             console.log('works till asking address');
-            // filling the data
             dummyData.content.primaryText = 'poisoning';
             dummyData.content.bodyText = poisonText;
             dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Warning_Signs.jpg';
-            // passing data to visual directive, APL
             responseBuilder.addDirective({
                 type: 'Alexa.Presentation.APL.RenderDocument',
                 document: displayTemplate,
