@@ -14,8 +14,8 @@ const displayTemplate = require('../commonAPL.json');
 
 const { repeatText, chokeMainText } = require('../constants.js');
 class chokeControl extends Control {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = 'unknown';
     }
     canHandle(input) {
@@ -49,16 +49,18 @@ class chokeControl extends Control {
                 let resp = chokeMainText;
                 responseBuilder.addPromptFragment(resp);
                 responseBuilder.addRepromptFragment(repeatText);
-                let chokeImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Chest_Thrust_AdultFloor.jpg';
-                dummyData.content.primaryText = 'Choking person';
-                dummyData.content.bodyText = resp;
-                dummyData.content.mainImage = chokeImage;
-                responseBuilder.addDirective({
-                    type: 'Alexa.Presentation.APL.RenderDocument',
-                    document: displayTemplate,
-                    datasources: dummyData
+                if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                    let chokeImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Chest_Thrust_AdultFloor.jpg';
+                    dummyData.content.primaryText = 'Choking person';
+                    dummyData.content.bodyText = resp;
+                    dummyData.content.mainImage = chokeImage;
+                    responseBuilder.addDirective({
+                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        document: displayTemplate,
+                        datasources: dummyData
 
-                });
+                    });
+                }
             } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
                 let topic = chokeControl.state;
                 let speechText = chokeData[topic].yes.speechText;
@@ -74,15 +76,17 @@ class chokeControl extends Control {
                 }
                 responseBuilder.addPromptFragment(speechText);
                 responseBuilder.addRepromptFragment(repeatText);
-                dummyData.content.primaryText = primaryText;
-                dummyData.content.bodyText = secondaryText;
-                dummyData.content.mainImage = imageUrl;
-                responseBuilder.addDirective({
-                    type: 'Alexa.Presentation.APL.RenderDocument',
-                    document: displayTemplate,
-                    datasources: dummyData
+                if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                    dummyData.content.primaryText = primaryText;
+                    dummyData.content.bodyText = secondaryText;
+                    dummyData.content.mainImage = imageUrl;
+                    responseBuilder.addDirective({
+                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        document: displayTemplate,
+                        datasources: dummyData
 
-                });
+                    });
+                }
 
 
             } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
@@ -100,15 +104,17 @@ class chokeControl extends Control {
                 }
                 responseBuilder.addPromptFragment(speechText);
                 responseBuilder.addRepromptFragment(repeatText);
-                dummyData.content.primaryText = primaryText;
-                dummyData.content.bodyText = secondaryText;
-                dummyData.content.mainImage = imageUrl;
-                responseBuilder.addDirective({
-                    type: 'Alexa.Presentation.APL.RenderDocument',
-                    document: displayTemplate,
-                    datasources: dummyData
+                if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                    dummyData.content.primaryText = primaryText;
+                    dummyData.content.bodyText = secondaryText;
+                    dummyData.content.mainImage = imageUrl;
+                    responseBuilder.addDirective({
+                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        document: displayTemplate,
+                        datasources: dummyData
 
-                });
+                    });
+                }
             }
         }
     }

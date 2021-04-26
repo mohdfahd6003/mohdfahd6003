@@ -14,6 +14,9 @@ const displayTemplate = require('../commonAPL.json');
 
 class Dehydration extends Control {
 
+    constructor(props){
+        super(props);
+    }
     canHandle(input) {
         console.log('Inside dehydration control');
         return InputUtil.isIntent(input, 'dehydrationIntent');
@@ -33,17 +36,17 @@ class Dehydration extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(dehydrationText);
             responseBuilder.addRepromptFragment(repeatText);
-            console.log('works till asking address');
-            dummyData.content.primaryText = 'dehydration ';
-            dummyData.content.bodyText = dehydrationText;
-            dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dehydration_Water.jpg';
-            responseBuilder.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
-                document: displayTemplate,
-                datasources: dummyData
+            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                dummyData.content.primaryText = 'dehydration ';
+                dummyData.content.bodyText = dehydrationText;
+                dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dehydration_Water.jpg';
+                responseBuilder.addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    document: displayTemplate,
+                    datasources: dummyData
 
-            });
-
+                });
+            }
         }
     }
 }

@@ -24,16 +24,20 @@ const SecondContainer = require('./containers/secondContainer.js')
 
 class RootContainer extends ContainerControl {
     constructor(props) {
-        super(props);
+        super(props);        
         this.addChild(new FirstContainer({ 'id': 'first' }));
-        this.addChild(new SecondContainer({ 'id': 'second' }));
+        //this.addChild(new SecondContainer({ 'id': 'second' }));
     }
+    
 
 }
 
 class AhaManager extends ControlManager {
+
     createControlTree() {
-        const root = new RootContainer("root");
+        console.log('one')
+        const root = new RootContainer({'id':'root'});
+        console.log('two');
         return root;
     }
 

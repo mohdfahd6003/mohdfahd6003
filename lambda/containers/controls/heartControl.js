@@ -12,7 +12,10 @@ let dummyData = require('../data.json');
 const displayTemplate = require('../commonAPL.json');
 
 class HeartControl extends Control {
-
+    
+    constructor(props){
+        super(props);
+    }
     canHandle(input) {
         return InputUtil.isIntent(input, 'heartWarningSignsIntent');
 
@@ -33,16 +36,17 @@ class HeartControl extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(heartAttackText);
             responseBuilder.addRepromptFragment(repeatText);
-            dummyData.content.primaryText = 'warning signs of a heart attack';
-            dummyData.content.bodyText = heartAttackText;
-            dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/During_a_Heart_Attack.jpg';
-            responseBuilder.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
-                document: displayTemplate,
-                datasources: dummyData
+            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){ 
+                dummyData.content.primaryText = 'warning signs of a heart attack';
+                dummyData.content.bodyText = heartAttackText;
+                dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/During_a_Heart_Attack.jpg';
+                responseBuilder.addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    document: displayTemplate,
+                    datasources: dummyData
 
-            });
-
+                });
+            }
         }
     }
 }

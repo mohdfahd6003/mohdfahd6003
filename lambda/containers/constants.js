@@ -20,7 +20,7 @@ const learnCPRText = `According to the American Heart Association, you should fi
                 Then, push hard and fast in the center of the chest at the rate of 100 to 120 beats per minute, 
                 such as the beat of the classic disco song Stayin Alive... 
                 Here is how fast you should push on the chest. 
-                <audio src='https://s3.amazonaws.com/ahaalexa/110-BPM-Metronome-short.mp3'/>.  What else can I help you with?`;
+                <audio src='https://s3.amazonaws.com/ahaalexa/110-BPM-Metronome-short.mp3'/> .  What else can I help you with?`;
 const noseText = `Ouch! Nose bleeds are no fun. Let's get this taken care of. 
                 First, make sure the scene is safe. Wear personal protective equipment, if available.
                 Have the person sit and lean forward. Pinch the soft part of the nose on both sides with 

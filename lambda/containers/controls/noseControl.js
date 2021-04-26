@@ -17,6 +17,10 @@ const displayTemplate = require('../commonAPL.json');
 
 class NoseControl extends Control {
 
+  constructor(props){
+    super(props);
+}
+
   canHandle(input) {
     return InputUtil.isIntent(input, 'noseIntent');
 
@@ -37,16 +41,17 @@ class NoseControl extends Control {
     if (act instanceof RequestValueAct) {
       responseBuilder.addPromptFragment(noseText);
       responseBuilder.addRepromptFragment(repeatText);
-      dummyData.content.primaryText = 'nose bleeds';
-      dummyData.content.bodyText = noseText;
-      dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Nose_w_type.jpg';
-      responseBuilder.addDirective({
-        type: 'Alexa.Presentation.APL.RenderDocument',
-        document: displayTemplate,
-        datasources: dummyData
+      if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+        dummyData.content.primaryText = 'nose bleeds';
+        dummyData.content.bodyText = noseText;
+        dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Nose_w_type.jpg';
+        responseBuilder.addDirective({
+          type: 'Alexa.Presentation.APL.RenderDocument',
+          document: displayTemplate,
+          datasources: dummyData
 
-      });
-
+        });
+      }
     }
   }
 }

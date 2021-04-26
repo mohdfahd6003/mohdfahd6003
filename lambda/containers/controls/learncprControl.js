@@ -13,6 +13,10 @@ const displayTemplate = require('../commonAPL.json');
 
 class learnCPRControl extends Control {
 
+    constructor(props){
+        super(props);
+    }
+
     canHandle(input) {
         return InputUtil.isIntent(input, 'learnCPRIntent');
 
@@ -31,18 +35,19 @@ class learnCPRControl extends Control {
     }
     renderAct(act, input, responseBuilder) {
         if (act instanceof RequestValueAct) {
-            responseBuilder.addPromptFragment(learnCPRText + repeatText);
+            responseBuilder.addPromptFragment(learnCPRText);
             responseBuilder.addRepromptFragment(repeatText);
-            dummyData.content.primaryText = 'learn CPR';
-            dummyData.content.bodyText = learnCPRText;
-            dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Fainting_Man.jpg';
-            responseBuilder.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
-                document: displayTemplate,
-                datasources: dummyData
+            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                dummyData.content.primaryText = 'learn CPR';
+                dummyData.content.bodyText = learnCPRText;
+                dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Fainting_Man.jpg';
+                responseBuilder.addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    document: displayTemplate,
+                    datasources: dummyData
 
-            });
-
+                });
+            }
         }
     }
 }

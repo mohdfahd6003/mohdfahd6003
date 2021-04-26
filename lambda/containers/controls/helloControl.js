@@ -12,6 +12,11 @@ let dummyData = require('../data.json');
 const displayTemplate = require('../commonAPL.json');
 
 class HelloControl extends Control {
+    
+    constructor(props){
+        super(props);
+    }
+
     canHandle(input) {
         return InputUtil.isLaunchRequest(input) || InputUtil.isIntent(input, 'HelloIntent');
     }
@@ -30,15 +35,17 @@ class HelloControl extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(introText);
             responseBuilder.addRepromptFragment(repeatText);
-            dummyData.content.primaryText = 'Welcome';
-            dummyData.content.bodyText = 'You can ask like warning signs of a heart attack';
-            dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/AHA_ASA_Masterbrand.jpg';
-            responseBuilder.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
-                document: displayTemplate,
-                datasources: dummyData
+            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                dummyData.content.primaryText = 'Welcome';
+                dummyData.content.bodyText = 'You can ask like warning signs of a heart attack';
+                dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/AHA_ASA_Masterbrand.jpg';
+                responseBuilder.addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    document: displayTemplate,
+                    datasources: dummyData
 
-            });
+                });
+            }
         }
     }
 

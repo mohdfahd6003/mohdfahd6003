@@ -13,7 +13,10 @@ const displayTemplate = require('../commonAPL.json');
 
 
 class PoisonControl extends Control {
-
+   
+    constructor(props){
+        super(props);
+    }
     canHandle(input) {
         console.log('Inside stroke control');
         return InputUtil.isIntent(input, 'poisonIntent');
@@ -33,17 +36,17 @@ class PoisonControl extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(poisonText);
             responseBuilder.addRepromptFragment(repeatText);
-            console.log('works till asking address');
-            dummyData.content.primaryText = 'poisoning';
-            dummyData.content.bodyText = poisonText;
-            dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Warning_Signs.jpg';
-            responseBuilder.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
-                document: displayTemplate,
-                datasources: dummyData
+            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                dummyData.content.primaryText = 'poisoning';
+                dummyData.content.bodyText = poisonText;
+                dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Warning_Signs.jpg';
+                responseBuilder.addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    document: displayTemplate,
+                    datasources: dummyData
 
-            });
-
+                });
+            }
         }
     }
 }

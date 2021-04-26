@@ -14,6 +14,10 @@ const displayTemplate = require('../commonAPL.json');
 
 class StrokeControl extends Control {
 
+    constructor(props){
+        super(props);
+    }
+
     canHandle(input) {
         return InputUtil.isIntent(input, 'strokeIntent');
 
@@ -34,16 +38,17 @@ class StrokeControl extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(strokeText);
             responseBuilder.addRepromptFragment(repeatText);
-            dummyData.content.primaryText = 'warning signs of a stroke';
-            dummyData.content.bodyText = strokeText;
-            dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/ASA_FAST_Warning_Signs.jpg';
-            responseBuilder.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
-                document: displayTemplate,
-                datasources: dummyData
+            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                dummyData.content.primaryText = 'warning signs of a stroke';
+                dummyData.content.bodyText = strokeText;
+                dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/ASA_FAST_Warning_Signs.jpg';
+                responseBuilder.addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    document: displayTemplate,
+                    datasources: dummyData
 
-            });
-
+                });
+            }
         }
     }
 }

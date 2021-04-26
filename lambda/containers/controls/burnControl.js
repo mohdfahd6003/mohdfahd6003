@@ -14,8 +14,8 @@ const displayTemplate = require('../commonAPL.json');
 let burnImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Burn_under_Running_Water_AdultSink.jpg';
 
 class BurnControl extends Control {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = 'unknown';
     }
 
@@ -60,43 +60,48 @@ class BurnControl extends Control {
                 BurnControl.state = 'burn';
                 responseBuilder.addPromptFragment(burnText);
                 responseBuilder.addRepromptFragment(repeatText);
-                dummyData.content.primaryText = 'burning';
-                dummyData.content.bodyText = burnText;
-                dummyData.content.mainImage = burnImage;
-                responseBuilder.addDirective({
-                    type: 'Alexa.Presentation.APL.RenderDocument',
-                    document: displayTemplate,
-                    datasources: dummyData
+                if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                    dummyData.content.primaryText = 'burning';
+                    dummyData.content.bodyText = burnText;
+                    dummyData.content.mainImage = burnImage;
+                    responseBuilder.addDirective({
+                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        document: displayTemplate,
+                        datasources: dummyData
 
-                });
+                    });
+                }
             } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
                 BurnControl.state = 'unknown';
                 responseBuilder.addPromptFragment(burnYesText);
                 responseBuilder.addRepromptFragment(repeatText);
-                dummyData.content.primaryText = 'burning';
-                dummyData.content.bodyText = burnYesText;
-                dummyData.content.mainImage = burnImage;
-                responseBuilder.addDirective({
-                    type: 'Alexa.Presentation.APL.RenderDocument',
-                    document: displayTemplate,
-                    datasources: dummyData
+                if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                    dummyData.content.primaryText = 'burning';
+                    dummyData.content.bodyText = burnYesText;
+                    dummyData.content.mainImage = burnImage;
+                    responseBuilder.addDirective({
+                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        document: displayTemplate,
+                        datasources: dummyData
 
-                });
-
+                    });
+                }
 
             } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
                 BurnControl.state = 'unknown';
                 responseBuilder.addPromptFragment(burnNoText);
                 responseBuilder.addRepromptFragment(repeatText);
-                dummyData.content.primaryText = 'burning';
-                dummyData.content.bodyText = burnNoText;
-                dummyData.content.mainImage = burnImage;
-                responseBuilder.addDirective({
-                    type: 'Alexa.Presentation.APL.RenderDocument',
-                    document: displayTemplate,
-                    datasources: dummyData
+                if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){    
+                    dummyData.content.primaryText = 'burning';
+                    dummyData.content.bodyText = burnNoText;
+                    dummyData.content.mainImage = burnImage;
+                    responseBuilder.addDirective({
+                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        document: displayTemplate,
+                        datasources: dummyData
 
-                });
+                    });
+                }
             }
         }
 
