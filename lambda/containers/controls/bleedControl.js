@@ -3,7 +3,7 @@ const Alexa = require('ask-sdk-core');
 const {
     InputUtil,
     Control,
-    RequestValueAct,
+    RequestValueAct
     } = require('ask-sdk-controls');
 
 const {repeatText, bleedText, bleedYesText, bleedNoText, bleedNoSecondText,bleedYesSecondText} = require('../constants.js'); 
@@ -26,7 +26,6 @@ class BleedControl extends Control {
     }
    
     canHandle(input) {
-        console.log('can handle - inside bleed control',this);
         if (InputUtil.isIntent(input, 'bleedIntent')) {
             return true;
         } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
@@ -48,8 +47,6 @@ class BleedControl extends Control {
     }
     handle(input, resultBuilder) {
 
-        console.log('handle - inside bleed control',this);
-
         resultBuilder.addAct(
 
             new RequestValueAct(this, {
@@ -65,7 +62,6 @@ class BleedControl extends Control {
         let resp = bleedText;
         
         if (act instanceof RequestValueAct) {
-            console.log('renderAct - inside bleed control',this);
             if (InputUtil.isIntent(input, 'bleedIntent')) {
                 
                 this.state.value = 'first';
