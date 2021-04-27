@@ -14,14 +14,17 @@ const displayTemplate = require('../commonAPL.json');
 
 let bleedImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Dressing_Gauze_Pad_3_Adult.jpg';
 
+const BleedControlState = {
+    'value': undefined
+};
+
+
 class BleedControl extends Control {
     constructor(props) {
-        super(props);
-        this.id = props.id;
-        this.state = { value: undefined, lastInitiative: undefined };
+        super(props.id);
+        this.state = BleedControlState;
     }
-
-    
+   
     canHandle(input) {
         console.log('can handle - inside bleed control',this);
         if (InputUtil.isIntent(input, 'bleedIntent')) {

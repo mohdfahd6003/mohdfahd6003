@@ -15,7 +15,6 @@ const HeartControl = require('./controls/heartControl.js');
 class FirstContainerState extends ContainerControlState {
     constructor(){
         super();
-        this.value = "first";
     }
 }
 class FirstContainer extends ContainerControl {
@@ -23,7 +22,7 @@ class FirstContainer extends ContainerControl {
         super(props);
         this.id = props.id;
         this.handleFunc = undefined;
-        this.state = new FirstContainerState;
+        this.state = new FirstContainerState();
         this.HelloControl = new HelloControl({'id':'hello'});
         this.HeartControl = new HeartControl({'id':'heart'});
         this.LearnCPRControl = new LearnCPRControl({'id':'cpr'});
