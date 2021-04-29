@@ -5,7 +5,7 @@ const repeatText = speakText['repeatText'];
 const imageCatalog = require('./content/assets.json');
 
 function prepareScreenContent(primaryText, bodyText, mainImage){
-    let dataTemplate = require('../../content/data.json');
+    let dataTemplate = require('../common/content/dataTemplate.json');
     dataTemplate.content.primaryText = primaryText;
     dataTemplate.content.bodyText = bodyText;
     dataTemplate.content.mainImage = mainImage;
