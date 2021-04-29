@@ -18,22 +18,24 @@ const {
 } = require('ask-sdk-controls');
 
 
-const FirstContainer = require('./containers/firstContainer.js');
-const SecondContainer = require('./containers/secondContainer.js')
+const SinglePathContainer = require('./containers/singlepath.container');
+const MultiPathContainer = require('./containers/multipath.container')
 
 
 class RootContainer extends ContainerControl {
     constructor(props) {
-        super(props);
-        this.addChild(new FirstContainer({ 'id': 'first' }));
-        this.addChild(new SecondContainer({ 'id': 'second' }));
+        super(props);        
+        this.addChild(new SinglePathContainer({ 'id': 'single' }));
+        //this.addChild(new MultiPathContainer({ 'id': 'second' }));
     }
+    
 
 }
 
 class AhaManager extends ControlManager {
+
     createControlTree() {
-        const root = new RootContainer("root");
+        const root = new RootContainer({'id':'root'});
         return root;
     }
 

@@ -12,7 +12,6 @@ new ControlInteractionModelGenerator()
     .addIntent({ name: 'AMAZON.HelpIntent' })
     .addIntent({ name: 'AMAZON.CancelIntent' })
     
-    // Add a custom intent
     .addIntent({ name: 'HelloIntent', samples: [
         "Say hello",
         "Say hi"
@@ -24,7 +23,6 @@ new ControlInteractionModelGenerator()
     .buildCoreModelForControls(new PetManager())
     
 
-    // Build and write
     .buildAndWrite('en-US-generated.json');
 
 log.info('Wrote ./en-US-generated.json');

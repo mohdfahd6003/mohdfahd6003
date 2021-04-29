@@ -6,13 +6,23 @@ const {
     RequestValueAct
 } = require('ask-sdk-controls');
 
-const { repeatText, strokeText } = require('../constants.js');
-
-let dummyData = require('../data.json');
-const displayTemplate = require('../commonAPL.json');
-
+const {
+    prepareScreenContent,
+    imageCatalog,
+    displayTemplate,
+    displayDirective,
+    repeatText,
+    speakText
+  } = require('../../util'); 
+  
+  const strokeText = speakText['strokeText'];
+  const strokeImage = imageCatalog['stroke.control'] ;
 
 class StrokeControl extends Control {
+
+    constructor(props){
+        super(props);
+    }
 
     canHandle(input) {
         return InputUtil.isIntent(input, 'strokeIntent');
@@ -34,16 +44,15 @@ class StrokeControl extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(strokeText);
             responseBuilder.addRepromptFragment(repeatText);
-            dummyData.content.primaryText = 'warning signs of a stroke';
-            dummyData.content.bodyText = strokeText;
-            dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/ASA_FAST_Warning_Signs.jpg';
-            responseBuilder.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
+            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                let dataTemplate = prepareScreenContent('strokeing', strokeText, strokeImage);
+                responseBuilder.addDirective({
+                type: displayDirective,
                 document: displayTemplate,
-                datasources: dummyData
+                datasources: dataTemplate
 
-            });
-
+                });
+            }
         }
     }
 }

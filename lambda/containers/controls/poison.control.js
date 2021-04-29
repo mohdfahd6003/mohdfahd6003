@@ -6,14 +6,23 @@ const {
     RequestValueAct
 } = require('ask-sdk-controls');
 
-const { repeatText, poisonText } = require('../constants.js');
-
-let dummyData = require('../data.json');
-const displayTemplate = require('../commonAPL.json');
-
+const {
+    prepareScreenContent,
+    imageCatalog,
+    displayTemplate,
+    displayDirective,
+    repeatText,
+    speakText
+  } = require('../../util'); 
+  
+  const poisonText = speakText['poisonText'];
+  const poisonImage = imageCatalog['poison.control'] ;
 
 class PoisonControl extends Control {
-
+   
+    constructor(props){
+        super(props);
+    }
     canHandle(input) {
         console.log('Inside stroke control');
         return InputUtil.isIntent(input, 'poisonIntent');
@@ -33,17 +42,15 @@ class PoisonControl extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(poisonText);
             responseBuilder.addRepromptFragment(repeatText);
-            console.log('works till asking address');
-            dummyData.content.primaryText = 'poisoning';
-            dummyData.content.bodyText = poisonText;
-            dummyData.content.mainImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Warning_Signs.jpg';
-            responseBuilder.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
+            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
+                let dataTemplate = prepareScreenContent('poisoning', poisonText, poisonImage);
+                responseBuilder.addDirective({
+                type: displayDirective,
                 document: displayTemplate,
-                datasources: dummyData
+                datasources: dataTemplate
 
-            });
-
+                });
+            }
         }
     }
 }
