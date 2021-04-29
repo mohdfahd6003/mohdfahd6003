@@ -1,0 +1,28 @@
+{
+    "name": "aha-alexa-skill",
+    "version": "1.2.0",
+    "description": "Alexa skill for AHA",
+    "main": "./lambda/index.js",
+    "scripts": {
+      "lint": "eslint",
+      "test": "echo \" Error: no test specified\" && exit 1"
+    },
+    "author": "AHA Alexa team",
+    "license": "Apache License",
+    "dependencies": {
+      "ask-sdk-core": "^2.8.0",
+      "ask-sdk-model": "^1.28.0",
+      "lodash": "^4.17.15",
+      "ask-sdk-controls": "^0.2.0"
+    },
+    "devDependencies": {
+      "@typescript-eslint/eslint-plugin": "^4.22.0",
+      "@typescript-eslint/parser": "^4.22.0",
+      "eslint": "^7.25.0",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-plugin-import": "^2.22.1",
+      "sinon": "^9.0.1",
+      "source-map-support": "^0.5.16"
+    }
+  }
+  

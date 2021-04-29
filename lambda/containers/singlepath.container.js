@@ -12,11 +12,13 @@ const NoseBleedingControl = require('./controls/nosebleeding.control');
 const PoisonControl = require('./controls/poison.control');
 const DehydrationControl = require('./controls/dehydration.control');
 
+
 class SinglePathContainerState extends ContainerControlState {
     constructor(){
         super();
     }
 }
+
 class SinglePathContainer extends ContainerControl {
     constructor(props) {
         super(props);
