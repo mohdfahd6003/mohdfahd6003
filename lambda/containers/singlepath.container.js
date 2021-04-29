@@ -4,7 +4,6 @@ const {
     InputUtil
 } = require('ask-sdk-controls');
 
-
 const HelloControl = require('./controls/hello.control.js');
 const LearnCPRControl = require('./controls/learncpr.control.js');
 const HeartControl = require('./controls/heart.control.js');
@@ -12,10 +11,9 @@ const NoseBleedingControl = require('./controls/nosebleeding.control');
 const PoisonControl = require('./controls/poison.control');
 const DehydrationControl = require('./controls/dehydration.control');
 
-
 class SinglePathContainerState extends ContainerControlState {
-    constructor(){
-        super();
+    constructor(props) {
+        super(props.id);
     }
 }
 
@@ -24,15 +22,15 @@ class SinglePathContainer extends ContainerControl {
         super(props);
         this.id = props.id;
         this.handleFunc = undefined;
-        this.state = new SinglePathContainerState();
+        this.state = new SinglePathContainerState({ id: 'singlepathstate' });
 
-        this.HelloControl = new HelloControl({'id':'hello'});
-        this.LearnCPRControl = new LearnCPRControl({'id':'cpr'});
-        this.HeartControl = new HeartControl({'id':'heart'});
-        this.NoseBleedingControl = new NoseBleedingControl({'id':'nosebleeding'});
-        this.PoisonControl = new PoisonControl({'id':'poison'});
-        this.DehydrationControl = new DehydrationControl({'id':'dehydration'});
-        
+        this.HelloControl = new HelloControl({ id: 'hello' });
+        this.LearnCPRControl = new LearnCPRControl({ id: 'cpr' });
+        this.HeartControl = new HeartControl({ id: 'heart' });
+        this.NoseBleedingControl = new NoseBleedingControl({ id: 'nosebleeding' });
+        this.PoisonControl = new PoisonControl({ id: 'poison' });
+        this.DehydrationControl = new DehydrationControl({ id: 'dehydration' });
+
         this.addChild(this.HelloControl);
         this.addChild(this.HeartControl);
         this.addChild(this.LearnCPRControl);
@@ -41,12 +39,12 @@ class SinglePathContainer extends ContainerControl {
         this.addChild(this.DehydrationControl);
     }
 
-    async canHandle(input){
-        if (await this.canHandleByChild(input)){
-            
+    async canHandle(input) {
+        if (await this.canHandleByChild(input)) {
             this.handleFunc = this.handleByChild;
             return true;
         }
+        return false;
     }
 
     async handle(input, resultBuilder) {
@@ -55,17 +53,17 @@ class SinglePathContainer extends ContainerControl {
 
     async decideHandlingChild(candidates, input) {
 
-        for(let candidate of candidates){
-            
-            if(InputUtil.isIntent(input, 'AMAZON.YesIntent'))
+        for (const candidate of candidates) {
+
+            if (InputUtil.isIntent(input, 'AMAZON.YesIntent'))
             {
-                if(candidate.id === 'bleed' && candidate.status.value === 'first'){
+                if (candidate.id === 'bleed' && candidate.status.value === 'first') {
                     return candidate;
                 }
-                else if (candidate.id === 'choke'){
+                else if (candidate.id === 'choke') {
                     return candidate;
                 }
-                
+
             }
         }
         return candidates[0];

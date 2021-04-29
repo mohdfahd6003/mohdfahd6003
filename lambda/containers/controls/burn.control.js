@@ -6,28 +6,29 @@ const {
     RequestValueAct
 } = require('ask-sdk-controls');
 
-const {repeatText, speakText} = require('../../util'); 
-const burnText = speakText['burnText'];
-const burnYesText = speakText['burnYesText'];
-const burnNoText = speakText['burnNoText'];
+const {
+    prepareScreenContent,
+    imageCatalog,
+    displayTemplate,
+    displayDirective,
+    repeatText,
+    speakText
+} = require('../../common/util');
 
-let dummyData = require('../../content/data.json');
-const displayTemplate = require('../../content/commonAPL.json');
-
-const imageCatalog = require('../../content/assets.json');
-
+const { burnText } = speakText;
+const { burnYesText } = speakText;
+const { burnNoText } = speakText;
 const burnImage = imageCatalog['burn.control'];
 
 const BurnControlState = {
-    'value': undefined
+    value: undefined
 };
 
 class BurnControl extends Control {
     constructor(props) {
-        super(props);
+        super(props.id);
         this.state = BurnControlState;
     }
-
 
     canHandle(input) {
 
@@ -38,7 +39,6 @@ class BurnControl extends Control {
                 return true;
             }
 
-
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
             if (this.state.value === 'burn') {
                 return true;
@@ -48,8 +48,8 @@ class BurnControl extends Control {
         return false;
 
     }
-    handle(input, resultBuilder) {
 
+    handle(input, resultBuilder) {
 
         resultBuilder.addAct(
 
@@ -59,26 +59,24 @@ class BurnControl extends Control {
         );
 
     }
+
     canTakeInitiative() {
         return false;
     }
+
     renderAct(act, input, responseBuilder) {
 
-
-        
         if (act instanceof RequestValueAct) {
             if (InputUtil.isIntent(input, 'burnIntent')) {
                 this.state.value = 'burn';
                 responseBuilder.addPromptFragment(burnText);
                 responseBuilder.addRepromptFragment(repeatText);
-                if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
-                    dummyData.content.primaryText = 'burning';
-                    dummyData.content.bodyText = burnText;
-                    dummyData.content.mainImage = burnImage;
+                if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
+                    const dataTemplate = prepareScreenContent('burning', burnText, burnImage);
                     responseBuilder.addDirective({
-                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        type: displayDirective,
                         document: displayTemplate,
-                        datasources: dummyData
+                        datasources: dataTemplate
 
                     });
                 }
@@ -86,14 +84,12 @@ class BurnControl extends Control {
                 this.state.value = 'unknown';
                 responseBuilder.addPromptFragment(burnYesText);
                 responseBuilder.addRepromptFragment(repeatText);
-                if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
-                    dummyData.content.primaryText = 'burning';
-                    dummyData.content.bodyText = burnYesText;
-                    dummyData.content.mainImage = burnImage;
+                if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
+                    const dataTemplate = prepareScreenContent('burning', burnYesText, burnImage);
                     responseBuilder.addDirective({
-                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        type: displayDirective,
                         document: displayTemplate,
-                        datasources: dummyData
+                        datasources: dataTemplate
 
                     });
                 }
@@ -102,14 +98,12 @@ class BurnControl extends Control {
                 this.state.value = 'unknown';
                 responseBuilder.addPromptFragment(burnNoText);
                 responseBuilder.addRepromptFragment(repeatText);
-                if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){    
-                    dummyData.content.primaryText = 'burning';
-                    dummyData.content.bodyText = burnNoText;
-                    dummyData.content.mainImage = burnImage;
+                if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
+                    const dataTemplate = prepareScreenContent('burning', burnNoText, burnImage);
                     responseBuilder.addDirective({
-                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        type: displayDirective,
                         document: displayTemplate,
-                        datasources: dummyData
+                        datasources: dataTemplate
 
                     });
                 }

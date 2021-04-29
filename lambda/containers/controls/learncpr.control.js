@@ -13,21 +13,22 @@ const {
     displayDirective,
     repeatText,
     speakText
-} = require('../../util'); 
+} = require('../../common/util');
 
-const learncprImage = imageCatalog['learncpr.control'] ;
-const learnCPRText = speakText["learnCPRText"];
+const learncprImage = imageCatalog['learncpr.control'];
+const { learnCPRText } = speakText;
 
 class learnCPRControl extends Control {
 
-    constructor(props){
-        super(props);
+    constructor(props) {
+        super(props.id);
     }
 
     canHandle(input) {
         return InputUtil.isIntent(input, 'learnCPRIntent');
 
     }
+
     handle(input, resultBuilder) {
         resultBuilder.addAct(
 
@@ -37,15 +38,17 @@ class learnCPRControl extends Control {
         );
 
     }
+
     canTakeInitiative() {
         return false;
     }
+
     renderAct(act, input, responseBuilder) {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(learnCPRText);
             responseBuilder.addRepromptFragment(repeatText);
-            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
-                let dataTemplate = prepareScreenContent('learn CPR', learnCPRText, learncprImage);
+            if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
+                const dataTemplate = prepareScreenContent('learn CPR', learnCPRText, learncprImage);
                 responseBuilder.addDirective({
                     type: displayDirective,
                     document: displayTemplate,

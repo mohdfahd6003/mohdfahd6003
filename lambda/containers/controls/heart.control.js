@@ -13,17 +13,20 @@ const {
     displayDirective,
     repeatText,
     speakText
-} = require('../../util');
+} = require('../../common/util');
 
 class HeartControl extends Control {
-    
-    constructor(props){
-        super(props);
+
+    constructor(props) {
+        super(props.id);
+
     }
+
     canHandle(input) {
         return InputUtil.isIntent(input, 'heartWarningSignsIntent');
 
     }
+
     handle(input, resultBuilder) {
         resultBuilder.addAct(
 
@@ -33,19 +36,21 @@ class HeartControl extends Control {
         );
 
     }
+
     canTakeInitiative() {
         return false;
     }
+
     renderAct(act, input, responseBuilder) {
         const heartAttackImage = imageCatalog['heart.control'];
         const primaryText = 'warning signs of a heart attack';
-        const heartAttackText = speakText['heartAttackText'];
-        
+        const { heartAttackText } = speakText;
+
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(heartAttackText);
             responseBuilder.addRepromptFragment(repeatText);
-            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){ 
-                let dataTemplate = prepareScreenContent(primaryText, heartAttackText, heartAttackImage);
+            if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
+                const dataTemplate = prepareScreenContent(primaryText, heartAttackText, heartAttackImage);
                 responseBuilder.addDirective({
                     type: displayDirective,
                     document: displayTemplate,

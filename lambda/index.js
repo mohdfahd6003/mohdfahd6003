@@ -17,32 +17,28 @@ const {
     ContainerControl,
 } = require('ask-sdk-controls');
 
-
 const SinglePathContainer = require('./containers/singlepath.container');
-const MultiPathContainer = require('./containers/multipath.container')
-
+const MultiPathContainer = require('./containers/multipath.container');
 
 class RootContainer extends ContainerControl {
     constructor(props) {
-        super(props);        
-        this.addChild(new SinglePathContainer({ 'id': 'single' }));
-        //this.addChild(new MultiPathContainer({ 'id': 'second' }));
+        super(props);
+        this.addChild(new SinglePathContainer({ id: 'single' }));
+        // this.addChild(new MultiPathContainer({ 'id': 'second' }));
     }
-    
 
 }
 
 class AhaManager extends ControlManager {
 
     createControlTree() {
-        const root = new RootContainer({'id':'root'});
+        const root = new RootContainer({ id: 'root' });
         return root;
     }
 
-
 }
 
-// stanard Alexa code 
+// stanard Alexa code
 
 /* *
 * Mandatory Intent as per Amazon guidelines
@@ -55,7 +51,7 @@ const HelpIntentHandler = {
             Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speakOutput = " Ok. Say something like warning signs of a heart attack";
+        const speakOutput = ' Ok. Say something like warning signs of a heart attack';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -85,7 +81,7 @@ const CancelAndStopIntentHandler = {
 /* *
  * FallbackIntent triggers when a customer says something that doesn’t map to any intents in your skill
  * It must also be defined in the language model (if the locale supports it)
- * This handler can be safely added but will be ingnored in locales that do not support it yet 
+ * This handler can be safely added but will be ingnored in locales that do not support it yet
  * */
 const FallbackIntentHandler = {
     canHandle(handlerInput) {
@@ -102,9 +98,9 @@ const FallbackIntentHandler = {
     }
 };
 /* *
- * SessionEndedRequest notifies that a session was ended. This handler will be triggered when a currently open 
- * session is closed for one of the following reasons: 1) The user says "exit" or "quit". 2) The user does not 
- * respond or says something that does not match an intent defined in your voice model. 3) An error occurs 
+ * SessionEndedRequest notifies that a session was ended. This handler will be triggered when a currently open
+ * session is closed for one of the following reasons: 1) The user says "exit" or "quit". 2) The user does not
+ * respond or says something that does not match an intent defined in your voice model. 3) An error occurs
 
 const SessionEndedRequestHandler = {
     canHandle(handlerInput) {
@@ -118,8 +114,8 @@ const SessionEndedRequestHandler = {
 };
 /* *
  * The intent reflector is used for interaction model testing and debugging.
- * It will simply repeat the intent the user said. You can create custom handlers for your intents 
- * by defining them above, then also adding them to the request handler chain below 
+ * It will simply repeat the intent the user said. You can create custom handlers for your intents
+ * by defining them above, then also adding them to the request handler chain below
  * */
 const IntentReflectorHandler = {
     canHandle(handlerInput) {
@@ -127,18 +123,18 @@ const IntentReflectorHandler = {
     },
     handle(handlerInput) {
         const intentName = Alexa.getIntentName(handlerInput.requestEnvelope);
-        const speakOutput = "you have triggered " + intentName;
+        const speakOutput = `you have triggered ${intentName}`;
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            // .reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
     }
 };
 /**
  * Generic error handling to capture any syntax or routing errors. If you receive an error
  * stating the request handler chain is not found, you have not implemented a handler for
- * the intent being invoked or included it in the skill builder below 
+ * the intent being invoked or included it in the skill builder below
  * */
 const ErrorHandler = {
     canHandle() {

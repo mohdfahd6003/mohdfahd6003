@@ -13,21 +13,22 @@ const {
     displayDirective,
     repeatText,
     speakText
-  } = require('../../util'); 
-  
-  const strokeText = speakText['strokeText'];
-  const strokeImage = imageCatalog['stroke.control'] ;
+} = require('../../common/util');
+
+const { strokeText } = speakText;
+const strokeImage = imageCatalog['stroke.control'];
 
 class StrokeControl extends Control {
 
-    constructor(props){
-        super(props);
+    constructor(props) {
+        super(props.id);
     }
 
     canHandle(input) {
         return InputUtil.isIntent(input, 'strokeIntent');
 
     }
+
     handle(input, resultBuilder) {
         resultBuilder.addAct(
 
@@ -37,19 +38,21 @@ class StrokeControl extends Control {
         );
 
     }
+
     canTakeInitiative() {
         return false;
     }
+
     renderAct(act, input, responseBuilder) {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(strokeText);
             responseBuilder.addRepromptFragment(repeatText);
-            if((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']){
-                let dataTemplate = prepareScreenContent('strokeing', strokeText, strokeImage);
+            if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
+                const dataTemplate = prepareScreenContent('strokeing', strokeText, strokeImage);
                 responseBuilder.addDirective({
-                type: displayDirective,
-                document: displayTemplate,
-                datasources: dataTemplate
+                    type: displayDirective,
+                    document: displayTemplate,
+                    datasources: dataTemplate
 
                 });
             }
