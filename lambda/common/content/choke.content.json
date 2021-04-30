@@ -1,288 +1,288 @@
 {
-  "chokingInfo": {
-    "yes": {
-      "speechText": "Now, can she talk, cough or make a sound? ",
-      "primaryText": "Now, can she talk, cough or make a sound? ",
-      "secondaryText": " ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.pregnant"
+    "chokingInfo": {
+        "yes": {
+            "speechText": "Now, can she talk, cough or make a sound? ",
+            "primaryText": "Now, can she talk, cough or make a sound? ",
+            "secondaryText": " ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.pregnant"
+        },
+        "no": {
+            "speechText": "Is this an infant? ",
+            "primaryText": "Is this an infant? ",
+            "secondaryText": " ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Child.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.infantOrAdult"
+        }
     },
-    "no": {
-      "speechText": "Is this an infant? ",
-      "primaryText": "Is this an infant? ",
-      "secondaryText": " ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Child.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.infantOrAdult"
-    }
-  },
-  "chokingInfo.pregnant": {
-    "yes": {
-      "speechText": "This might be scary but it's okay. It means she has a mild airway block.  Let her continue to cough. What else can I help you with?",
-      "primaryText": "This might be scary but it's okay. ",
-      "secondaryText": "It means she has a mild airway block.  Let her continue to cough. ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
+    "chokingInfo.pregnant": {
+        "yes": {
+            "speechText": "This might be scary but it's okay. It means she has a mild airway block.  Let her continue to cough. What else can I help you with?",
+            "primaryText": "This might be scary but it's okay. ",
+            "secondaryText": "It means she has a mild airway block.  Let her continue to cough. ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        },
+        "no": {
+            "speechText": "Is she making the choking sign with their hands around her neck? ",
+            "primaryText": "Is she making the choking sign with their hands around her neck? ",
+            "secondaryText": " ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.pregnant.choking"
+        }
     },
-    "no": {
-      "speechText": "Is she making the choking sign with their hands around her neck? ",
-      "primaryText": "Is she making the choking sign with their hands around her neck? ",
-      "secondaryText": " ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.pregnant.choking"
-    }
-  },
-  "chokingInfo.pregnant.choking": {
-    "yes": {
-      "speechText": "Ask, Are you choking? Can I help you? Did she nod yes or no? ",
-      "primaryText": "Ask, Are you choking? Can I help you? Did she nod yes or no? ",
-      "secondaryText": " ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.pregnant.help"
+    "chokingInfo.pregnant.choking": {
+        "yes": {
+            "speechText": "Ask, Are you choking? Can I help you? Did she nod yes or no? ",
+            "primaryText": "Ask, Are you choking? Can I help you? Did she nod yes or no? ",
+            "secondaryText": " ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.pregnant.help"
+        },
+        "no": {
+            "speechText": "If she is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR?  ",
+            "primaryText": "Unresponsive? call your local emergency number! ",
+            "secondaryText": "begin CPR. Do you need help with CPR? ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.startCPR"
+        }
     },
-    "no": {
-      "speechText": "If she is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR?  ",
-      "primaryText": "Unresponsive? call your local emergency number! ",
-      "secondaryText": "begin CPR. Do you need help with CPR? ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.startCPR"
-    }
-  },
-  "chokingInfo.pregnant.help": {
-    "yes": {
-      "speechText": "Stand firmly or kneel behind her. Put your arms under the armpits and your hands on the lower half of the breastbone. Pull straight back to give chest thrusts. Did the object come out? ",
-      "primaryText": "  ",
-      "secondaryText": "Stand firmly or kneel behind her. Put your arms under the armpits and your hands on the lower half of the breastbone. Pull straight back to give chest thrusts. Did the object come out? ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.pregnant.object"
+    "chokingInfo.pregnant.help": {
+        "yes": {
+            "speechText": "Stand firmly or kneel behind her. Put your arms under the armpits and your hands on the lower half of the breastbone. Pull straight back to give chest thrusts. Did the object come out? ",
+            "primaryText": "  ",
+            "secondaryText": "Stand firmly or kneel behind her. Put your arms under the armpits and your hands on the lower half of the breastbone. Pull straight back to give chest thrusts. Did the object come out? ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.pregnant.object"
+        },
+        "no": {
+            "speechText": "Since she doesn't consent to your helping, I suggest calling your local emergency number. Stay with her until advanced help arrives.  What else can I help you with?",
+            "primaryText": "Call your local emergency number.  ",
+            "secondaryText": "Stay with her until advanced help arrives. ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        }
     },
-    "no": {
-      "speechText": "Since she doesn't consent to your helping, I suggest calling your local emergency number. Stay with her until advanced help arrives.  What else can I help you with?",
-      "primaryText": "Call your local emergency number.  ",
-      "secondaryText": "Stay with her until advanced help arrives. ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
-    }
-  },
-  "chokingInfo.pregnant.object": {
-    "yes": {
-      "speechText": "Good work! Take a deep breath and when you can, tell her to inform her healthcare provider about this incident.  It's great that you were able to do this. You may want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid. What else can I help you with?",
-      "primaryText": "Good work! ",
-      "secondaryText": "Tell her to inform her healthcare provider about this incident ",
-      "tertiaryText": "You can get more information at heart.org/firstaid ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
+    "chokingInfo.pregnant.object": {
+        "yes": {
+            "speechText": "Good work! Take a deep breath and when you can, tell her to inform her healthcare provider about this incident.  It's great that you were able to do this. You may want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid. What else can I help you with?",
+            "primaryText": "Good work! ",
+            "secondaryText": "Tell her to inform her healthcare provider about this incident ",
+            "tertiaryText": "You can get more information at heart.org/firstaid ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        },
+        "no": {
+            "speechText": "Continue giving thrusts until she can talk, cough or make a sound. If she becomes unresponsive, call your local emergency number and begin CPR. I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR. What else can I help you with?",
+            "primaryText": "Call your local emergency number and begin CPR ",
+            "secondaryText": "Continue giving thrusts until she can talk, cough or make a sound ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        }
     },
-    "no": {
-      "speechText": "Continue giving thrusts until she can talk, cough or make a sound. If she becomes unresponsive, call your local emergency number and begin CPR. I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR. What else can I help you with?",
-      "primaryText": "Call your local emergency number and begin CPR ",
-      "secondaryText": "Continue giving thrusts until she can talk, cough or make a sound ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
-    }
-  },
-  "chokingInfo.startCPR": {
-    "yes": {
-      "speechText": "According to the American Heart Association, you should first call your local emergency number if you see a teen or adult suddenly collapse and is not responsive and not breathing normally. Then, push hard and fast in the center of the chest at the rate of 100 to 120 beats per minute, such as the beat of the classic disco song Stayin Alive... Here is how fast you should push on the chest. <audio src='https://s3.amazonaws.com/ahaalexa/110-BPM-Metronome-short.mp3'/>. What else can I help you with? ",
-      "primaryText": "You should first call your local emergency number ",
-      "secondaryText": "if you see a teen or adult suddenly collapse and is not responsive and not breathing normally.",
-      "tertiaryText": "Push hard and fast in the center of the chest at the rate of 100 to 120 beats per minute, such as the beat of the classic disco song Stayin Alive... ",
-      "title": "Learn CPR",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
+    "chokingInfo.startCPR": {
+        "yes": {
+            "speechText": "According to the American Heart Association, you should first call your local emergency number if you see a teen or adult suddenly collapse and is not responsive and not breathing normally. Then, push hard and fast in the center of the chest at the rate of 100 to 120 beats per minute, such as the beat of the classic disco song Stayin Alive... Here is how fast you should push on the chest. <audio src='https://s3.amazonaws.com/ahaalexa/110-BPM-Metronome-short.mp3'/>. What else can I help you with? ",
+            "primaryText": "You should first call your local emergency number ",
+            "secondaryText": "if you see a teen or adult suddenly collapse and is not responsive and not breathing normally.",
+            "tertiaryText": "Push hard and fast in the center of the chest at the rate of 100 to 120 beats per minute, such as the beat of the classic disco song Stayin Alive... ",
+            "title": "Learn CPR",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        },
+        "no": {
+            "speechText": "OK, I'm going to let you concentrate on CPR. Let me know when I can help you again. ",
+            "primaryText": "call your local emergency number ",
+            "secondaryText": " ",
+            "tertiaryText": " ",
+            "title": "Learn CPR",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        }
     },
-    "no": {
-      "speechText": "OK, I'm going to let you concentrate on CPR. Let me know when I can help you again. ",
-      "primaryText": "call your local emergency number ",
-      "secondaryText": " ",
-      "tertiaryText": " ",
-      "title": "Learn CPR",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Choking_Sign_Woman.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
-    }
-  },
-  "chokingInfo.infantOrAdult": {
-    "yes": {
-      "speechText": "Now, can the infant breathe, cough or make a sound? ",
-      "primaryText": "Now, can the infant breathe, cough or make a sound? ",
-      "secondaryText": " ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Back Slaps_InfantCube.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.infant.breath"
+    "chokingInfo.infantOrAdult": {
+        "yes": {
+            "speechText": "Now, can the infant breathe, cough or make a sound? ",
+            "primaryText": "Now, can the infant breathe, cough or make a sound? ",
+            "secondaryText": " ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Back Slaps_InfantCube.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.infant.breath"
+        },
+        "no": {
+            "speechText": "Now, can the person talk, cough or make a sound? ",
+            "primaryText": "Now, can the person talk, cough or make a sound? ",
+            "secondaryText": " ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.adult"
+        }
     },
-    "no": {
-      "speechText": "Now, can the person talk, cough or make a sound? ",
-      "primaryText": "Now, can the person talk, cough or make a sound? ",
-      "secondaryText": " ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.adult"
-    }
-  },
-  "chokingInfo.infant.breath": {
-    "yes": {
-      "speechText": "This might sound and look scary, but it's okay. It means they have a mild airway block.  Let them continue to cough. What else can I help you with?",
-      "primaryText": "This might sound and look scary, but it's okay. It means they have a mild airway block.  Let them continue to cough. ",
-      "secondaryText": " ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
+    "chokingInfo.infant.breath": {
+        "yes": {
+            "speechText": "This might sound and look scary, but it's okay. It means they have a mild airway block.  Let them continue to cough. What else can I help you with?",
+            "primaryText": "This might sound and look scary, but it's okay. It means they have a mild airway block.  Let them continue to cough. ",
+            "secondaryText": " ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        },
+        "no": {
+            "speechText": "OK, hold the infant face down on your forearm. Support the infant's head and jaw with your hand. Give up to 5 back slaps with the heel of your other hand, between the infant's shoulder blades. Did the object come out? ",
+            "primaryText": "If the person becomes unresponsive, call 9-1-1 and start CPR ",
+            "secondaryText": "OK, hold the infant face down on your forearm. Support the infant's head and jaw with your hand. Give up to 5 back slaps with the heel of your other hand, between the infant's shoulder blades ",
+            "tertiaryText": "Did the object come out? ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.infant.object"
+        }
     },
-    "no": {
-      "speechText": "OK, hold the infant face down on your forearm. Support the infant's head and jaw with your hand. Give up to 5 back slaps with the heel of your other hand, between the infant's shoulder blades. Did the object come out? ",
-      "primaryText": "If the person becomes unresponsive, call 9-1-1 and start CPR ",
-      "secondaryText": "OK, hold the infant face down on your forearm. Support the infant's head and jaw with your hand. Give up to 5 back slaps with the heel of your other hand, between the infant's shoulder blades ",
-      "tertiaryText": "Did the object come out? ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.infant.object"
-    }
-  },
-  "chokingInfo.adult": {
-    "yes": {
-      "speechText": "This might be scary but it's okay. It means they have a mild airway block.  Let them continue to cough. What else can I help you with?",
-      "primaryText": " ",
-      "secondaryText": "This might be scary but it's okay. It means they have a mild airway block.  Let them continue to cough. ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
+    "chokingInfo.adult": {
+        "yes": {
+            "speechText": "This might be scary but it's okay. It means they have a mild airway block.  Let them continue to cough. What else can I help you with?",
+            "primaryText": " ",
+            "secondaryText": "This might be scary but it's okay. It means they have a mild airway block.  Let them continue to cough. ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        },
+        "no": {
+            "speechText": "Is the person making the choking sign with their hands around their neck? ",
+            "primaryText": " ",
+            "secondaryText": "Is the person making the choking sign with their hands around their neck? ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.adult.chokingSign"
+        }
     },
-    "no": {
-      "speechText": "Is the person making the choking sign with their hands around their neck? ",
-      "primaryText": " ",
-      "secondaryText": "Is the person making the choking sign with their hands around their neck? ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.adult.chokingSign"
-    }
-  },
-  "chokingInfo.adult.chokingSign": {
-    "yes": {
-      "speechText": "Ask, Are you choking? Can I help you? Did the person nod yes or no?  ",
-      "primaryText": " ",
-      "secondaryText": " ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.adult.help"
+    "chokingInfo.adult.chokingSign": {
+        "yes": {
+            "speechText": "Ask, Are you choking? Can I help you? Did the person nod yes or no?  ",
+            "primaryText": " ",
+            "secondaryText": " ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.adult.help"
+        },
+        "no": {
+            "speechText": "If the person is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR?  ",
+            "primaryText": " ",
+            "secondaryText": "If the person is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR? ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.startCPR"
+        }
     },
-    "no": {
-      "speechText": "If the person is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR?  ",
-      "primaryText": " ",
-      "secondaryText": "If the person is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR? ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.startCPR"
-    }
-  },
-  "chokingInfo.adult.help": {
-    "yes": {
-      "speechText": "Stand firmly or kneel behind the person. Wrap your arms around the person's waist so that your fists are in front. Make a fist with one hand. Put the thumb side of your fist slightly above the belly button and well below the breastbone. Grasp the fist with your other hand and give quick upward thrusts into the abdomen. Did the object come out?  ",
-      "primaryText": "  ",
-      "secondaryText": "Stand firmly or kneel behind the person. Wrap your arms around the person's waist so that your fists are in front. Make a fist with one hand. Put the thumb side of your fist slightly above the belly button and well below the breastbone. Grasp the fist with your other hand and give quick upward thrusts into the abdomen. ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": "chokingInfo.adult.object"
+    "chokingInfo.adult.help": {
+        "yes": {
+            "speechText": "Stand firmly or kneel behind the person. Wrap your arms around the person's waist so that your fists are in front. Make a fist with one hand. Put the thumb side of your fist slightly above the belly button and well below the breastbone. Grasp the fist with your other hand and give quick upward thrusts into the abdomen. Did the object come out?  ",
+            "primaryText": "  ",
+            "secondaryText": "Stand firmly or kneel behind the person. Wrap your arms around the person's waist so that your fists are in front. Make a fist with one hand. Put the thumb side of your fist slightly above the belly button and well below the breastbone. Grasp the fist with your other hand and give quick upward thrusts into the abdomen. ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": "chokingInfo.adult.object"
+        },
+        "no": {
+            "speechText": "Since the person doesn't consent to your helping, I suggest calling your local emergency number. Stay with them until advanced help arrives.  ",
+            "primaryText": "Call your local emergency number.  ",
+            "secondaryText": "Stay with them until advanced help arrives. ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        }
     },
-    "no": {
-      "speechText": "Since the person doesn't consent to your helping, I suggest calling your local emergency number. Stay with them until advanced help arrives.  ",
-      "primaryText": "Call your local emergency number.  ",
-      "secondaryText": "Stay with them until advanced help arrives. ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
-    }
-  },
-  "chokingInfo.adult.object": {
-    "yes": {
-      "speechText": "Good work! Take a deep breath. When you can, tell the person to inform his or her healthcare provider about this incident. It's great that you were able to do this. You may want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid.  What else can I help you with?",
-      "primaryText": "Good work! ",
-      "secondaryText": "Tell them to inform her healthcare provider about this incident ",
-      "tertiaryText": "You can get more information at heart.org/firstaid ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
+    "chokingInfo.adult.object": {
+        "yes": {
+            "speechText": "Good work! Take a deep breath. When you can, tell the person to inform his or her healthcare provider about this incident. It's great that you were able to do this. You may want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid.  What else can I help you with?",
+            "primaryText": "Good work! ",
+            "secondaryText": "Tell them to inform her healthcare provider about this incident ",
+            "tertiaryText": "You can get more information at heart.org/firstaid ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        },
+        "no": {
+            "speechText": "Continue giving thrusts until the person can talk, cough or make a sound. If the person becomes unresponsive, call your local emergency number and begin CPR. I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR.  What else can I help you with?",
+            "primaryText": "Call your local emergency number and begin CPR ",
+            "secondaryText": "Continue giving thrusts until she can talk, cough or make a sound ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        }
     },
-    "no": {
-      "speechText": "Continue giving thrusts until the person can talk, cough or make a sound. If the person becomes unresponsive, call your local emergency number and begin CPR. I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR.  What else can I help you with?",
-      "primaryText": "Call your local emergency number and begin CPR ",
-      "secondaryText": "Continue giving thrusts until she can talk, cough or make a sound ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Phone_911.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
+    "chokingInfo.infant.object": {
+        "yes": {
+            "speechText": "Good work! Take a deep breath and when you can, tell the caregiver to inform the pediatrician about this incident. It's great that you were able to do this. You may want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid. What else can I help you with?",
+            "primaryText": "Good work! ",
+            "secondaryText": "Take a deep breath and when you can, tell the caregiver to inform the pediatrician about this incident. ",
+            "tertiaryText": "",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        },
+        "no": {
+            "speechText": "Turn the infant onto his or her back, supporting the head. Give up to 5 chest thrusts, using 2 fingers of your other hand to push on the center of the chest. Repeat, alternating between 5 back slaps and 5 chest thrusts until the infant can breathe, cough, or cry. If the infant becomes unresponsive, make sure the infant is lying on their back on a firm, flat surface, begin CPR and call your local emergency number.  I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR. I'm going to let you focus now. What else can I help you with? ",
+            "primaryText": "Turn the infant onto his or her back, supporting the head ",
+            "secondaryText": "Give up to 5 chest thrusts, using 2 fingers of your other hand to push on the center of the chest. Repeat, alternating between 5 back slaps and 5 chest thrusts until the infant can breathe, cough, or cry ",
+            "tertiaryText": " ",
+            "title": "Choking",
+            "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
+            "backgroundImage": "backgroundImage",
+            "continue": false
+        }
     }
-  },
-  "chokingInfo.infant.object": {
-    "yes": {
-      "speechText": "Good work! Take a deep breath and when you can, tell the caregiver to inform the pediatrician about this incident. It's great that you were able to do this. You may want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid. What else can I help you with?",
-      "primaryText": "Good work! ",
-      "secondaryText": "Take a deep breath and when you can, tell the caregiver to inform the pediatrician about this incident. ",
-      "tertiaryText": "",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
-    },
-    "no": {
-      "speechText": "Turn the infant onto his or her back, supporting the head. Give up to 5 chest thrusts, using 2 fingers of your other hand to push on the center of the chest. Repeat, alternating between 5 back slaps and 5 chest thrusts until the infant can breathe, cough, or cry. If the infant becomes unresponsive, make sure the infant is lying on their back on a firm, flat surface, begin CPR and call your local emergency number.  I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR. I'm going to let you focus now. What else can I help you with? ",
-      "primaryText": "Turn the infant onto his or her back, supporting the head ",
-      "secondaryText": "Give up to 5 chest thrusts, using 2 fingers of your other hand to push on the center of the chest. Repeat, alternating between 5 back slaps and 5 chest thrusts until the infant can breathe, cough, or cry ",
-      "tertiaryText": " ",
-      "title": "Choking",
-      "imageUrl": "https://s3.amazonaws.com/ahaalexa/forechoshow/Universal_Choking_Sign_AdultFloor.jpg",
-      "backgroundImage": "backgroundImage",
-      "continue": false
-    }
-  }
 }

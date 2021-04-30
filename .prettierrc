@@ -1,14 +1,9 @@
 {
-    "extends": ["prettier"],
-    "plugins": ["prettier"],
-    "rules": {
-      "prettier/prettier": "error",
-      "arrow-body-style": "off",
-      "prefer-arrow-callback": "off",
-      "tabWidth": 4,
-      "singleQuote":true,
-      "semi": true,
-      "bracketSpacing": true,
-      "useTabs" : true 
-    }
-  }
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "tabWidth": 4,
+  "semi": true,
+  "bracketSpacing": true
+}

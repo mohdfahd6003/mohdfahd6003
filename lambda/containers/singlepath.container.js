@@ -1,8 +1,4 @@
-const {
-    ContainerControl,
-    ContainerControlState,
-    InputUtil
-} = require('ask-sdk-controls');
+const { ContainerControl, ContainerControlState, InputUtil } = require('ask-sdk-controls');
 
 const HelloControl = require('./controls/hello.control.js');
 const LearnCPRControl = require('./controls/learncpr.control.js');
@@ -52,18 +48,13 @@ class SinglePathContainer extends ContainerControl {
     }
 
     async decideHandlingChild(candidates, input) {
-
         for (const candidate of candidates) {
-
-            if (InputUtil.isIntent(input, 'AMAZON.YesIntent'))
-            {
+            if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
                 if (candidate.id === 'bleed' && candidate.status.value === 'first') {
                     return candidate;
-                }
-                else if (candidate.id === 'choke') {
+                } else if (candidate.id === 'choke') {
                     return candidate;
                 }
-
             }
         }
         return candidates[0];

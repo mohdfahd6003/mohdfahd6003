@@ -1,10 +1,6 @@
 const Alexa = require('ask-sdk-core');
 
-const {
-    InputUtil,
-    Control,
-    RequestValueAct
-} = require('ask-sdk-controls');
+const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
@@ -12,31 +8,23 @@ const {
     displayTemplate,
     displayDirective,
     repeatText,
-    speakText
+    speakText,
 } = require('../../common/util');
 
 const { strokeText } = speakText;
 const strokeImage = imageCatalog['stroke.control'];
 
 class StrokeControl extends Control {
-
     constructor(props) {
         super(props.id);
     }
 
     canHandle(input) {
         return InputUtil.isIntent(input, 'strokeIntent');
-
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(
-
-            new RequestValueAct(this, {
-
-            })
-        );
-
+        resultBuilder.addAct(new RequestValueAct(this, {}));
     }
 
     canTakeInitiative() {
@@ -47,13 +35,16 @@ class StrokeControl extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(strokeText);
             responseBuilder.addRepromptFragment(repeatText);
-            if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
+            if (
+                Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
+                    'Alexa.Presentation.APL'
+                ]
+            ) {
                 const dataTemplate = prepareScreenContent('strokeing', strokeText, strokeImage);
                 responseBuilder.addDirective({
                     type: displayDirective,
                     document: displayTemplate,
-                    datasources: dataTemplate
-
+                    datasources: dataTemplate,
                 });
             }
         }

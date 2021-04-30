@@ -11,11 +11,7 @@
  * permissions and limitations under the License.
  */
 const Alexa = require('ask-sdk-core');
-const {
-    ControlHandler,
-    ControlManager,
-    ContainerControl,
-} = require('ask-sdk-controls');
+const { ControlHandler, ControlManager, ContainerControl } = require('ask-sdk-controls');
 
 const SinglePathContainer = require('./containers/singlepath.container');
 const MultiPathContainer = require('./containers/multipath.container');
@@ -26,57 +22,53 @@ class RootContainer extends ContainerControl {
         this.addChild(new SinglePathContainer({ id: 'single' }));
         // this.addChild(new MultiPathContainer({ 'id': 'second' }));
     }
-
 }
 
 class AhaManager extends ControlManager {
-
     createControlTree() {
         const root = new RootContainer({ id: 'root' });
         return root;
     }
-
 }
 
 // stanard Alexa code
 
 /* *
-* Mandatory Intent as per Amazon guidelines
-* Content of the help can be revised
+ * Mandatory Intent as per Amazon guidelines
+ * Content of the help can be revised
  * */
 
 const HelpIntentHandler = {
     canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
-            Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
+        return (
+            Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
+            Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent'
+        );
     },
     handle(handlerInput) {
         const speakOutput = ' Ok. Say something like warning signs of a heart attack';
 
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
+        return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse();
+    },
 };
 /* *
-* Stop the sklill on user's demand.
-* Cancel also works in the same way
+ * Stop the sklill on user's demand.
+ * Cancel also works in the same way
  * */
 
 const CancelAndStopIntentHandler = {
     canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
+        return (
+            Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
             (Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.CancelIntent' ||
-                Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.StopIntent');
+                Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.StopIntent')
+        );
     },
     handle(handlerInput) {
         const speakOutput = 'See you soon. Bye';
 
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .getResponse();
-    }
+        return handlerInput.responseBuilder.speak(speakOutput).getResponse();
+    },
 };
 /* *
  * FallbackIntent triggers when a customer says something that doesn’t map to any intents in your skill
@@ -85,17 +77,16 @@ const CancelAndStopIntentHandler = {
  * */
 const FallbackIntentHandler = {
     canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
-            Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.FallbackIntent';
+        return (
+            Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
+            Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.FallbackIntent'
+        );
     },
     handle(handlerInput) {
         const speakOutput = 'Oops. I didnot get that. Can you please repeat ?';
 
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
+        return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse();
+    },
 };
 /* *
  * SessionEndedRequest notifies that a session was ended. This handler will be triggered when a currently open
@@ -125,11 +116,13 @@ const IntentReflectorHandler = {
         const intentName = Alexa.getIntentName(handlerInput.requestEnvelope);
         const speakOutput = `you have triggered ${intentName}`;
 
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            // .reprompt('add a reprompt if you want to keep the session open for the user to respond')
-            .getResponse();
-    }
+        return (
+            handlerInput.responseBuilder
+                .speak(speakOutput)
+                // .reprompt('add a reprompt if you want to keep the session open for the user to respond')
+                .getResponse()
+        );
+    },
 };
 /**
  * Generic error handling to capture any syntax or routing errors. If you receive an error
@@ -144,19 +137,18 @@ const ErrorHandler = {
         const speakOutput = 'There was an error';
         console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
 
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
+        return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse();
+    },
 };
 
 exports.handler = Alexa.SkillBuilders.custom()
-    .addRequestHandlers(new ControlHandler(new AhaManager()),
+    .addRequestHandlers(
+        new ControlHandler(new AhaManager()),
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
-        IntentReflectorHandler)
+        IntentReflectorHandler
+    )
     .lambda();
 
 // Exported for building interaction model

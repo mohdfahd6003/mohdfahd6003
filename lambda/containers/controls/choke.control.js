@@ -1,10 +1,6 @@
 const Alexa = require('ask-sdk-core');
 
-const {
-    InputUtil,
-    Control,
-    RequestValueAct
-} = require('ask-sdk-controls');
+const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
@@ -12,7 +8,7 @@ const {
     displayTemplate,
     displayDirective,
     repeatText,
-    speakText
+    speakText,
 } = require('../../common/util');
 
 const chokeData = require('../../common/content/choke.content.json');
@@ -21,7 +17,7 @@ const dataTemplate = require('../../common/content/dataTemplate.json');
 const { chokeMainText } = speakText;
 
 const ChokeControlState = {
-    value: undefined
+    value: undefined,
 };
 
 class ChokeControl extends Control {
@@ -45,14 +41,10 @@ class ChokeControl extends Control {
             return true;
         }
         return false;
-
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(
-            new RequestValueAct(this, {
-            })
-        );
+        resultBuilder.addAct(new RequestValueAct(this, {}));
     }
 
     canTakeInitiative() {
@@ -66,16 +58,20 @@ class ChokeControl extends Control {
                 const resp = chokeMainText;
                 responseBuilder.addPromptFragment(resp);
                 responseBuilder.addRepromptFragment(repeatText);
-                if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
-                    const chokeImage = 'https://s3.amazonaws.com/ahaalexa/forechoshow/Chest_Thrust_AdultFloor.jpg';
+                if (
+                    Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
+                        'Alexa.Presentation.APL'
+                    ]
+                ) {
+                    const chokeImage =
+                        'https://s3.amazonaws.com/ahaalexa/forechoshow/Chest_Thrust_AdultFloor.jpg';
                     dataTemplate.content.primaryText = 'Choking person';
                     dataTemplate.content.bodyText = resp;
                     dataTemplate.content.mainImage = chokeImage;
                     responseBuilder.addDirective({
                         type: 'Alexa.Presentation.APL.RenderDocument',
                         document: displayTemplate,
-                        datasources: dataTemplate
-
+                        datasources: dataTemplate,
                     });
                 }
             } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
@@ -87,24 +83,25 @@ class ChokeControl extends Control {
                 const topicnext = chokeData[topic].yes.continue;
                 if (topicnext === false) {
                     this.state = 'unknown';
-                }
-                else {
+                } else {
                     this.state = topicnext;
                 }
                 responseBuilder.addPromptFragment(speechText);
                 responseBuilder.addRepromptFragment(repeatText);
-                if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
+                if (
+                    Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
+                        'Alexa.Presentation.APL'
+                    ]
+                ) {
                     dataTemplate.content.primaryText = primaryText;
                     dataTemplate.content.bodyText = secondaryText;
                     dataTemplate.content.mainImage = imageUrl;
                     responseBuilder.addDirective({
                         type: 'Alexa.Presentation.APL.RenderDocument',
                         document: displayTemplate,
-                        datasources: dataTemplate
-
+                        datasources: dataTemplate,
                     });
                 }
-
             } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
                 const topic = this.state;
                 const { speechText } = chokeData[topic].no;
@@ -114,26 +111,27 @@ class ChokeControl extends Control {
                 const topicnext = chokeData[topic].no.continue;
                 if (topicnext === false) {
                     this.state = 'unknown';
-                }
-                else {
+                } else {
                     this.state = topicnext;
                 }
                 responseBuilder.addPromptFragment(speechText);
                 responseBuilder.addRepromptFragment(repeatText);
-                if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
+                if (
+                    Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
+                        'Alexa.Presentation.APL'
+                    ]
+                ) {
                     dataTemplate.content.primaryText = primaryText;
                     dataTemplate.content.bodyText = secondaryText;
                     dataTemplate.content.mainImage = imageUrl;
                     responseBuilder.addDirective({
                         type: 'Alexa.Presentation.APL.RenderDocument',
                         document: displayTemplate,
-                        datasources: dataTemplate
-
+                        datasources: dataTemplate,
                     });
                 }
             }
         }
     }
-
 }
 module.exports = ChokeControl;

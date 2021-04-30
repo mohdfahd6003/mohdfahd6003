@@ -1,10 +1,6 @@
 const Alexa = require('ask-sdk-core');
 
-const {
-    InputUtil,
-    Control,
-    RequestValueAct
-} = require('ask-sdk-controls');
+const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
@@ -12,13 +8,12 @@ const {
     displayTemplate,
     displayDirective,
     repeatText,
-    speakText
+    speakText,
 } = require('../../common/util');
 
 const { dehydrationText } = speakText;
 const dehydrationImage = imageCatalog['dehydration.control'];
 class Dehydration extends Control {
-
     constructor(props) {
         super(props.id);
     }
@@ -26,15 +21,10 @@ class Dehydration extends Control {
     canHandle(input) {
         console.log('Inside dehydration control');
         return InputUtil.isIntent(input, 'dehydrationIntent');
-
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(
-            new RequestValueAct(this, {
-            })
-        );
-
+        resultBuilder.addAct(new RequestValueAct(this, {}));
     }
 
     canTakeInitiative() {
@@ -45,13 +35,20 @@ class Dehydration extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(dehydrationText);
             responseBuilder.addRepromptFragment(repeatText);
-            if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
-                const dataTemplate = prepareScreenContent('dehydration', dehydrationText, dehydrationImage);
+            if (
+                Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
+                    'Alexa.Presentation.APL'
+                ]
+            ) {
+                const dataTemplate = prepareScreenContent(
+                    'dehydration',
+                    dehydrationText,
+                    dehydrationImage
+                );
                 responseBuilder.addDirective({
                     type: displayDirective,
                     document: displayTemplate,
-                    datasources: dataTemplate
-
+                    datasources: dataTemplate,
                 });
             }
         }

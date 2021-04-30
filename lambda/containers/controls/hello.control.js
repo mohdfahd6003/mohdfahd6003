@@ -1,10 +1,6 @@
 const Alexa = require('ask-sdk-core');
 
-const {
-    InputUtil,
-    Control,
-    RequestValueAct
-} = require('ask-sdk-controls');
+const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
@@ -12,7 +8,7 @@ const {
     displayTemplate,
     displayDirective,
     repeatText,
-    speakText
+    speakText,
 } = require('../../common/util');
 
 const { introText } = speakText;
@@ -20,7 +16,6 @@ const { introText } = speakText;
 const helloImage = imageCatalog['hello.control'];
 
 class HelloControl extends Control {
-
     constructor(props) {
         super(props.id);
     }
@@ -30,12 +25,7 @@ class HelloControl extends Control {
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(
-            new RequestValueAct(this, {
-
-            })
-
-        );
+        resultBuilder.addAct(new RequestValueAct(this, {}));
     }
 
     canTakeInitiative() {
@@ -46,17 +36,23 @@ class HelloControl extends Control {
         if (act instanceof RequestValueAct) {
             responseBuilder.addPromptFragment(introText);
             responseBuilder.addRepromptFragment(repeatText);
-            if ((Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope))['Alexa.Presentation.APL']) {
-                const dataTemplate = prepareScreenContent('Welcome', 'You can ask like warning signs of a heart attack', helloImage);
+            if (
+                Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
+                    'Alexa.Presentation.APL'
+                ]
+            ) {
+                const dataTemplate = prepareScreenContent(
+                    'Welcome',
+                    'You can ask like warning signs of a heart attack',
+                    helloImage
+                );
                 responseBuilder.addDirective({
                     type: displayDirective,
                     document: displayTemplate,
-                    datasources: dataTemplate
-
+                    datasources: dataTemplate,
                 });
             }
         }
     }
-
 }
 module.exports = HelloControl;

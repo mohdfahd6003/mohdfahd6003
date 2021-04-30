@@ -36,9 +36,9 @@ class NoseBleeding extends Control {
             responseBuilder.addPromptFragment(noseBleedText);
             responseBuilder.addRepromptFragment(repeatText);
             if (
-                Alexa.getSupportedInterfaces(
-                    input.handlerInput.requestEnvelope
-                )['Alexa.Presentation.APL']
+                Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
+                    'Alexa.Presentation.APL'
+                ]
             ) {
                 const dataTemplate = prepareScreenContent(
                     'nose bleeds',

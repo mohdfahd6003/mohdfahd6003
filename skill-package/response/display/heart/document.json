@@ -1,1 +1,58 @@
-{"type":"APL","version":"1.6","theme":"dark","import":[{"name":"alexa-layouts","version":"1.3.0"}],"mainTemplate":{"parameters":["payload"],"item":[{"type":"AlexaDetail","backgroundColor":"red","theme":"dark","headerTitle":"warning signs of  heart attack","imageSource":"https://s3.amazonaws.com/ahaalexa/forechoshow/During_a_Heart_Attack.jpg","bodyText":"Some heart attacks are sudden and intense, but most start slowly, with mild pain or discomfort.                 call your local emergency number right away if you have any of these heart attack warning signs.                 Chest discomfort: Most heart attacks involve discomfort in the center of the chest that lasts more than a few minutes, or                 that goes away and comes back. It can feel like uncomfortable pressure, squeezing, fullness or pain.                 Discomfort in other areas of the upper body. Symptoms can include pain or discomfort in one or both arms,                  the back, neck, jaw or stomach. Shortness of breath with or without chest discomfort.                 Other signs may include breaking out in a cold sweat, nausea or lightheadedness.                 Women also may experience other common symptoms, particularly shortness of breath, nausea, vomiting, and back or jaw pain.                 You can learn more at www.heart.org/warningsigns.                 This information is not a substitute for medical advice or treatment, and the A.H.A recommends                 consultation with your doctor or healthcare professional. Feel free to ask about Warning Signs of a Stroke, How to Do CPR, or poisoning. Now what else can I help you with?","imageAlignment":"top","imageShadow":true}]},"onMount":[{"type":"SpeakItem","componentId":"PlantHeadline"}],"datasources":{"headlineTemplateData":{"type":"object","objectId":"headlineSample","properties":{"backgroundImage":{"contentDescription":null,"smallSourceUrl":null,"largeSourceUrl":null,"sources":[{"url":"https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/headline/HeadlineBackground_Dark.png","size":"large"}]},"textContent":{"primaryText":{"type":"PlainText","text":"Welcome to The Daily Plant Facts"}},"logoUrl":"https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/logo/logo-modern-botanical-white.png","hintText":"Try, \"Alexa, what is the plant fact of the day?\"","welcomeSpeechSSML":"<speak><amazon:emotion name='excited' intensity='medium'>Welcome to The Daily Plant Facts</amazon:emotion></speak>"},"transformers":[{"inputPath":"welcomeSpeechSSML","transformer":"ssmlToSpeech","outputName":"welcomeSpeech"}]}},"layouts":{}}
+{
+  "type": "APL",
+  "version": "1.6",
+  "theme": "dark",
+  "import": [{ "name": "alexa-layouts", "version": "1.3.0" }],
+  "mainTemplate": {
+    "parameters": ["payload"],
+    "item": [
+      {
+        "type": "AlexaDetail",
+        "backgroundColor": "red",
+        "theme": "dark",
+        "headerTitle": "warning signs of  heart attack",
+        "imageSource": "https://s3.amazonaws.com/ahaalexa/forechoshow/During_a_Heart_Attack.jpg",
+        "bodyText": "Some heart attacks are sudden and intense, but most start slowly, with mild pain or discomfort.                 call your local emergency number right away if you have any of these heart attack warning signs.                 Chest discomfort: Most heart attacks involve discomfort in the center of the chest that lasts more than a few minutes, or                 that goes away and comes back. It can feel like uncomfortable pressure, squeezing, fullness or pain.                 Discomfort in other areas of the upper body. Symptoms can include pain or discomfort in one or both arms,                  the back, neck, jaw or stomach. Shortness of breath with or without chest discomfort.                 Other signs may include breaking out in a cold sweat, nausea or lightheadedness.                 Women also may experience other common symptoms, particularly shortness of breath, nausea, vomiting, and back or jaw pain.                 You can learn more at www.heart.org/warningsigns.                 This information is not a substitute for medical advice or treatment, and the A.H.A recommends                 consultation with your doctor or healthcare professional. Feel free to ask about Warning Signs of a Stroke, How to Do CPR, or poisoning. Now what else can I help you with?",
+        "imageAlignment": "top",
+        "imageShadow": true
+      }
+    ]
+  },
+  "onMount": [{ "type": "SpeakItem", "componentId": "PlantHeadline" }],
+  "datasources": {
+    "headlineTemplateData": {
+      "type": "object",
+      "objectId": "headlineSample",
+      "properties": {
+        "backgroundImage": {
+          "contentDescription": null,
+          "smallSourceUrl": null,
+          "largeSourceUrl": null,
+          "sources": [
+            {
+              "url": "https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/headline/HeadlineBackground_Dark.png",
+              "size": "large"
+            }
+          ]
+        },
+        "textContent": {
+          "primaryText": {
+            "type": "PlainText",
+            "text": "Welcome to The Daily Plant Facts"
+          }
+        },
+        "logoUrl": "https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/logo/logo-modern-botanical-white.png",
+        "hintText": "Try, \"Alexa, what is the plant fact of the day?\"",
+        "welcomeSpeechSSML": "<speak><amazon:emotion name='excited' intensity='medium'>Welcome to The Daily Plant Facts</amazon:emotion></speak>"
+      },
+      "transformers": [
+        {
+          "inputPath": "welcomeSpeechSSML",
+          "transformer": "ssmlToSpeech",
+          "outputName": "welcomeSpeech"
+        }
+      ]
+    }
+  },
+  "layouts": {}
+}

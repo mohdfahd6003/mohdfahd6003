@@ -2,7 +2,7 @@ const {
     ControlHandler,
     ControlManager,
     ContainerControl,
-    ContainerControlState
+    ContainerControlState,
 } = require('ask-sdk-controls');
 
 const { getSupportedInterfaces } = require('ask-sdk-core');
@@ -32,7 +32,6 @@ class MultiPathContainer extends ContainerControl {
     }
 
     async canHandle(input) {
-
         if (await this.canHandleByChild(input)) {
             this.handleFunc = this.handleByChild;
             return true;
