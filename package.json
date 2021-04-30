@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint",
-    "test": "echo \" Error: no test specified\" && exit 1"
+    "test": "echo \" Error: no test specified\" && exit 1",
+    "prepare": "husky install .config/husky"
+
+  
   },
   "author": "AHA Alexa team",
   "license": "Apache License",
@@ -14,6 +17,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
+    "husky": "^6.0.0",
     "prettier": "^2.2.1"
   },
   "dependencies": {}

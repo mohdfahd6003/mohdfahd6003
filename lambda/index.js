@@ -20,7 +20,7 @@ class RootContainer extends ContainerControl {
     constructor(props) {
         super(props);
         this.addChild(new SinglePathContainer({ id: 'single' }));
-        // this.addChild(new MultiPathContainer({ 'id': 'second' }));
+        this.addChild(new MultiPathContainer({ id: 'second' }));
     }
 }
 
