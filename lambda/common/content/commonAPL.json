@@ -16,9 +16,7 @@
     "commands": {},
     "layouts": {},
     "mainTemplate": {
-        "parameters": [
-            "payload"
-        ],
+        "parameters": ["payload"],
         "items": [
             {
                 "type": "AlexaDetail",

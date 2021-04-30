@@ -1,1 +1,62 @@
-{"type":"APL","version":"1.6","theme":"dark","import":[{"name":"alexa-layouts","version":"1.3.0"}],"mainTemplate":{"parameters":["payload"],"item":[{"type":"AlexaHeadline","theme":"dark","headerAttributionImage":"https://s3.amazonaws.com/ahaalexa/forechoshow/AHA_ASA_Masterbrand.jpg","secondaryText":" ","backgroundImageSource":"https://s3.amazonaws.com/ahaalexa/forechoshow/background.jpg","footerHintText":"Alexa, Warning Signs of a Heart Attack","primaryText":" ","headerBackgroundColor":"red","backgroundColor":"black","backgroundAlign":"top","headerTitle":"welcome","id":"PlantHeadline","speech":"${payload.headlineTemplateData.properties.welcomeSpeech}"}]},"onMount":[{"type":"SpeakItem","componentId":"PlantHeadline"}],"datasources":{"headlineTemplateData":{"type":"object","objectId":"headlineSample","properties":{"backgroundImage":{"contentDescription":null,"smallSourceUrl":null,"largeSourceUrl":null,"sources":[{"url":"https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/headline/HeadlineBackground_Dark.png","size":"large"}]},"textContent":{"primaryText":{"type":"PlainText","text":"Welcome to The Daily Plant Facts"}},"logoUrl":"https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/logo/logo-modern-botanical-white.png","hintText":"Try, \"Alexa, what is the plant fact of the day?\"","welcomeSpeechSSML":"<speak><amazon:emotion name='excited' intensity='medium'>Welcome to The Daily Plant Facts</amazon:emotion></speak>"},"transformers":[{"inputPath":"welcomeSpeechSSML","transformer":"ssmlToSpeech","outputName":"welcomeSpeech"}]}}}
+{
+  "type": "APL",
+  "version": "1.6",
+  "theme": "dark",
+  "import": [{ "name": "alexa-layouts", "version": "1.3.0" }],
+  "mainTemplate": {
+    "parameters": ["payload"],
+    "item": [
+      {
+        "type": "AlexaHeadline",
+        "theme": "dark",
+        "headerAttributionImage": "https://s3.amazonaws.com/ahaalexa/forechoshow/AHA_ASA_Masterbrand.jpg",
+        "secondaryText": " ",
+        "backgroundImageSource": "https://s3.amazonaws.com/ahaalexa/forechoshow/background.jpg",
+        "footerHintText": "Alexa, Warning Signs of a Heart Attack",
+        "primaryText": " ",
+        "headerBackgroundColor": "red",
+        "backgroundColor": "black",
+        "backgroundAlign": "top",
+        "headerTitle": "welcome",
+        "id": "PlantHeadline",
+        "speech": "${payload.headlineTemplateData.properties.welcomeSpeech}"
+      }
+    ]
+  },
+  "onMount": [{ "type": "SpeakItem", "componentId": "PlantHeadline" }],
+  "datasources": {
+    "headlineTemplateData": {
+      "type": "object",
+      "objectId": "headlineSample",
+      "properties": {
+        "backgroundImage": {
+          "contentDescription": null,
+          "smallSourceUrl": null,
+          "largeSourceUrl": null,
+          "sources": [
+            {
+              "url": "https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/headline/HeadlineBackground_Dark.png",
+              "size": "large"
+            }
+          ]
+        },
+        "textContent": {
+          "primaryText": {
+            "type": "PlainText",
+            "text": "Welcome to The Daily Plant Facts"
+          }
+        },
+        "logoUrl": "https://d2o906d8ln7ui1.cloudfront.net/images/templates_v3/logo/logo-modern-botanical-white.png",
+        "hintText": "Try, \"Alexa, what is the plant fact of the day?\"",
+        "welcomeSpeechSSML": "<speak><amazon:emotion name='excited' intensity='medium'>Welcome to The Daily Plant Facts</amazon:emotion></speak>"
+      },
+      "transformers": [
+        {
+          "inputPath": "welcomeSpeechSSML",
+          "transformer": "ssmlToSpeech",
+          "outputName": "welcomeSpeech"
+        }
+      ]
+    }
+  }
+}

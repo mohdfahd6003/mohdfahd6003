@@ -1,0 +1,20 @@
+{
+  "name": "aha-alexa-skill",
+  "version": "1.2.0",
+  "description": "Alexa skill for AHA",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint",
+    "test": "echo \" Error: no test specified\" && exit 1"
+  },
+  "author": "AHA Alexa team",
+  "license": "Apache License",
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {}
+}

@@ -22,10 +22,7 @@
         {
           "name": "HelloIntent",
           "slots": [],
-          "samples": [
-            "Say hello",
-            "Say hi"
-          ]
+          "samples": ["Say hello", "Say hi"]
         },
         {
           "name": "heartWarningSignsIntent",
@@ -38,10 +35,7 @@
         {
           "name": "learnCPRIntent",
           "slots": [],
-          "samples": [
-            "how to do c. p. r.",
-            "how do I do c.p.r"
-          ]
+          "samples": ["how to do c. p. r.", "how do I do c.p.r"]
         },
         {
           "name": "AMAZON.NoIntent",
@@ -54,9 +48,7 @@
         {
           "name": "bleedIntent",
           "slots": [],
-          "samples": [
-            "I cut myself.  What do I do"
-          ]
+          "samples": ["I cut myself.  What do I do"]
         },
         {
           "name": "chokeIntent",

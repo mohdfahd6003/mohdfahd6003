@@ -103,22 +103,14 @@
       "locales": {
         "en-US": {
           "description": "Sample Full Description",
-          "examplePhrases": [
-            "Alexa open hello world",
-            "hello",
-            "help"
-          ],
+          "examplePhrases": ["Alexa open hello world", "hello", "help"],
           "keywords": [],
           "name": "control first",
           "summary": "Sample Short Description"
         },
         "en-IN": {
           "description": "Sample Full Description",
-          "examplePhrases": [
-            "Alexa open hello world",
-            "hello",
-            "help"
-          ],
+          "examplePhrases": ["Alexa open hello world", "hello", "help"],
           "keywords": [],
           "name": "control first",
           "summary": "Sample Short Description"
