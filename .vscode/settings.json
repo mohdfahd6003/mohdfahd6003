@@ -1,7 +1,0 @@
-{
-  "debug.javascript.autoAttachFilter": "smart",
-  "prettier.jsxBracketSameLine": true,
-  "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true,
-  "prettier.tabWidth": 4
-}
