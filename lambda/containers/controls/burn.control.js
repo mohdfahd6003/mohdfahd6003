@@ -68,7 +68,7 @@ class BurnControl extends Control {
                     });
                 }
             } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-                this.state.value = 'unknown';
+                this.state.value = undefined;
                 responseBuilder.addPromptFragment(burnYesText);
                 responseBuilder.addRepromptFragment(repeatText);
                 if (
@@ -84,7 +84,7 @@ class BurnControl extends Control {
                     });
                 }
             } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
-                this.state.value = 'unknown';
+                this.state.value = undefined;
                 responseBuilder.addPromptFragment(burnNoText);
                 responseBuilder.addRepromptFragment(repeatText);
                 if (

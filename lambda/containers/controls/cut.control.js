@@ -34,9 +34,6 @@ class BleedControl extends Control {
             return true;
         }
         if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-            /* if ((this.state.value === 'first') || (this.state.value === 'second')) {
-                return true;
-            }  */
             return true;
         }
         if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {

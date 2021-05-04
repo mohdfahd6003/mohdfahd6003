@@ -5,8 +5,6 @@ const {
     ContainerControlState,
 } = require('ask-sdk-controls');
 
-const { getSupportedInterfaces } = require('ask-sdk-core');
-
 const StrokeControl = require('./controls/stroke.control');
 const BurnControl = require('./controls/burn.control');
 const ChokeControl = require('./controls/choke.control');
@@ -41,6 +39,15 @@ class MultiPathContainer extends ContainerControl {
 
     async handle(input, resultBuilder) {
         await this.handleFunc(input, resultBuilder);
+    }
+
+    async decideHandlingChild(candidates, input) {
+        for (const candidate of candidates) {
+            if (candidate.state.value !== undefined) {
+                return candidate;
+            }
+        }
+        return candidates[0];
     }
 }
 

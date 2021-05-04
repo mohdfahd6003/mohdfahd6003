@@ -46,19 +46,6 @@ class SinglePathContainer extends ContainerControl {
     async handle(input, resultBuilder) {
         await this.handleFunc(input, resultBuilder);
     }
-
-    async decideHandlingChild(candidates, input) {
-        for (const candidate of candidates) {
-            if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-                if (candidate.id === 'bleed' && candidate.status.value === 'first') {
-                    return candidate;
-                } else if (candidate.id === 'choke') {
-                    return candidate;
-                }
-            }
-        }
-        return candidates[0];
-    }
 }
 
 module.exports = SinglePathContainer;
