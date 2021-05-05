@@ -11,7 +11,12 @@
  * permissions and limitations under the License.
  */
 const Alexa = require('ask-sdk-core');
-const { ControlHandler, ControlManager, ContainerControl } = require('ask-sdk-controls');
+const {
+    ControlHandler,
+    ControlManager,
+    ContainerControl,
+    LiteralContentAct,
+} = require('ask-sdk-controls');
 
 const SinglePathContainer = require('./containers/singlepath.container');
 const MultiPathContainer = require('./containers/multipath.container');
@@ -21,6 +26,27 @@ class RootContainer extends ContainerControl {
         super(props);
         this.addChild(new SinglePathContainer({ id: 'single' }));
         this.addChild(new MultiPathContainer({ id: 'second' }));
+        this.isChild = false;
+    }
+
+    async canHandle(input) {
+        if (await this.canHandleByChild(input)) {
+            this.handleFunc = this.handleByChild;
+            this.isChild = true;
+        }
+        return true;
+    }
+
+    async handle(input, resultBuilder) {
+        if (this.isChild) {
+            await this.handleFunc(input, resultBuilder);
+        } else {
+            resultBuilder.addAct(
+                new LiteralContentAct(this, {
+                    promptFragment: 'Invalid input. Can you please repeat ?',
+                })
+            );
+        }
     }
 }
 
