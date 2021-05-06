@@ -43,8 +43,6 @@ Thumbs.db
 # VS Code files
 ./vscode/
 
-# Ignore huskey files
-.husky/
 
 # Large media files
 *.mp4
