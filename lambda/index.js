@@ -16,6 +16,8 @@ const {
     ControlManager,
     ContainerControl,
     LiteralContentAct,
+    InputUtil,
+    NonUnderstandingAct,
 } = require('ask-sdk-controls');
 
 const SinglePathContainer = require('./containers/singlepath.container');
@@ -24,21 +26,47 @@ const MultiPathContainer = require('./containers/multipath.container');
 class RootContainer extends ContainerControl {
     constructor(props) {
         super(props);
-        this.addChild(new SinglePathContainer({ id: 'single' }));
-        this.addChild(new MultiPathContainer({ id: 'second' }));
+        this.addChild(new SinglePathContainer({ id: 'singlepath' }));
+        this.addChild(new MultiPathContainer({ id: 'multipath' }));
         this.isChild = false;
     }
 
     async canHandle(input) {
         if (await this.canHandleByChild(input)) {
             this.handleFunc = this.handleByChild;
-            this.isChild = true;
+            return true;
         }
-        return true;
+        if (InputUtil.isSessionEndedRequest(input)) {
+            this.handleFunc = this.handleSessionEndedRequest;
+            return true;
+        } else if (InputUtil.isFallbackIntent(input)) {
+            this.handleFunc = this.handleFallbackIntent;
+            return true;
+        } else if (
+            input.request.type === 'IntentRequest' &&
+            input.request.intent.name === 'AMAZON.CancelIntent'
+        ) {
+            this.handleFunc = this.handleCancelIntent;
+            return true;
+        } else if (
+            input.request.type === 'IntentRequest' &&
+            input.request.intent.name === 'AMAZON.StopIntent'
+        ) {
+            this.handleFunc = this.handleStopIntent;
+            return true;
+        } else if (
+            input.request.type === 'IntentRequest' &&
+            input.request.intent.name === 'AMAZON.HelpIntent'
+        ) {
+            this.handleFunc = this.handleHelpIntent;
+            return true;
+        }
+        console.log('WARN: Nothing wants this input. A new clause may be required.');
+        return false;
     }
 
     async handle(input, resultBuilder) {
-        if (this.isChild) {
+        if (this.handleFunc !== undefined) {
             await this.handleFunc(input, resultBuilder);
         } else {
             resultBuilder.addAct(
@@ -48,134 +76,53 @@ class RootContainer extends ContainerControl {
             );
         }
     }
+
+    async handleSessionEndedRequest(input, resultBuilder) {
+        resultBuilder.addAct(
+            new LiteralContentAct(this, {
+                promptFragment: 'Thank you. See you soon',
+            })
+        );
+        resultBuilder.endSession();
+    }
+
+    async handleCancelIntent(input, resultBuilder) {
+        resultBuilder.endSession();
+    }
+
+    async handleStopIntent(input, resultBuilder) {
+        resultBuilder.addAct(
+            new LiteralContentAct(this, {
+                promptFragment: 'Thank you. See you soon',
+            })
+        );
+        resultBuilder.endSession();
+    }
+
+    async handleHelpIntent(input, resultBuilder) {
+        resultBuilder.addAct(
+            new LiteralContentAct(this, {
+                promptFragment:
+                    ' I can help you with warning signs of heart attack, learn CPR and others. What can I help you with?',
+            })
+        );
+    }
+
+    async handleFallbackIntent(input, resultBuilder) {
+        resultBuilder.addAct(new NonUnderstandingAct(this));
+    }
 }
 
-class AhaManager extends ControlManager {
+class RootManager extends ControlManager {
     createControlTree() {
         const root = new RootContainer({ id: 'root' });
         return root;
     }
 }
 
-// stanard Alexa code
-
-/* *
- * Mandatory Intent as per Amazon guidelines
- * Content of the help can be revised
- * */
-
-const HelpIntentHandler = {
-    canHandle(handlerInput) {
-        return (
-            Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
-            Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent'
-        );
-    },
-    handle(handlerInput) {
-        const speakOutput = ' Ok. Say something like warning signs of a heart attack';
-
-        return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse();
-    },
-};
-/* *
- * Stop the sklill on user's demand.
- * Cancel also works in the same way
- * */
-
-const CancelAndStopIntentHandler = {
-    canHandle(handlerInput) {
-        return (
-            Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
-            (Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.CancelIntent' ||
-                Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.StopIntent')
-        );
-    },
-    handle(handlerInput) {
-        const speakOutput = 'See you soon. Bye';
-
-        return handlerInput.responseBuilder.speak(speakOutput).getResponse();
-    },
-};
-/* *
- * FallbackIntent triggers when a customer says something that doesn’t map to any intents in your skill
- * It must also be defined in the language model (if the locale supports it)
- * This handler can be safely added but will be ingnored in locales that do not support it yet
- * */
-const FallbackIntentHandler = {
-    canHandle(handlerInput) {
-        return (
-            Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
-            Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.FallbackIntent'
-        );
-    },
-    handle(handlerInput) {
-        const speakOutput = 'Oops. I didnot get that. Can you please repeat ?';
-
-        return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse();
-    },
-};
-/* *
- * SessionEndedRequest notifies that a session was ended. This handler will be triggered when a currently open
- * session is closed for one of the following reasons: 1) The user says "exit" or "quit". 2) The user does not
- * respond or says something that does not match an intent defined in your voice model. 3) An error occurs
-
-const SessionEndedRequestHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'SessionEndedRequest';
-    },
-    handle(handlerInput) {
-        console.log(`~~~~ Session ended: ${JSON.stringify(handlerInput.requestEnvelope)}`);
-        // Any cleanup logic goes here.
-        return handlerInput.responseBuilder.getResponse(); // notice we send an empty response
-    }
-};
-/* *
- * The intent reflector is used for interaction model testing and debugging.
- * It will simply repeat the intent the user said. You can create custom handlers for your intents
- * by defining them above, then also adding them to the request handler chain below
- * */
-const IntentReflectorHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest';
-    },
-    handle(handlerInput) {
-        const intentName = Alexa.getIntentName(handlerInput.requestEnvelope);
-        const speakOutput = `you have triggered ${intentName}`;
-
-        return (
-            handlerInput.responseBuilder
-                .speak(speakOutput)
-                // .reprompt('add a reprompt if you want to keep the session open for the user to respond')
-                .getResponse()
-        );
-    },
-};
-/**
- * Generic error handling to capture any syntax or routing errors. If you receive an error
- * stating the request handler chain is not found, you have not implemented a handler for
- * the intent being invoked or included it in the skill builder below
- * */
-const ErrorHandler = {
-    canHandle() {
-        return true;
-    },
-    handle(handlerInput, error) {
-        const speakOutput = 'There was an error';
-        console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
-
-        return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse();
-    },
-};
-
 exports.handler = Alexa.SkillBuilders.custom()
-    .addRequestHandlers(
-        new ControlHandler(new AhaManager()),
-        HelpIntentHandler,
-        CancelAndStopIntentHandler,
-        FallbackIntentHandler,
-        IntentReflectorHandler
-    )
+    .addRequestHandlers(new ControlHandler(new RootManager()))
     .lambda();
 
 // Exported for building interaction model
-exports.AhaManager = AhaManager;
+exports.RootManager = RootManager;

@@ -10,6 +10,12 @@
 
   
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix",
+      "pre-push": "npm test"
+    }
+  },
   "author": "AHA Alexa team",
   "license": "Apache License",
   "devDependencies": {
