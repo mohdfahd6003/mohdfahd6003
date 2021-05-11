@@ -57,3 +57,4 @@ new ControlInteractionModelGenerator()
     .buildAndWrite('en-US-generated.json');
 
 log.info('Wrote ./en-US-generated.json');
+

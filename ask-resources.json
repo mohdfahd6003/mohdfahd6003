@@ -1,10 +1,22 @@
 {
-  "askToolkitResourcesVersion": "2020-04-15",
+  "askcliResourcesVersion": "2020-03-31",
   "profiles": {
     "default": {
-      "skillId": "amzn1.ask.skill.b43ef9ef-34e8-4359-bf71-68570046a4dc",
+      "skillMetadata": {
+        "src": "./skill-package"
+      },
+      "code": {
+        "default": {
+          "src": "./lambda"
+        }
+      },
       "skillInfrastructure": {
-        "type": "@ask-cli/hosted-skill-deployer"
+        "userConfig": {
+          "runtime": "nodejs10.x",
+          "handler": "index.handler",
+          "awsRegion": "us-east-1"
+        },
+        "type": "@ask-cli/lambda-deployer"
       }
     }
   }

@@ -1,0 +1,24 @@
+{
+    "name": "aha-alexa-skill",
+    "version": "1.2.0",
+    "description": "Alexa skill for AHA",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \" Error: no test specified\" && exit 1"
+    },
+    "author": "AHA Alexa team",
+    "license": "Apache License",
+    "dependencies": {
+        "ask-sdk-controls": "^0.2.4",
+        "ask-sdk-core": "^2.10.2",
+        "ask-sdk-model": "^1.35.1",
+        "lodash": "^4.17.15",
+        "typescript": "^4.2.4",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "ask-sdk-local-debug": "^1.1.0",
+        "sinon": "^9.0.1",
+        "source-map-support": "^0.5.16"
+    }
+}

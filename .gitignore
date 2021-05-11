@@ -43,6 +43,11 @@ Thumbs.db
 # VS Code files
 ./vscode/
 
+# ask files
+./ask/
+
+# config files
+./config
 
 # Large media files
 *.mp4
