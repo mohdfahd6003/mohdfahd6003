@@ -11,7 +11,7 @@
   "rules": {
     "import/no-extraneous-dependencies": [
       "warn",
-      { "devDependencies": ["**/test/**/*"] }
+      { "devDependencies": ["**/test/**/*", "**/test2.js","**/test*.*"] }
     ],
     "indent": ["error", 4, { "SwitchCase": 1 }],
     "max-len": "off",

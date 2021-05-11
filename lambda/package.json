@@ -4,7 +4,7 @@
     "description": "Alexa skill for AHA",
     "main": "index.js",
     "scripts": {
-        "test": "echo \" Error: no test specified\" && exit 1"
+        "test": "mocha ./test2.js"
     },
     "author": "AHA Alexa team",
     "license": "Apache License",
@@ -17,7 +17,8 @@
     },
     "devDependencies": {
         "ask-sdk-local-debug": "^1.1.0",
-        "sinon": "^9.0.1",
+        "mocha": "^8.4.0",
+        "sinon": "^10.0.0",
         "source-map-support": "^0.5.16"
     }
 }
