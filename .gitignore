@@ -41,14 +41,14 @@ Thumbs.db
 *.war
 
 # VS Code files
-./vscode/
+/ide
 
 # ask files
 /.ask
 
 
 # config files
-./config
+/.config
 
 # Large media files
 *.mp4
