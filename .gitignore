@@ -44,7 +44,7 @@ Thumbs.db
 ./vscode/
 
 # ask files
-./ask/
+.ask/
 
 # config files
 ./config
