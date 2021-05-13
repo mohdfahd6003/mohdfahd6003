@@ -54,10 +54,5 @@ class HelloControl extends Control {
     canTakeInitiative() {
         return false;
     }
-
-    /* renderAct(act, input, responseBuilder) {
-        if (act instanceof RequestValueAct) {
-        }
-    } */
 }
 module.exports = HelloControl;
