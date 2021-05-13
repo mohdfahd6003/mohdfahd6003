@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint",
-    "test": "mocha ./lambda/test2.js",
+    "test": "cd lambda && mocha ./test/test2.js",
     "prepare": "husky install .config/husky"
   },
   "author": "AHA Alexa team",

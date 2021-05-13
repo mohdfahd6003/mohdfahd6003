@@ -4,7 +4,7 @@
     "description": "Alexa skill for AHA",
     "main": "index.js",
     "scripts": {
-        "test": "mocha ./test2.js"
+        "test": "mocha ./test/test2.js"
     },
     "author": "AHA Alexa team",
     "license": "Apache License",

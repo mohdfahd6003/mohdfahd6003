@@ -14,7 +14,7 @@ const { before, after, describe, test } = require('mocha');
 const sinon = require('sinon');
 const { RootManager } = require('../index');
 
-const speakText = require('./common/content/constants.json');
+const speakText = require('../src/common/content/constants.json');
 
 const {
     introText,
