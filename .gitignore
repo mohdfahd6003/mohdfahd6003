@@ -42,6 +42,7 @@ Thumbs.db
 
 # VS Code files
 /ide
+/.vscode
 
 # ask files
 /.ask
