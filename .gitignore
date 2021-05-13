@@ -41,7 +41,7 @@ Thumbs.db
 *.war
 
 # VS Code files
-/.vscode
+/.vscode/
 
 # ask files
 /.ask
