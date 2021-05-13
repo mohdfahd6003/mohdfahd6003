@@ -3,7 +3,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "arn:aws:lambda:eu-west-1:299327231075:function:b43ef9ef-34e8-4359-bf71-68570046a4dc:Release_0"
+          "uri": "arn:aws:lambda:us-east-1:790113021232:function:ask-aha-information-default-default-1620628884213"
         },
         "interfaces": [
           {
@@ -75,24 +75,7 @@
             ],
             "type": "ALEXA_PRESENTATION_APL"
           }
-        ],
-        "regions": {
-          "EU": {
-            "endpoint": {
-              "uri": "arn:aws:lambda:eu-west-1:299327231075:function:b43ef9ef-34e8-4359-bf71-68570046a4dc:Release_0"
-            }
-          },
-          "NA": {
-            "endpoint": {
-              "uri": "arn:aws:lambda:us-east-1:299327231075:function:b43ef9ef-34e8-4359-bf71-68570046a4dc:Release_0"
-            }
-          },
-          "FE": {
-            "endpoint": {
-              "uri": "arn:aws:lambda:us-west-2:299327231075:function:b43ef9ef-34e8-4359-bf71-68570046a4dc:Release_0"
-            }
-          }
-        }
+        ]
       }
     },
     "manifestVersion": "1.0",
@@ -103,16 +86,22 @@
       "locales": {
         "en-US": {
           "description": "Sample Full Description",
-          "examplePhrases": ["Alexa open hello world", "hello", "help"],
-          "keywords": [],
-          "name": "control first",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "hello",
+            "help"
+          ],
+          "name": "AHA-information",
           "summary": "Sample Short Description"
         },
         "en-IN": {
           "description": "Sample Full Description",
-          "examplePhrases": ["Alexa open hello world", "hello", "help"],
-          "keywords": [],
-          "name": "control first",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "hello",
+            "help"
+          ],
+          "name": "AHA-information",
           "summary": "Sample Short Description"
         }
       },

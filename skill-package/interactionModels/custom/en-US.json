@@ -1,32 +1,29 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "control first",
+      "types": [],
       "intents": [
         {
-          "name": "AMAZON.StopIntent",
-          "samples": []
+          "name": "AMAZON.StopIntent"
         },
         {
-          "name": "AMAZON.NavigateHomeIntent",
-          "samples": []
+          "name": "AMAZON.NavigateHomeIntent"
         },
         {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
+          "name": "AMAZON.HelpIntent"
         },
         {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
+          "name": "AMAZON.CancelIntent"
         },
         {
           "name": "HelloIntent",
-          "slots": [],
-          "samples": ["Say hello", "Say hi"]
+          "samples": [
+            "Say hello",
+            "Say hi"
+          ]
         },
         {
           "name": "heartWarningSignsIntent",
-          "slots": [],
           "samples": [
             "Warning signs of a heart attack",
             "How do I know about heart attack"
@@ -34,34 +31,64 @@
         },
         {
           "name": "learnCPRIntent",
-          "slots": [],
-          "samples": ["how to do c. p. r.", "how do I do c.p.r"]
+          "samples": [
+            "how to do c. p. r.",
+            "how do I do c.p.r"
+          ]
         },
         {
-          "name": "AMAZON.NoIntent",
-          "samples": []
+          "name": "AMAZON.YesIntent"
         },
         {
-          "name": "AMAZON.YesIntent",
-          "samples": []
+          "name": "AMAZON.NoIntent"
         },
         {
           "name": "bleedIntent",
-          "slots": [],
-          "samples": ["I cut myself.  What do I do"]
+          "samples": [
+            "I cut myself.  What do I do"
+          ]
         },
         {
           "name": "chokeIntent",
-          "slots": [],
           "samples": [
             "learn about choking",
             "need assistance with choking",
             "warning signs of choking"
           ]
+        },
+        {
+          "name": "burnIntent",
+          "samples": [
+            "burning"
+          ]
+        },
+        {
+          "name": "dehydrationIntent",
+          "samples": [
+            "dehydration"
+          ]
+        },
+        {
+          "name": "noseIntent",
+          "samples": [
+            "nose bleeding"
+          ]
+        },
+        {
+          "name": "poisonIntent",
+          "samples": [
+            "poisoning"
+          ]
+        },
+        {
+          "name": "strokeIntent",
+          "samples": [
+            "warning signs of stroke"
+          ]
         }
       ],
-      "types": []
-    }
-  },
-  "version": "40"
+      "invocationName": "control first"
+    },
+    "prompts": []
+  }
 }
