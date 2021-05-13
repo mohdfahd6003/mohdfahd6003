@@ -40,7 +40,7 @@ class StrokeControl extends Control {
                     'Alexa.Presentation.APL'
                 ]
             ) {
-                const dataTemplate = prepareScreenContent('strokeing', strokeText, strokeImage);
+                const dataTemplate = prepareScreenContent('strokes', strokeText, strokeImage);
                 responseBuilder.addDirective({
                     type: displayDirective,
                     document: displayTemplate,

@@ -2,6 +2,16 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { createLogger, format, transports, level, info } = require('winston');
+
+const { combine, timestamp, label, printf } = format;
+
+// eslint-disable-next-line no-shadow
+const myFormat = printf(({ level, message, timestamp }) => {
+    return `${timestamp} ${level}: ${message}`;
+});
+
 const {
     prepareScreenContent,
     imageCatalog,
@@ -9,12 +19,25 @@ const {
     displayDirective,
     repeatText,
     speakText,
+    renderGeneralFunction,
 } = require('../../common/util');
 
 const { introText } = speakText;
 
 const helloImage = imageCatalog['hello.control'];
 
+class WelcomeAct extends RequestValueAct {
+    render(input, responseBuilder) {
+        responseBuilder = renderGeneralFunction(
+            input,
+            responseBuilder,
+            introText,
+            helloImage,
+            'welcome',
+            'What can I help you with?'
+        );
+    }
+}
 class HelloControl extends Control {
     constructor(props) {
         super(props.id);
@@ -25,34 +48,16 @@ class HelloControl extends Control {
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(new RequestValueAct(this, {}));
+        resultBuilder.addAct(new WelcomeAct(this, {}));
     }
 
     canTakeInitiative() {
         return false;
     }
 
-    renderAct(act, input, responseBuilder) {
+    /* renderAct(act, input, responseBuilder) {
         if (act instanceof RequestValueAct) {
-            responseBuilder.addPromptFragment(introText);
-            responseBuilder.addRepromptFragment(repeatText);
-            if (
-                Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
-                    'Alexa.Presentation.APL'
-                ]
-            ) {
-                const dataTemplate = prepareScreenContent(
-                    'Welcome',
-                    'You can ask like warning signs of a heart attack',
-                    helloImage
-                );
-                responseBuilder.addDirective({
-                    type: displayDirective,
-                    document: displayTemplate,
-                    datasources: dataTemplate,
-                });
-            }
         }
-    }
+    } */
 }
 module.exports = HelloControl;

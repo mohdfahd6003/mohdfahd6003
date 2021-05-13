@@ -19,7 +19,6 @@ class Dehydration extends Control {
     }
 
     canHandle(input) {
-        console.log('Inside dehydration control');
         return InputUtil.isIntent(input, 'dehydrationIntent');
     }
 

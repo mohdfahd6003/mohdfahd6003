@@ -9,16 +9,34 @@ const {
     displayDirective,
     repeatText,
     speakText,
+    renderGeneralFunction,
 } = require('../../common/util');
 
 const { bleedText } = speakText;
 const { bleedYesText } = speakText;
 const { bleedNoText } = speakText;
 const { bleedNoSecondText } = speakText;
-const bleedYesSecondText = speakText.leedYesSecondText;
+const { bleedYesSecondText } = speakText;
 
 const bleedImage = imageCatalog['cut.control'];
 
+class BleedActMain extends RequestValueAct {
+    constructor(control, payload) {
+        super(control, payload);
+        this.bleedText = bleedText;
+    }
+
+    render(input, responseBuilder) {
+        responseBuilder = renderGeneralFunction(
+            input,
+            responseBuilder,
+            this.bleedText,
+            bleedImage,
+            'bleeding',
+            this.bleedText
+        );
+    }
+}
 const BleedControlState = {
     value: undefined,
 };
@@ -43,78 +61,30 @@ class BleedControl extends Control {
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(new RequestValueAct(this, {}));
+        const bleedAct = new BleedActMain(this, {});
+        if (InputUtil.isIntent(input, 'bleedIntent')) {
+            this.state.value = 'first';
+            bleedAct.bleedText = bleedText;
+        } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
+            bleedAct.bleedText = bleedYesText;
+            if (this.state.value === 'second') {
+                bleedAct.bleedText = bleedYesSecondText;
+            }
+            this.state.value = undefined;
+        } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
+            if (this.state.value === 'first') {
+                bleedAct.bleedText = bleedNoText;
+                this.state.value = 'second';
+            } else if (this.state.value === 'second') {
+                this.state.value = undefined;
+                bleedAct.bleedText = bleedNoSecondText;
+            }
+        }
+        resultBuilder.addAct(bleedAct);
     }
 
     canTakeInitiative() {
         return false;
-    }
-
-    renderAct(act, input, responseBuilder) {
-        let resp = bleedText;
-
-        if (act instanceof RequestValueAct) {
-            if (InputUtil.isIntent(input, 'bleedIntent')) {
-                this.state.value = 'first';
-                responseBuilder.addPromptFragment(resp);
-                responseBuilder.addRepromptFragment(repeatText);
-                if (
-                    Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
-                        'Alexa.Presentation.APL'
-                    ]
-                ) {
-                    const dataTemplate = prepareScreenContent('I cut myself', resp, bleedImage);
-                    responseBuilder.addDirective({
-                        type: displayDirective,
-                        document: displayTemplate,
-                        datasources: dataTemplate,
-                    });
-                }
-            } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-                resp = bleedYesText;
-                if (this.state.value === 'second') {
-                    resp = bleedYesSecondText;
-                }
-                this.state.value = undefined;
-                responseBuilder.addPromptFragment(resp);
-                responseBuilder.addRepromptFragment(repeatText);
-                if (
-                    Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
-                        'Alexa.Presentation.APL'
-                    ]
-                ) {
-                    const dataTemplate = prepareScreenContent('I cut myself', resp, bleedImage);
-                    responseBuilder.addDirective({
-                        type: displayDirective,
-                        document: displayTemplate,
-                        datasources: dataTemplate,
-                    });
-                }
-            } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
-                resp = '';
-                if (this.state.value === 'first') {
-                    resp = bleedNoText;
-                    this.state.value = 'second';
-                } else if (this.state.value === 'second') {
-                    this.state.value = undefined;
-                    resp = bleedNoSecondText;
-                }
-                responseBuilder.addPromptFragment(resp);
-                responseBuilder.addRepromptFragment(repeatText);
-                if (
-                    Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
-                        'Alexa.Presentation.APL'
-                    ]
-                ) {
-                    const dataTemplate = prepareScreenContent('I cut myself', resp, bleedImage);
-                    responseBuilder.addDirective({
-                        type: displayDirective,
-                        document: displayTemplate,
-                        datasources: dataTemplate,
-                    });
-                }
-            }
-        }
     }
 }
 

@@ -3,7 +3,7 @@
         "burn.control": "https://s3.amazonaws.com/ahaalexa/forechoshow/Burn_under_Running_Water_AdultSink.jpg",
         "cut.control": "https://s3.amazonaws.com/ahaalexa/forechoshow/Dressing_Gauze_Pad_3_Adult.jpg",
         "dehydration.control": "https://s3.amazonaws.com/ahaalexa/forechoshow/Dehydration_Water.jpg",
-        "heart.control": "",
+        "heart.control": "https://s3.amazonaws.com/ahaalexa/forechoshow/During_a_Heart_Attack.jpg",
         "hello.control": "https://s3.amazonaws.com/ahaalexa/forechoshow/AHA_ASA_Masterbrand.jpg",
         "learncpr.control": "https://s3.amazonaws.com/ahaalexa/forechoshow/Fainting_Man.jpg",
         "nosebleeding.control": "https://s3.amazonaws.com/ahaalexa/forechoshow/Nose_w_type.jpg",
