@@ -20,6 +20,26 @@ const {
     NonUnderstandingAct,
 } = require('ask-sdk-controls');
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { createLogger, format, transports, level, info } = require('winston');
+
+const { combine, timestamp, label, printf } = format;
+
+// eslint-disable-next-line no-shadow
+const myFormat = printf(({ level, message, timestamp }) => {
+    return `${timestamp} ${level}: ${message}`;
+});
+
+const logger = createLogger({
+    format: combine(timestamp({ format: 'YYYY:MM:DD HH:mm:ss.SSS' }), myFormat),
+    transports: [new transports.Console()],
+});
+
+logger.log({
+    level: 'info',
+    message: 'What time is the testing at?',
+});
+
 const SinglePathContainer = require('./containers/singlepath.container');
 const MultiPathContainer = require('./containers/multipath.container');
 
