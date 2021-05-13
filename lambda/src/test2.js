@@ -12,7 +12,7 @@ const {
 } = require('ask-sdk-controls');
 const { before, after, describe, test } = require('mocha');
 const sinon = require('sinon');
-const { RootManager } = require('./index');
+const { RootManager } = require('../index');
 
 const speakText = require('./common/content/constants.json');
 

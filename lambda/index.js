@@ -20,8 +20,8 @@ const {
     NonUnderstandingAct,
 } = require('ask-sdk-controls');
 
-const SinglePathContainer = require('./containers/singlepath.container');
-const MultiPathContainer = require('./containers/multipath.container');
+const SinglePathContainer = require('./src/containers/singlepath.container');
+const MultiPathContainer = require('./src/containers/multipath.container');
 
 class RootContainer extends ContainerControl {
     constructor(props) {

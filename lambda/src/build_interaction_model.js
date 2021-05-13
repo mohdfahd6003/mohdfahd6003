@@ -1,5 +1,5 @@
 const { ControlInteractionModelGenerator, Logger } = require('ask-sdk-controls');
-const { RootManager } = require('./index');
+const { RootManager } = require('../index');
 
 const log = new Logger('HelloWorld:InteractionModel');
 
