@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint",
-    "test": "cd lambda && mocha ./test/test2.js",
+    "test": "cd lambda/ && npm test",
     "prepare": "husky install .config/husky"
   },
   "author": "AHA Alexa team",
   "license": "Apache License",
   "devDependencies": {
+    "chai": "^4.3.4",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",

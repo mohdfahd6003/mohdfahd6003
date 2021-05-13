@@ -56,7 +56,11 @@ describe('cutmyself path 1', () => {
     test('cut path', async () => {
         const tester = new SkillTester(new ControlHandler(new RootManager()));
         await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
-        await tester.testTurn('U: I cut myself', TestInput.intent('bleedIntent'), `A:${bleedText}`);
+        await tester.testTurn(
+            'U: I cut myself',
+            TestInput.intent('bleedIntent'),
+            `A:${bleedText}`.trim()
+        );
         await tester.testTurn(
             'U: yes',
             TestInput.intent(AmazonIntent.YesIntent),
@@ -69,12 +73,16 @@ describe('cutmyself path 2', () => {
     test('cut path', async () => {
         const tester = new SkillTester(new ControlHandler(new RootManager()));
         await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
-        await tester.testTurn('U: I cut myself', TestInput.intent('bleedIntent'), `A:${bleedText}`);
+        await tester.testTurn(
+            'U: I cut myself',
+            TestInput.intent('bleedIntent'),
+            `A:${bleedText}`.trim()
+        );
         await tester.testTurn('U: no', TestInput.intent(AmazonIntent.NoIntent), `A:${bleedNoText}`);
         await tester.testTurn(
             'U: no',
             TestInput.intent(AmazonIntent.NoIntent),
-            `A:${bleedNoSecondText}`
+            `A:${bleedNoSecondText}`.trim()
         );
     });
 });
