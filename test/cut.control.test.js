@@ -19,8 +19,6 @@ const speakText = require('../src/common/content/constants.json');
 
 const {
     introText,
-    heartAttackText,
-    poisonText,
     bleedText,
     bleedYesText,
     bleedNoText,
@@ -29,30 +27,6 @@ const {
 } = speakText;
 
 waitForDebugger();
-
-describe('warning signs of heart attack path', () => {
-    test('heart attack', async () => {
-        const tester = new SkillTester(new ControlHandler(new RootManager()));
-        await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
-        await tester.testTurn(
-            'U: warning sings of a heart attack',
-            TestInput.intent('heartWarningSignsIntent'),
-            `A:${heartAttackText}`
-        );
-    });
-});
-
-describe('poisons path', () => {
-    test('poisons attack', async () => {
-        const tester = new SkillTester(new ControlHandler(new RootManager()));
-        await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
-        await tester.testTurn(
-            'U: warning sings of a poisons',
-            TestInput.intent('poisonIntent'),
-            `A:${poisonText}`
-        );
-    });
-});
 
 describe('cutmyself path', () => {
     test('cut path yes', async () => {
