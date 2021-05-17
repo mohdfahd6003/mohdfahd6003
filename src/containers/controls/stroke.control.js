@@ -11,16 +11,16 @@ const {
     speakText,
 } = require('../../common/util');
 
-const { dehydrationText } = speakText;
-const dehydrationImage = imageCatalog['dehydration.control'];
-class Dehydration extends Control {
+const { strokeText } = speakText;
+const strokeImage = imageCatalog['stroke.control'];
+
+class StrokeControl extends Control {
     constructor(props) {
         super(props.id);
     }
 
     canHandle(input) {
-        console.log('Inside dehydration control');
-        return InputUtil.isIntent(input, 'dehydrationIntent');
+        return InputUtil.isIntent(input, 'strokeIntent');
     }
 
     handle(input, resultBuilder) {
@@ -33,18 +33,14 @@ class Dehydration extends Control {
 
     renderAct(act, input, responseBuilder) {
         if (act instanceof RequestValueAct) {
-            responseBuilder.addPromptFragment(dehydrationText);
+            responseBuilder.addPromptFragment(strokeText);
             responseBuilder.addRepromptFragment(repeatText);
             if (
                 Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
                     'Alexa.Presentation.APL'
                 ]
             ) {
-                const dataTemplate = prepareScreenContent(
-                    'dehydration',
-                    dehydrationText,
-                    dehydrationImage
-                );
+                const dataTemplate = prepareScreenContent('strokes', strokeText, strokeImage);
                 responseBuilder.addDirective({
                     type: displayDirective,
                     document: displayTemplate,
@@ -54,4 +50,4 @@ class Dehydration extends Control {
         }
     }
 }
-module.exports = Dehydration;
+module.exports = StrokeControl;
