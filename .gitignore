@@ -45,6 +45,7 @@ Thumbs.db
 
 # ask files
 /.ask/
+./.ask/
 
 
 # config files
@@ -58,3 +59,8 @@ Thumbs.db
 *.mov
 *.wmv
 
+# debugger files
+lambda/local-debugger.js
+
+# Ask states
+.ask/ask-states.json
