@@ -1,5 +1,6 @@
 const {
     ControlHandler,
+    ControlManager,
     GeneralControlIntent,
     SingleValueControlIntent,
     Strings,
@@ -12,7 +13,7 @@ const {
 } = require('ask-sdk-controls');
 const { before, after, describe, test } = require('mocha');
 const sinon = require('sinon');
-const { RootManager } = require('../index');
+const { RootManager } = require('../src/index');
 
 const speakText = require('../src/common/content/constants.json');
 
