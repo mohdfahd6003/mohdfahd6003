@@ -1,0 +1,13 @@
+{
+    "dev":{
+        "s3-bucket":"s3://alexa-skill-aha-dev/",
+        "cloudfront": "dtzf6dz2qpnrm.cloudfront.net"
+
+    },
+    "test":{
+
+    },
+    "prod":{
+
+    }
+}

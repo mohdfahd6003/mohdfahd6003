@@ -9,10 +9,30 @@ const {
     displayDirective,
     repeatText,
     speakText,
+    renderGeneralFunction,
 } = require('../../common/util');
 
 const { dehydrationText } = speakText;
 const dehydrationImage = imageCatalog['dehydration.control'];
+
+class DehydrationRequestAct extends RequestValueAct {
+    constructor(control, payload) {
+        super(control, payload);
+        this.speakText = dehydrationText;
+    }
+
+    render(input, responseBuilder) {
+        responseBuilder = renderGeneralFunction(
+            input,
+            responseBuilder,
+            this.speakText,
+            dehydrationImage,
+            'dehydration',
+            this.speakText
+        );
+    }
+}
+
 class Dehydration extends Control {
     constructor(props) {
         super(props.id);
@@ -23,34 +43,11 @@ class Dehydration extends Control {
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(new RequestValueAct(this, {}));
+        resultBuilder.addAct(new DehydrationRequestAct(this, {}));
     }
 
     canTakeInitiative() {
         return false;
-    }
-
-    renderAct(act, input, responseBuilder) {
-        if (act instanceof RequestValueAct) {
-            responseBuilder.addPromptFragment(dehydrationText);
-            responseBuilder.addRepromptFragment(repeatText);
-            if (
-                Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
-                    'Alexa.Presentation.APL'
-                ]
-            ) {
-                const dataTemplate = prepareScreenContent(
-                    'dehydration',
-                    dehydrationText,
-                    dehydrationImage
-                );
-                responseBuilder.addDirective({
-                    type: displayDirective,
-                    document: displayTemplate,
-                    datasources: dataTemplate,
-                });
-            }
-        }
     }
 }
 module.exports = Dehydration;

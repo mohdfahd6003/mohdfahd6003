@@ -9,7 +9,29 @@ const {
     displayDirective,
     repeatText,
     speakText,
+    renderGeneralFunction,
 } = require('../../common/util');
+
+const { heartAttackText } = speakText;
+const heartImage = imageCatalog['heart.control'];
+
+class HeartRequestAct extends RequestValueAct {
+    constructor(control, payload) {
+        super(control, payload);
+        this.speakText = heartAttackText;
+    }
+
+    render(input, responseBuilder) {
+        responseBuilder = renderGeneralFunction(
+            input,
+            responseBuilder,
+            this.speakText,
+            heartImage,
+            'warning signs of a heart attack',
+            this.speakText
+        );
+    }
+}
 
 class HeartControl extends Control {
     constructor(props) {
@@ -21,38 +43,11 @@ class HeartControl extends Control {
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(new RequestValueAct(this, {}));
+        resultBuilder.addAct(new HeartRequestAct(this, {}));
     }
 
     canTakeInitiative() {
         return false;
-    }
-
-    renderAct(act, input, responseBuilder) {
-        const heartAttackImage = imageCatalog['heart.control'];
-        const primaryText = 'warning signs of a heart attack';
-        const { heartAttackText } = speakText;
-
-        if (act instanceof RequestValueAct) {
-            responseBuilder.addPromptFragment(heartAttackText);
-            responseBuilder.addRepromptFragment(repeatText);
-            if (
-                Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
-                    'Alexa.Presentation.APL'
-                ]
-            ) {
-                const dataTemplate = prepareScreenContent(
-                    primaryText,
-                    heartAttackText,
-                    heartAttackImage
-                );
-                responseBuilder.addDirective({
-                    type: displayDirective,
-                    document: displayTemplate,
-                    datasources: dataTemplate,
-                });
-            }
-        }
     }
 }
 module.exports = HeartControl;

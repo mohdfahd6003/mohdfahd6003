@@ -20,7 +20,7 @@ const { bleedYesSecondText } = speakText;
 
 const bleedImage = imageCatalog['cut.control'];
 
-class BleedActMain extends RequestValueAct {
+class BleedRequestAct extends RequestValueAct {
     constructor(control, payload) {
         super(control, payload);
         this.bleedText = bleedText;
@@ -61,7 +61,7 @@ class BleedControl extends Control {
     }
 
     handle(input, resultBuilder) {
-        const bleedAct = new BleedActMain(this, {});
+        const bleedAct = new BleedRequestAct(this, {});
         if (InputUtil.isIntent(input, 'bleedIntent')) {
             this.state.value = 'first';
             bleedAct.bleedText = bleedText;
