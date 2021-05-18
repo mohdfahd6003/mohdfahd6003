@@ -5,9 +5,6 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 const {
     prepareScreenContent,
     imageCatalog,
-    displayTemplate,
-    displayDirective,
-    repeatText,
     speakText,
     renderGeneralFunction,
 } = require('../../common/util');
