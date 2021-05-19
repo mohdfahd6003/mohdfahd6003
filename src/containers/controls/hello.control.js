@@ -14,17 +14,17 @@ const myFormat = printf(({ level, message, timestamp }) => {
 
 const {
     prepareScreenContent,
-    imageCatalog,
-    displayTemplate,
-    displayDirective,
-    repeatText,
+    configData,
+    assets,
     speakText,
     renderGeneralFunction,
 } = require('../../common/util');
 
-const { introText } = speakText;
+const helloImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['hello.control']
+}`;
 
-const helloImage = imageCatalog['hello.control'];
+const { introText } = speakText;
 
 class WelcomeAct extends RequestValueAct {
     render(input, responseBuilder) {

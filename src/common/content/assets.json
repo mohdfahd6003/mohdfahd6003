@@ -1,13 +1,13 @@
 {
     "Images": {
-        "burn.control": "Burn_under_Running_Water_AdultSink.jpg",
-        "cut.control": "Dressing_Gauze_Pad_3_Adult.jpg",
-        "dehydration.control": "Dehydration_Water.jpg",
-        "heart.control": "During_a_Heart_Attack.jpg",
-        "hello.control": "AHA_ASA_Masterbrand.jpg",
-        "learncpr.control": "Fainting_Man.jpg",
-        "nosebleeding.control": "Nose_w_type.jpg",
-        "poison.control": "Warning_Signs.jpg",
-        "stroke.control": "ASA_FAST_Warning_Signs.jpg"
+        "burn.control": "images/Burn_under_Running_Water_AdultSink.jpg",
+        "cut.control": "images/Dressing_Gauze_Pad_3_Adult.jpg",
+        "dehydration.control": "images/Dehydration_Water.jpg",
+        "heart.control": "images/During_a_Heart_Attack.jpg",
+        "hello.control": "images/AHA_ASA_Masterbrand.jpg",
+        "learncpr.control": "images/Fainting_Man.jpg",
+        "nosebleeding.control": "images/Nose_w_type.jpg",
+        "poison.control": "images/Warning_Signs.jpg",
+        "stroke.control": "images/ASA_FAST_Warning_Signs.jpg"
     }
 }

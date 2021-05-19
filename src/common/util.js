@@ -7,10 +7,7 @@ const speakText = require('./content/constants.json');
 const { repeatText } = speakText;
 const assets = require('./content/assets.json');
 
-const env = process.env.ENVIRONMENT;
 const configData = require('../config.json');
-
-const imageCatalog = addCloudFront();
 
 function prepareScreenContent(primaryText, bodyText, mainImage) {
     const dataTemplate = {};
@@ -37,24 +34,13 @@ function renderGeneralFunction(input, responseBuilder, primaryText, mainImage, t
     return responseBuilder;
 }
 
-function addCloudFront() {
-    const imageList = {};
-    const cloudFrontUrl = configData[env].cloudfront;
-    // eslint-disable-next-line no-restricted-syntax
-    for (const key in assets.Images) {
-        if (Object.hasOwnProperty.call(assets.Images, key)) {
-            const element = assets.Images[key];
-            imageList[key] = `https://${cloudFrontUrl}/${element}`;
-        }
-    }
-    return imageList;
-}
 module.exports = {
     prepareScreenContent,
     displayDirective,
     displayTemplate,
     speakText,
     repeatText,
-    imageCatalog,
+    configData,
+    assets,
     renderGeneralFunction,
 };

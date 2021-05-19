@@ -9,11 +9,16 @@ const {
     displayDirective,
     repeatText,
     speakText,
+    configData,
+    assets,
     renderGeneralFunction,
 } = require('../../common/util');
 
 const { heartAttackText } = speakText;
-const heartImage = imageCatalog['heart.control'];
+
+const heartImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['heart.control']
+}`;
 
 class HeartRequestAct extends RequestValueAct {
     constructor(control, payload) {

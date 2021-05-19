@@ -4,15 +4,19 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
-    imageCatalog,
+    configData,
+    assets,
     speakText,
     renderGeneralFunction,
 } = require('../../common/util');
 
+const burnImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['burn.control']
+}`;
+
 const { burnText } = speakText;
 const { burnYesText } = speakText;
 const { burnNoText } = speakText;
-const burnImage = imageCatalog['burn.control'];
 
 class BurnActMain extends RequestValueAct {
     constructor(control, payload) {

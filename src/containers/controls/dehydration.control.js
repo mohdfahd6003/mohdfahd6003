@@ -4,16 +4,17 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
-    imageCatalog,
-    displayTemplate,
-    displayDirective,
-    repeatText,
+    configData,
+    assets,
     speakText,
     renderGeneralFunction,
 } = require('../../common/util');
 
+const dehydrationImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['dehydration.control']
+}`;
+
 const { dehydrationText } = speakText;
-const dehydrationImage = imageCatalog['dehydration.control'];
 
 class DehydrationRequestAct extends RequestValueAct {
     constructor(control, payload) {

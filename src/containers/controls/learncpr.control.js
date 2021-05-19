@@ -4,14 +4,19 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
-    imageCatalog,
-    displayTemplate,
-    displayDirective,
-    repeatText,
+    configData,
+    assets,
     speakText,
+    displayDirective,
+    displayTemplate,
+    repeatText,
+    renderGeneralFunction,
 } = require('../../common/util');
 
-const learncprImage = imageCatalog['learncpr.control'];
+const learncprImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['learncpr.control']
+}`;
+
 const { learnCPRText } = speakText;
 
 class learnCPRControl extends Control {

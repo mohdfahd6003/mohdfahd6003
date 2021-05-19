@@ -4,21 +4,21 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
-    imageCatalog,
-    displayTemplate,
-    displayDirective,
-    repeatText,
+    configData,
+    assets,
     speakText,
     renderGeneralFunction,
 } = require('../../common/util');
+
+const bleedImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['bleed.control']
+}`;
 
 const { bleedText } = speakText;
 const { bleedYesText } = speakText;
 const { bleedNoText } = speakText;
 const { bleedNoSecondText } = speakText;
 const { bleedYesSecondText } = speakText;
-
-const bleedImage = imageCatalog['cut.control'];
 
 class BleedRequestAct extends RequestValueAct {
     constructor(control, payload) {

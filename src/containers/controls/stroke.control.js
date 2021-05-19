@@ -4,15 +4,19 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
-    imageCatalog,
-    displayTemplate,
-    displayDirective,
-    repeatText,
+    configData,
+    assets,
     speakText,
+    displayDirective,
+    displayTemplate,
+    repeatText,
+    renderGeneralFunction,
 } = require('../../common/util');
 
 const { strokeText } = speakText;
-const strokeImage = imageCatalog['stroke.control'];
+const strokeImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['stroke.control']
+}`;
 
 class StrokeControl extends Control {
     constructor(props) {

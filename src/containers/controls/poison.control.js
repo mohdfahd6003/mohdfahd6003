@@ -4,15 +4,20 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const {
     prepareScreenContent,
-    imageCatalog,
-    displayTemplate,
-    displayDirective,
-    repeatText,
+    configData,
+    assets,
     speakText,
+    displayDirective,
+    displayTemplate,
+    repeatText,
+    renderGeneralFunction,
 } = require('../../common/util');
 
+const poisonImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['poison.control']
+}`;
+
 const { poisonText } = speakText;
-const poisonImage = imageCatalog['poison.control'];
 
 class PoisonControl extends Control {
     constructor(props) {
