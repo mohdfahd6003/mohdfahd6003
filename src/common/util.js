@@ -7,7 +7,7 @@ const speakText = require('./content/constants.json');
 const { repeatText } = speakText;
 const assets = require('./content/assets.json');
 
-const imageCatalog = assets.Images;
+const configData = require('../config.json');
 
 function prepareScreenContent(primaryText, bodyText, mainImage) {
     const dataTemplate = {};
@@ -33,12 +33,14 @@ function renderGeneralFunction(input, responseBuilder, primaryText, mainImage, t
     }
     return responseBuilder;
 }
+
 module.exports = {
     prepareScreenContent,
     displayDirective,
     displayTemplate,
     speakText,
     repeatText,
-    imageCatalog,
+    configData,
+    assets,
     renderGeneralFunction,
 };

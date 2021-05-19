@@ -46,6 +46,7 @@ Thumbs.db
 # ask files
 /.ask/
 ./.ask/
+./.ask/ask-states.json
 
 
 # config files
