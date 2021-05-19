@@ -9,7 +9,7 @@
       },
       "code": {
         "default": {
-          "lastDeployHash": "ibqdfwjpVmoAD3G9CJ6gm40K98g="
+          "lastDeployHash": "zMXMtntTyJc0PLTu9d6cDg0ebz0="
         }
       },
       "skillInfrastructure": {
@@ -18,8 +18,8 @@
             "default": {
               "lambda": {
                 "arn": "arn:aws:lambda:us-east-1:790113021232:function:ask-aha-information-default-default-1620628884213",
-                "lastModified": "2021-05-18T12:37:10.435+0000",
-                "revisionId": "766ae7b0-b900-405e-9f97-48b582889ed0"
+                "lastModified": "2021-05-18T13:49:59.670+0000",
+                "revisionId": "347aa3d0-cd88-4639-94bd-bf8599229ab1"
               },
               "iamRole": "arn:aws:iam::790113021232:role/ask-lambda-AHA-information-1620628881509"
             }
