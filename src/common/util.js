@@ -15,6 +15,12 @@ function prepareScreenContent(primaryText, bodyText, mainImage) {
     dataTemplate.content.primaryText = primaryText;
     dataTemplate.content.bodyText = bodyText;
     dataTemplate.content.mainImage = mainImage;
+    dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+        assets.Images.headerImage
+    }`;
+    dataTemplate.content.background = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+        assets.Images.background
+    }`;
     return dataTemplate;
 }
 
