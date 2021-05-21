@@ -53,31 +53,37 @@
           "samples": [
             "learn about choking",
             "need assistance with choking",
-            "warning signs of choking"
+            "warning signs of choking",
+            "I can see someone choking"
           ]
         },
         {
           "name": "burnIntent",
           "samples": [
-            "burning"
+            "burning",
+            "what to do with burning"
           ]
         },
         {
           "name": "dehydrationIntent",
           "samples": [
-            "dehydration"
+            "dehydration",
+            "what to do during dyhydration",
+            "explain me on dehydration"
           ]
         },
         {
           "name": "noseIntent",
           "samples": [
-            "nose bleeding"
+            "nose bleeding",
+            "my nose is bleeding"
           ]
         },
         {
           "name": "poisonIntent",
           "samples": [
-            "poisoning"
+            "poisoning",
+            "what to do with poisoning"
           ]
         },
         {
@@ -87,7 +93,7 @@
           ]
         }
       ],
-      "invocationName": "control first"
+      "invocationName": "american heart association"
     },
     "prompts": []
   }
