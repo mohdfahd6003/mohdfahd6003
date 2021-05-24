@@ -14,7 +14,7 @@
         "choke.control.main": "images/Chest_Thrust_AdultFloor.jpg"
     },
     "Audio":{
-        "learncpr.control": "<audio src='https://s3.amazonaws.com/ahaalexa/110-BPM-Metronome-short.mp3'/>"
+        "learncpr.control": "audio/110-BPM-Metronome-short.mp3"
 
     }
 }

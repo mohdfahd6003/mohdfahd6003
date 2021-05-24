@@ -7,9 +7,6 @@ const {
     configData,
     assets,
     speakText,
-    displayDirective,
-    displayTemplate,
-    repeatText,
     renderGeneralFunction,
 } = require('../../common/util');
 
@@ -48,9 +45,9 @@ class learnCPRControl extends Control {
 
     handle(input, resultBuilder) {
         const learncprReq = new LearncprRequestAct(this, {});
-        const combinedSpeech = `${learnCPRTextOne}https://${
+        const combinedSpeech = `${learnCPRTextOne} <audio src="https://${
             configData[process.env.ENVIRONMENT].cloudfront
-        }/${assets.Audio['learncpr.control']}${learnCPRTextTwo}`;
+        }/${assets.Audio['learncpr.control']}"/> ${learnCPRTextTwo}`;
         learncprReq.speakText = combinedSpeech;
         resultBuilder.addAct(learncprReq);
     }
