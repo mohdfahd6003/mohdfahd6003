@@ -7,9 +7,6 @@ const {
     configData,
     assets,
     speakText,
-    displayDirective,
-    displayTemplate,
-    repeatText,
     renderGeneralFunction,
 } = require('../../common/util');
 
@@ -17,7 +14,25 @@ const learncprImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}
     assets.Images['learncpr.control']
 }`;
 
-const { learnCPRText } = speakText;
+const { learnCPRTextOne, learnCPRTextTwo } = speakText;
+
+class LearncprRequestAct extends RequestValueAct {
+    constructor(control, payload) {
+        super(control, payload);
+        this.speakText = undefined;
+    }
+
+    render(input, responseBuilder) {
+        responseBuilder = renderGeneralFunction(
+            input,
+            responseBuilder,
+            this.speakText,
+            learncprImage,
+            'Learn c.p.r',
+            this.speakText
+        );
+    }
+}
 
 class learnCPRControl extends Control {
     constructor(props) {
@@ -29,30 +44,16 @@ class learnCPRControl extends Control {
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(new RequestValueAct(this, {}));
+        const learncprReq = new LearncprRequestAct(this, {});
+        const combinedSpeech = `${learnCPRTextOne} <audio src="https://${
+            configData[process.env.ENVIRONMENT].cloudfront
+        }/${assets.Audio['learncpr.control']}"/> ${learnCPRTextTwo}`;
+        learncprReq.speakText = combinedSpeech;
+        resultBuilder.addAct(learncprReq);
     }
 
     canTakeInitiative() {
         return false;
-    }
-
-    renderAct(act, input, responseBuilder) {
-        if (act instanceof RequestValueAct) {
-            responseBuilder.addPromptFragment(learnCPRText);
-            responseBuilder.addRepromptFragment(repeatText);
-            if (
-                Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
-                    'Alexa.Presentation.APL'
-                ]
-            ) {
-                const dataTemplate = prepareScreenContent('learn CPR', learnCPRText, learncprImage);
-                responseBuilder.addDirective({
-                    type: displayDirective,
-                    document: displayTemplate,
-                    datasources: dataTemplate,
-                });
-            }
-        }
     }
 }
 

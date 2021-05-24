@@ -1,9 +1,26 @@
 {
   "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "American heart association skil",
+          "examplePhrases": [
+            "Alexa open  american heart association",
+            "Alexa start  american heart association"
+          ],
+          "name": "AHA-one",
+          "description": "Skill my Amercian heart assication "
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Open the skill and follow instruction",
+      "category": "EDUCATION_AND_REFERENCE",
+      "distributionCountries": []
+    },
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "arn:aws:lambda:us-east-1:790113021232:function:ask-aha-information-default-default-1620628884213"
+          "uri": "arn:aws:lambda:us-east-1:790113021232:function:ask-skill-sample-nodejs-highlow-AlexaSkillFunction-RON2ZkIZcrww"
         },
         "interfaces": [
           {
@@ -78,34 +95,6 @@
         ]
       }
     },
-    "manifestVersion": "1.0",
-    "publishingInformation": {
-      "category": "KNOWLEDGE_AND_TRIVIA",
-      "distributionCountries": [],
-      "isAvailableWorldwide": true,
-      "locales": {
-        "en-US": {
-          "description": "Sample Full Description",
-          "examplePhrases": [
-            "Alexa open hello world",
-            "hello",
-            "help"
-          ],
-          "name": "AHA-information",
-          "summary": "Sample Short Description"
-        },
-        "en-IN": {
-          "description": "Sample Full Description",
-          "examplePhrases": [
-            "Alexa open hello world",
-            "hello",
-            "help"
-          ],
-          "name": "AHA-information",
-          "summary": "Sample Short Description"
-        }
-      },
-      "testingInstructions": "Sample Testing Instructions."
-    }
+    "manifestVersion": "1.0"
   }
 }

@@ -36,6 +36,9 @@ describe('cutmyself e2e', () => {
             'U: I cut myself',
             TestInput.intent('bleedIntent'),
             `A:${bleedText}`.trim(),
+            'U: yes',
+            TestInput.intent(AmazonIntent.YesIntent),
+            `A:${bleedYesText}`,
         ]);
     });
 });

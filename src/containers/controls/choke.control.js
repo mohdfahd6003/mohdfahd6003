@@ -42,10 +42,10 @@ class ChokeControl extends Control {
     canHandle(input) {
         if (InputUtil.isIntent(input, 'chokeIntent')) {
             return true;
-        } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-            return true;
-        } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
-            return true;
+        } else if (this.state && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
+            if (String(this.state).startsWith('choking')) return true;
+        } else if (this.state && InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
+            if (String(this.state).startsWith('choking')) return true;
         }
         return false;
     }
