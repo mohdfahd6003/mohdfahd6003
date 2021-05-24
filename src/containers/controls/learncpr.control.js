@@ -14,7 +14,16 @@ const learncprImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}
     assets.Images['learncpr.control']
 }`;
 
-const { learnCPRTextOne, learnCPRTextTwo } = speakText;
+const learncprData = require('../../common/content/learncpr.content.json');
+
+const {
+    title,
+    primaryText,
+    secondaryText,
+    tertiaryText,
+    speakTextOne,
+    speakTextTwo,
+} = learncprData;
 
 class LearncprRequestAct extends RequestValueAct {
     constructor(control, payload) {
@@ -28,8 +37,8 @@ class LearncprRequestAct extends RequestValueAct {
             responseBuilder,
             this.speakText,
             learncprImage,
-            'Learn c.p.r',
-            this.speakText
+            title,
+            primaryText + secondaryText + tertiaryText
         );
     }
 }
@@ -45,9 +54,9 @@ class learnCPRControl extends Control {
 
     handle(input, resultBuilder) {
         const learncprReq = new LearncprRequestAct(this, {});
-        const combinedSpeech = `${learnCPRTextOne} <audio src="https://${
+        const combinedSpeech = `${speakTextOne} <audio src="https://${
             configData[process.env.ENVIRONMENT].cloudfront
-        }/${assets.Audio['learncpr.control']}"/> ${learnCPRTextTwo}`;
+        }/${assets.Audio['learncpr.control']}"/> ${speakTextTwo}`;
         learncprReq.speakText = combinedSpeech;
         resultBuilder.addAct(learncprReq);
     }
