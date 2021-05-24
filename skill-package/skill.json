@@ -8,8 +8,8 @@
             "Alexa open  american heart association",
             "Alexa start  american heart association"
           ],
-          "name": "AHA-one",
-          "description": "Skill my Amercian heart assication "
+          "name": "american-heart-association",
+          "description": "Skill by Amercian heart assication"
         }
       },
       "isAvailableWorldwide": true,
@@ -20,7 +20,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "arn:aws:lambda:us-east-1:790113021232:function:ask-skill-sample-nodejs-highlow-AlexaSkillFunction-RON2ZkIZcrww"
+          "uri": "arn:aws:lambda:us-east-1:790113021232:function:ask-american-heart-association--AlexaSkillFunction-Uxqxe1TbBrq4"
         },
         "interfaces": [
           {
