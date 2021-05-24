@@ -2,22 +2,33 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const {
-    prepareScreenContent,
-    configData,
-    assets,
-    speakText,
-    displayDirective,
-    displayTemplate,
-    repeatText,
-    renderGeneralFunction,
-} = require('../../common/util');
+const { configData, assets, renderGeneralFunction } = require('../../common/util');
 
 const poisonImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['poison.control']
 }`;
 
-const { poisonText } = speakText;
+const noseBleedData = require('../../common/content/poison.content.json');
+
+const { speakText, title, primaryText, secondaryText, tertiaryText } = noseBleedData;
+
+class PoisoningRequestAct extends RequestValueAct {
+    constructor(control, payload) {
+        super(control, payload);
+        this.speakText = speakText;
+    }
+
+    render(input, responseBuilder) {
+        responseBuilder = renderGeneralFunction(
+            input,
+            responseBuilder,
+            this.speakText,
+            poisonImage,
+            title,
+            primaryText + secondaryText + tertiaryText
+        );
+    }
+}
 
 class PoisonControl extends Control {
     constructor(props) {
@@ -29,30 +40,11 @@ class PoisonControl extends Control {
     }
 
     handle(input, resultBuilder) {
-        resultBuilder.addAct(new RequestValueAct(this, {}));
+        resultBuilder.addAct(new PoisoningRequestAct(this, {}));
     }
 
     canTakeInitiative() {
         return false;
-    }
-
-    renderAct(act, input, responseBuilder) {
-        if (act instanceof RequestValueAct) {
-            responseBuilder.addPromptFragment(poisonText);
-            responseBuilder.addRepromptFragment(repeatText);
-            if (
-                Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)[
-                    'Alexa.Presentation.APL'
-                ]
-            ) {
-                const dataTemplate = prepareScreenContent('poisoning', poisonText, poisonImage);
-                responseBuilder.addDirective({
-                    type: displayDirective,
-                    document: displayTemplate,
-                    datasources: dataTemplate,
-                });
-            }
-        }
     }
 }
 module.exports = PoisonControl;
