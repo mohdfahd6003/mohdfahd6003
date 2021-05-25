@@ -4,7 +4,6 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const { configData, assets, renderGeneralFunction } = require('../../common/util');
 
-const { strokeText } = speakText;
 const strokeImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['stroke.control']
 }`;

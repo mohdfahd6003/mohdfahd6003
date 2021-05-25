@@ -23,7 +23,6 @@ class MultiPathContainer extends ContainerControl {
         this.state = new MultiPathContainerState();
         this.id = props.id;
         this.handleFunc = undefined;
-        this.addChild(new StrokeControl({ id: 'stroke' }));
         this.addChild(new ChokeControl({ id: 'choke' }));
         this.addChild(new BleedControl({ id: 'bleed' }));
         this.addChild(new BurnControl({ id: 'burn' }));

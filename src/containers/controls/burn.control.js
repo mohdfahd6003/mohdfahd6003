@@ -2,13 +2,7 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const {
-    prepareScreenContent,
-    configData,
-    assets,
-    speakText,
-    renderGeneralFunction,
-} = require('../../common/util');
+const { configData, assets, speakText, renderGeneralFunction } = require('../../common/util');
 
 const burnImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['burn.control']
@@ -49,10 +43,10 @@ class BurnControl extends Control {
     canHandle(input) {
         if (InputUtil.isIntent(input, 'burnIntent')) {
             return true;
-        } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-            return true;
-        } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
-            return true;
+        } else if (this.state.value && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
+            if (this.state.value === 'burn') return true;
+        } else if (this.state.value && InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
+            if (this.state.value === 'burn') return true;
         }
         return false;
     }
