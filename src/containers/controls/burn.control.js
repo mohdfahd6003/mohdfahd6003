@@ -2,30 +2,32 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const { configData, assets, speakText, renderGeneralFunction } = require('../../common/util');
+const { configData, assets, renderGeneralFunction } = require('../../common/util');
 
 const burnImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['burn.control']
 }`;
 
-const { burnText } = speakText;
-const { burnYesText } = speakText;
-const { burnNoText } = speakText;
+const burnData = require('../../common/content/burn.content.json');
 
 class BurnActMain extends RequestValueAct {
     constructor(control, payload) {
         super(control, payload);
-        this.burnText = burnText;
+        this.speakText = undefined;
+        this.primaryText = undefined;
+        this.secondaryText = undefined;
+        this.tertiaryText = undefined;
+        this.title = undefined;
     }
 
     render(input, resultBuilder) {
         resultBuilder = renderGeneralFunction(
             input,
             resultBuilder,
-            this.burnText,
+            this.speakText,
             burnImage,
-            'burning',
-            this.burnText
+            this.title,
+            this.primaryText + this.secondaryText + this.tertiaryText
         );
     }
 }
@@ -55,12 +57,22 @@ class BurnControl extends Control {
         const burnAct = new BurnActMain(this, {});
         if (InputUtil.isIntent(input, 'burnIntent')) {
             this.state.value = 'burn';
+            burnAct.speakText = burnData.main.speakText;
+            burnAct.primaryText = burnData.main.primaryText;
+            burnAct.secondaryText = burnData.main.secondaryText;
+            burnAct.tertiaryText = burnData.main.tertiaryText;
         } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
             this.state.value = undefined;
-            this.burnText = burnYesText;
+            burnAct.speakText = burnData.yes.speakText;
+            burnAct.primaryText = burnData.yes.primaryText;
+            burnAct.secondaryText = burnData.yes.secondaryText;
+            burnAct.tertiaryText = burnData.yes.tertiaryText;
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
             this.state.value = undefined;
-            this.burnText = burnNoText;
+            burnAct.speakText = burnData.no.speakText;
+            burnAct.primaryText = burnData.no.primaryText;
+            burnAct.secondaryText = burnData.no.secondaryText;
+            burnAct.tertiaryText = burnData.no.tertiaryText;
         }
         resultBuilder.addAct(burnAct);
     }

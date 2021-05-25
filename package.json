@@ -11,6 +11,7 @@
   "author": "AHA Alexa team",
   "license": "Apache License",
   "devDependencies": {
+    "ask-sdk-local-debug": "^1.1.0",
     "chai": "^4.3.4",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
