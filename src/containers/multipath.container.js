@@ -5,7 +5,6 @@ const {
     ContainerControlState,
 } = require('ask-sdk-controls');
 
-const StrokeControl = require('./controls/stroke.control');
 const BurnControl = require('./controls/burn.control');
 const ChokeControl = require('./controls/choke.control');
 const BleedControl = require('./controls/cut.control');
