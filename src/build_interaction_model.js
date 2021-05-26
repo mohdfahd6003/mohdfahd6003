@@ -21,7 +21,7 @@ new ControlInteractionModelGenerator()
     })
     .addYesAndNoIntents()
     .addIntent({
-        name: 'cutIntent',
+        name: 'bleedIntent',
         samples: ['I cut myself.  What do I do', 'I cut myself. What do I do?'],
     })
     .addIntent({
