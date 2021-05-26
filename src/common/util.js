@@ -27,6 +27,7 @@ function prepareScreenContent(primaryText, bodyText, mainImage) {
 function renderGeneralFunction(input, responseBuilder, primaryText, mainImage, title, bodyText) {
     responseBuilder.addPromptFragment(primaryText);
     responseBuilder.addRepromptFragment(repeatText);
+    responseBuilder.withStandardCard(title, bodyText, mainImage, mainImage);
     if (
         Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)['Alexa.Presentation.APL']
     ) {
