@@ -2,24 +2,20 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const {
-    prepareScreenContent,
-    configData,
-    assets,
-    speakText,
-    renderGeneralFunction,
-} = require('../../common/util');
+const { configData, assets, renderGeneralFunction } = require('../../common/util');
 
 const dehydrationImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['dehydration.control']
 }`;
 
-const { dehydrationText } = speakText;
+const dehydrationData = require('../../common/content/dehydration.content.json');
+
+const { speakText, title, primaryText, secondaryText, tertiaryText } = dehydrationData;
 
 class DehydrationRequestAct extends RequestValueAct {
     constructor(control, payload) {
         super(control, payload);
-        this.speakText = dehydrationText;
+        this.speakText = speakText;
     }
 
     render(input, responseBuilder) {
@@ -28,8 +24,8 @@ class DehydrationRequestAct extends RequestValueAct {
             responseBuilder,
             this.speakText,
             dehydrationImage,
-            'dehydration',
-            this.speakText
+            title,
+            primaryText + secondaryText + tertiaryText
         );
     }
 }

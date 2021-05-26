@@ -103,7 +103,7 @@ class RootContainer extends ContainerControl {
         resultBuilder.addAct(
             new LiteralContentAct(this, {
                 promptFragment:
-                    ' I can help you with warning signs of heart attack, learn CPR and others. What can I help you with?',
+                    ' You can say things like, How do I do CPR?, What are the Warning Signs of a Heart Attack, or I have a nose bleed. Now, what can I help you with?!',
             })
         );
     }

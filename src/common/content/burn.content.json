@@ -1,0 +1,24 @@
+{
+    "main":{
+        "speakText": "Oh no! Burns aren't any fun. Follow these steps to help someone who has a small burn. Is the scene safe? ",
+        "primaryText": "Is the scene safe? ",
+        "secondaryText": " ",
+        "tertiaryText": " ",
+        "title": "Burns"
+
+    },
+    "yes": {
+        "speakText": "Get the first aid kit. If you don't have a first aid kit, get a dry, non-stick sterile or clean dressing. Wear protective gloves if you have them. Cool the burn area immediately with cold, but not ice-cold, water for at least 10 minutes. If you do not have cold water, use a cool or cold, but not freezing, clean compress. Run cold water on the burn until it doesn't hurt. You may then cover the burn with a dry, nonstick sterile or clean dressing. The only things you should put on a burn are cold water and clean dressings. If the pain persists, see a healthcare provider as soon as possible. I hope your patient feels a little better. What else can I help you with?",
+        "primaryText": "Is the scene safe? If not, call your local emergency number ",
+        "secondaryText": " Cool the burn with cold, but not ice-cold water for 10 minutes.  Run cold water on the burn until it doesn't hurt.  Cover the area with a non-stick sterile or clean dressing. ",
+        "tertiaryText": "",
+        "title": "Burns"
+    },
+    "no": {
+        "speakText": "call your local emergency number and wait for a professional responder to arrive. What else can I help you with?. ",
+        "primaryText": "call your local emergency number and wait for a professional responder to arrive.",
+        "secondaryText": " ",
+        "tertiaryText": " ",
+        "title": "Burns"        
+    }
+}

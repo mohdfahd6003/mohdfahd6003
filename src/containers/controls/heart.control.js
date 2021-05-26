@@ -2,19 +2,11 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const {
-    prepareScreenContent,
-    imageCatalog,
-    displayTemplate,
-    displayDirective,
-    repeatText,
-    speakText,
-    configData,
-    assets,
-    renderGeneralFunction,
-} = require('../../common/util');
+const { configData, assets, renderGeneralFunction } = require('../../common/util');
 
-const { heartAttackText } = speakText;
+const heartData = require('../../common/content/heart.content.json');
+
+const { speakText, title, primaryText, secondaryText, tertiaryText } = heartData;
 
 const heartImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['heart.control']
@@ -23,7 +15,7 @@ const heartImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
 class HeartRequestAct extends RequestValueAct {
     constructor(control, payload) {
         super(control, payload);
-        this.speakText = heartAttackText;
+        this.speakText = speakText;
     }
 
     render(input, responseBuilder) {
@@ -32,8 +24,8 @@ class HeartRequestAct extends RequestValueAct {
             responseBuilder,
             this.speakText,
             heartImage,
-            'warning signs of a heart attack',
-            this.speakText
+            title,
+            primaryText + secondaryText + tertiaryText
         );
     }
 }

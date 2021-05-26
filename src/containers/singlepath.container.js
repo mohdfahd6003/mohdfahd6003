@@ -6,6 +6,7 @@ const HeartControl = require('./controls/heart.control.js');
 const NoseBleedingControl = require('./controls/nosebleeding.control');
 const PoisonControl = require('./controls/poison.control');
 const DehydrationControl = require('./controls/dehydration.control');
+const StrokeControl = require('./controls/stroke.control');
 
 class SinglePathContainerState extends ContainerControlState {
     constructor(props) {
@@ -26,13 +27,14 @@ class SinglePathContainer extends ContainerControl {
         this.NoseBleedingControl = new NoseBleedingControl({ id: 'nosebleeding' });
         this.PoisonControl = new PoisonControl({ id: 'poison' });
         this.DehydrationControl = new DehydrationControl({ id: 'dehydration' });
-
+        this.StrokeControl = new StrokeControl({ id: 'stroke' });
         this.addChild(this.HelloControl);
         this.addChild(this.HeartControl);
         this.addChild(this.LearnCPRControl);
         this.addChild(this.NoseBleedingControl);
         this.addChild(this.PoisonControl);
         this.addChild(this.DehydrationControl);
+        this.addChild(this.StrokeControl);
     }
 
     async canHandle(input) {

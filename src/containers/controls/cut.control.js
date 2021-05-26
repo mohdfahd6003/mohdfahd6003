@@ -2,49 +2,42 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const {
-    prepareScreenContent,
-    configData,
-    assets,
-    speakText,
-    renderGeneralFunction,
-} = require('../../common/util');
+const { configData, assets, renderGeneralFunction } = require('../../common/util');
 
-const bleedImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['bleed.control']
+const cutImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['cut.control']
 }`;
+const cutData = require('../../common/content/cut.content.json');
 
-const { bleedText } = speakText;
-const { bleedYesText } = speakText;
-const { bleedNoText } = speakText;
-const { bleedNoSecondText } = speakText;
-const { bleedYesSecondText } = speakText;
-
-class BleedRequestAct extends RequestValueAct {
+class CutRequestAct extends RequestValueAct {
     constructor(control, payload) {
         super(control, payload);
-        this.bleedText = bleedText;
+        this.speakText = undefined;
+        this.primaryText = undefined;
+        this.secondaryText = undefined;
+        this.tertiaryText = undefined;
+        this.title = undefined;
     }
 
     render(input, responseBuilder) {
         responseBuilder = renderGeneralFunction(
             input,
             responseBuilder,
-            this.bleedText,
-            bleedImage,
-            'bleeding',
-            this.bleedText
+            this.speakText,
+            cutImage,
+            this.title,
+            this.primaryText + this.secondaryText + this.tertiaryText
         );
     }
 }
-const BleedControlState = {
+const CutControlState = {
     value: undefined,
 };
 
-class BleedControl extends Control {
+class CutControl extends Control {
     constructor(props) {
         super(props.id);
-        this.state = BleedControlState;
+        this.state = CutControlState;
     }
 
     canHandle(input) {
@@ -61,26 +54,41 @@ class BleedControl extends Control {
     }
 
     handle(input, resultBuilder) {
-        const bleedAct = new BleedRequestAct(this, {});
+        const cutAct = new CutRequestAct(this, {});
         if (InputUtil.isIntent(input, 'bleedIntent')) {
             this.state.value = 'first';
-            bleedAct.bleedText = bleedText;
+            cutAct.speakText = cutData.main.speakText;
+            cutAct.primaryText = cutData.main.primaryText;
+            cutAct.secondaryText = cutData.main.secondaryText;
+            cutAct.tertiaryText = cutData.main.tertiaryText;
+            cutAct.title = cutData.main.title;
         } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-            bleedAct.bleedText = bleedYesText;
+            let turnNum = 'turn1';
             if (this.state.value === 'second') {
-                bleedAct.bleedText = bleedYesSecondText;
+                turnNum = 'turn2';
             }
+            cutAct.speakText = cutData[turnNum].yes.speakText;
+            cutAct.primaryText = cutData[turnNum].yes.primaryText;
+            cutAct.secondaryText = cutData[turnNum].yes.secondaryText;
+            cutAct.tertiaryText = cutData[turnNum].yes.tertiaryText;
+            cutAct.title = cutData[turnNum].title;
             this.state.value = undefined;
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
+            let turnNum;
             if (this.state.value === 'first') {
-                bleedAct.bleedText = bleedNoText;
                 this.state.value = 'second';
+                turnNum = 'turn1';
             } else if (this.state.value === 'second') {
                 this.state.value = undefined;
-                bleedAct.bleedText = bleedNoSecondText;
+                turnNum = 'turn2';
             }
+            cutAct.speakText = cutData[turnNum].no.speakText;
+            cutAct.primaryText = cutData[turnNum].no.primaryText;
+            cutAct.secondaryText = cutData[turnNum].no.secondaryText;
+            cutAct.tertiaryText = cutData[turnNum].no.tertiaryText;
+            cutAct.title = cutData[turnNum].title;
         }
-        resultBuilder.addAct(bleedAct);
+        resultBuilder.addAct(cutAct);
     }
 
     canTakeInitiative() {
@@ -88,4 +96,4 @@ class BleedControl extends Control {
     }
 }
 
-module.exports = BleedControl;
+module.exports = CutControl;
