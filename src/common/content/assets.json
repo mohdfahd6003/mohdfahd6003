@@ -1,7 +1,7 @@
 {
     "Images": {
         "burn.control": "images/Burn_under_Running_Water_AdultSink.jpg",
-        "bleed.control": "images/Dressing_Gauze_Pad_3_Adult.jpg",
+        "cut.control": "images/Dressing_Gauze_Pad_3_Adult.jpg",
         "dehydration.control": "images/Dehydration_Water.jpg",
         "heart.control": "images/During_a_Heart_Attack.jpg",
         "hello.control": "images/AHA_ASA_Masterbrand.jpg",

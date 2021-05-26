@@ -61,18 +61,21 @@ class BurnControl extends Control {
             burnAct.primaryText = burnData.main.primaryText;
             burnAct.secondaryText = burnData.main.secondaryText;
             burnAct.tertiaryText = burnData.main.tertiaryText;
+            burnAct.title = burnData.main.title;
         } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
             this.state.value = undefined;
             burnAct.speakText = burnData.yes.speakText;
             burnAct.primaryText = burnData.yes.primaryText;
             burnAct.secondaryText = burnData.yes.secondaryText;
             burnAct.tertiaryText = burnData.yes.tertiaryText;
+            burnAct.title = burnData.yes.title;
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
             this.state.value = undefined;
             burnAct.speakText = burnData.no.speakText;
             burnAct.primaryText = burnData.no.primaryText;
             burnAct.secondaryText = burnData.no.secondaryText;
             burnAct.tertiaryText = burnData.no.tertiaryText;
+            burnAct.title = burnData.no.title;
         }
         resultBuilder.addAct(burnAct);
     }
