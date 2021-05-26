@@ -55,7 +55,7 @@ class CutControl extends Control {
 
     handle(input, resultBuilder) {
         const cutAct = new CutRequestAct(this, {});
-        if (InputUtil.isIntent(input, 'cutIntent')) {
+        if (InputUtil.isIntent(input, 'bleedIntent')) {
             this.state.value = 'first';
             cutAct.speakText = cutData.main.speakText;
             cutAct.primaryText = cutData.main.primaryText;
