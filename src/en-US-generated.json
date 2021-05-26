@@ -1,0 +1,101 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "types": [],
+      "intents": [
+        {
+          "name": "AMAZON.StopIntent"
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent"
+        },
+        {
+          "name": "AMAZON.HelpIntent"
+        },
+        {
+          "name": "AMAZON.CancelIntent"
+        },
+        {
+          "name": "HelloIntent",
+          "samples": [
+            "Say hello",
+            "Say hi"
+          ]
+        },
+        {
+          "name": "heartWarningSignsIntent",
+          "samples": [
+            "Warning signs of a heart attack",
+            "How do I know about heart attack"
+          ]
+        },
+        {
+          "name": "learnCPRIntent",
+          "samples": [
+            "how to do c. p. r.",
+            "how do I do c.p.r",
+            "How do I do CPR?"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent"
+        },
+        {
+          "name": "AMAZON.NoIntent"
+        },
+        {
+          "name": "cutIntent",
+          "samples": [
+            "I cut myself.  What do I do",
+            "I cut myself. What do I do?"
+          ]
+        },
+        {
+          "name": "chokeIntent",
+          "samples": [
+            "learn about choking",
+            "need assistance with choking",
+            "warning signs of choking",
+            "Tell me what to do for choking"
+          ]
+        },
+        {
+          "name": "burnIntent",
+          "samples": [
+            "burning",
+            "What do I do for a burn?"
+          ]
+        },
+        {
+          "name": "dehydrationIntent",
+          "samples": [
+            "dehydration",
+            "What is Dehydration?"
+          ]
+        },
+        {
+          "name": "noseIntent",
+          "samples": [
+            "nose bleeding",
+            "How do I stop a Nose Bleed?"
+          ]
+        },
+        {
+          "name": "poisonIntent",
+          "samples": [
+            "poisoning",
+            "Tell me what to do for poisoning"
+          ]
+        },
+        {
+          "name": "strokeIntent",
+          "samples": [
+            "warning signs of stroke"
+          ]
+        }
+      ],
+      "invocationName": "american heart association"
+    },
+    "prompts": []
+  }
+}
