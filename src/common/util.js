@@ -9,17 +9,6 @@ const assets = require('./content/assets.json');
 
 const configData = require('../config.json');
 
-const randData = require('./content/hint.content.json');
-
-const { randomHint } = randData;
-
-function getRandomInt() {
-    return Math.floor(Math.random() * randomHint.length);
-}
-
-function getRandomHint() {
-    return randomHint[getRandomInt()];
-}
 function prepareScreenContent(primaryText, bodyText, mainImage) {
     const dataTemplate = {};
     dataTemplate.content = {};
@@ -57,8 +46,6 @@ function renderGeneralFunction(
             datasources: dataTemplate,
         });
     }
-
-    console.log(getRandomHint());
 
     return responseBuilder;
 }
