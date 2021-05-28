@@ -23,6 +23,8 @@ const {
 const SinglePathContainer = require('./containers/singlepath.container');
 const MultiPathContainer = require('./containers/multipath.container');
 
+const { assets, configData, renderGeneralFunction } = require('./common/util');
+
 class RootContainer extends ContainerControl {
     constructor(props) {
         super(props);
@@ -57,7 +59,6 @@ class RootContainer extends ContainerControl {
             this.handleFunc = this.handleHelpIntent;
             return true;
         }
-        console.log('WARN: Nothing wants this input. A new clause may be required.');
         return false;
     }
 
@@ -107,12 +108,26 @@ class RootContainer extends ContainerControl {
     }
 
     async handleHelpIntent(input, resultBuilder) {
-        resultBuilder.addAct(
-            new LiteralContentAct(this, {
-                promptFragment:
-                    ' You can say things like, How do I do CPR?, What are the Warning Signs of a Heart Attack, or I have a nose bleed. Now, what can I help you with?!',
-            })
-        );
+        const speakText =
+            'You can say things like, How do I do CPR?, What are the Warning Signs of a Heart Attack, or I have a nose bleed. Now, what can I help you with?!';
+        const title = 'help';
+        const helpImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+            assets.Images['hello.control']
+        }`;
+
+        class HelpContentAct extends LiteralContentAct {
+            render(inputData, responseBuilder) {
+                responseBuilder = renderGeneralFunction(
+                    input,
+                    responseBuilder,
+                    speakText,
+                    helpImage,
+                    title,
+                    speakText
+                );
+            }
+        }
+        resultBuilder.addAct(new HelpContentAct(this, {}));
     }
 
     async handleFallbackIntent(input, resultBuilder) {
