@@ -25,6 +25,10 @@ const MultiPathContainer = require('./containers/multipath.container');
 
 const { assets, configData, renderGeneralFunction } = require('./common/util');
 
+const stopData = require('./common/content/stop.content.json');
+
+const helpData = require('./common/content/help.content.json');
+
 class RootContainer extends ContainerControl {
     constructor(props) {
         super(props);
@@ -88,19 +92,13 @@ class RootContainer extends ContainerControl {
     }
 
     async handleStopIntent(input, resultBuilder) {
-        const stopTextList = [
-            'Thank you.  If you would like to make a donation, please say - Alexa donate to the American Heart Association',
-            'Goodbye',
-            'Thank you.  If you would like to learn more, please visit heart.org',
-        ];
-        const stopText = stopTextList[Math.floor(Math.random() * stopTextList.length)];
-        const stopTitle = 'American Heart Association';
-        const stopBody = 'For More information, please visit http://www.heart.org';
+        const stopText =
+            stopData.stopTextList[Math.floor(Math.random() * stopData.stopTextList.length)];
 
         class StopContentAct extends LiteralContentAct {
             render(inputData, responseBuilder) {
                 responseBuilder.addPromptFragment(stopText);
-                responseBuilder.withSimpleCard(stopTitle, stopBody);
+                responseBuilder.withSimpleCard(stopData.stopTitle, stopData.stopBody);
             }
         }
         resultBuilder.addAct(new StopContentAct(this, {}));
@@ -108,9 +106,6 @@ class RootContainer extends ContainerControl {
     }
 
     async handleHelpIntent(input, resultBuilder) {
-        const speakText =
-            'You can say things like, How do I do CPR?, What are the Warning Signs of a Heart Attack, or I have a nose bleed. Now, what can I help you with?!';
-        const title = 'help';
         const helpImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
             assets.Images['hello.control']
         }`;
@@ -120,10 +115,10 @@ class RootContainer extends ContainerControl {
                 responseBuilder = renderGeneralFunction(
                     input,
                     responseBuilder,
-                    speakText,
+                    helpData.speakText,
                     helpImage,
-                    title,
-                    speakText
+                    helpData.title,
+                    helpData.speakText
                 );
             }
         }

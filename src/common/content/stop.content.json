@@ -1,0 +1,10 @@
+{
+    "stopTextList":[
+        "Thank you.  If you would like to make a donation, please say - Alexa donate to the American Heart Association",
+        "Goodbye",
+        "Thank you.  If you would like to learn more, please visit heart.org"
+    ],
+    
+    "stopTitle":"American Heart Association",
+    "stopBody":"For More information, please visit http://www.heart.org"
+}
