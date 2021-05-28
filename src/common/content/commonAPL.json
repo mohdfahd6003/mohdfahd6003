@@ -39,7 +39,8 @@
                 "bodyText": "${payload.content.bodyText}",
                 "imageAlignment": "center",
                 "imageAspectRatio": "standard_portait",
-                "backgroundBlur": true
+                "backgroundBlur": true,
+                "headerSubtitle": "${payload.content.properties.transformedHintText}"
             }
         ]
     }
