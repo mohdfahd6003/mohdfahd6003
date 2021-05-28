@@ -43,14 +43,10 @@ class RootContainer extends ContainerControl {
             this.handleFunc = this.handleFallbackIntent;
             return true;
         } else if (
-            input.request.type === 'IntentRequest' &&
-            input.request.intent.name === 'AMAZON.CancelIntent'
-        ) {
-            this.handleFunc = this.handleCancelIntent;
-            return true;
-        } else if (
-            input.request.type === 'IntentRequest' &&
-            input.request.intent.name === 'AMAZON.StopIntent'
+            (input.request.type === 'IntentRequest' &&
+                input.request.intent.name === 'AMAZON.CancelIntent') ||
+            (input.request.type === 'IntentRequest' &&
+                input.request.intent.name === 'AMAZON.StopIntent')
         ) {
             this.handleFunc = this.handleStopIntent;
             return true;
@@ -91,11 +87,22 @@ class RootContainer extends ContainerControl {
     }
 
     async handleStopIntent(input, resultBuilder) {
-        resultBuilder.addAct(
-            new LiteralContentAct(this, {
-                promptFragment: 'Thank you. See you soon',
-            })
-        );
+        const stopTextList = [
+            'Thank you.  If you would like to make a donation, please say - Alexa donate to the American Heart Association',
+            'Goodbye',
+            'Thank you.  If you would like to learn more, please visit heart.org',
+        ];
+        const stopText = stopTextList[Math.floor(Math.random() * stopTextList.length)];
+        const stopTitle = 'American Heart Association';
+        const stopBody = 'For More information, please visit http://www.heart.org';
+
+        class StopContentAct extends LiteralContentAct {
+            render(inputData, responseBuilder) {
+                responseBuilder.addPromptFragment(stopText);
+                responseBuilder.withSimpleCard(stopTitle, stopBody);
+            }
+        }
+        resultBuilder.addAct(new StopContentAct(this, {}));
         resultBuilder.endSession();
     }
 
