@@ -23,6 +23,12 @@ const {
 const SinglePathContainer = require('./containers/singlepath.container');
 const MultiPathContainer = require('./containers/multipath.container');
 
+const { assets, configData, renderGeneralFunction } = require('./common/util');
+
+const stopData = require('./common/content/stop.content.json');
+
+const helpData = require('./common/content/help.content.json');
+
 class RootContainer extends ContainerControl {
     constructor(props) {
         super(props);
@@ -43,14 +49,10 @@ class RootContainer extends ContainerControl {
             this.handleFunc = this.handleFallbackIntent;
             return true;
         } else if (
-            input.request.type === 'IntentRequest' &&
-            input.request.intent.name === 'AMAZON.CancelIntent'
-        ) {
-            this.handleFunc = this.handleCancelIntent;
-            return true;
-        } else if (
-            input.request.type === 'IntentRequest' &&
-            input.request.intent.name === 'AMAZON.StopIntent'
+            (input.request.type === 'IntentRequest' &&
+                input.request.intent.name === 'AMAZON.CancelIntent') ||
+            (input.request.type === 'IntentRequest' &&
+                input.request.intent.name === 'AMAZON.StopIntent')
         ) {
             this.handleFunc = this.handleStopIntent;
             return true;
@@ -61,7 +63,6 @@ class RootContainer extends ContainerControl {
             this.handleFunc = this.handleHelpIntent;
             return true;
         }
-        console.log('WARN: Nothing wants this input. A new clause may be required.');
         return false;
     }
 
@@ -91,21 +92,37 @@ class RootContainer extends ContainerControl {
     }
 
     async handleStopIntent(input, resultBuilder) {
-        resultBuilder.addAct(
-            new LiteralContentAct(this, {
-                promptFragment: 'Thank you. See you soon',
-            })
-        );
+        const stopText =
+            stopData.stopTextList[Math.floor(Math.random() * stopData.stopTextList.length)];
+
+        class StopContentAct extends LiteralContentAct {
+            render(inputData, responseBuilder) {
+                responseBuilder.addPromptFragment(stopText);
+                responseBuilder.withSimpleCard(stopData.stopTitle, stopData.stopBody);
+            }
+        }
+        resultBuilder.addAct(new StopContentAct(this, {}));
         resultBuilder.endSession();
     }
 
     async handleHelpIntent(input, resultBuilder) {
-        resultBuilder.addAct(
-            new LiteralContentAct(this, {
-                promptFragment:
-                    ' You can say things like, How do I do CPR?, What are the Warning Signs of a Heart Attack, or I have a nose bleed. Now, what can I help you with?!',
-            })
-        );
+        const helpImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+            assets.Images['hello.control']
+        }`;
+
+        class HelpContentAct extends LiteralContentAct {
+            render(inputData, responseBuilder) {
+                responseBuilder = renderGeneralFunction(
+                    input,
+                    responseBuilder,
+                    helpData.speakText,
+                    helpImage,
+                    helpData.title,
+                    helpData.speakText
+                );
+            }
+        }
+        resultBuilder.addAct(new HelpContentAct(this, {}));
     }
 
     async handleFallbackIntent(input, resultBuilder) {
