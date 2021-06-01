@@ -13,6 +13,10 @@ const randData = require('./content/hint.content.json');
 
 const { randomHint } = randData;
 
+function getEnvData() {
+    return process.env.ENVIRONMENT ? process.env.ENVIRONMENT : 'dev';
+}
+
 function getRandomInt() {
     return Math.floor(Math.random() * randomHint.length);
 }
@@ -43,15 +47,7 @@ function prepareScreenContent(primaryText, bodyText, mainImage) {
     return dataTemplate;
 }
 
-function renderGeneralFunction(
-    input,
-    responseBuilder,
-    primaryText,
-    mainImage,
-    title,
-    bodyText,
-    isHint = false
-) {
+function renderGeneralFunction(input, responseBuilder, primaryText, mainImage, title, bodyText) {
     responseBuilder.addPromptFragment(primaryText);
     responseBuilder.addRepromptFragment(repeatText);
     responseBuilder.withStandardCard(title, bodyText, mainImage, mainImage);
@@ -78,4 +74,5 @@ module.exports = {
     configData,
     assets,
     renderGeneralFunction,
+    getEnvData,
 };

@@ -36,12 +36,13 @@ class HelloControl extends Control {
     }
 
     canHandle(input) {
-        if (InputUtil.isLaunchRequest(input) || InputUtil.isIntent(input, 'HelloIntent')) {
+        if (InputUtil.isLaunchRequest(input)) {
             logger.log({
                 level: 'info',
                 message: 'Inside launch',
                 requestId: input.request.requestId,
-                intent: input.request.type,
+                intentType: input.request.type,
+                intentName: 'None',
                 locale: input.request.locale,
                 timestamp: input.request.timestamp,
             });
