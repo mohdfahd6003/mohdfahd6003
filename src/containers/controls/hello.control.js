@@ -16,7 +16,7 @@ const helloImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
 
 const { introText } = speakText;
 
-const { createLogger } = require('../../logging/logger');
+const { logger } = require('../../logging/logger');
 
 class WelcomeAct extends RequestValueAct {
     render(input, responseBuilder) {
@@ -37,7 +37,14 @@ class HelloControl extends Control {
 
     canHandle(input) {
         if (InputUtil.isLaunchRequest(input) || InputUtil.isIntent(input, 'HelloIntent')) {
-            createLogger.log({ level: 'info', message: 'inside launch intent' });
+            logger.log({
+                level: 'info',
+                message: 'Inside launch',
+                requestId: input.request.requestId,
+                intent: input.request.type,
+                locale: input.request.locale,
+                timestamp: input.request.timestamp,
+            });
             return true;
         }
         return false;

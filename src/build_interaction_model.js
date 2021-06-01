@@ -39,7 +39,7 @@ new ControlInteractionModelGenerator()
     })
     .addIntent({
         name: 'dehydrationIntent',
-        samples: ['dehydration', 'What is Dehydration?'],
+        samples: ['dehydration', 'What is Dehydration?', 'explain me on Dehydration'],
     })
     .addIntent({
         name: 'noseIntent',
