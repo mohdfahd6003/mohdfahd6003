@@ -13,9 +13,7 @@ const randData = require('./content/hint.content.json');
 
 const { randomHint } = randData;
 
-function getEnvData() {
-    return process.env.ENVIRONMENT ? process.env.ENVIRONMENT : 'dev';
-}
+process.env.ENVIRONMENT = process.env.ENVIRONMENT ? process.env.ENVIRONMENT : 'dev';
 
 function getRandomInt() {
     return Math.floor(Math.random() * randomHint.length);
@@ -30,10 +28,10 @@ function prepareScreenContent(primaryText, bodyText, mainImage) {
     dataTemplate.content.primaryText = primaryText;
     dataTemplate.content.bodyText = bodyText;
     dataTemplate.content.mainImage = mainImage;
-    dataTemplate.content.headerImage = `https://${configData[getEnvData()].cloudfront}/${
+    dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
         assets.Images.headerImage
     }`;
-    dataTemplate.content.background = `https://${configData[getEnvData()].cloudfront}/${
+    dataTemplate.content.background = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
         assets.Images.background
     }`;
     dataTemplate.content.properties = {};
@@ -74,5 +72,4 @@ module.exports = {
     configData,
     assets,
     renderGeneralFunction,
-    getEnvData,
 };
