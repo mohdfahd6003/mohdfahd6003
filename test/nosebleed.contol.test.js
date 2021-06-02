@@ -17,7 +17,7 @@ const speakText = require('../src/common/content/constants.json');
 const {
     introText,
     noseBleedingText
-} = speakText
+} = speakText;
 
 waitForDebugger();
 
@@ -27,4 +27,4 @@ describe('nose bleed path',()=>{
         await tester.testTurn('U: __',TestInput.launchRequest(),`A:${introText}`);
         await tester.testTurn('U: How do I stop a Nose Bleed?',TestInput.intent('noseIntent'), `A:${noseBleedingText}`.trim());
     });
-})
+});

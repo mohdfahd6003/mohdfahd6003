@@ -17,7 +17,7 @@ const speakText = require('../src/common/content/constants.json');
 const {
     introText,
     dehydrationText
-} = speakText
+} = speakText;
 
 waitForDebugger();
 
@@ -27,4 +27,4 @@ describe('dehydration  path',()=>{
         await tester.testTurn('U: __',TestInput.launchRequest(),`A:${introText}`);
         await tester.testTurn('U: dehydration',TestInput.intent('dehydrationIntent'), `A:${dehydrationText}`.trim());
     });
-})
+});
