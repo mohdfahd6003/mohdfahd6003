@@ -22,8 +22,9 @@ const myFormat = printf(
 exports.logger = createLogger({
     format: combine(timestamp({ format: 'YYYY:MM:DD HH:mm:ss.SSS' }), myFormat, format.json()),
     transports: [
-        new transports.File({
-            filename: 'info.log',
-        }),
+        //    new transports.File({
+        //       filename: 'info.log',
+        //    }),
+        new transports.Console(),
     ],
 });
