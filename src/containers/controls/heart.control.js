@@ -50,7 +50,6 @@ class HeartControl extends Control {
             intentName: input.request.intent.name,
             locale: input.request.locale,
             timestamp: input.request.timestamp,
-            sessionId: input.sessionId,
         });
         resultBuilder.addAct(new HeartRequestAct(this, {}));
     }
