@@ -17,7 +17,7 @@ new ControlInteractionModelGenerator()
     })
     .addIntent({
         name: 'learnCPRIntent',
-        samples: ['how to do c. p. r.', 'how do I do c.p.r', 'How do I do CPR?'],
+        samples: ['how to do c. p. r.', 'how do I do c.p.r', 'How do I do CPR?', 'learn cpr'],
     })
     .addYesAndNoIntents()
     .addIntent({
@@ -39,7 +39,7 @@ new ControlInteractionModelGenerator()
     })
     .addIntent({
         name: 'dehydrationIntent',
-        samples: ['dehydration', 'What is Dehydration?'],
+        samples: ['dehydration', 'What is Dehydration?', 'explain me on Dehydrationec'],
     })
     .addIntent({
         name: 'noseIntent',

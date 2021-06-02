@@ -1,6 +1,6 @@
 const { ContainerControl, ContainerControlState, InputUtil } = require('ask-sdk-controls');
 
-const HelloControl = require('./controls/hello.control.js');
+const HelloControl = require('./controls/launch.control.js');
 const LearnCPRControl = require('./controls/learncpr.control.js');
 const HeartControl = require('./controls/heart.control.js');
 const NoseBleedingControl = require('./controls/nosebleeding.control');
@@ -21,7 +21,7 @@ class SinglePathContainer extends ContainerControl {
         this.handleFunc = undefined;
         this.state = new SinglePathContainerState({ id: 'singlepathstate' });
 
-        this.HelloControl = new HelloControl({ id: 'hello' });
+        this.HelloControl = new HelloControl({ id: 'launch' });
         this.LearnCPRControl = new LearnCPRControl({ id: 'cpr' });
         this.HeartControl = new HeartControl({ id: 'heart' });
         this.NoseBleedingControl = new NoseBleedingControl({ id: 'nosebleeding' });
