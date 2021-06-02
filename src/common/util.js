@@ -30,10 +30,10 @@ function prepareScreenContent(primaryText, bodyText, mainImage) {
     dataTemplate.content.primaryText = primaryText;
     dataTemplate.content.bodyText = bodyText;
     dataTemplate.content.mainImage = mainImage;
-    dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    dataTemplate.content.headerImage = `https://${configData[getEnvData()].cloudfront}/${
         assets.Images.headerImage
     }`;
-    dataTemplate.content.background = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    dataTemplate.content.background = `https://${configData[getEnvData()].cloudfront}/${
         assets.Images.background
     }`;
     dataTemplate.content.properties = {};
