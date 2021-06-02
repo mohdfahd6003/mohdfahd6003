@@ -33,7 +33,7 @@ describe('burn path',()=>{
     test('burn path no',async()=>{
         const tester = new SkillTester(new ControlHandler(new RootManager()));
         await tester.testTurn('U: __',TestInput.launchRequest(),`A:${introText}`);
-        await tester.testTurn('U: burning',TestInput.intent('burnIntent'), `A:${burnText}888`);
+        await tester.testTurn('U: burning',TestInput.intent('burnIntent'), `A:${burnText}`);
         await tester.testTurn('U: no', TestInput.intent(AmazonIntent.NoIntent), `A:${burnNoText}.`);
     });
 });
