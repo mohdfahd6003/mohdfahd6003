@@ -2,16 +2,6 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-// eslint-disable-next-line import/no-extraneous-dependencies
-const { createLogger, format, transports, level, info } = require('winston');
-
-const { combine, timestamp, label, printf } = format;
-
-// eslint-disable-next-line no-shadow
-const myFormat = printf(({ level, message, timestamp }) => {
-    return `${timestamp} ${level}: ${message}`;
-});
-
 const {
     prepareScreenContent,
     configData,
@@ -25,6 +15,8 @@ const helloImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
 }`;
 
 const { introText } = speakText;
+
+const { logger } = require('../../logging/logger');
 
 class WelcomeAct extends RequestValueAct {
     render(input, responseBuilder) {
@@ -44,7 +36,19 @@ class HelloControl extends Control {
     }
 
     canHandle(input) {
-        return InputUtil.isLaunchRequest(input) || InputUtil.isIntent(input, 'HelloIntent');
+        if (InputUtil.isLaunchRequest(input)) {
+            logger.log({
+                level: 'info',
+                message: 'Inside launch',
+                requestId: input.request.requestId,
+                intentType: input.request.type,
+                intentName: 'None',
+                locale: input.request.locale,
+                timestamp: input.request.timestamp,
+            });
+            return true;
+        }
+        return false;
     }
 
     handle(input, resultBuilder) {

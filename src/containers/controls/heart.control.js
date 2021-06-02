@@ -12,6 +12,8 @@ const heartImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['heart.control']
 }`;
 
+const { logger } = require('../../logging/logger');
+
 class HeartRequestAct extends RequestValueAct {
     constructor(control, payload) {
         super(control, payload);
@@ -40,6 +42,15 @@ class HeartControl extends Control {
     }
 
     handle(input, resultBuilder) {
+        logger.log({
+            level: 'info',
+            message: 'Inside heart',
+            requestId: input.request.requestId,
+            intentType: input.request.type,
+            intentName: input.request.intent.name,
+            locale: input.request.locale,
+            timestamp: input.request.timestamp,
+        });
         resultBuilder.addAct(new HeartRequestAct(this, {}));
     }
 

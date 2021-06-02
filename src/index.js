@@ -63,7 +63,7 @@ class RootContainer extends ContainerControl {
             this.handleFunc = this.handleHelpIntent;
             return true;
         }
-        return false;
+        return true;
     }
 
     async handle(input, resultBuilder) {
