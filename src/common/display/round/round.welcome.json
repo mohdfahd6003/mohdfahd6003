@@ -1,0 +1,47 @@
+{
+    "type": "APL",
+    "version": "1.6",
+    "settings": {},
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.3.0"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": ["payload"],
+        "items": [
+            {
+                "type": "AlexaDetail",
+                "headerTitle": "round device",
+                "theme": "dark",
+                "imageHeight": 500,
+                "imageRoundedCorner": true,
+                "imageSource": "${payload.content.mainImage}",
+                "backgroundImageSource": "${payload.content.background}",
+                "primaryText": "${payload.content.primaryText}",
+                "backgroundColor": "red",
+                "backgroundAlign": "left",
+                "detailImageAlignment": "left",
+                "headerAttributionImage": "${payload.content.headerImage}",
+                "headerAttributionPrimacy": true,
+                "headerDivider": true,
+                "headerBackgroundColor": "pink",
+                "imageBlurredBackground": false,
+                "detailType": "generic",
+                "bodyText": "${payload.content.bodyText}",
+                "imageAlignment": "center",
+                "imageAspectRatio": "standard_portait",
+                "backgroundBlur": true,
+                "headerSubtitle": "${payload.content.properties.transformedHintText}"
+            }
+        ]
+    }
+}
