@@ -49,8 +49,17 @@ function prepareScreenContent(primaryText, bodyText, mainImage) {
     return dataTemplate;
 }
 
+function getShape(input) {
+    try {
+        const { shape } = input.handlerInput.requestEnvelope.context.Viewport;
+        return shape;
+    } catch (e) {
+        const shape = '';
+        return shape;
+    }
+}
 function getDisplayTemplate(input, iswelcome) {
-    const { shape } = input.handlerInput.requestEnvelope.context.Viewport;
+    const shape = getShape(input);
     const isRound = shape === 'ROUND';
     if (iswelcome) {
         if (isRound) return roundWelcomeTemplate;
