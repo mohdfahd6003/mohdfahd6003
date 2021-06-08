@@ -26,7 +26,8 @@ class WelcomeAct extends RequestValueAct {
             introText,
             helloImage,
             'welcome',
-            'What can I help you with?'
+            'What can I help you with?',
+            true
         );
     }
 }
