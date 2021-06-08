@@ -1,19 +1,19 @@
 const Alexa = require('ask-sdk-core');
 
-const rectangleGenericTemplate = require('./display/rectangle/rectangle.general.json');
-const roundGenericTemplate = require('./display/round/round.general.json');
-const rectangleWelcomeTemplate = require('./display/rectangle/rectangle.welcome.json');
-const roundWelcomeTemplate = require('./display/round/round.welcome.json');
+const rectangleGenericTemplate = require('../display/rectangle/rectangle.general.json');
+const roundGenericTemplate = require('../display/round/round.general.json');
+const rectangleWelcomeTemplate = require('../display/rectangle/rectangle.welcome.json');
+const roundWelcomeTemplate = require('../display/round/round.welcome.json');
 
 const displayDirective = 'Alexa.Presentation.APL.RenderDocument';
-const speakText = require('./content/constants.json');
+const speakText = require('../content/constants.json');
 
 const { repeatText } = speakText;
-const assets = require('./content/assets.json');
+const assets = require('../content/assets.json');
 
-const configData = require('../config.json');
+const configData = require('../../config.json');
 
-const randData = require('./content/hint.content.json');
+const randData = require('../content/hint.content.json');
 
 const { randomHint } = randData;
 

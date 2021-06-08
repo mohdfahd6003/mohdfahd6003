@@ -8,7 +8,7 @@ const {
     assets,
     speakText,
     renderGeneralFunction,
-} = require('../../common/util');
+} = require('../../common/utils/util');
 
 const helloImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['hello.control']
