@@ -6,7 +6,7 @@ const zipkin = require('zipkin');
 
 const CLSContext = require('zipkin-context-cls');
 
-const ctxImpl = new CLSContext(); // if you want to use CLS(continuation-local-storage)
+const ctxImpl = new CLSContext();
 const config = require('../config');
 
 let requestIp;
@@ -16,11 +16,11 @@ let userId;
 let fileName;
 
 const tracer = new zipkin.Tracer({
-    ctxImpl, // the in-process context
-    recorder: new zipkin.ConsoleRecorder(), // For easy debugging.
-    sampler: new zipkin.sampler.CountingSampler(0.01), // sample rate 0.01 will sample 1 % of all incoming requests
-    traceId128Bit: true, // to generate 128-bit trace IDs. 64-bit (false) is default
-    localServiceName: config.appname, // name of this application //config.appname
+    ctxImpl,
+    recorder: new zipkin.ConsoleRecorder(),
+    sampler: new zipkin.sampler.CountingSampler(0.01),
+    traceId128Bit: true,
+    localServiceName: config.appname,
 });
 
 const myFormat = printf(
