@@ -2,13 +2,11 @@ const {
     ControlHandler,
     waitForDebugger,
     TestInput,
-    AmazonIntent,
     SkillTester
 } = require('ask-sdk-controls');
 
 const {describe,test} = require('mocha');
-
-const sinon = require('sinon');
+const {expect} = require('chai');
 
 const {RootManager} = require('../src/index');
 
@@ -24,7 +22,11 @@ waitForDebugger();
 describe('dehydration  path',()=>{
     test('dehydration',async()=>{
         const tester = new SkillTester(new ControlHandler(new RootManager()));
-        await tester.testTurn('U: __',TestInput.launchRequest(),`A:${introText}`);
-        await tester.testTurn('U: dehydration',TestInput.intent('dehydrationIntent'), `A:${dehydrationText}`.trim());
+
+        const launchResponse = await tester.testTurn('U: __',TestInput.launchRequest(),`A:${introText}`);
+        expect(launchResponse.response.shouldEndSession).equals(false);
+
+        const dehydrationResponse = await tester.testTurn('U: dehydration',TestInput.intent('dehydrationIntent'), `A:${dehydrationText}`.trim());
+        expect(dehydrationResponse.response.shouldEndSession).equals(false);
     });
 });
