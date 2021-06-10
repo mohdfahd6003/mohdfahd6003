@@ -1,19 +1,11 @@
 const {
     ControlHandler,
-    ControlManager,
-    GeneralControlIntent,
-    SingleValueControlIntent,
-    Strings,
     AmazonIntent,
     waitForDebugger,
     testE2E,
     TestInput,
-    SkillTester,
-    IntentBuilder,
-    AmazonBuiltInSlotType,
 } = require('ask-sdk-controls');
-const { before, after, describe, test } = require('mocha');
-const sinon = require('sinon');
+const {describe, test } = require('mocha');
 const { RootManager } = require('../src/index');
 
 const speakText = require('../src/common/content/constants.json');
@@ -22,10 +14,9 @@ const {
     introText,
     bleedText,
     bleedYesText,
-    bleedNoText,
-    bleedNoSecondText,
-    bleedYesSecondText,
 } = speakText;
+
+waitForDebugger();
 
 describe('cutmyself e2e', () => {
     test('cut E2E', async () => {

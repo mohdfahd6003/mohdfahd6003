@@ -1,18 +1,11 @@
 const {
     ControlHandler,
-    ControlManager,
-    GeneralControlIntent,
-    SingleValueControlIntent,
-    Strings,
-    AmazonIntent,
     waitForDebugger,
     TestInput,
     SkillTester,
-    IntentBuilder,
-    AmazonBuiltInSlotType,
 } = require('ask-sdk-controls');
-const { before, after, describe, test } = require('mocha');
-const sinon = require('sinon');
+const {describe, test } = require('mocha');
+const {expect} = require('chai');
 const { RootManager } = require('../src/index');
 
 const speakText = require('../src/common/content/constants.json');
@@ -24,11 +17,15 @@ waitForDebugger();
 describe('warning signs of heart attack path', () => {
     test('heart attack', async () => {
         const tester = new SkillTester(new ControlHandler(new RootManager()));
-        await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
-        await tester.testTurn(
+
+        const launchResponse = await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
+        expect(launchResponse.response.shouldEndSession).equals(false);
+
+        const heartResponse = await tester.testTurn(
             'U: warning sings of a heart attack',
             TestInput.intent('heartWarningSignsIntent'),
             `A:${heartAttackText}`
         );
+        expect(heartResponse.response.shouldEndSession).equals(false);
     });
 });
