@@ -1,0 +1,16 @@
+{
+    "type": "Frame",
+    "width": "50%",
+    "height": "60%",
+    "position": "absolute",
+    "item": [
+        {
+            "type": "Text",
+            "width": "100%",
+            "height": "100%",
+            "text" : "${payload.content.bodyText}"
+        }
+    ],
+    "top": "40%",
+    "left": "5%"
+}
