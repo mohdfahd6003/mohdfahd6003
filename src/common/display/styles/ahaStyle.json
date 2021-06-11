@@ -1,0 +1,25 @@
+{
+    "rectHeader":
+    {
+        "values":[
+            {
+            "backgroundColor": "red"
+            }
+        ]
+    },
+    "rectFooter":
+    {
+        "description": "rectangle footer,  hint text",
+        "values":[
+            {
+                "fontFamily": "@fontFamilyRomanSerif"
+            }
+        ]
+    },
+    "roundFooter":{
+        "values":
+        {
+            "color": "blue"
+        }
+    }
+}

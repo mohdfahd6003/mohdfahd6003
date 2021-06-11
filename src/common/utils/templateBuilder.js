@@ -2,13 +2,16 @@ const roundHeader = require('../display/templates/round/header.round.json');
 const roundTitle = require('../display/templates/round/title.round.json');
 const roundImage = require('../display/templates/round/image.round.json');
 const roundMainText = require('../display/templates/round/mainText.round.json');
+const roundFooter = require('../display/templates/round/footer.round.json');
 
 const rectHeader = require('../display/templates/rectangle/header.rectangle.json');
 const rectTitle = require('../display/templates/rectangle/title.rectangle.json');
 const rectImage = require('../display/templates/rectangle/image.rectangle.json');
 const rectMainText = require('../display/templates/rectangle/mainText.rectangle.json');
+const rectBackground = require('../display/templates/rectangle/background.rectangle.json');
+const rectFooter = require('../display/templates/rectangle/footer.rectangle.json');
 
-const rectStyle = require('../display/styles/rectangle.json');
+const ahaStyle = require('../display/styles/ahaStyle.json');
 
 function generateDocument() {
     const document = {
@@ -36,7 +39,7 @@ function getImports() {
     ];
 }
 function getStyles() {
-    return rectStyle; /* {
+    return ahaStyle; /* {
         rectangleWelcomeStyles: {
             description: 'Basic styling for rectangle welcome screens',
             values: [
@@ -68,11 +71,12 @@ function getMainTemplate() {
 
 function getRectangleContainer() {
     const rectContainer = [];
+    rectContainer.push(getRectBackground());
     rectContainer.push(getRectMainImage());
     rectContainer.push(getRectHeader());
     rectContainer.push(getRectTitle());
     rectContainer.push(getRectMainText());
-
+    rectContainer.push(getRectFooter());
     return rectContainer;
 }
 
@@ -82,6 +86,7 @@ function getRoundContainer() {
     roundContainer.push(getRoundHeader());
     roundContainer.push(getRoundTitle());
     roundContainer.push(getRoundMainText());
+    roundContainer.push(getRoundFooter());
     return roundContainer;
 }
 
@@ -100,6 +105,10 @@ function getRoundMainText() {
     return roundMainText;
 }
 
+function getRoundFooter() {
+    return roundFooter;
+}
+
 function getRectHeader() {
     return rectHeader;
 }
@@ -113,5 +122,13 @@ function getRectMainImage() {
 
 function getRectMainText() {
     return rectMainText;
+}
+
+function getRectBackground() {
+    return rectBackground;
+}
+
+function getRectFooter() {
+    return rectFooter;
 }
 exports.generateDocument = generateDocument;
