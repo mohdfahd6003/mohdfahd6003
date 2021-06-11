@@ -22,8 +22,32 @@ function generateDocument() {
         mainTemplate: getMainTemplate(),
         settings: getAplConfig(),
         styles: getStyles(),
+        resources: getResources(),
     };
     return document;
+}
+
+function getResources() {
+    return [
+        {
+            when: '${viewport.width < 1200}',
+            string: {
+                resolution: '_20x20.jpeg',
+            },
+        },
+        {
+            when: '${viewport.width < 500}',
+            string: {
+                resolution: '.jpg',
+            },
+        },
+        {
+            when: '${viewport.width >= 1200}',
+            string: {
+                resolution: '.jpg',
+            },
+        },
+    ];
 }
 
 function getAplConfig() {

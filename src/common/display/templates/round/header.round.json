@@ -9,7 +9,7 @@
             "width": "100%",
             "height": "100%",
             "source":
-                "${payload.content.headerImage}"
+                "${payload.content.headerImage+@resolution}"
         }
     ],
     "left": "20%",

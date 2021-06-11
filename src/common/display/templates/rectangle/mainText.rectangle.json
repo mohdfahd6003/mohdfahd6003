@@ -5,11 +5,21 @@
     "position": "absolute",
     "item": [
         {
-            "type": "Text",
-            "width": "100%",
-            "height": "100%",
-            "text" : "${payload.content.bodyText}"
+            "type":"ScrollView",
+            "item":{
+                "type": "Text",
+                    "width": "100%",
+                    "height": "100%",
+                    "style": "rectMainText",
+                    "text" : "${payload.content.bodyText}"
+
+            },
+            "height":"100%",
+            "width":"100%",
+            "style":"rectScroll"
+
         }
+        
     ],
     "top": "40%",
     "left": "5%"
