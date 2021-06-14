@@ -2,8 +2,6 @@ const { waitForDebugger } = require('ask-sdk-controls');
 
 const { describe, test } = require('mocha');
 
-const { RootManager } = require('../src/index');
-
 const speakText = require('../src/common/content/constants.json');
 
 const { testIntentRequest, testLaunchRequest } = require('./util.js');
@@ -14,13 +12,8 @@ waitForDebugger();
 
 describe('nose bleed path', () => {
     test('nose bleed', async () => {
-        await testLaunchRequest(RootManager, introText);
+        await testLaunchRequest(introText);
 
-        await testIntentRequest(
-            RootManager,
-            'noseIntent',
-            'How do I stop a Nose Bleed?',
-            noseBleedingText
-        );
+        await testIntentRequest('noseIntent', 'How do I stop a Nose Bleed?', noseBleedingText);
     });
 });

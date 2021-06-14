@@ -2,12 +2,13 @@ const { ControlHandler, TestInput, SkillTester } = require('ask-sdk-controls');
 
 const { expect } = require('chai');
 
+const { RootManager } = require('../src/index.js');
+
 /**
  *
- * @param {Constructor} RootManager Control Manager
  * @param {String} speakText expected alexa response
  */
-async function testLaunchRequest(RootManager, speakText) {
+async function testLaunchRequest(speakText) {
     const tester = new SkillTester(new ControlHandler(new RootManager()));
 
     const launchResponse = await tester.testTurn(
@@ -20,12 +21,11 @@ async function testLaunchRequest(RootManager, speakText) {
 
 /**
  *
- * @param {Constructor} RootManager Control Manager
  * @param {String/Built-in Intent name } intentName name of the intent
  * @param {String} inputText input text to trigger intent
  * @param {String} speakText expected alexa response
  */
-async function testIntentRequest(RootManager, intentName, inputText, speakText) {
+async function testIntentRequest(intentName, inputText, speakText) {
     const tester = new SkillTester(new ControlHandler(new RootManager()));
 
     const intentResponse = await tester.testTurn(
