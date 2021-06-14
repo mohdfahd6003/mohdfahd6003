@@ -1,19 +1,16 @@
 const Alexa = require('ask-sdk-core');
 
-const rectangleGenericTemplate = require('./display/rectangle/rectangle.general.json');
-const roundGenericTemplate = require('./display/round/round.general.json');
-const rectangleWelcomeTemplate = require('./display/rectangle/rectangle.welcome.json');
-const roundWelcomeTemplate = require('./display/round/round.welcome.json');
-
 const displayDirective = 'Alexa.Presentation.APL.RenderDocument';
-const speakText = require('./content/constants.json');
+const speakText = require('../content/constants.json');
 
 const { repeatText } = speakText;
-const assets = require('./content/assets.json');
+const assets = require('../content/assets.json');
 
-const configData = require('../config.json');
+const configData = require('../../config.json');
 
-const randData = require('./content/hint.content.json');
+const randData = require('../content/hint.content.json');
+
+const { generateDocument } = require('./templateBuilder');
 
 const { randomHint } = randData;
 
@@ -58,17 +55,6 @@ function getShape(input) {
         return shape;
     }
 }
-function getDisplayTemplate(input, iswelcome) {
-    const shape = getShape(input);
-    const isRound = shape === 'ROUND';
-    if (iswelcome) {
-        if (isRound) return roundWelcomeTemplate;
-        else return rectangleWelcomeTemplate;
-    } else {
-        if (isRound) return roundGenericTemplate;
-        else return rectangleGenericTemplate;
-    }
-}
 
 function renderGeneralFunction(
     input,
@@ -85,7 +71,7 @@ function renderGeneralFunction(
     if (
         Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)['Alexa.Presentation.APL']
     ) {
-        const displayTemplate = getDisplayTemplate(input, iswelcome);
+        const displayTemplate = generateDocument();
         const dataTemplate = prepareScreenContent(title, bodyText, mainImage);
         responseBuilder.addDirective({
             type: displayDirective,
@@ -97,7 +83,7 @@ function renderGeneralFunction(
     return responseBuilder;
 }
 
-const displayTemplate = rectangleGenericTemplate;
+const displayTemplate = {};
 
 module.exports = {
     prepareScreenContent,

@@ -2,7 +2,7 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const { configData, assets, renderGeneralFunction } = require('../../common/util');
+const { configData, assets, renderGeneralFunction } = require('../../common/utils/util');
 
 const heartData = require('../../common/content/heart.content.json');
 

@@ -23,7 +23,7 @@ const {
 const SinglePathContainer = require('./containers/singlepath.container');
 const MultiPathContainer = require('./containers/multipath.container');
 
-const { assets, configData, renderGeneralFunction } = require('./common/util');
+const { assets, configData, renderGeneralFunction } = require('./common/utils/util');
 
 const stopData = require('./common/content/stop.content.json');
 
