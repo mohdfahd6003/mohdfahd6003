@@ -1,14 +1,9 @@
-const {
-    ControlHandler,
-    AmazonIntent,
-    waitForDebugger,
-    TestInput,
-    SkillTester,
-} = require('ask-sdk-controls');
-const {describe, test } = require('mocha');
-const {expect} = require('chai');
+const { AmazonIntent, waitForDebugger } = require('ask-sdk-controls');
+const { describe, test } = require('mocha');
 
 const { RootManager } = require('../src/index');
+
+const { testIntentRequest, testLaunchRequest } = require('./util.js');
 
 const speakText = require('../src/common/content/constants.json');
 
@@ -25,69 +20,28 @@ waitForDebugger();
 
 describe('cutmyself path', () => {
     test('cut path yes', async () => {
-        const tester = new SkillTester(new ControlHandler(new RootManager()));
+        await testLaunchRequest(RootManager, introText);
 
-        const launchResponse = await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
-        expect(launchResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest(RootManager, 'bleedIntent', 'I cut myself', bleedText);
 
-        const cutResponse = await tester.testTurn(
-            'U: I cut myself',
-            TestInput.intent('bleedIntent'),
-            `A:${bleedText}`.trim()
-        );
-        expect(cutResponse.response.shouldEndSession).equals(false);
-
-        const cutResponseYes = await tester.testTurn(
-            'U: yes',
-            TestInput.intent(AmazonIntent.YesIntent),
-            `A:${bleedYesText}`
-        );
-        expect(cutResponseYes.response.shouldEndSession).equals(false);
+        await testIntentRequest(RootManager, AmazonIntent.YesIntent, 'yes', bleedYesText);
     });
     test('cut path no yes', async () => {
-        const tester = new SkillTester(new ControlHandler(new RootManager()));
+        await testLaunchRequest(RootManager, introText);
 
-        const launchResponse = await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
-        expect(launchResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest(RootManager, 'bleedIntent', 'I cut myself', bleedText);
 
-        const cutResponse = await tester.testTurn(
-            'U: I cut myself',
-            TestInput.intent('bleedIntent'),
-            `A:${bleedText}`.trim()
-        );
-        expect(cutResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest(RootManager, AmazonIntent.NoIntent, 'no', bleedNoText);
 
-        const cutResponseNo = await tester.testTurn('U: no', TestInput.intent(AmazonIntent.NoIntent), `A:${bleedNoText}`);
-        expect(cutResponseNo.response.shouldEndSession).equals(false);
-
-        const cutResponseNoYes = await tester.testTurn(
-            'U: yes',
-            TestInput.intent(AmazonIntent.YesIntent),
-            `A:${bleedYesSecondText}`.trim()
-        );
-        expect(cutResponseNoYes.response.shouldEndSession).equals(false);
+        await testIntentRequest(RootManager, AmazonIntent.YesIntent, 'yes', bleedYesSecondText);
     });
     test('cut path no no', async () => {
-        const tester = new SkillTester(new ControlHandler(new RootManager()));
+        await testLaunchRequest(RootManager, introText);
 
-        const launchResponse = await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
-        expect(launchResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest(RootManager, 'bleedIntent', 'I cut myself', bleedText);
 
-        const cutResponse = await tester.testTurn(
-            'U: I cut myself',
-            TestInput.intent('bleedIntent'),
-            `A:${bleedText}`.trim()
-        );
-        expect(cutResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest(RootManager, AmazonIntent.NoIntent, 'no', bleedNoText);
 
-        const cutResponseNo = await tester.testTurn('U: no', TestInput.intent(AmazonIntent.NoIntent), `A:${bleedNoText}`);
-        expect(cutResponseNo.response.shouldEndSession).equals(false);
-
-        const cutResponseNoNo = await tester.testTurn(
-            'U: no',
-            TestInput.intent(AmazonIntent.NoIntent),
-            `A:${bleedNoSecondText}`.trim()
-        );
-        expect(cutResponseNoNo.response.shouldEndSession).equals(false);
+        await testIntentRequest(RootManager, AmazonIntent.NoIntent, 'no', bleedNoSecondText);
     });
 });

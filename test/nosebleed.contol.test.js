@@ -1,32 +1,26 @@
-const {
-    ControlHandler,
-    waitForDebugger,
-    TestInput,
-    SkillTester
-} = require('ask-sdk-controls');
+const { waitForDebugger } = require('ask-sdk-controls');
 
-const {describe,test} = require('mocha');
-const {expect} = require('chai');
+const { describe, test } = require('mocha');
 
-const {RootManager} = require('../src/index');
+const { RootManager } = require('../src/index');
 
 const speakText = require('../src/common/content/constants.json');
 
-const {
-    introText,
-    noseBleedingText
-} = speakText;
+const { testIntentRequest, testLaunchRequest } = require('./util.js');
+
+const { introText, noseBleedingText } = speakText;
 
 waitForDebugger();
 
-describe('nose bleed path',()=>{
-    test('nose bleed',async()=>{
-        const tester = new SkillTester(new ControlHandler(new RootManager()));
+describe('nose bleed path', () => {
+    test('nose bleed', async () => {
+        await testLaunchRequest(RootManager, introText);
 
-        const launchResponse = await tester.testTurn('U: __',TestInput.launchRequest(),`A:${introText}`);
-        expect(launchResponse.response.shouldEndSession).equals(false);
-
-        const noseBleedResponse = await tester.testTurn('U: How do I stop a Nose Bleed?',TestInput.intent('noseIntent'), `A:${noseBleedingText}`.trim());
-        expect(noseBleedResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest(
+            RootManager,
+            'noseIntent',
+            'How do I stop a Nose Bleed?',
+            noseBleedingText
+        );
     });
 });
