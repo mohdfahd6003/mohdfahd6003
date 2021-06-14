@@ -4,10 +4,6 @@ const { expect } = require('chai');
 
 const { RootManager } = require('../src/index.js');
 
-/**
- *
- * @param {String} speakText expected alexa response
- */
 async function testLaunchRequest(speakText) {
     const tester = new SkillTester(new ControlHandler(new RootManager()));
 
@@ -19,12 +15,6 @@ async function testLaunchRequest(speakText) {
     expect(launchResponse.response.shouldEndSession).equals(false);
 }
 
-/**
- *
- * @param {String/Built-in Intent name } intentName name of the intent
- * @param {String} inputText input text to trigger intent
- * @param {String} speakText expected alexa response
- */
 async function testIntentRequest(intentName, inputText, speakText) {
     const tester = new SkillTester(new ControlHandler(new RootManager()));
 

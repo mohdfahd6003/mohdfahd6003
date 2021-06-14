@@ -10,8 +10,7 @@
         "poison.control": "images/Warning_Signs.jpg",
         "stroke.control": "images/ASA_FAST_Warning_Signs.jpg",
         "background": "images/Background.jpg",
-        "headerImage":"images/AHA_ASA_Masterbrand.jpg",
-        "choke.control.main": "images/Chest_Thrust_AdultFloor.jpg"
+        "headerImage":"images/AHA_ASA_Masterbrand",        "choke.control.main": "images/Chest_Thrust_AdultFloor.jpg"
     },
     "Audio":{
         "learncpr.control": "audio/110-BPM-Metronome-short.mp3"

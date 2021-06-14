@@ -1,0 +1,17 @@
+{
+    "type":"Frame",
+    "height":"10%",
+    "width": "100%",
+    "item":[ 
+        {
+            "type":"Text",
+            "text": "${payload.content.properties.transformedHintText}",
+            "style": "rectFooter"
+        }
+   
+    ],
+    "position":"absolute",
+    "top":"90%",
+    "left": "5%"
+
+}

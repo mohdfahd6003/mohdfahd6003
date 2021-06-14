@@ -2,7 +2,7 @@ const { waitForDebugger } = require('ask-sdk-controls');
 
 const { describe, test } = require('mocha');
 
-const { configData, assets } = require('../src/common/util.js');
+const { configData, assets } = require('../src/common/utils/util.js');
 const { testIntentRequest, testLaunchRequest } = require('./util.js');
 
 const { introText } = require('../src/common/content/constants.json');
