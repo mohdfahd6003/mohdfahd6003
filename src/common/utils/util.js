@@ -55,17 +55,6 @@ function getShape(input) {
         return shape;
     }
 }
-/* function getDisplayTemplate(input, iswelcome) {
-    const shape = getShape(input);
-    const isRound = shape === 'ROUND';
-    if (iswelcome) {
-        if (isRound) return roundWelcomeTemplate;
-        else return rectangleWelcomeTemplate;
-    } else {
-        if (isRound) return roundGenericTemplate;
-        else return rectangleGenericTemplate;
-    }
-} */
 
 function renderGeneralFunction(
     input,
@@ -76,14 +65,12 @@ function renderGeneralFunction(
     bodyText,
     iswelcome = false
 ) {
-    console.log('third');
     responseBuilder.addPromptFragment(primaryText);
     responseBuilder.addRepromptFragment(repeatText);
     responseBuilder.withStandardCard(title, bodyText, mainImage, mainImage);
     if (
         Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)['Alexa.Presentation.APL']
     ) {
-        // const displayTemplate = getDisplayTemplate(input, iswelcome);
         const displayTemplate = generateDocument();
         const dataTemplate = prepareScreenContent(title, bodyText, mainImage);
         responseBuilder.addDirective({
@@ -92,8 +79,6 @@ function renderGeneralFunction(
             datasources: dataTemplate,
         });
     }
-    console.log('response builder outout');
-    console.log(responseBuilder);
 
     return responseBuilder;
 }

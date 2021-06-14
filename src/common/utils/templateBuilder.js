@@ -63,16 +63,7 @@ function getImports() {
     ];
 }
 function getStyles() {
-    return ahaStyle; /* {
-        rectangleWelcomeStyles: {
-            description: 'Basic styling for rectangle welcome screens',
-            values: [
-                {
-                    color: 'blue',
-                },
-            ],
-        },
-    }; */
+    return ahaStyle;
 }
 function getMainTemplate() {
     const mainTemplate = {
