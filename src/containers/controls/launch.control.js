@@ -2,13 +2,7 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const {
-    prepareScreenContent,
-    configData,
-    assets,
-    speakText,
-    sendResponse,
-} = require('../../common/utils/util');
+const { configData, assets, speakText, sendResponse } = require('../../common/utils/util');
 
 const helloImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['hello.control']

@@ -1,4 +1,4 @@
-const { ContainerControl, ContainerControlState, InputUtil } = require('ask-sdk-controls');
+const { ContainerControl, ContainerControlState } = require('ask-sdk-controls');
 
 const HelloControl = require('./controls/launch.control.js');
 const LearnCPRControl = require('./controls/learncpr.control.js');
