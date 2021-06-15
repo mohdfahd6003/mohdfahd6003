@@ -9,3 +9,5 @@ function getRandomInt() {
 function getRandomHint() {
     return randomHint[getRandomInt()];
 }
+
+module.exports = { getRandomHint };

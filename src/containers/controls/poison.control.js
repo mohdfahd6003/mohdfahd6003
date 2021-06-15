@@ -2,7 +2,7 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const { configData, assets, renderGeneralFunction } = require('../../common/utils/util');
+const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const poisonImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['poison.control']
@@ -19,7 +19,7 @@ class PoisoningRequestAct extends RequestValueAct {
     }
 
     render(input, responseBuilder) {
-        responseBuilder = renderGeneralFunction(
+        responseBuilder = sendResponse(
             input,
             responseBuilder,
             this.speakText,

@@ -7,7 +7,7 @@ const {
     configData,
     assets,
     speakText,
-    renderGeneralFunction,
+    sendResponse,
 } = require('../../common/utils/util');
 
 const helloImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
@@ -20,7 +20,7 @@ const { logger } = require('../../logging/logger');
 
 class WelcomeAct extends RequestValueAct {
     render(input, responseBuilder) {
-        responseBuilder = renderGeneralFunction(
+        responseBuilder = sendResponse(
             input,
             responseBuilder,
             introText,
@@ -41,11 +41,11 @@ class HelloControl extends Control {
             logger.log({
                 level: 'info',
                 message: 'Inside launch',
-                requestId: input.request.requestId,
-                intentType: input.request.type,
-                intentName: 'None',
-                locale: input.request.locale,
-                timestamp: input.request.timestamp,
+                // requestId: input.request.requestId,
+                // intentType: input.request.type,
+                // intentName: 'None',
+                // locale: input.request.locale,
+                // timestamp: input.request.timestamp,
             });
             return true;
         }

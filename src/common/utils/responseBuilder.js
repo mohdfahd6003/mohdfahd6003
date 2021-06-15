@@ -36,7 +36,7 @@ function prepareScreenContent(primaryText, bodyText, mainImage) {
     return dataTemplate;
 }
 
-function renderGeneralFunction(
+function sendResponse(
     input,
     responseBuilder,
     primaryText,
@@ -64,7 +64,7 @@ function renderGeneralFunction(
 }
 
 module.exports = {
-    renderGeneralFunction,
+    sendResponse,
     prepareScreenContent,
     assets,
     displayDirective,

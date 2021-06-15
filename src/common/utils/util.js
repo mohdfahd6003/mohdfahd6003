@@ -1,5 +1,5 @@
 const {
-    renderGeneralFunction,
+    sendResponse,
     prepareScreenContent,
     assets,
     displayDirective,
@@ -30,5 +30,5 @@ module.exports = {
     repeatText,
     configData,
     assets,
-    renderGeneralFunction,
+    sendResponse,
 };

@@ -40,12 +40,12 @@ function getMainTemplate() {
             {
                 type: 'Container',
                 when: "${viewport.shape == 'rectangle'}",
-                item: layouts.getRectangleContainer(),
+                item: layouts.getRectangleLayout(),
             },
             {
                 type: 'Container',
                 when: "${viewport.shape == 'round'}",
-                item: layouts.getRoundContainer(),
+                item: layouts.getRoundLayout(),
             },
         ],
     };
