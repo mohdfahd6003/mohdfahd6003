@@ -1,49 +1,27 @@
-const {
-    ControlHandler,
-    waitForDebugger,
-    TestInput,
-    AmazonIntent,
-    SkillTester
-} = require('ask-sdk-controls');
+const { waitForDebugger, AmazonIntent } = require('ask-sdk-controls');
 
-const {describe,test} = require('mocha');
-const {expect} = require('chai');
+const { describe, test } = require('mocha');
+const { testIntentRequest, testLaunchRequest } = require('./util.js');
 
-const {RootManager} = require('../src/index');
 const speakText = require('../src/common/content/constants.json');
 
-const {
-    introText,
-    burnText,
-    burnNoText,
-    burnYesText
-} = speakText;
+const { introText, burnText, burnNoText, burnYesText } = speakText;
 
 waitForDebugger();
 
-describe('burn path',()=>{
-    test('burn path yes',async()=>{
-        const tester = new SkillTester(new ControlHandler(new RootManager()));
+describe('burn path', () => {
+    test('burn path yes', async () => {
+        await testLaunchRequest(introText);
 
-        const launchResponse = await tester.testTurn('U: __',TestInput.launchRequest(),`A:${introText}`);
-        expect(launchResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest('burnIntent', 'burning', burnText);
 
-        const burnResponse = await tester.testTurn('U: burning',TestInput.intent('burnIntent'), `A:${burnText}`);
-        expect(burnResponse.response.shouldEndSession).equals(false);
-
-        const burnYesResponse = await tester.testTurn('U: yes', TestInput.intent(AmazonIntent.YesIntent), `A:${burnYesText}`);
-        expect(burnYesResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest(AmazonIntent.YesIntent, 'burning', burnYesText);
     });
-    test('burn path no',async()=>{
-        const tester = new SkillTester(new ControlHandler(new RootManager()));
+    test('burn path no', async () => {
+        await testLaunchRequest(introText);
 
-        const launchResponse = await tester.testTurn('U: __',TestInput.launchRequest(),`A:${introText}`);
-        expect(launchResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest('burnIntent', 'burning', burnText);
 
-        const burnResponse = await tester.testTurn('U: burning',TestInput.intent('burnIntent'), `A:${burnText}`);
-        expect(burnResponse.response.shouldEndSession).equals(false);
-
-        const burnNoResponse = await tester.testTurn('U: no', TestInput.intent(AmazonIntent.NoIntent), `A:${burnNoText}.`);
-        expect(burnNoResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest(AmazonIntent.NoIntent, 'burning', burnNoText);
     });
 });

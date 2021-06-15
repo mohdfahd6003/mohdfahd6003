@@ -5,16 +5,12 @@ const {
     testE2E,
     TestInput,
 } = require('ask-sdk-controls');
-const {describe, test } = require('mocha');
+const { describe, test } = require('mocha');
 const { RootManager } = require('../src/index');
 
 const speakText = require('../src/common/content/constants.json');
 
-const {
-    introText,
-    bleedText,
-    bleedYesText,
-} = speakText;
+const { introText, bleedText, bleedYesText } = speakText;
 
 waitForDebugger();
 

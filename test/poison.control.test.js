@@ -1,14 +1,10 @@
-const {
-    ControlHandler,
-    waitForDebugger,
-    TestInput,
-    SkillTester,
-} = require('ask-sdk-controls');
-const {describe, test } = require('mocha');
-const {expect} = require('chai');
+const { waitForDebugger } = require('ask-sdk-controls');
 
-const { RootManager } = require('../src/index');
+const { describe, test } = require('mocha');
+
 const speakText = require('../src/common/content/constants.json');
+
+const { testIntentRequest, testLaunchRequest } = require('./util.js');
 
 const { introText, poisonText } = speakText;
 
@@ -16,16 +12,8 @@ waitForDebugger();
 
 describe('poisons path', () => {
     test('poisons attack', async () => {
-        const tester = new SkillTester(new ControlHandler(new RootManager()));
+        await testLaunchRequest(introText);
 
-        const launchResponse = await tester.testTurn('U: __', TestInput.launchRequest(), `A:${introText}`);
-        expect(launchResponse.response.shouldEndSession).equals(false);
-
-        const poisonResponse = await tester.testTurn(
-            'U: warning sings of a poisons',
-            TestInput.intent('poisonIntent'),
-            `A:${poisonText}`
-        );
-        expect(poisonResponse.response.shouldEndSession).equals(false);
+        await testIntentRequest('poisonIntent', 'warning sings of a poisons', poisonText);
     });
 });
