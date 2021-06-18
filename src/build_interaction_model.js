@@ -10,7 +10,6 @@ new ControlInteractionModelGenerator()
     .addIntent({ name: 'AMAZON.NavigateHomeIntent' })
     .addIntent({ name: 'AMAZON.HelpIntent' })
     .addIntent({ name: 'AMAZON.CancelIntent' })
-    .addIntent({ name: 'HelloIntent', samples: ['hello', 'hi', 'hey', 'hey there', 'hi there'] })
     .addIntent({
         name: 'heartWarningSignsIntent',
         samples: [
@@ -49,8 +48,8 @@ new ControlInteractionModelGenerator()
             'I have been cut. What shall I do',
             'I have cut myself with sharp object. What do I do',
             'Can you provide me help I have cut myself',
-            'tell me how to give fist aid for cut',
-            'learn about cut fist aid',
+            'tell me how to give first aid for cut',
+            'learn about cut first aid',
         ],
     })
     .addIntent({
