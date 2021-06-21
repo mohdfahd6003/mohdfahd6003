@@ -1,0 +1,32 @@
+env:
+  parameter-store:
+    AWS_ACCESS_KEY_ID: /skill-test/accesskey
+    AWS_SECRET_ACCESS_KEY: /skill-test/secretkey
+    ASK_VENDOR_ID: /skill-test/vendorid
+    ASK_REFRESH_TOKEN: /skill-test/refreshtoken
+phases:
+ install:
+   commands:
+      - npm install --silent --no-progress -g npm
+      - npm install --silent --no-progress -g ask-cli
+      - npm install --silent --no-progress
+      - npm install -g ask   
+ build:
+   commands:
+     - |-
+       if [ "$ENV_NAME" = "dev" ]; then
+       echo "$ssh_key" | base64 --decode > ~/.ssh/id_rsa;
+       chmod 400 ~/.ssh/id_rsa;       
+       git config --global url."git@bitbucket.org:".insteadOf https://bitbucket.org/;
+       git config --global url."git@bitbucket.org:".insteadOf https://sijos07@bitbucket.org/;
+       git config --global url."git@github.com:".insteadOf https://github.com/;
+       ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts;
+       ssh-keyscan github.com >> ~/.ssh/known_hosts;
+       git clone -b development git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git;
+       cd alexa-skill;
+       ask deploy;
+       cat .ask/ask-states.json;
+       fi
+ post_build:
+   commands:
+     - echo "post_build step"
