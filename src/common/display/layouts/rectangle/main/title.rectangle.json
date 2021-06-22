@@ -1,6 +1,6 @@
 {
     "type": "Container",
-    "width": "56.785vw",
+    "width": "56.785%",
     "items": [
         {
             "type": "Text",
@@ -11,5 +11,5 @@
         }
     ],
     "id": "rectTitleContainer",
-    "left": "6.25vw"
+    "left": "6.25%"
 }

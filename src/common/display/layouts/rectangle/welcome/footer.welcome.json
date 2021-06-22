@@ -1,15 +1,12 @@
 {
     "type": "Container",
-    "height": "12.5vh",
-    "width" : "100vw",
+    "paddingLeft": "6.25vw",
+    "paddingTop": "21.125vh",
     "items": [
         {
             "type": "Text",
             "text": "${payload.content.properties.transformedHintText}",
             "style": "footerText"
-            
         }
-    ],
-    "spacing": "4.5vh",
-    "left": "6.25vw"
+    ]
 }

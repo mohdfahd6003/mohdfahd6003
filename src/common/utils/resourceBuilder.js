@@ -8,7 +8,7 @@ function getResources() {
         },
         {
             when: '${viewport.width < 500}',
-            strestring: {
+            string: {
                 resolution: '.jpg',
             },
         },

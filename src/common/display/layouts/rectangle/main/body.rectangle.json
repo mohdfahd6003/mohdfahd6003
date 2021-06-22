@@ -1,0 +1,64 @@
+{
+    "type": "Container",
+    "width": "100%",
+    "height": "66%",
+    "items": [
+        {
+            "type": "Container",
+            "width": "56.785%",
+            "items": [
+                {
+                    "type": "Text",
+                    "opacity": 1,
+                    "text": "Warning signs of a heart attack",
+                    "fontSize": "@fontSizeXLarge",
+                    "color": "#FFFFFF",
+                    "fontWeight": "500",
+                    "textAlign": "left"
+                }
+            ],
+            "left": "6.25%"
+        },
+        {
+            "type": "Container",
+            "width": "100%",
+            "height": "100%",
+            "item": [
+                {
+                    "type": "ScrollView",
+                    "width": "63.125%",
+                    "height": "100%",
+                    "items": [
+                        {
+                            "type": "Text",
+                            "paddingLeft": "@marginHorizontal",
+                            "text": "Some heart attacks are sudden and intense, but most start slowly, with mild pain or discomfort. call your local emergency number right away if you have any of these heart attack warning signs. Chest discomfort: Most heart attacks involve discomfort in the center of the chest that lasts more than a few minutes, or that goes away and comes back. It can feel like uncomfortable pressure, squeezing, fullness or pain. Discomfort in other areas of the upper body. Symptoms can include pain or discomfort in one or both arms, the back, neck, jaw or stomach. Shortness of breath with or without chest discomfort. Other signs may include breaking out in a cold sweat, nausea or lightheadedness. Women also may experience other common symptoms, particularly shortness of breath, nausea, vomiting, and back or jaw pain. You can learn more at www.heart.org/warningsigns. This information is not a substitute for medical advice or treatment, and the A.H.A recommends consultation with your doctor or healthcare professional. Feel free",
+                            "fontWeight": "300",
+                            "textAlign": "left"
+                        }
+                    ]
+                },
+                {
+                    "type": "Frame",
+                    "width": "25.48%",
+                    "height": "100%",
+                    "position": "relative",
+                    "spacing": "4.83vw",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "width": "100%",
+                            "height": "100%",
+                            "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/During_a_Heart_Attack.jpg",
+                            "scale": "fill"
+                        }
+                    ]
+                }
+            ],
+            "direction": "row",
+            "spacing": "3.725vh"
+        }
+    ],
+    "direction": "column",
+    "spacing": "4.5vh"
+}

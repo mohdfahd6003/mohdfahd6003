@@ -11,6 +11,11 @@ const rectMainText = require('../display/layouts/rectangle/mainText.rectangle.js
 const rectBackground = require('../display/layouts/rectangle/background.rectangle.json');
 const rectFooter = require('../display/layouts/rectangle/footer.rectangle.json');
 
+const rectWelcomeHeader = require('../display/layouts/rectangle/welcome/header.welcome.json');
+const rectWelcomeTitle = require('../display/layouts/rectangle/welcome/title.welcome.json');
+const rectWelcomeBackground = require('../display/layouts/rectangle/welcome/background.welcome.json');
+const rectWelcomeFooter = require('../display/layouts/rectangle/welcome/footer.welcome.json');
+
 function getRoundHeader() {
     return roundHeader;
 }
@@ -53,18 +58,41 @@ function getRectFooter() {
     return rectFooter;
 }
 
-function getRectangleLayout() {
+function getWelcomeRectBackground() {
+    return rectWelcomeBackground;
+}
+
+function getWelcomeRectHeader() {
+    return rectWelcomeHeader;
+}
+
+function getWelcomeRectTitle() {
+    return rectWelcomeTitle;
+}
+
+function getWelcomeRectFooter() {
+    return rectWelcomeFooter;
+}
+
+function getRectangleLayout(isWelcome) {
     const rectMainLayout = [];
-    rectMainLayout.push(getRectBackground());
-    rectMainLayout.push(getRectMainImage());
-    rectMainLayout.push(getRectHeader());
-    rectMainLayout.push(getRectTitle());
-    rectMainLayout.push(getRectMainText());
-    rectMainLayout.push(getRectFooter());
+    if (isWelcome) {
+        rectMainLayout.push(getWelcomeRectBackground());
+        rectMainLayout.push(getWelcomeRectHeader());
+        rectMainLayout.push(getWelcomeRectTitle());
+        rectMainLayout.push(getWelcomeRectFooter());
+    } else {
+        rectMainLayout.push(getRectBackground());
+        rectMainLayout.push(getRectMainImage());
+        rectMainLayout.push(getRectHeader());
+        rectMainLayout.push(getRectTitle());
+        rectMainLayout.push(getRectMainText());
+        rectMainLayout.push(getRectFooter());
+    }
     return rectMainLayout;
 }
 
-function getRoundLayout() {
+function getRoundLayout(isWelcome) {
     const roundMainLayout = [];
     roundMainLayout.push(getRoundMainImage());
     roundMainLayout.push(getRoundHeader());

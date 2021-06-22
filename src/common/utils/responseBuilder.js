@@ -51,7 +51,7 @@ function sendResponse(
     if (
         Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)['Alexa.Presentation.APL']
     ) {
-        const displayTemplate = generateDocument();
+        const displayTemplate = generateDocument(iswelcome);
         const dataTemplate = prepareScreenContent(title, bodyText, mainImage);
         responseBuilder.addDirective({
             type: displayDirective,

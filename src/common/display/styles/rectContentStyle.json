@@ -1,0 +1,25 @@
+{
+    "backgroundFrame":
+    {
+        "opacity": 0.75,
+        "backgroundColor": "#222328"
+    },
+    "title":
+    {
+        "fontSize": "@fontSizeXLarge",
+        "color": "#FFFFFF",
+        "fontWeight": "500",
+        "textAlign": "left"
+    },
+    "mainText":{
+        "paddingLeft": "@marginHorizontal",
+        "fontWeight": "300",
+        "textAlign": "left"
+    },
+    "footerText":{
+        "fontStyle": "italic",
+        "fontSize": "@fontSizeMedium",
+        "fontFamily": "Bookerly",
+        "textAlign": "left"
+    }
+}
