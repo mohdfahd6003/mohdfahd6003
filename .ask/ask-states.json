@@ -1,0 +1,21 @@
+{
+    "askcliStatesVersion": "2020-03-31",
+    "profiles": {
+        "__ENVIRONMENT_ASK_PROFILE__": {
+            "skillId": "amzn1.ask.skill.94d0fde4-c3e8-4ca7-ae12-083ddde36482",
+            "skillInfrastructure": {
+                "@ask-cli/cfn-deployer": {
+                    "deployState": {
+                        "default": {
+                            "s3": {
+                                "bucket": "ask-alexa-skill-alexa-useast1-1623753562240",
+                                "key": "endpoint/build.zip"
+                            },
+                            "stackId": "arn:aws:cloudformation:us-east-1:790113021232:stack/ask-american-heart-association-default-skillStack-1623998157438/8bb50ac0-cfff-11eb-b96d-0e3caa6b31bf"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
