@@ -29,6 +29,3 @@ phases:
        ask deploy;
        cat .ask/ask-states.json;
        fi
- post_build:
-   commands:
-     - echo "post_build step"
