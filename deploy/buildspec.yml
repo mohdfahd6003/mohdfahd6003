@@ -25,7 +25,7 @@ phases:
        ssh-keyscan github.com >> ~/.ssh/known_hosts;
        git clone -b development git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git;
        cd alexa-skill;
-       mv ask-resources-code-build.json ask-resources.json
+       mv ask-resources-code-build.json ask-resources.json;
        ask deploy;
        cat .ask/ask-states.json;
        fi
