@@ -1,9 +1,9 @@
-const rectHeader = require('../display/layouts/rectangle/header.rectangle.json');
-const rectTitle = require('../display/layouts/rectangle/title.rectangle.json');
-const rectImage = require('../display/layouts/rectangle/image.rectangle.json');
-const rectMainText = require('../display/layouts/rectangle/mainText.rectangle.json');
-const rectBackground = require('../display/layouts/rectangle/background.rectangle.json');
-const rectFooter = require('../display/layouts/rectangle/footer.rectangle.json');
+const rectHeader = require('../display/layouts/rectangle/explain/header.rectangle.json');
+const rectTitle = require('../display/layouts/rectangle/explain/title.rectangle.json');
+const rectImage = require('../display/layouts/rectangle/explain/image.rectangle.json');
+const rectMainText = require('../display/layouts/rectangle/explain/mainText.rectangle.json');
+const rectBackground = require('../display/layouts/rectangle/explain/background.rectangle.json');
+const rectFooter = require('../display/layouts/rectangle/explain/footer.rectangle.json');
 
 const rectWelcomeHeader = require('../display/layouts/rectangle/welcome/header.welcome.json');
 const rectWelcomeBackground = require('../display/layouts/rectangle/welcome/background.welcome.json');
