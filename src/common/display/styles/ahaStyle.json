@@ -10,11 +10,27 @@
             }
         ]
     },
-    "main.welcome.text":{
-        "fontFamily": "@fontFamilyRomanSans",
-        "fontSize": "8.5vh",
-        "lineHeight": "@lineHeightNormal",
-        "letterSpacing": "@letterSpacingNormal",
-        "fontWeight": "400"
+    "welcomeText":{
+        "values":[
+            {
+                "fontFamily": "@fontFamilyRomanSans",
+                "fontSize": "8.5vh",
+                "lineHeight": "@lineHeightNormal",
+                "letterSpacing": "@letterSpacingNormal",
+                "fontWeight": "400"        
+
+            }
+        ]
+    },
+    "image.header":{
+        "values":[
+            {
+                "imageAlignment": "center",
+                "imageScale": "best-fit",
+                "imageAspectRatio": "widescreen"
+        
+
+            }
+        ]
     }
 }

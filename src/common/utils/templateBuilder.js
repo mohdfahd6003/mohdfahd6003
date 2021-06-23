@@ -47,13 +47,7 @@ function getMainTemplate(isWelcome) {
         items: [
             {
                 type: 'Container',
-                when: "${viewport.shape == 'rectangle'}",
                 item: layouts.getRectangleLayout(isWelcome),
-            },
-            {
-                type: 'Container',
-                when: "${viewport.shape == 'round'}",
-                item: layouts.getRoundLayout(isWelcome),
             },
         ],
     };

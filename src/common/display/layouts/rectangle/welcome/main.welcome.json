@@ -10,7 +10,7 @@
             "paddingLeft": "6.25vw",
             "paddingRight": "6.25vw",
             "text": "${payload.content.primaryText}",
-            "style":"main.welcome.text"
+            "style":"welcomeText"
         }
     ],
     "alignItems": "stretch",

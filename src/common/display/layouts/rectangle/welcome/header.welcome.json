@@ -8,11 +8,9 @@
         {
             "type": "AlexaImage",
             "id":"headerImageRect",
-            "imageAspectRatio": "widescreen",
             "height": "22.375vh",
             "width": "10.54687vw",
-            "imageAlignment": "center",
-            "imageScale": "best-fit",
+            "style":"image.header",
             "imageSource": "${payload.content.logo}"
         }
     ],
