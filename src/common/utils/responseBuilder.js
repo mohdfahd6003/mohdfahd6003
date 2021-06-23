@@ -7,34 +7,11 @@ const { generateDocument } = require('./templateBuilder');
 
 const assets = require('../content/assets.json');
 
-const { getRandomHint } = require('./hintBuilder');
+const dataBuilder = require('./dataBuilder');
 
 const displayDirective = 'Alexa.Presentation.APL.RenderDocument';
 
 const configData = require('../../config.json');
-
-function prepareScreenContent(primaryText, bodyText, mainImage) {
-    const dataTemplate = {};
-    dataTemplate.content = {};
-    dataTemplate.content.primaryText = primaryText;
-    dataTemplate.content.bodyText = bodyText;
-    dataTemplate.content.mainImage = mainImage;
-    dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-        assets.Images.headerImage
-    }`;
-    dataTemplate.content.background = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-        assets.Images.background
-    }`;
-    dataTemplate.content.properties = {};
-    dataTemplate.content.properties.hint = getRandomHint();
-    dataTemplate.content.transformers = [];
-    dataTemplate.content.transformers[0] = {
-        inputPath: 'hint',
-        outputName: 'transformedHintText',
-        transformer: 'textToHint',
-    };
-    return dataTemplate;
-}
 
 function sendResponse(
     input,
@@ -54,7 +31,12 @@ function sendResponse(
     ) {
         try {
             const displayTemplate = generateDocument(iswelcome);
-            const dataTemplate = prepareScreenContent(title, bodyText, mainImage);
+            const dataTemplate = dataBuilder.prepareScreenContent(
+                title,
+                bodyText,
+                mainImage,
+                iswelcome
+            );
             responseBuilder.addDirective({
                 type: displayDirective,
                 document: displayTemplate,
@@ -71,7 +53,6 @@ function sendResponse(
 
 module.exports = {
     sendResponse,
-    prepareScreenContent,
     assets,
     displayDirective,
     configData,

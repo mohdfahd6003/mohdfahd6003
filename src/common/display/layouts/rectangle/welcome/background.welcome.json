@@ -1,7 +1,7 @@
 {
     "type": "AlexaBackground",
     "backgroundColor": "#222328",
-    "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_bg.jpg",
+    "backgroundImageSource": "${payload.content.background}",
     "colorOverlay": true,
     "id": "backgroundRect"
 }
