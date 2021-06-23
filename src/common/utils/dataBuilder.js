@@ -13,6 +13,9 @@ function prepareScreenContent(primaryText, bodyText, mainImage, isWelcome) {
     dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
         assets.Images.headerImage
     }`;
+    dataTemplate.content.logo = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+        assets.Images.logo
+    }`;
     if (isWelcome) {
         dataTemplate.content.background = `https://${
             configData[process.env.ENVIRONMENT].cloudfront

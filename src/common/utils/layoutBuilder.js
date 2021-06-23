@@ -83,8 +83,6 @@ function getRectangleLayout(isWelcome) {
     isWelcome = true;
     if (isWelcome) {
         const rectRoot = getWelcomeRectRoot();
-        rectRoot.items = [];
-        console.log('rectRoot', rectRoot);
         rectRoot.items.push(getWelcomeRectBackground());
         rectRoot.items.push(getWelcomeRectHeader());
         rectRoot.items.push(getWelcomeRectMain());

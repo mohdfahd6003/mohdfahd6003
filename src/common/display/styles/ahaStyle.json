@@ -1,75 +1,4 @@
-{
-    "rectHeader":
-    {
-        "values":[
-            {
-            "backgroundColor": "red"
-            }
-        ]
-    },
-    "rectTitle":{
-        "description":"rectangle title text",
-        "values":[
-            {
-                "color":"yellow",
-                "fontSize": "60dp",
-                "letterSpacing":"0",
-                "lineHeight":"1.25",
-                "fontWeight": "normal",
-                "textAlign": "auto",
-                "fontFamily": "Amazon Ember",
-                "fontStyle": "normal"
-        
-            }
-        ]
-
-    },
-    "rectMainText":{
-        "description":"rectangle body text",
-        "values":[
-            {
-                "color":"blue",
-                "fontSize": "30dp",
-                "letterSpacing":"0",
-                "lineHeight":"1.25",
-                "fontWeight": "normal",
-                "textAlign": "auto",
-                "fontFamily": "Amazon Ember",
-                "fontStyle": "normal"
-        
-            }
-        ]
-    },
-    "rectScroll":{
-        "description":"rectangle scroll view",
-        "values":[
-            
-        ]
-
-    },
-    "rectFooter":
-    {
-        "description": "rectangle footer,  hint text",
-        "values":[
-            {
-                "fontFamily": "@fontFamilyRomanSerif",
-                "color":"white",
-                "fontSize":"30dp",
-                "letterSpacing":"0",
-                "lineHeight":"1.25",
-                "fontWeight": "normal",
-                "textAlign": "auto",
-                "fontStyle": "normal"
-            }
-        ]
-    },
-    "roundFooter":{
-        "values":
-        {
-            "color": "blue"
-        }
-    },
-    "logoContainer": {
+{  "logoContainer": {
         "values": [
             {
                 "when": "${@viewportShape == @viewportShapeRound}",
@@ -80,5 +9,12 @@
                 "justifyContent": "end"
             }
         ]
+    },
+    "main.welcome.text":{
+        "fontFamily": "@fontFamilyRomanSans",
+        "fontSize": "8.5vh",
+        "lineHeight": "@lineHeightNormal",
+        "letterSpacing": "@letterSpacingNormal",
+        "fontWeight": "400"
     }
 }

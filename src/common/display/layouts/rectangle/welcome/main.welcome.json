@@ -10,11 +10,7 @@
             "paddingLeft": "6.25vw",
             "paddingRight": "6.25vw",
             "text": "${payload.content.primaryText}",
-            "fontFamily": "@fontFamilyRomanSans",
-            "fontSize": "8.5vh",
-            "lineHeight": "@lineHeightNormal",
-            "letterSpacing": "@letterSpacingNormal",
-            "fontWeight": "400"
+            "style":"main.welcome.text"
         }
     ],
     "alignItems": "stretch",
