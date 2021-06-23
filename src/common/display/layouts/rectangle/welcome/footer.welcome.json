@@ -1,12 +1,7 @@
 {
-    "type": "Container",
-    "paddingLeft": "6.25vw",
-    "paddingTop": "21.125vh",
-    "items": [
-        {
-            "type": "Text",
-            "text": "${payload.content.properties.transformedHintText}",
-            "style": "footerText"
-        }
-    ]
+    "type": "AlexaFooter",
+    "when": "${@viewportShape == @viewportShapeRectangle}",
+    "hintText": "${payload.content.properties.transformedHintText}",
+    "theme": "dark",
+    "id": "footerRect"
 }

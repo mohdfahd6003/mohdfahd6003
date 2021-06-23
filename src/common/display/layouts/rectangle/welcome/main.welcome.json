@@ -1,0 +1,22 @@
+{
+    "type": "Container",
+    "width": "100vw",
+    "items": [
+        {
+            "type": "Text",
+            "textAlign": "left",
+            "height": "55vh",
+            "paddingTop": "13.0vh",
+            "paddingLeft": "6.25vw",
+            "paddingRight": "6.25vw",
+            "text": "${payload.content.primaryText}",
+            "fontFamily": "@fontFamilyRomanSans",
+            "fontSize": "8.5vh",
+            "lineHeight": "@lineHeightNormal",
+            "letterSpacing": "@letterSpacingNormal",
+            "fontWeight": "400"
+        }
+    ],
+    "alignItems": "stretch",
+    "justifyContent": "center"
+}

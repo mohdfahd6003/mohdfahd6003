@@ -32,6 +32,10 @@ function getImports() {
             name: 'alexa-styles',
             version: '1.2.0',
         },
+        {
+            name: 'alexa-viewport-profiles',
+            version: '1.2.0',
+        },
     ];
 }
 function getStyles() {

@@ -68,5 +68,17 @@
         {
             "color": "blue"
         }
+    },
+    "logoContainer": {
+        "values": [
+            {
+                "when": "${@viewportShape == @viewportShapeRound}",
+                "justifyContent": "center"
+            },
+            {
+                "when": "${@viewportShape == @viewportShapeRectangle}",
+                "justifyContent": "end"
+            }
+        ]
     }
 }

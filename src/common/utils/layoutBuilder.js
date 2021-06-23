@@ -12,9 +12,10 @@ const rectBackground = require('../display/layouts/rectangle/background.rectangl
 const rectFooter = require('../display/layouts/rectangle/footer.rectangle.json');
 
 const rectWelcomeHeader = require('../display/layouts/rectangle/welcome/header.welcome.json');
-const rectWelcomeTitle = require('../display/layouts/rectangle/welcome/title.welcome.json');
 const rectWelcomeBackground = require('../display/layouts/rectangle/welcome/background.welcome.json');
 const rectWelcomeFooter = require('../display/layouts/rectangle/welcome/footer.welcome.json');
+const rectWelcomeMain = require('../display/layouts/rectangle/welcome/main.welcome.json');
+const rectWelcomeRoot = require('../display/layouts/rectangle/welcome/rootLayout.welcome.json');
 
 function getRoundHeader() {
     return roundHeader;
@@ -66,21 +67,29 @@ function getWelcomeRectHeader() {
     return rectWelcomeHeader;
 }
 
-function getWelcomeRectTitle() {
-    return rectWelcomeTitle;
+function getWelcomeRectMain() {
+    return rectWelcomeMain;
 }
 
 function getWelcomeRectFooter() {
     return rectWelcomeFooter;
 }
 
+function getWelcomeRectRoot() {
+    return rectWelcomeRoot;
+}
 function getRectangleLayout(isWelcome) {
     const rectMainLayout = [];
+    isWelcome = true;
     if (isWelcome) {
-        rectMainLayout.push(getWelcomeRectBackground());
-        rectMainLayout.push(getWelcomeRectHeader());
-        rectMainLayout.push(getWelcomeRectTitle());
-        rectMainLayout.push(getWelcomeRectFooter());
+        const rectRoot = getWelcomeRectRoot();
+        rectRoot.items = [];
+        console.log('rectRoot', rectRoot);
+        rectRoot.items.push(getWelcomeRectBackground());
+        rectRoot.items.push(getWelcomeRectHeader());
+        rectRoot.items.push(getWelcomeRectMain());
+        rectRoot.items.push(getWelcomeRectFooter());
+        rectMainLayout.push(rectRoot);
     } else {
         rectMainLayout.push(getRectBackground());
         rectMainLayout.push(getRectMainImage());

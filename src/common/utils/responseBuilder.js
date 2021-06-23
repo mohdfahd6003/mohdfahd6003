@@ -48,16 +48,22 @@ function sendResponse(
     responseBuilder.addPromptFragment(primaryText);
     responseBuilder.addRepromptFragment(repeatText);
     responseBuilder.withStandardCard(title, bodyText, mainImage, mainImage);
+
     if (
         Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)['Alexa.Presentation.APL']
     ) {
-        const displayTemplate = generateDocument(iswelcome);
-        const dataTemplate = prepareScreenContent(title, bodyText, mainImage);
-        responseBuilder.addDirective({
-            type: displayDirective,
-            document: displayTemplate,
-            datasources: dataTemplate,
-        });
+        try {
+            const displayTemplate = generateDocument(iswelcome);
+            const dataTemplate = prepareScreenContent(title, bodyText, mainImage);
+            responseBuilder.addDirective({
+                type: displayDirective,
+                document: displayTemplate,
+                datasources: dataTemplate,
+            });
+            console.log('response', displayTemplate);
+        } catch (e) {
+            console.log('error', e);
+        }
     }
 
     return responseBuilder;

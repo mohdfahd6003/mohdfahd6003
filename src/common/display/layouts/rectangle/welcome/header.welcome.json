@@ -1,23 +1,21 @@
 {
     "type": "Container",
-    "width": "100%",
+    "width": "100vw",
+    "style": "logoContainer",
     "paddingTop": "7.5vh",
     "paddingRight": "6.25vw",
     "items": [
         {
-            "type": "Frame",
-            "width": "10.547vw",
-            "height": "22.35vh",
-            "items": [
-                {
-                    "type": "Image",
-                    "width": "100%",
-                    "height": "100%",
-                    "source": "${payload.content.headerImage+@resolution}",
-                    "scale": "fill"
-                }
-            ],
-            "left": "89.6vw"
+            "type": "AlexaImage",
+            "id":"headerImageRect",
+            "imageAspectRatio": "widescreen",
+            "height": "22.375vh",
+            "width": "10.54687vw",
+            "imageAlignment": "center",
+            "imageScale": "best-fit",
+            "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png"
         }
-    ]
+    ],
+    "direction": "row",
+    "id":"headerRectContainer"
 }

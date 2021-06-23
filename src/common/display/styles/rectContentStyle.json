@@ -21,5 +21,17 @@
         "fontSize": "@fontSizeMedium",
         "fontFamily": "Bookerly",
         "textAlign": "left"
+    },
+    "logoContainer": {
+        "values": [
+            {
+                "when": "${@viewportShape == @viewportShapeRound}",
+                "justifyContent": "center"
+            },
+            {
+                "when": "${@viewportShape == @viewportShapeRectangle}",
+                "justifyContent": "end"
+            }
+        ]
     }
 }
