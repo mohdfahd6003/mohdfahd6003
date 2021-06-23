@@ -1,339 +1,105 @@
 {
-    "document":{
-       "type":"APL",
-       "version":"1.6",
-       "description":"AHA alexa skill",
-       "import":[
-          {
-             "name":"alexa-styles",
-             "version":"1.2.0"
-          }
+   "document": {
+       "type": "APL",
+       "version": "1.6",
+       "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+       "settings": {},
+       "theme": "dark",
+       "import": [
+           {
+               "name": "alexa-styles",
+               "version": "1.2.0"
+           },
+           {
+               "name": "alexa-layouts",
+               "version": "1.3.0"
+           },
+           {
+               "name": "alexa-viewport-profiles",
+               "version": "1.2.0"
+           }
        ],
-       "mainTemplate":{
-          "parameters":[
-             "payload"
-          ],
-          "items":[
-             {
-                "type":"Container",
-                "when":"${viewport.shape == 'rectangle'}",
-                "item":[
+       "resources": [],
+       "styles": {
+           "logoContainer": {
+               "values": [
                    {
-                      "type":"Image",
-                      "height":"100%",
-                      "width":"100%",
-                      "source":"${payload.content.background}"
+                       "when": "${@viewportShape == @viewportShapeRound}",
+                       "justifyContent": "center"
                    },
                    {
-                      "type":"Frame",
-                      "width":"30%",
-                      "height":"30%",
-                      "position":"absolute",
-                      "item":[
-                         {
-                            "type":"Image",
-                            "width":"100%",
-                            "height":"100%",
-                            "source":"${payload.content.mainImage}"
-                         }
-                      ],
-                      "left":"60%",
-                      "top":"40%"
-                   },
-                   {
-                      "type":"Container",
-                      "width":"100%",
-                      "height":"15%",
-                      "position":"absolute",
-                      "item":[
-                         {
-                            "type":"Frame",
-                            "height":"100%",
-                            "width":"100%",
-                            "item":[
-                               {
-                                  "type":"Text",
-                                  "text":"American Heart Association"
-                               }
-                            ],
-                            "position":"absolute",
-                            "left":"0%",
-                            "style":"rectHeader"
-                         },
-                         {
-                            "type":"Frame",
-                            "width":"30%",
-                            "height":"100%",
-                            "item":[
-                               {
-                                  "type":"Image",
-                                  "width":"100%",
-                                  "height":"100%",
-                                  "source":"${payload.content.headerImage+@resolution}"
-                               }
-                            ],
-                            "position":"absolute",
-                            "left":"70%"
-                         }
-                      ],
-                      "left":"0%",
-                      "top":"0%"
-                   },
-                   {
-                      "type":"Frame",
-                      "width":"100%",
-                      "height":"10%",
-                      "position":"absolute",
-                      "item":[
-                         {
-                            "type":"Text",
-                            "width":"100%",
-                            "height":"100%",
-                            "text":"${payload.content.primaryText}",
-                            "style":"rectTitle"
-                         }
-                      ],
-                      "top":"20%",
-                      "left":"5%"
-                   },
-                   {
-                      "type":"Frame",
-                      "width":"50%",
-                      "height":"50%",
-                      "position":"absolute",
-                      "item":[
-                         {
-                            "type":"ScrollView",
-                            "item":{
-                               "type":"Text",
-                               "width":"100%",
-                               "height":"100%",
-                               "style":"rectMainText",
-                               "text":"${payload.content.bodyText}"
-                            },
-                            "height":"100%",
-                            "width":"100%",
-                            "style":"rectScroll"
-                         }
-                      ],
-                      "top":"40%",
-                      "left":"5%"
-                   },
-                   {
-                      "type":"Frame",
-                      "height":"10%",
-                      "width":"100%",
-                      "item":[
-                         {
-                            "type":"Text",
-                            "text":"${payload.content.properties.transformedHintText}",
-                            "style":"rectFooter"
-                         }
-                      ],
-                      "position":"absolute",
-                      "top":"90%",
-                      "left":"5%"
+                       "when": "${@viewportShape == @viewportShapeRectangle}",
+                       "justifyContent": "end"
                    }
-                ]
-             },
-             {
-                "type":"Container",
-                "when":"${viewport.shape == 'round'}",
-                "item":[
-                   {
-                      "type":"Frame",
-                      "width":"100%",
-                      "height":"100%",
-                      "position":"absolute",
-                      "item":[
-                         {
-                            "type":"Image",
-                            "width":"100%",
-                            "height":"100%",
-                            "overlayColor":"rgba(white,0.3)",
-                            "source":"${payload.content.mainImage}"
-                         }
-                      ],
-                      "left":"0%",
-                      "top":"0%"
-                   },
-                   {
-                      "type":"Frame",
-                      "width":"50%",
-                      "height":"15%",
-                      "position":"absolute",
-                      "item":[
-                         {
-                            "type":"Image",
-                            "width":"100%",
-                            "height":"100%",
-                            "source":"${payload.content.headerImage+@resolution}"
-                         }
-                      ],
-                      "left":"20%",
-                      "top":"5%"
-                   },
-                   {
-                      "type":"Frame",
-                      "width":"100%",
-                      "height":"10%",
-                      "position":"absolute",
-                      "item":[
-                         {
-                            "type":"Text",
-                            "width":"100%",
-                            "height":"100%",
-                            "text":"${payload.content.primaryText}"
-                         }
-                      ],
-                      "top":"30%",
-                      "left":"5%"
-                   },
-                   {
-                      "type":"Frame",
-                      "width":"100%",
-                      "height":"60%",
-                      "position":"absolute",
-                      "item":[
-                         {
-                            "type":"Text",
-                            "width":"100%",
-                            "height":"100%",
-                            "text":"${payload.content.bodyText}"
-                         }
-                      ],
-                      "top":"40%",
-                      "left":"5%"
-                   },
-                   {
-                      "type":"Frame",
-                      "width":"10%",
-                      "height":"10%",
-                      "position":"absolute",
-                      "item":[
-                         {
-                            "type":"TouchWrapper",
-                            "item":{
-                               "type":"Text",
-                               "text":"i",
-                               "style":"roundFooter"
-                            }
-                         }
-                      ],
-                      "left":"70%",
-                      "top":"23%"
-                   }
-                ]
-             }
-          ]
+               ]
+           }
        },
-       "settings":{
-          "supportsResizing":true
-       },
-       "styles":{
-          "rectHeader":{
-             "values":[
-                {
-                   "backgroundColor":"red"
-                }
-             ]
-          },
-          "rectTitle":{
-             "description":"rectangle title text",
-             "values":[
-                {
-                   "color":"yellow",
-                   "fontSize":"60dp",
-                   "letterSpacing":"0",
-                   "lineHeight":"1.25",
-                   "fontWeight":"normal",
-                   "textAlign":"auto",
-                   "fontFamily":"Amazon Ember",
-                   "fontStyle":"normal"
-                }
-             ]
-          },
-          "rectMainText":{
-             "description":"rectangle body text",
-             "values":[
-                {
-                   "color":"blue",
-                   "fontSize":"30dp",
-                   "letterSpacing":"0",
-                   "lineHeight":"1.25",
-                   "fontWeight":"normal",
-                   "textAlign":"auto",
-                   "fontFamily":"Amazon Ember",
-                   "fontStyle":"normal"
-                }
-             ]
-          },
-          "rectScroll":{
-             "description":"rectangle scroll view",
-             "values":[
-                
-             ]
-          },
-          "rectFooter":{
-             "description":"rectangle footer,  hint text",
-             "values":[
-                {
-                   "fontFamily":"@fontFamilyRomanSerif",
-                   "color":"white",
-                   "fontSize":"30dp",
-                   "letterSpacing":"0",
-                   "lineHeight":"1.25",
-                   "fontWeight":"normal",
-                   "textAlign":"auto",
-                   "fontStyle":"normal"
-                }
-             ]
-          },
-          "roundFooter":{
-             "values":{
-                "color":"blue"
-             }
-          }
-       },
-       "resources":[
-          {
-             "when":"${viewport.width < 1200}",
-             "string":{
-                "resolution":"_20x20.jpeg"
-             }
-          },
-          {
-             "when":"${viewport.width < 500}",
-             "strestring":{
-                "resolution":".jpg"
-             }
-          },
-          {
-             "when":"${viewport.width >= 1200}",
-             "string":{
-                "resolution":".jpg"
-             }
-          }
-       ]
-    },
-    "datasources":{
-       "content":{
-          "primaryText":"Warning signs of a heart attack",
-          "bodyText":"Some heart attacks are sudden and intense, but most start slowly, with mild pain or discomfort. call your local emergency number right away if you have any of these heart attack warning signs.Chest discomfort: Most heart attacks involve discomfort in the center of the chest that lasts more than a few minutes, or that goes away and comes back. It can feel like uncomfortable pressure, squeezing, fullness or pain. Discomfort in other areas of the upper body. Symptoms can include pain or discomfort in one or both arms, the back, neck, jaw or stomach. Shortness of breath with or without chest discomfort. Other signs may include breaking out in a cold sweat, nausea or lightheadedness. Women also may experience other common symptoms, particularly shortness of breath, nausea, vomiting, and back or jaw pain. You can learn more at www.heart.org/warningsigns. This information is not a substitute for medical advice or treatment, and the A.H.A recommends consultation with your doctor or healthcare professional. Feel free to ask about Warning Signs of a Stroke, How to Do CPR, or poisoning.",
-          "mainImage":"https://dtzf6dz2qpnrm.cloudfront.net/images/During_a_Heart_Attack.jpg",
-          "headerImage":"https://dtzf6dz2qpnrm.cloudfront.net/images/AHA_ASA_Masterbrand",
-          "background":"https://dtzf6dz2qpnrm.cloudfront.net/images/Background.jpg",
-          "properties":{
-             "hint":"Tell me what to do for choking"
-          },
-          "transformers":[
-             {
-                "inputPath":"hint",
-                "outputName":"transformedHintText",
-                "transformer":"textToHint"
-             }
-          ]
+       "mainTemplate": {
+           "0": "payload",
+           "items": [
+               {
+                   "type": "Container",
+                   "width": "100vw",
+                   "height": "100vh",
+                   "items": [
+                       {
+                           "type": "AlexaBackground",
+                           "backgroundColor": "#222328",
+                           "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_bg.jpg",
+                           "colorOverlay": true
+                       },
+                       {
+                           "type": "Container",
+                           "width": "100vw",
+                           "style": "logoContainer",
+                           "paddingTop": "7.5vh",
+                           "paddingRight": "6.25vw",
+                           "items": [
+                               {
+                                   "type": "AlexaImage",
+                                   "imageAspectRatio": "widescreen",
+                                   "height": "22.375vh",
+                                   "width": "10.54687vw",
+                                   "imageAlignment": "center",
+                                   "imageScale": "best-fit",
+                                   "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png"
+                               }
+                           ],
+                           "direction": "row"
+                       },
+                       {
+                           "type": "Container",
+                           "width": "100vw",
+                           "items": [
+                               {
+                                   "type": "Text",
+                                   "textAlign": "left",
+                                   "height": "55vh",
+                                   "paddingTop": "13.0vh",
+                                   "paddingLeft": "6.25vw",
+                                   "paddingRight": "6.25vw",
+                                   "text": "Welcome To American Heart Association",
+                                   "fontFamily": "@fontFamilyRomanSans",
+                                   "fontSize": "8.5vh",
+                                   "lineHeight": "@lineHeightNormal",
+                                   "letterSpacing": "@letterSpacingNormal",
+                                   "fontWeight": "400"
+                               }
+                           ],
+                           "alignItems": "stretch",
+                           "justifyContent": "center"
+                       },
+                       {
+                           "type": "AlexaFooter",
+                           "when": "${@viewportShape == @viewportShapeRectangle}",
+                           "hintText": "Try, 'Alexa, what are the warning signs of heart attack'",
+                           "theme": "dark"
+                       }
+                   ],
+                   "direction": "column"
+               }
+           ]
        }
-    },
-    "timeoutType":"SHORT"
- }
+   },
+   "datasources": {}
+}
