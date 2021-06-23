@@ -37,11 +37,11 @@ class HelloControl extends Control {
             logger.log({
                 level: 'info',
                 message: 'Inside launch',
-                // requestId: input.request.requestId,
-                // intentType: input.request.type,
-                // intentName: 'None',
-                // locale: input.request.locale,
-                // timestamp: input.request.timestamp,
+                requestId: input.request.requestId,
+                intentType: input.request.type,
+                intentName: 'None',
+                locale: input.request.locale,
+                timestamp: input.request.timestamp,
             });
             return true;
         }
