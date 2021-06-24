@@ -40,7 +40,7 @@
                 "fontSize": "4vh",
                 "lineHeight": "@lineHeightNormal",
                 "letterSpacing": "@letterSpacingNormal",
-                "color": "red",
+                "color": "#FFFFFF",
                 "fontWeight": "400",
                 "textAlign": "left"    
 
