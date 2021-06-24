@@ -2,7 +2,7 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const { configData, assets, renderGeneralFunction } = require('../../common/utils/util');
+const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const burnImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['burn.control']
@@ -21,7 +21,7 @@ class BurnActMain extends RequestValueAct {
     }
 
     render(input, resultBuilder) {
-        resultBuilder = renderGeneralFunction(
+        resultBuilder = sendResponse(
             input,
             resultBuilder,
             this.speakText,

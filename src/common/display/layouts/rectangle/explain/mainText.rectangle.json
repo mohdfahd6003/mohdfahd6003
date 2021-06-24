@@ -1,0 +1,14 @@
+{
+    "type": "ScrollView",
+    "width": "63.125%",
+    "height": "100%",
+    "id":"rectScrollView",
+    "items": [
+        {
+            "type": "Text",
+            "text": "${payload.content.bodyText}",
+            "id":"rectMainText",
+            "style":"mainText"
+        }
+    ]
+}

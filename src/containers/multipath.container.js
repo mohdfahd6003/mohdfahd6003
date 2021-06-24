@@ -1,9 +1,4 @@
-const {
-    ControlHandler,
-    ControlManager,
-    ContainerControl,
-    ContainerControlState,
-} = require('ask-sdk-controls');
+const { ContainerControl, ContainerControlState } = require('ask-sdk-controls');
 
 const BurnControl = require('./controls/burn.control');
 const ChokeControl = require('./controls/choke.control');

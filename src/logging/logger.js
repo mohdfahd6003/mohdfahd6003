@@ -39,14 +39,8 @@ const myFormat = printf(
         return `${timestamp} : ${timestampReq}: ${level}:${requestId}: ${sessionId} :${intentType} : ${intentName} : ${locale}- ${message}- traceeeee : traiceid -${tracer._sentinelTraceId.traceId}:spanId - ${tracer._sentinelTraceId.spanId}:parentSpantId : ${tracer._sentinelTraceId.parentSpanId}`;
     }
 );
-// :trace details -${tracer._sentinelTraceId.traceId}:${tracer._sentinelTraceId.spanId}:${tracer._sentinelTraceId.parentSpanId}
 
 exports.logger = createLogger({
-    format: combine(timestamp({ format: 'YYYY:MM:DD HH:mm:ss.SSS' }), myFormat),
-    transports: [
-        new transports.File({
-            filename: 'info.log',
-        }),
-        // new transports.Console(),
-    ],
+    // format: combine(timestamp({ format: 'YYYY:MM:DD HH:mm:ss.SSS' }), myFormat),
+    transports: [new transports.Console()],
 });

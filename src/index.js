@@ -23,7 +23,7 @@ const {
 const SinglePathContainer = require('./containers/singlepath.container');
 const MultiPathContainer = require('./containers/multipath.container');
 
-const { assets, configData, renderGeneralFunction } = require('./common/utils/util');
+const { assets, configData, sendResponse } = require('./common/utils/util');
 
 const stopData = require('./common/content/stop.content.json');
 
@@ -112,7 +112,7 @@ class RootContainer extends ContainerControl {
 
         class HelpContentAct extends LiteralContentAct {
             render(inputData, responseBuilder) {
-                responseBuilder = renderGeneralFunction(
+                responseBuilder = sendResponse(
                     input,
                     responseBuilder,
                     helpData.speakText,

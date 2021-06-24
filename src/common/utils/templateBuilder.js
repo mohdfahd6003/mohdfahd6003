@@ -1,53 +1,21 @@
-const roundHeader = require('../display/templates/round/header.round.json');
-const roundTitle = require('../display/templates/round/title.round.json');
-const roundImage = require('../display/templates/round/image.round.json');
-const roundMainText = require('../display/templates/round/mainText.round.json');
-const roundFooter = require('../display/templates/round/footer.round.json');
-
-const rectHeader = require('../display/templates/rectangle/header.rectangle.json');
-const rectTitle = require('../display/templates/rectangle/title.rectangle.json');
-const rectImage = require('../display/templates/rectangle/image.rectangle.json');
-const rectMainText = require('../display/templates/rectangle/mainText.rectangle.json');
-const rectBackground = require('../display/templates/rectangle/background.rectangle.json');
-const rectFooter = require('../display/templates/rectangle/footer.rectangle.json');
-
 const ahaStyle = require('../display/styles/ahaStyle.json');
 
-function generateDocument() {
+const layouts = require('./layoutBuilder');
+
+const { getResources } = require('./resourceBuilder');
+
+function generateDocument(isWelcome) {
     const document = {
         type: 'APL',
         version: '1.6',
         description: 'AHA alexa skill',
         import: getImports(),
-        mainTemplate: getMainTemplate(),
+        mainTemplate: getMainTemplate(isWelcome),
         settings: getAplConfig(),
         styles: getStyles(),
         resources: getResources(),
     };
     return document;
-}
-
-function getResources() {
-    return [
-        {
-            when: '${viewport.width < 1200}',
-            string: {
-                resolution: '_20x20.jpeg',
-            },
-        },
-        {
-            when: '${viewport.width < 500}',
-            string: {
-                resolution: '.jpg',
-            },
-        },
-        {
-            when: '${viewport.width >= 1200}',
-            string: {
-                resolution: '.jpg',
-            },
-        },
-    ];
 }
 
 function getAplConfig() {
@@ -57,7 +25,15 @@ function getAplConfig() {
 function getImports() {
     return [
         {
+            name: 'alexa-layouts',
+            version: '1.3.0',
+        },
+        {
             name: 'alexa-styles',
+            version: '1.2.0',
+        },
+        {
+            name: 'alexa-viewport-profiles',
             version: '1.2.0',
         },
     ];
@@ -65,85 +41,17 @@ function getImports() {
 function getStyles() {
     return ahaStyle;
 }
-function getMainTemplate() {
+function getMainTemplate(isWelcome) {
     const mainTemplate = {
         parameters: ['payload'],
         items: [
             {
                 type: 'Container',
-                when: "${viewport.shape == 'rectangle'}",
-                item: getRectangleContainer(),
-            },
-            {
-                type: 'Container',
-                when: "${viewport.shape == 'round'}",
-                item: getRoundContainer(),
+                item: layouts.getRectangleLayout(isWelcome),
             },
         ],
     };
     return mainTemplate;
 }
 
-function getRectangleContainer() {
-    const rectContainer = [];
-    rectContainer.push(getRectBackground());
-    rectContainer.push(getRectMainImage());
-    rectContainer.push(getRectHeader());
-    rectContainer.push(getRectTitle());
-    rectContainer.push(getRectMainText());
-    rectContainer.push(getRectFooter());
-    return rectContainer;
-}
-
-function getRoundContainer() {
-    const roundContainer = [];
-    roundContainer.push(getRoundMainImage());
-    roundContainer.push(getRoundHeader());
-    roundContainer.push(getRoundTitle());
-    roundContainer.push(getRoundMainText());
-    roundContainer.push(getRoundFooter());
-    return roundContainer;
-}
-
-function getRoundHeader() {
-    return roundHeader;
-}
-
-function getRoundTitle() {
-    return roundTitle;
-}
-function getRoundMainImage() {
-    return roundImage;
-}
-
-function getRoundMainText() {
-    return roundMainText;
-}
-
-function getRoundFooter() {
-    return roundFooter;
-}
-
-function getRectHeader() {
-    return rectHeader;
-}
-
-function getRectTitle() {
-    return rectTitle;
-}
-function getRectMainImage() {
-    return rectImage;
-}
-
-function getRectMainText() {
-    return rectMainText;
-}
-
-function getRectBackground() {
-    return rectBackground;
-}
-
-function getRectFooter() {
-    return rectFooter;
-}
 exports.generateDocument = generateDocument;

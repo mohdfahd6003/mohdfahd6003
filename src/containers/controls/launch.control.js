@@ -2,31 +2,27 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const {
-    prepareScreenContent,
-    configData,
-    assets,
-    speakText,
-    renderGeneralFunction,
-} = require('../../common/utils/util');
+const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const helloImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['hello.control']
 }`;
 
-const { introText } = speakText;
+const launchData = require('../../common/content/launch.content.json');
+
+const { title, primaryText, secondaryText, tertiaryText, speakText } = launchData;
 
 const { logger } = require('../../logging/logger');
 
 class WelcomeAct extends RequestValueAct {
     render(input, responseBuilder) {
-        responseBuilder = renderGeneralFunction(
+        responseBuilder = sendResponse(
             input,
             responseBuilder,
-            introText,
+            speakText,
             helloImage,
-            'welcome',
-            'What can I help you with?',
+            title,
+            primaryText + secondaryText + tertiaryText,
             true
         );
     }

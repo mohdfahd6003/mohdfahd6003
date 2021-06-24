@@ -2,7 +2,7 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const { speakText, renderGeneralFunction, assets, configData } = require('../../common/utils/util');
+const { speakText, sendResponse, assets, configData } = require('../../common/utils/util');
 
 const chokeData = require('../../common/content/choke.content.json');
 
@@ -22,7 +22,7 @@ class ChokeActMain extends RequestValueAct {
     }
 
     render(input, resultBuilder) {
-        resultBuilder = renderGeneralFunction(
+        resultBuilder = sendResponse(
             input,
             resultBuilder,
             this.speechText,

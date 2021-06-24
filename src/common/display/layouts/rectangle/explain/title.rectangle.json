@@ -1,0 +1,15 @@
+{
+    "type": "Container",
+    "width": "56.785%",
+    "items": [
+        {
+            "type": "Text",
+            "opacity": 1,
+            "text": "${payload.content.primaryText}",
+            "style": "title",
+            "id":"rectTitle"
+        }
+    ],
+    "id": "rectTitleContainer",
+    "left": "6.25%"
+}

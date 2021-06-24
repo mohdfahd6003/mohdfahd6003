@@ -2,7 +2,7 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
-const { configData, assets, renderGeneralFunction } = require('../../common/utils/util');
+const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const cutImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images['cut.control']
@@ -20,7 +20,7 @@ class CutRequestAct extends RequestValueAct {
     }
 
     render(input, responseBuilder) {
-        responseBuilder = renderGeneralFunction(
+        responseBuilder = sendResponse(
             input,
             responseBuilder,
             this.speakText,

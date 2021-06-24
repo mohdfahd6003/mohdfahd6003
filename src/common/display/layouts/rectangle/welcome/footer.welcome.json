@@ -1,0 +1,7 @@
+{
+    "type": "AlexaFooter",
+    "when": "${@viewportShape == @viewportShapeRectangle}",
+    "hintText": "${payload.content.properties.transformedHintText}",
+    "theme": "dark",
+    "id": "footerRect"
+}

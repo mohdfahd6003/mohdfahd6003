@@ -1,72 +1,36 @@
-{
-    "rectHeader":
-    {
-        "values":[
+{  "logoContainer": {
+        "values": [
             {
-            "backgroundColor": "red"
+                "when": "${@viewportShape == @viewportShapeRound}",
+                "justifyContent": "center"
+            },
+            {
+                "when": "${@viewportShape == @viewportShapeRectangle}",
+                "justifyContent": "end"
             }
         ]
     },
-    "rectTitle":{
-        "description":"rectangle title text",
+    "welcomeText":{
         "values":[
             {
-                "color":"yellow",
-                "fontSize": "60dp",
-                "letterSpacing":"0",
-                "lineHeight":"1.25",
-                "fontWeight": "normal",
-                "textAlign": "auto",
-                "fontFamily": "Amazon Ember",
-                "fontStyle": "normal"
-        
-            }
-        ]
+                "fontFamily": "@fontFamilyRomanSans",
+                "fontSize": "8.5vh",
+                "lineHeight": "@lineHeightNormal",
+                "letterSpacing": "@letterSpacingNormal",
+                "fontWeight": "400"        
 
+            }
+        ]
     },
-    "rectMainText":{
-        "description":"rectangle body text",
+    "image.header":{
         "values":[
             {
-                "color":"blue",
-                "fontSize": "30dp",
-                "letterSpacing":"0",
-                "lineHeight":"1.25",
-                "fontWeight": "normal",
-                "textAlign": "auto",
-                "fontFamily": "Amazon Ember",
-                "fontStyle": "normal"
+                "imageAlignment": "center",
+                "imageScale": "best-fit",
+                "imageAspectRatio": "widescreen"
         
-            }
-        ]
-    },
-    "rectScroll":{
-        "description":"rectangle scroll view",
-        "values":[
-            
-        ]
 
-    },
-    "rectFooter":
-    {
-        "description": "rectangle footer,  hint text",
-        "values":[
-            {
-                "fontFamily": "@fontFamilyRomanSerif",
-                "color":"white",
-                "fontSize":"30dp",
-                "letterSpacing":"0",
-                "lineHeight":"1.25",
-                "fontWeight": "normal",
-                "textAlign": "auto",
-                "fontStyle": "normal"
             }
         ]
-    },
-    "roundFooter":{
-        "values":
-        {
-            "color": "blue"
-        }
     }
 }
