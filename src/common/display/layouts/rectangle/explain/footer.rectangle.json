@@ -1,4 +1,5 @@
 {
-    "type": "Container",
-    "width" : "100vw"
+    "type": "AlexaFooter",
+    "hintText": "Try, 'Alexa, what are the warning signs of heart attack'",
+    "theme": "dark"
 }

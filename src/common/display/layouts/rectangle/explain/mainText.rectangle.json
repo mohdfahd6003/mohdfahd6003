@@ -1,14 +1,20 @@
 {
     "type": "ScrollView",
-    "width": "63.125%",
-    "height": "100%",
-    "id":"rectScrollView",
+    "width": "67.96875vw",
+    "height": "67vh",
     "items": [
         {
             "type": "Text",
-            "text": "${payload.content.bodyText}",
-            "id":"rectMainText",
-            "style":"mainText"
+            "paddingLeft": "6.25vw",
+            "paddingRight": "4.84375vw",
+            "text": "Some heart attacks are sudden and intense, but most slowly, with mild pain or discomfort. Call your local emergency number right away if you have any of these heart attack warning signs.<br><br> Other signs may include breaking out in a cold sweat, nausea or lightheadedness. Women also may experience other common symptoms, particularly shortness of breath, nausea, vomiting, and back or jaw pain. You can learn more at www.heart.org/warningsigns. This information is not a substitute for medical advice or treatment, and the A.H.A recommends consultation with your doctor or healthcare professional.",
+            "fontFamily": "@fontFamilyRomanSans",
+            "fontSize": "4vh",
+            "lineHeight": "@lineHeightNormal",
+            "letterSpacing": "@letterSpacingNormal",
+            "color": "#FFFFFF",
+            "fontWeight": "400",
+            "textAlign": "left"
         }
     ]
 }

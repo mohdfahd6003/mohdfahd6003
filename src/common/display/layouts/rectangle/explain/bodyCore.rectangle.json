@@ -1,0 +1,9 @@
+{
+        "type": "Container",
+        "height": "63.18vh",
+        "paddingRight": "4.84375vw",
+        "items": [],
+        "alignSelf": "auto",
+        "position": "relative",
+        "alignItems": "start"
+}

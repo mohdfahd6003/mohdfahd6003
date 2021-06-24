@@ -1,5 +1,6 @@
 {
-    "type": "Container",
-    "width": "100%",
-    "height": "100%"
+    "type": "AlexaBackground",
+    "backgroundColor": "#222328",
+    "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/During_a_Heart_Attack.jpg",
+    "colorOverlay": true
 }

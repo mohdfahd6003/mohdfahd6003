@@ -4,6 +4,10 @@ const rectImage = require('../display/layouts/rectangle/explain/image.rectangle.
 const rectMainText = require('../display/layouts/rectangle/explain/mainText.rectangle.json');
 const rectBackground = require('../display/layouts/rectangle/explain/background.rectangle.json');
 const rectFooter = require('../display/layouts/rectangle/explain/footer.rectangle.json');
+const rectRoot = require('../display/layouts/rectangle/explain/rootLayout.rectangle.json');
+const rectTextImage = require('../display/layouts/rectangle/explain/textImageContainer.rectangle.json');
+const rectBodyCore = require('../display/layouts/rectangle/explain/bodyCore.rectangle.json');
+const rectBodyWrap = require('../display/layouts/rectangle/explain/bodyWrap.rectangle.json');
 
 const rectWelcomeHeader = require('../display/layouts/rectangle/welcome/header.welcome.json');
 const rectWelcomeBackground = require('../display/layouts/rectangle/welcome/background.welcome.json');
@@ -34,6 +38,22 @@ function getRectFooter() {
     return rectFooter;
 }
 
+function getRectRoot() {
+    return rectRoot;
+}
+
+function getRectTextImage() {
+    return rectTextImage;
+}
+
+function getRectBodyCore() {
+    return rectBodyCore;
+}
+
+function getRectBodyWrap() {
+    return rectBodyWrap;
+}
+
 function getWelcomeRectBackground() {
     return rectWelcomeBackground;
 }
@@ -53,23 +73,31 @@ function getWelcomeRectFooter() {
 function getWelcomeRectRoot() {
     return rectWelcomeRoot;
 }
+
 function getRectangleLayout(isWelcome) {
     const rectMainLayout = [];
-    isWelcome = true;
     if (isWelcome) {
-        const rectRoot = getWelcomeRectRoot();
-        rectRoot.items.push(getWelcomeRectBackground());
-        rectRoot.items.push(getWelcomeRectHeader());
-        rectRoot.items.push(getWelcomeRectMain());
-        rectRoot.items.push(getWelcomeRectFooter());
-        rectMainLayout.push(rectRoot);
+        const rectWelcomeRootContainer = getWelcomeRectRoot();
+        rectWelcomeRootContainer.items.push(getWelcomeRectBackground());
+        rectWelcomeRootContainer.items.push(getWelcomeRectHeader());
+        rectWelcomeRootContainer.items.push(getWelcomeRectMain());
+        rectWelcomeRootContainer.items.push(getWelcomeRectFooter());
+        rectMainLayout.push(rectWelcomeRootContainer);
     } else {
-        rectMainLayout.push(getRectBackground());
-        rectMainLayout.push(getRectMainImage());
-        rectMainLayout.push(getRectHeader());
-        rectMainLayout.push(getRectTitle());
-        rectMainLayout.push(getRectMainText());
-        rectMainLayout.push(getRectFooter());
+        const rectExplainTextImage = getRectTextImage();
+        rectExplainTextImage.items.push(getRectMainText());
+        rectExplainTextImage.items.push(getRectMainImage());
+        const rectExplainBodyCore = getRectBodyCore();
+        rectExplainBodyCore.items.push(getRectTitle());
+        rectExplainBodyCore.items.push(rectExplainTextImage);
+        const rectExplainBodyWrap = getRectBodyWrap();
+        rectExplainBodyWrap.items.push(rectExplainBodyCore);
+        const rectExplainRoot = getRectRoot(rectExplainBodyWrap);
+        rectExplainRoot.items.push(getRectBackground());
+        rectExplainRoot.items.push(getRectHeader());
+        rectExplainRoot.items.push(rectExplainBodyWrap);
+        rectExplainRoot.items.push(getRectFooter());
+        rectMainLayout.push(rectExplainRoot);
     }
     return rectMainLayout;
 }

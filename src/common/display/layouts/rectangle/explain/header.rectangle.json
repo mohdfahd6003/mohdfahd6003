@@ -1,4 +1,7 @@
 {
-    "type": "Container",
-    "width": "100%"
+    "type": "AlexaHeader",
+    "headerBackgroundColor": "transparent",
+    "headerBackButton": true,
+    "headerTitle": "American Heart Association",
+    "headerAttributionImage": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png"
 }
