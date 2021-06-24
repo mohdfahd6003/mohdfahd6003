@@ -4,7 +4,7 @@
     "items": [
         {
             "type": "Text",
-            "text": "Warning signs of a heart attack",
+            "text": "${payload.content.primaryText}",
             "fontFamily": "@fontFamilyRomanSans",
             "fontSize": "6vh",
             "lineHeight": "1.95vh",

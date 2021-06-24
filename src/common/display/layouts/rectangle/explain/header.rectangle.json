@@ -3,5 +3,5 @@
     "headerBackgroundColor": "transparent",
     "headerBackButton": true,
     "headerTitle": "American Heart Association",
-    "headerAttributionImage": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png"
+    "headerAttributionImage": "${payload.content.logo}"
 }

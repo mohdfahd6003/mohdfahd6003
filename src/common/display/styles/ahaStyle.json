@@ -32,5 +32,19 @@
 
             }
         ]
+    },
+    "mainText.explain":{
+        "values":[
+            {
+                "fontFamily": "@fontFamilyRomanSans",
+                "fontSize": "4vh",
+                "lineHeight": "@lineHeightNormal",
+                "letterSpacing": "@letterSpacingNormal",
+                "color": "#FFFFFF",
+                "fontWeight": "400",
+                "textAlign": "left"    
+
+            }
+        ]
     }
 }

@@ -1,5 +1,5 @@
 {
     "type": "AlexaFooter",
-    "hintText": "Try, 'Alexa, what are the warning signs of heart attack'",
+    "hintText": "${payload.content.properties.transformedHintText}",
     "theme": "dark"
 }

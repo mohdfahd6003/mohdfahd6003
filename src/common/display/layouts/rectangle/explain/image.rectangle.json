@@ -6,7 +6,7 @@
     "items": [
         {
             "type": "AlexaImage",
-            "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/During_a_Heart_Attack.jpg",
+            "imageSource": "${payload.content.mainImage}",
             "imageScale": "fill",
             "imageAspectRatio": "standard_portrait"
         }

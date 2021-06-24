@@ -1,6 +1,6 @@
 {
     "type": "AlexaBackground",
-    "backgroundColor": "#222328",
-    "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/During_a_Heart_Attack.jpg",
+    "backgroundColor": "222328",
+    "backgroundImageSource": "${payload.content.mainImage}",
     "colorOverlay": true
 }
