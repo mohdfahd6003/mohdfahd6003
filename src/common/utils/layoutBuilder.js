@@ -97,6 +97,7 @@ function getRectangleLayout(isWelcome) {
         rectExplainRoot.items.push(getRectHeader());
         rectExplainRoot.items.push(rectExplainBodyWrap);
         rectExplainRoot.items.push(getRectFooter());
+        console.log(rectExplainRoot);
         rectMainLayout.push(rectExplainRoot);
     }
     return rectMainLayout;
