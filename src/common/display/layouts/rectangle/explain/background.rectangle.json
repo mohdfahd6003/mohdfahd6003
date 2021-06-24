@@ -1,6 +1,6 @@
 {
     "type": "AlexaBackground",
-    "backgroundColor": "222328",
     "backgroundImageSource": "${payload.content.mainImage}",
-    "colorOverlay": true
+    "colorOverlay": true,
+    "style":"background.explain"
 }

@@ -5,15 +5,7 @@
         {
             "type": "Text",
             "text": "${payload.content.primaryText}",
-            "fontFamily": "@fontFamilyRomanSans",
-            "fontSize": "6vh",
-            "lineHeight": "1.95vh",
-            "letterSpacing": "@letterSpacingNormal",
-            "color": "#FFFFFF",
-            "maxLines": 2,
-            "fontWeight": "500",
-            "paddingLeft": "6.25vw",
-            "textAlign": "left"
+            "style":"title.explain"
         }
     ],
     "alignItems": "start"

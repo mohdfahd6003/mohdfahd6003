@@ -8,8 +8,7 @@
             "paddingLeft": "6.25vw",
             "paddingRight": "4.84375vw",
             "text": "${payload.content.bodyText}",
-            "style":"mainText.explain"
-            
+            "style":"mainText.explain"           
         }
     ]
 }
