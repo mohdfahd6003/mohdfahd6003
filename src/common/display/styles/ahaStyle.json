@@ -40,7 +40,7 @@
                 "fontSize": "4vh",
                 "lineHeight": "@lineHeightNormal",
                 "letterSpacing": "@letterSpacingNormal",
-                "color": "#FFFFFF",
+                "color": "red",
                 "fontWeight": "400",
                 "textAlign": "left"    
 
@@ -52,7 +52,7 @@
             {
             "fontFamily": "@fontFamilyRomanSans",
             "fontSize": "6vh",
-            "lineHeight": "1.95vh",
+            "lineHeight": "@lineHeightNormal",
             "letterSpacing": "@letterSpacingNormal",
             "color": "#FFFFFF",
             "maxLines": 2,

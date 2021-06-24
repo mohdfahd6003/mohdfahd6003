@@ -1,6 +1,6 @@
 const ahaStyle = require('../display/styles/ahaStyle.json');
 
-const layouts = require('./layoutBuilder');
+const layouts = require('./layoutBuilders/layoutBuilder');
 
 const { getResources } = require('./resourceBuilder');
 
