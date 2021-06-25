@@ -19,6 +19,10 @@ const {
     getRectBodyWrap,
 } = require('./explainLayouts');
 
+function flushPrevComponents(rootComponent) {
+    rootComponent.items.length = 0;
+}
+
 function getRectangleLayout(isWelcome) {
     const rectMainLayout = [];
     if (isWelcome) {
@@ -37,11 +41,23 @@ function getRectangleLayout(isWelcome) {
         rectExplainBodyCore.items.push(rectExplainTextImage);
         const rectExplainBodyWrap = getRectBodyWrap();
         rectExplainBodyWrap.items.push(rectExplainBodyCore);
-        const rectExplainRoot = getRectRoot(rectExplainBodyWrap);
+        let rectExplainRoot = {};
+        rectExplainRoot = getRectRoot();
+        rectExplainRoot.items = [];
+        console.log('starting');
+        console.log(rectExplainRoot);
         rectExplainRoot.items.push(getRectBackground());
+        console.log('added background');
+        console.log(rectExplainRoot);
         rectExplainRoot.items.push(getRectHeader());
+        console.log('added header');
+        console.log(rectExplainRoot);
         rectExplainRoot.items.push(rectExplainBodyWrap);
+        console.log('added body wrap');
+        console.log(rectExplainRoot);
         rectExplainRoot.items.push(getRectFooter());
+        console.log('added footer');
+        console.log(rectExplainRoot);
         rectMainLayout.push(rectExplainRoot);
     }
     return rectMainLayout;

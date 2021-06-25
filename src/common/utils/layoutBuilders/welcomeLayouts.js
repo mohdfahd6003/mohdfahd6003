@@ -5,6 +5,7 @@ const rectWelcomeMain = require('../../display/layouts/welcome/main.welcome.json
 const rectWelcomeRoot = require('../../display/layouts/welcome/rootLayout.welcome.json');
 
 function getWelcomeRectBackground() {
+    // console.log('welcome background called');
     return rectWelcomeBackground;
 }
 

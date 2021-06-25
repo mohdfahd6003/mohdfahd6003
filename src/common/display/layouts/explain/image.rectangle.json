@@ -14,6 +14,7 @@
     "alignItems": "stretch",
     "alignSelf": "center",
     "position": "relative",
-    "right": "6.25vw"
+    "right": "6.25vw",
+    "id":"rect.explain.image"
 }
 

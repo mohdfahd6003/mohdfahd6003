@@ -2,5 +2,6 @@
     "type": "Container",
     "items": [],
     "alignItems": "center",
-    "direction": "row"
+    "direction": "row",
+    "id":"rect.explain.textImage"
 }

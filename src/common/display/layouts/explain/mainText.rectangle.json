@@ -10,5 +10,6 @@
             "text": "${payload.content.bodyText}",
             "style":"mainText.explain"           
         }
-    ]
+    ],
+    "id":"rect.explain.mainText"
 }

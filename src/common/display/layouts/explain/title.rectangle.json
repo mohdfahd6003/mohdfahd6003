@@ -8,5 +8,6 @@
             "style":"title.explain"
         }
     ],
-    "alignItems": "start"
+    "alignItems": "start",
+    "id":"rect.explain.title"
 }

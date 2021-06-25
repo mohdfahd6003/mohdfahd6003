@@ -4,5 +4,6 @@
     "height": "68vh",
     "items": [],
     "direction": "row",
-    "alignItems": "center"
+    "alignItems": "center",
+    "id":"rect.explain.bodyWrap"
 }

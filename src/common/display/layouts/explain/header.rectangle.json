@@ -3,5 +3,6 @@
     "headerBackgroundColor": "transparent",
     "headerBackButton": true,
     "headerTitle": "American Heart Association",
-    "headerAttributionImage": "${payload.content.logo}"
+    "headerAttributionImage": "${payload.content.logo}",
+    "id":"rect.explain.header"
 }

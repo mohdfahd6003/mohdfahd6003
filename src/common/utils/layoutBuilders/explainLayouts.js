@@ -37,6 +37,7 @@ function getRectRoot() {
 }
 
 function getRectTextImage() {
+    // console.log('explain text Image called');
     return rectTextImage;
 }
 
