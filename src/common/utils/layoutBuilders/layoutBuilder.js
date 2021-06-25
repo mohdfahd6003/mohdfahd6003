@@ -6,18 +6,7 @@ const {
     getWelcomeRectRoot,
 } = require('./welcomeLayouts');
 
-const {
-    getRectHeader,
-    getRectTitle,
-    getRectMainImage,
-    getRectMainText,
-    getRectBackground,
-    getRectFooter,
-    getRectRoot,
-    getRectTextImage,
-    getRectBodyCore,
-    getRectBodyWrap,
-} = require('./explainLayouts');
+const { explain } = require('./explainLayouts');
 
 function welcomePageCreater() {
     let welcomeRootContainer = {};
@@ -30,32 +19,32 @@ function welcomePageCreater() {
     return welcomeRootContainer;
 }
 function explainTextImageCreator() {
-    const explainTextImage = getRectTextImage();
-    explainTextImage.items.push(getRectMainText());
-    explainTextImage.items.push(getRectMainImage());
+    const explainTextImage = explain.getTextImage();
+    explainTextImage.items.push(explain.getMainText());
+    explainTextImage.items.push(explain.getMainImage());
     return explainTextImage;
 }
 
 function explainBodyCoreCreator() {
-    const explainBodyCore = getRectBodyCore();
-    explainBodyCore.items.push(getRectTitle());
+    const explainBodyCore = explain.getBodyCore();
+    explainBodyCore.items.push(explain.getTitle());
     explainBodyCore.items.push(explainTextImageCreator());
     return explainBodyCore;
 }
 function explainBodyWrapCreater() {
-    const explainBodyWrap = getRectBodyWrap();
+    const explainBodyWrap = explain.getBodyWrap();
     explainBodyWrap.items.push(explainBodyCoreCreator());
     return explainBodyWrap;
 }
 
 function explainPageCreater() {
     let explainRoot = {};
-    explainRoot = getRectRoot();
+    explainRoot = explain.getRoot();
     explainRoot.items = [];
-    explainRoot.items.push(getRectBackground());
-    explainRoot.items.push(getRectHeader());
+    explainRoot.items.push(explain.getBackground());
+    explainRoot.items.push(explain.getHeader());
     explainRoot.items.push(explainBodyWrapCreater());
-    explainRoot.items.push(getRectFooter());
+    explainRoot.items.push(explain.getFooter());
     return explainRoot;
 }
 

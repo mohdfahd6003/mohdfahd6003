@@ -9,55 +9,54 @@ const rectTextImage = require('../../display/layouts/explain/textImageContainer.
 const rectBodyCore = require('../../display/layouts/explain/bodyCore.rectangle.json');
 const rectBodyWrap = require('../../display/layouts/explain/bodyWrap.rectangle.json');
 
-function getRectHeader() {
+function getHeader() {
     return rectHeader;
 }
 
-function getRectTitle() {
+function getTitle() {
     return rectTitle;
 }
-function getRectMainImage() {
+function getMainImage() {
     return rectImage;
 }
 
-function getRectMainText() {
+function getMainText() {
     return rectMainText;
 }
 
-function getRectBackground() {
+function getBackground() {
     return rectBackground;
 }
 
-function getRectFooter() {
+function getFooter() {
     return rectFooter;
 }
 
-function getRectRoot() {
+function getRoot() {
     return rectRoot;
 }
 
-function getRectTextImage() {
-    // console.log('explain text Image called');
+function getTextImage() {
     return rectTextImage;
 }
 
-function getRectBodyCore() {
+function getBodyCore() {
     return rectBodyCore;
 }
 
-function getRectBodyWrap() {
+function getBodyWrap() {
     return rectBodyWrap;
 }
 
-module.exports = {
-    getRectHeader,
-    getRectTitle,
-    getRectMainImage,
-    getRectMainText,
-    getRectBackground,
-    getRectFooter,
-    getRectRoot,
-    getRectTextImage,
-    getRectBodyCore,
-    getRectBodyWrap,
+exports.explain = {
+    getHeader,
+    getTitle,
+    getMainImage,
+    getMainText,
+    getBackground,
+    getFooter,
+    getRoot,
+    getTextImage,
+    getBodyCore,
+    getBodyWrap,
 };
