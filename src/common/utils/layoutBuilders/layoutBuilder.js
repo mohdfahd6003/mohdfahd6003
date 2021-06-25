@@ -1,21 +1,21 @@
 const {
-    getWelcomeRectBackground,
-    getWelcomeRectHeader,
-    getWelcomeRectMain,
-    getWelcomeRectFooter,
-    getWelcomeRectRoot,
+    getWelcomeBackground,
+    getWelcomeHeader,
+    getWelcomeMain,
+    getWelcomeFooter,
+    getWelcomeRoot,
 } = require('./welcomeLayouts');
 
 const { explain } = require('./explainLayouts');
 
 function welcomePageCreater() {
     let welcomeRootContainer = {};
-    welcomeRootContainer = getWelcomeRectRoot();
+    welcomeRootContainer = getWelcomeRoot();
     welcomeRootContainer.items = [];
-    welcomeRootContainer.items.push(getWelcomeRectBackground());
-    welcomeRootContainer.items.push(getWelcomeRectHeader());
-    welcomeRootContainer.items.push(getWelcomeRectMain());
-    welcomeRootContainer.items.push(getWelcomeRectFooter());
+    welcomeRootContainer.items.push(getWelcomeBackground());
+    welcomeRootContainer.items.push(getWelcomeHeader());
+    welcomeRootContainer.items.push(getWelcomeMain());
+    welcomeRootContainer.items.push(getWelcomeFooter());
     return welcomeRootContainer;
 }
 function explainTextImageCreator() {

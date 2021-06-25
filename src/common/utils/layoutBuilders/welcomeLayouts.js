@@ -4,31 +4,30 @@ const rectWelcomeFooter = require('../../display/layouts/welcome/footer.welcome.
 const rectWelcomeMain = require('../../display/layouts/welcome/main.welcome.json');
 const rectWelcomeRoot = require('../../display/layouts/welcome/rootLayout.welcome.json');
 
-function getWelcomeRectBackground() {
-    // console.log('welcome background called');
+function getWelcomeBackground() {
     return rectWelcomeBackground;
 }
 
-function getWelcomeRectHeader() {
+function getWelcomeHeader() {
     return rectWelcomeHeader;
 }
 
-function getWelcomeRectMain() {
+function getWelcomeMain() {
     return rectWelcomeMain;
 }
 
-function getWelcomeRectFooter() {
+function getWelcomeFooter() {
     return rectWelcomeFooter;
 }
 
-function getWelcomeRectRoot() {
+function getWelcomeRoot() {
     return rectWelcomeRoot;
 }
 
 module.exports = {
-    getWelcomeRectBackground,
-    getWelcomeRectHeader,
-    getWelcomeRectMain,
-    getWelcomeRectFooter,
-    getWelcomeRectRoot,
+    getWelcomeBackground,
+    getWelcomeHeader,
+    getWelcomeMain,
+    getWelcomeFooter,
+    getWelcomeRoot,
 };

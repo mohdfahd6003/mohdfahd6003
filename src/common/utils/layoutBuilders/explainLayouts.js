@@ -1,13 +1,13 @@
-const rectHeader = require('../../display/layouts/explain/header.rectangle.json');
-const rectTitle = require('../../display/layouts/explain/title.rectangle.json');
-const rectImage = require('../../display/layouts/explain/image.rectangle.json');
-const rectMainText = require('../../display/layouts/explain/mainText.rectangle.json');
-const rectBackground = require('../../display/layouts/explain/background.rectangle.json');
-const rectFooter = require('../../display/layouts/explain/footer.rectangle.json');
-const rectRoot = require('../../display/layouts/explain/rootLayout.rectangle.json');
-const rectTextImage = require('../../display/layouts/explain/textImageContainer.rectangle.json');
-const rectBodyCore = require('../../display/layouts/explain/bodyCore.rectangle.json');
-const rectBodyWrap = require('../../display/layouts/explain/bodyWrap.rectangle.json');
+const rectHeader = require('../../display/layouts/explain/header.explain.json');
+const rectTitle = require('../../display/layouts/explain/title.explain.json');
+const rectImage = require('../../display/layouts/explain/image.explain.json');
+const rectMainText = require('../../display/layouts/explain/mainText.explain.json');
+const rectBackground = require('../../display/layouts/explain/background.explain.json');
+const rectFooter = require('../../display/layouts/explain/footer.explain.json');
+const rectRoot = require('../../display/layouts/explain/rootLayout.explain.json');
+const rectTextImage = require('../../display/layouts/explain/textImageContainer.explain.json');
+const rectBodyCore = require('../../display/layouts/explain/bodyCore.explain.json');
+const rectBodyWrap = require('../../display/layouts/explain/bodyWrap.explain.json');
 
 function getHeader() {
     return rectHeader;
