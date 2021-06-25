@@ -20,33 +20,43 @@ const {
 } = require('./explainLayouts');
 
 function welcomePageCreater() {
-    let rectWelcomeRootContainer = {};
-    rectWelcomeRootContainer = getWelcomeRectRoot();
-    rectWelcomeRootContainer.items = [];
-    rectWelcomeRootContainer.items.push(getWelcomeRectBackground());
-    rectWelcomeRootContainer.items.push(getWelcomeRectHeader());
-    rectWelcomeRootContainer.items.push(getWelcomeRectMain());
-    rectWelcomeRootContainer.items.push(getWelcomeRectFooter());
-    return rectWelcomeRootContainer;
+    let welcomeRootContainer = {};
+    welcomeRootContainer = getWelcomeRectRoot();
+    welcomeRootContainer.items = [];
+    welcomeRootContainer.items.push(getWelcomeRectBackground());
+    welcomeRootContainer.items.push(getWelcomeRectHeader());
+    welcomeRootContainer.items.push(getWelcomeRectMain());
+    welcomeRootContainer.items.push(getWelcomeRectFooter());
+    return welcomeRootContainer;
+}
+function explainTextImageCreator() {
+    const explainTextImage = getRectTextImage();
+    explainTextImage.items.push(getRectMainText());
+    explainTextImage.items.push(getRectMainImage());
+    return explainTextImage;
+}
+
+function explainBodyCoreCreator() {
+    const explainBodyCore = getRectBodyCore();
+    explainBodyCore.items.push(getRectTitle());
+    explainBodyCore.items.push(explainTextImageCreator());
+    return explainBodyCore;
+}
+function explainBodyWrapCreater() {
+    const explainBodyWrap = getRectBodyWrap();
+    explainBodyWrap.items.push(explainBodyCoreCreator());
+    return explainBodyWrap;
 }
 
 function explainPageCreater() {
-    const rectExplainTextImage = getRectTextImage();
-    rectExplainTextImage.items.push(getRectMainText());
-    rectExplainTextImage.items.push(getRectMainImage());
-    const rectExplainBodyCore = getRectBodyCore();
-    rectExplainBodyCore.items.push(getRectTitle());
-    rectExplainBodyCore.items.push(rectExplainTextImage);
-    const rectExplainBodyWrap = getRectBodyWrap();
-    rectExplainBodyWrap.items.push(rectExplainBodyCore);
-    let rectExplainRoot = {};
-    rectExplainRoot = getRectRoot();
-    rectExplainRoot.items = [];
-    rectExplainRoot.items.push(getRectBackground());
-    rectExplainRoot.items.push(getRectHeader());
-    rectExplainRoot.items.push(rectExplainBodyWrap);
-    rectExplainRoot.items.push(getRectFooter());
-    return rectExplainRoot;
+    let explainRoot = {};
+    explainRoot = getRectRoot();
+    explainRoot.items = [];
+    explainRoot.items.push(getRectBackground());
+    explainRoot.items.push(getRectHeader());
+    explainRoot.items.push(explainBodyWrapCreater());
+    explainRoot.items.push(getRectFooter());
+    return explainRoot;
 }
 
 function getRectangleLayout(isWelcome) {
