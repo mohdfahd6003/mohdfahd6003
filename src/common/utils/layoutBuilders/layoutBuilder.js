@@ -19,46 +19,42 @@ const {
     getRectBodyWrap,
 } = require('./explainLayouts');
 
-function flushPrevComponents(rootComponent) {
-    rootComponent.items.length = 0;
+function welcomePageCreater() {
+    let rectWelcomeRootContainer = {};
+    rectWelcomeRootContainer = getWelcomeRectRoot();
+    rectWelcomeRootContainer.items = [];
+    rectWelcomeRootContainer.items.push(getWelcomeRectBackground());
+    rectWelcomeRootContainer.items.push(getWelcomeRectHeader());
+    rectWelcomeRootContainer.items.push(getWelcomeRectMain());
+    rectWelcomeRootContainer.items.push(getWelcomeRectFooter());
+    return rectWelcomeRootContainer;
+}
+
+function explainPageCreater() {
+    const rectExplainTextImage = getRectTextImage();
+    rectExplainTextImage.items.push(getRectMainText());
+    rectExplainTextImage.items.push(getRectMainImage());
+    const rectExplainBodyCore = getRectBodyCore();
+    rectExplainBodyCore.items.push(getRectTitle());
+    rectExplainBodyCore.items.push(rectExplainTextImage);
+    const rectExplainBodyWrap = getRectBodyWrap();
+    rectExplainBodyWrap.items.push(rectExplainBodyCore);
+    let rectExplainRoot = {};
+    rectExplainRoot = getRectRoot();
+    rectExplainRoot.items = [];
+    rectExplainRoot.items.push(getRectBackground());
+    rectExplainRoot.items.push(getRectHeader());
+    rectExplainRoot.items.push(rectExplainBodyWrap);
+    rectExplainRoot.items.push(getRectFooter());
+    return rectExplainRoot;
 }
 
 function getRectangleLayout(isWelcome) {
     const rectMainLayout = [];
     if (isWelcome) {
-        const rectWelcomeRootContainer = getWelcomeRectRoot();
-        rectWelcomeRootContainer.items.push(getWelcomeRectBackground());
-        rectWelcomeRootContainer.items.push(getWelcomeRectHeader());
-        rectWelcomeRootContainer.items.push(getWelcomeRectMain());
-        rectWelcomeRootContainer.items.push(getWelcomeRectFooter());
-        rectMainLayout.push(rectWelcomeRootContainer);
+        rectMainLayout.push(welcomePageCreater());
     } else {
-        const rectExplainTextImage = getRectTextImage();
-        rectExplainTextImage.items.push(getRectMainText());
-        rectExplainTextImage.items.push(getRectMainImage());
-        const rectExplainBodyCore = getRectBodyCore();
-        rectExplainBodyCore.items.push(getRectTitle());
-        rectExplainBodyCore.items.push(rectExplainTextImage);
-        const rectExplainBodyWrap = getRectBodyWrap();
-        rectExplainBodyWrap.items.push(rectExplainBodyCore);
-        let rectExplainRoot = {};
-        rectExplainRoot = getRectRoot();
-        rectExplainRoot.items = [];
-        console.log('starting');
-        console.log(rectExplainRoot);
-        rectExplainRoot.items.push(getRectBackground());
-        console.log('added background');
-        console.log(rectExplainRoot);
-        rectExplainRoot.items.push(getRectHeader());
-        console.log('added header');
-        console.log(rectExplainRoot);
-        rectExplainRoot.items.push(rectExplainBodyWrap);
-        console.log('added body wrap');
-        console.log(rectExplainRoot);
-        rectExplainRoot.items.push(getRectFooter());
-        console.log('added footer');
-        console.log(rectExplainRoot);
-        rectMainLayout.push(rectExplainRoot);
+        rectMainLayout.push(explainPageCreater());
     }
     return rectMainLayout;
 }
