@@ -76,14 +76,14 @@ class ChokeControl extends Control {
             chokeValueAct.primaryText = chokeData[topic].yes.primaryText;
             chokeValueAct.secondaryText = chokeData[topic].yes.secondaryText;
 
-            if (topic === 'chokingInfo.startCPR') {
+            /* if (topic === 'chokingInfo.startCPR') {
                 chokeValueAct.speechText = chokeValueAct.speechText.replace(
-                    'https://s3.amazonaws.com/ahaalexa/110-BPM-Metronome-short.mp3',
+                    `https://s3.amazonaws.com/ahaalexa/110-BPM-Metronome-short.mp3`,
                     `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
                         assets.Audio['learncpr.control']
                     }`
                 );
-            }
+            } */
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
             const topic = this.state;
             const topicnext = chokeData[topic].no.continue;
