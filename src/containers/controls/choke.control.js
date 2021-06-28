@@ -19,6 +19,8 @@ class ChokeActMain extends RequestValueAct {
         this.imageUrl = undefined;
         this.primaryText = undefined;
         this.secondaryText = undefined;
+        this.tertiaryText = undefined;
+        this.title = undefined;
     }
 
     render(input, resultBuilder) {
@@ -27,8 +29,8 @@ class ChokeActMain extends RequestValueAct {
             resultBuilder,
             this.speechText,
             this.imageUrl,
-            this.primaryText,
-            this.secondaryText
+            this.title,
+            this.primaryText + this.secondaryText + this.tertiaryText
         );
     }
 }
@@ -43,9 +45,9 @@ class ChokeControl extends Control {
         if (InputUtil.isIntent(input, 'chokeIntent')) {
             return true;
         } else if (this.state && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-            if (String(this.state).startsWith('choking')) return true;
+            if (String(this.state.value).startsWith('choking')) return true;
         } else if (this.state && InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
-            if (String(this.state).startsWith('choking')) return true;
+            if (String(this.state.value).startsWith('choking')) return true;
         }
         return false;
     }
@@ -53,29 +55,31 @@ class ChokeControl extends Control {
     handle(input, resultBuilder) {
         const chokeValueAct = new ChokeActMain(this, {});
         if (InputUtil.isIntent(input, 'chokeIntent')) {
-            this.state = 'chokingInfo';
-
+            this.state.value = 'chokingInfo';
             chokeValueAct.speechText = chokeMainText;
             chokeValueAct.imageUrl = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
                 assets.Images['choke.control.main']
             }`;
+            chokeValueAct.title = 'choking';
             chokeValueAct.primaryText = 'Is the person pregnant? ';
             chokeValueAct.secondaryText = '';
+            chokeValueAct.tertiaryText = '';
         } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
-            const topic = this.state;
+            const topic = this.state.value;
             const topicnext = chokeData[topic].yes.continue;
             if (topicnext === false) {
-                this.state = undefined;
+                this.state.value = undefined;
             } else {
-                this.state = topicnext;
+                this.state.value = topicnext;
             }
             chokeValueAct.speechText = chokeData[topic].yes.speechText;
             chokeValueAct.imageUrl = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
                 chokeData[topic].yes.imageUrl
             }`;
+            chokeValueAct.title = chokeData[topic].yes.title;
             chokeValueAct.primaryText = chokeData[topic].yes.primaryText;
             chokeValueAct.secondaryText = chokeData[topic].yes.secondaryText;
-
+            chokeValueAct.tertiaryText = chokeData[topic].yes.tertiaryText;
             /* if (topic === 'chokingInfo.startCPR') {
                 chokeValueAct.speechText = chokeValueAct.speechText.replace(
                     `https://s3.amazonaws.com/ahaalexa/110-BPM-Metronome-short.mp3`,
@@ -85,19 +89,21 @@ class ChokeControl extends Control {
                 );
             } */
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
-            const topic = this.state;
+            const topic = this.state.value;
             const topicnext = chokeData[topic].no.continue;
             if (topicnext === false) {
-                this.state = undefined;
+                this.state.value = undefined;
             } else {
-                this.state = topicnext;
+                this.state.value = topicnext;
             }
             chokeValueAct.speechText = chokeData[topic].no.speechText;
             chokeValueAct.imageUrl = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
                 chokeData[topic].no.imageUrl
             }`;
+            chokeValueAct.title = chokeData[topic].no.title;
             chokeValueAct.primaryText = chokeData[topic].no.primaryText;
             chokeValueAct.secondaryText = chokeData[topic].no.secondaryText;
+            chokeValueAct.tertiaryText = chokeData[topic].yes.tertiaryText;
         }
         resultBuilder.addAct(chokeValueAct);
     }
