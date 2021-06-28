@@ -80,14 +80,12 @@ class ChokeControl extends Control {
             chokeValueAct.primaryText = chokeData[topic].yes.primaryText;
             chokeValueAct.secondaryText = chokeData[topic].yes.secondaryText;
             chokeValueAct.tertiaryText = chokeData[topic].yes.tertiaryText;
-            /* if (topic === 'chokingInfo.startCPR') {
-                chokeValueAct.speechText = chokeValueAct.speechText.replace(
-                    `https://s3.amazonaws.com/ahaalexa/110-BPM-Metronome-short.mp3`,
-                    `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-                        assets.Audio['learncpr.control']
-                    }`
-                );
-            } */
+            if (topic === 'chokingInfo.startCPR') {
+                const combinedSpeech = `${chokeValueAct.speechText} <audio src="https://${
+                    configData[process.env.ENVIRONMENT].cloudfront
+                }/${assets.Audio['learncpr.control']}"/> ${chokeData[topic].yes.speechTextTwo}`;
+                chokeValueAct.speechText = combinedSpeech;
+            }
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
             const topic = this.state.value;
             const topicnext = chokeData[topic].no.continue;
@@ -103,7 +101,7 @@ class ChokeControl extends Control {
             chokeValueAct.title = chokeData[topic].no.title;
             chokeValueAct.primaryText = chokeData[topic].no.primaryText;
             chokeValueAct.secondaryText = chokeData[topic].no.secondaryText;
-            chokeValueAct.tertiaryText = chokeData[topic].yes.tertiaryText;
+            chokeValueAct.tertiaryText = chokeData[topic].no.tertiaryText;
         }
         resultBuilder.addAct(chokeValueAct);
     }
