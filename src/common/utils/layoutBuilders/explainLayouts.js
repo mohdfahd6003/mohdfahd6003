@@ -1,51 +1,51 @@
-const rectHeader = require('../../display/layouts/explain/header.explain.json');
-const rectTitle = require('../../display/layouts/explain/title.explain.json');
-const rectImage = require('../../display/layouts/explain/image.explain.json');
-const rectMainText = require('../../display/layouts/explain/mainText.explain.json');
-const rectBackground = require('../../display/layouts/explain/background.explain.json');
-const rectFooter = require('../../display/layouts/explain/footer.explain.json');
-const rectRoot = require('../../display/layouts/explain/rootLayout.explain.json');
-const rectTextImage = require('../../display/layouts/explain/textImageContainer.explain.json');
-const rectBodyCore = require('../../display/layouts/explain/bodyCore.explain.json');
-const rectBodyWrap = require('../../display/layouts/explain/bodyWrap.explain.json');
+const explainHeader = require('../../display/layouts/explain/header.explain.json');
+const explainTitle = require('../../display/layouts/explain/title.explain.json');
+const explainImage = require('../../display/layouts/explain/image.explain.json');
+const explainMainText = require('../../display/layouts/explain/mainText.explain.json');
+const explainBackground = require('../../display/layouts/explain/background.explain.json');
+const explainFooter = require('../../display/layouts/explain/footer.explain.json');
+const explainRoot = require('../../display/layouts/explain/rootLayout.explain.json');
+const explainTextImage = require('../../display/layouts/explain/textImageContainer.explain.json');
+const explainBodyCore = require('../../display/layouts/explain/bodyCore.explain.json');
+const explainBodyWrap = require('../../display/layouts/explain/bodyWrap.explain.json');
 
 function getHeader() {
-    return rectHeader;
+    return explainHeader;
 }
 
 function getTitle() {
-    return rectTitle;
+    return explainTitle;
 }
 function getMainImage() {
-    return rectImage;
+    return explainImage;
 }
 
 function getMainText() {
-    return rectMainText;
+    return explainMainText;
 }
 
 function getBackground() {
-    return rectBackground;
+    return explainBackground;
 }
 
 function getFooter() {
-    return rectFooter;
+    return explainFooter;
 }
 
 function getRoot() {
-    return rectRoot;
+    return explainRoot;
 }
 
 function getTextImage() {
-    return rectTextImage;
+    return explainTextImage;
 }
 
 function getBodyCore() {
-    return rectBodyCore;
+    return explainBodyCore;
 }
 
 function getBodyWrap() {
-    return rectBodyWrap;
+    return explainBodyWrap;
 }
 
 exports.explain = {
