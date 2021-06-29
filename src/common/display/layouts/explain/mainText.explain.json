@@ -1,7 +1,7 @@
 {
     "type": "ScrollView",
     "width": "67.96875vw",
-    "height": "67vh",
+    "height": "57vh",
     "items": [
         {
             "type": "Text",
