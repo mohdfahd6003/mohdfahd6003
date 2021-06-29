@@ -5,16 +5,15 @@ const ChokeControl = require('./controls/choke.control');
 const BleedControl = require('./controls/cut.control');
 
 class MultiPathContainerState extends ContainerControlState {
-    constructor() {
-        super();
-        this.value = undefined;
+    constructor(props) {
+        super(props.id);
     }
 }
 
 class MultiPathContainer extends ContainerControl {
     constructor(props) {
         super(props);
-        this.state = new MultiPathContainerState();
+        this.state = new MultiPathContainerState({ id: 'multipathstate' });
         this.id = props.id;
         this.handleFunc = undefined;
         this.addChild(new ChokeControl({ id: 'choke' }));
@@ -32,15 +31,6 @@ class MultiPathContainer extends ContainerControl {
 
     async handle(input, resultBuilder) {
         await this.handleFunc(input, resultBuilder);
-    }
-
-    async decideHandlingChild(candidates, input) {
-        for (const candidate of candidates) {
-            if (candidate.state.value !== undefined) {
-                return candidate;
-            }
-        }
-        return candidates[0];
     }
 }
 

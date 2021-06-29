@@ -1,6 +1,6 @@
 const Alexa = require('ask-sdk-core');
 
-const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
+const { InputUtil, Control, RequestValueAct, ControlState } = require('ask-sdk-controls');
 
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
@@ -33,7 +33,7 @@ class BurnActMain extends RequestValueAct {
 }
 
 const BurnControlState = {
-    value: undefined,
+    value: 'dummyValue',
 };
 
 class BurnControl extends Control {
