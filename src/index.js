@@ -71,8 +71,6 @@ class RootContainer extends ContainerControl {
 
     async handle(input, resultBuilder) {
         await this.handleFunc(input, resultBuilder);
-        console.log('result is ');
-        console.log(resultBuilder);
     }
 
     async handleInvalidInput(input, resultBuilder) {
