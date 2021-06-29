@@ -65,7 +65,7 @@ class RootContainer extends ContainerControl {
         } else {
             console.log('something went wrong');
             this.handleFunc = this.handleInvalidInput;
-            return false;
+            return true;
         }
     }
 
@@ -76,7 +76,7 @@ class RootContainer extends ContainerControl {
     async handleInvalidInput(input, resultBuilder) {
         resultBuilder.addAct(
             new LiteralContentAct(this, {
-                promptFragment: 'Something went wrong. Can you please repeat ?',
+                promptFragment: 'Sorry, I didnot understand your request. Can you please repeat ?',
             })
         );
     }
