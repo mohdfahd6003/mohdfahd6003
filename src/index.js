@@ -76,7 +76,7 @@ class RootContainer extends ContainerControl {
     async handleInvalidInput(input, resultBuilder) {
         resultBuilder.addAct(
             new LiteralContentAct(this, {
-                promptFragment: 'Sorry, I didnot understand your request. Can you please repeat ?',
+                promptFragment: 'Sorry, I could understand your request. Can you please repeat ?',
             })
         );
     }
@@ -139,16 +139,25 @@ class RootManager extends ControlManager {
         return root;
     }
 
-    handleInternalError(input, error, responseBuilder) {
-        console.log('Error logged');
-        console.log(error);
-        console.log('input');
-        console.log(input);
+    handleInternalError(input, error) {
+        console.log(`Internal error occurred. Error stack:${error.stack}`);
     }
 }
 
+const ErrorHandler = {
+    canHandle() {
+        return true;
+    },
+    handle(handlerInput, error) {
+        console.log(`~~~~ Error handled: ${error.stack}`);
+        const speakOutput = `Sorry, I had trouble doing what you asked. Please try again.`;
+        return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse();
+    },
+};
+
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(new ControlHandler(new RootManager()))
+    .addErrorHandlers(ErrorHandler)
     .lambda();
 
 // Exported for building interaction model
