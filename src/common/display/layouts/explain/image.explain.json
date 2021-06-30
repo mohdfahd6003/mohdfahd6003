@@ -8,13 +8,14 @@
             "type": "AlexaImage",
             "imageSource": "${payload.content.mainImage}",
             "imageScale": "fill",
-            "imageAspectRatio": "standard_portrait"
+            "imageAspectRatio": "standard_portrait",
+            "id":"rect.explain.image"
         }
     ],
     "alignItems": "stretch",
     "alignSelf": "center",
     "position": "relative",
     "right": "6.25vw",
-    "id":"rect.explain.image"
+    "id":"rect.explain.imageContainer"
 }
 

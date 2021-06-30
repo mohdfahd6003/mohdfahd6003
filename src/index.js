@@ -138,6 +138,13 @@ class RootManager extends ControlManager {
         const root = new RootContainer({ id: 'root' });
         return root;
     }
+
+    handleInternalError(input, error, responseBuilder) {
+        console.log('Error logged');
+        console.log(error);
+        console.log('input');
+        console.log(input);
+    }
 }
 
 exports.handler = Alexa.SkillBuilders.custom()

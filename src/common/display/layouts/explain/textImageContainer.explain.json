@@ -1,7 +1,6 @@
 {
     "type": "Container",
-    "items": [],
     "alignItems": "center",
     "direction": "row",
-    "id":"rect.explain.textImage"
+    "id":"rect.explain.textImageContainer"
 }
