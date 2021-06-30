@@ -2,5 +2,6 @@
     "type": "Container",
     "alignItems": "center",
     "direction": "row",
-    "id":"rect.explain.textImageContainer"
+    "id":"rect.explain.textImageContainer",
+    "paddingTop": "3.75vh"
 }

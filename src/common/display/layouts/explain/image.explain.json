@@ -9,6 +9,8 @@
             "imageSource": "${payload.content.mainImage}",
             "imageScale": "fill",
             "imageAspectRatio": "standard_portrait",
+            "imageHeight": "54.75vh",
+            "imageWidth": "25.78125vw",
             "id":"rect.explain.image"
         }
     ],
