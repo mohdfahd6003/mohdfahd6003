@@ -6,7 +6,8 @@
     "title": "Bleeding"
 
 },
-    "turn1":{
+    
+"turn1":{
     "yes": {
         "speakText": "Wash the area with soap and water. Then, apply a dressing or a Band-Aid to the wound. You can get more information at heart.org/firstaid. What else is on your mind today?",
         "primaryText": "Wash the area with soap and water. Then, apply a dressing or a Band-Aid to the wound.",

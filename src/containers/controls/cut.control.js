@@ -71,7 +71,7 @@ class CutControl extends Control {
             cutAct.primaryText = cutData[turnNum].yes.primaryText;
             cutAct.secondaryText = cutData[turnNum].yes.secondaryText;
             cutAct.tertiaryText = cutData[turnNum].yes.tertiaryText;
-            cutAct.title = cutData[turnNum].title;
+            cutAct.title = cutData[turnNum].yes.title;
             this.state.value = undefined;
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
             let turnNum;
@@ -86,7 +86,7 @@ class CutControl extends Control {
             cutAct.primaryText = cutData[turnNum].no.primaryText;
             cutAct.secondaryText = cutData[turnNum].no.secondaryText;
             cutAct.tertiaryText = cutData[turnNum].no.tertiaryText;
-            cutAct.title = cutData[turnNum].title;
+            cutAct.title = cutData[turnNum].no.title;
         }
         resultBuilder.addAct(cutAct);
     }
