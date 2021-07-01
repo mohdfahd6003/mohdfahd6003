@@ -1,0 +1,9 @@
+{
+    "type": "Container",
+    "width": "100vw",
+    "height": "68vh",
+    "items": [],
+    "direction": "row",
+    "alignItems": "center",
+    "id":"rect.explain.bodyWrap"
+}

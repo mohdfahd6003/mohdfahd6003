@@ -1,0 +1,15 @@
+{
+    "type": "ScrollView",
+    "width": "67.96875vw",
+    "height": "67vh",
+    "items": [
+        {
+            "type": "Text",
+            "paddingLeft": "6.25vw",
+            "paddingRight": "4.84375vw",
+            "text": "${payload.content.bodyText}",
+            "style":"mainText.explain"           
+        }
+    ],
+    "id":"rect.explain.mainText"
+}

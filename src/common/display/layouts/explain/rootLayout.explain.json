@@ -1,0 +1,8 @@
+{
+    "type": "Container",
+    "width": "100vw",
+    "height": "100vh",
+    "direction": "column",
+    "items": [],
+    "id":"rect.explain.rootLayout"
+}

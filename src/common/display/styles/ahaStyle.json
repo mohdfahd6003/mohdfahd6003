@@ -32,5 +32,42 @@
 
             }
         ]
+    },
+    "mainText.explain":{
+        "values":[
+            {
+                "fontFamily": "@fontFamilyRomanSans",
+                "fontSize": "4vh",
+                "lineHeight": "@lineHeightNormal",
+                "letterSpacing": "@letterSpacingNormal",
+                "color": "#FFFFFF",
+                "fontWeight": "400",
+                "textAlign": "left"    
+
+            }
+        ]
+    },
+    "title.explain":{
+        "values":[
+            {
+            "fontFamily": "@fontFamilyRomanSans",
+            "fontSize": "6vh",
+            "lineHeight": "@lineHeightNormal",
+            "letterSpacing": "@letterSpacingNormal",
+            "color": "#FFFFFF",
+            "maxLines": 2,
+            "fontWeight": "500",
+            "paddingLeft": "6.25vw",
+            "textAlign": "left"
+            }
+        ]
+    },
+    "background.explain":{
+        "values":[
+            {
+                "backgroundColor": "#222328"
+            }
+
+        ]
     }
 }
