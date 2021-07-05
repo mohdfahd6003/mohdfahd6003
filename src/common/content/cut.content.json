@@ -1,42 +1,41 @@
-{  "main":{
-    "speakText": "First, does it look like this is a minor cut?",
-    "primaryText": "First, does it look like this is a minor cut?",
-    "secondaryText": "",
-    "tertiaryText": "",
-    "title": "Bleeding"
-
-},
+{
+    "main":{
+       "speakText":"First, does it look like this is a minor cut?",
+       "primaryText":"First, does it look like this is a minor cut?",
+       "secondaryText":"",
+       "tertiaryText":"",
+       "title":"Bleeding"
+    },
     "turn1":{
-    "yes": {
-        "speakText": "Wash the area with soap and water. Then, apply a dressing or a Band-Aid to the wound. You can get more information at heart.org/firstaid. What else is on your mind today?",
-        "primaryText": "Wash the area with soap and water. Then, apply a dressing or a Band-Aid to the wound.",
-        "secondaryText": "You may want to think about taking an American Heart Association first aid course in case you run into something more serious.",
-        "tertiaryText": "You can get more information at heart.org/firstaid.",
-        "title": "Bleeding"
+       "yes":{
+          "speakText":"Wash the area with soap and water. Then, apply a dressing or a Band-Aid to the wound. You can get more information at heart.org/firstaid. What else is on your mind today?",
+          "primaryText":"Wash the area with soap and water. Then, apply a dressing or a Band-Aid to the wound.",
+          "secondaryText":"You may want to think about taking an American Heart Association first aid course in case you run into something more serious.",
+          "tertiaryText":"You can get more information at heart.org/firstaid.",
+          "title":"Bleeding"
+       },
+       "no":{
+          "speakText":"OK, now make sure the scene is safe. Send someone to get the first aid kit. If possible, have the person who is bleeding apply direct pressure to the wound while you put on your protective equipment. Apply dressings, such as a gauze pad. Use the flat part of your fingers or the palm of your hand to apply direct pressure on the dressings over the bleeding area. Did the bleeding stop?",
+          "primaryText":"OK, now make sure the scene is safe. Send someone to get the first aid kit.  If possible, have the person who is bleeding apply direct pressure to the wound while you put on your protective equipment.",
+          "secondaryText":"If you don't have a first aid kit, get a piece of gauze or any other clean piece of cloth. Let's keep going.",
+          "tertiaryText":"",
+          "title":"Bleeding"
+       }
     },
-    "no": {
-        "speakText": "OK, now make sure the scene is safe. Send someone to get the first aid kit. If possible, have the person who is bleeding apply direct pressure to the wound while you put on your protective equipment. Apply dressings, such as a gauze pad. Use the flat part of your fingers or the palm of your hand to apply direct pressure on the dressings over the bleeding area. Did the bleeding stop?",
-        "primaryText": "OK, now make sure the scene is safe. Send someone to get the first aid kit.  If possible, have the person who is bleeding apply direct pressure to the wound while you put on your protective equipment.",
-        "secondaryText": "If you don't have a first aid kit, get a piece of gauze or any other clean piece of cloth. Let's keep going.",
-        "tertiaryText": "",
-        "title": "Bleeding"
-
+    "turn2":{
+       "yes":{
+          "speakText":"I'm so relieved to hear that! Now that the bleeding has stopped, wrap a bandage firmly over the dressings to hold them in place. There are other things I can help with. For example, I can tell you how to remove bloodstains from your clothes or the floor if that is a problem. And, because you did so well today in this emergency, you may also want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid.  What else can i help you with? ",
+          "primaryText":"I'm so relieved to hear that! Now that the bleeding has stopped, wrap a bandage firmly over the dressings to hold them in place.",
+          "secondaryText":"There are other things I can help with. For example, I can tell you how to remove bloodstains from your clothes or the floor if that is a problem. And, because you did so well today in this emergency, you may also want to think about taking an American Heart Association first aid course in case this happens again.",
+          "tertiaryText":"You can get more information at heart.org/firstaid.",
+          "title":"Bleeding"
+       },
+       "no":{
+          "speakText":"OK, you'll need to add a second dressing and press harder. Do not remove a dressing once it's in place because this could cause the wound to bleed more. Keep pressure on the wound until it stops bleeding. Once the bleeding has stopped or if you can't keep pressure on the wound, wrap a bandage firmly over the dressings to hold them in place. If the bleeding cannot be controlled and doesn't stop, call your local emergency number. I hope that the bleeding is coming under control. What else can i help you with? ",
+          "primaryText":"OK, you'll need to add a second dressing and press harder. Do not remove a dressing once it's in place because this could cause the wound to bleed more.",
+          "secondaryText":"Keep pressure on the wound until it stops bleeding. Once the bleeding has stopped or if you can't keep pressure on the wound, wrap a bandage firmly over the dressings to hold them in place. If the bleeding cannot be controlled and doesn't stop, call your local emergency number",
+          "tertiaryText":"I hope that the bleeding is coming under control.",
+          "title":"Bleeding"
+       }
     }
-},
-"turn2": {
-    "yes": {
-        "speakText": "I'm so relieved to hear that! Now that the bleeding has stopped, wrap a bandage firmly over the dressings to hold them in place. There are other things I can help with. For example, I can tell you how to remove bloodstains from your clothes or the floor if that is a problem. And, because you did so well today in this emergency, you may also want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid.  What else can i help you with? ",
-        "primaryText": "I'm so relieved to hear that! Now that the bleeding has stopped, wrap a bandage firmly over the dressings to hold them in place.",
-        "secondaryText": "There are other things I can help with. For example, I can tell you how to remove bloodstains from your clothes or the floor if that is a problem. And, because you did so well today in this emergency, you may also want to think about taking an American Heart Association first aid course in case this happens again.",
-        "tertiaryText": "You can get more information at heart.org/firstaid.",
-        "title": "Bleeding"
-    },
-    "no": {
-        "speakText": "OK, you'll need to add a second dressing and press harder. Do not remove a dressing once it's in place because this could cause the wound to bleed more. Keep pressure on the wound until it stops bleeding. Once the bleeding has stopped or if you can't keep pressure on the wound, wrap a bandage firmly over the dressings to hold them in place. If the bleeding cannot be controlled and doesn't stop, call your local emergency number. I hope that the bleeding is coming under control. What else can i help you with? ",
-        "primaryText": "OK, you'll need to add a second dressing and press harder. Do not remove a dressing once it's in place because this could cause the wound to bleed more.",
-        "secondaryText": "Keep pressure on the wound until it stops bleeding. Once the bleeding has stopped or if you can't keep pressure on the wound, wrap a bandage firmly over the dressings to hold them in place. If the bleeding cannot be controlled and doesn't stop, call your local emergency number",
-        "tertiaryText": "I hope that the bleeding is coming under control.",
-        "title": "Bleeding"
-    }
-}
-}
+ }

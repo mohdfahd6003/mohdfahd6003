@@ -5,7 +5,8 @@ const layouts = require('./layoutBuilders/layoutBuilder');
 const { getResources } = require('./resourceBuilder');
 
 function generateDocument(isWelcome) {
-    const document = {
+    let document = {};
+    document = {
         type: 'APL',
         version: '1.6',
         description: 'AHA alexa skill',
@@ -41,15 +42,21 @@ function getImports() {
 function getStyles() {
     return ahaStyle;
 }
+
+function getLayouts(isWelcome) {
+    const itemArray = [];
+    const layout = {};
+    layout.type = 'Container';
+    layout.item = [];
+    layout.item = layouts.getRectangleLayout(isWelcome);
+    itemArray.push(layout);
+    return itemArray;
+}
 function getMainTemplate(isWelcome) {
-    const mainTemplate = {
+    let mainTemplate = {};
+    mainTemplate = {
         parameters: ['payload'],
-        items: [
-            {
-                type: 'Container',
-                item: layouts.getRectangleLayout(isWelcome),
-            },
-        ],
+        items: getLayouts(isWelcome),
     };
     return mainTemplate;
 }

@@ -34,7 +34,7 @@ class RootContainer extends ContainerControl {
         super(props);
         this.addChild(new SinglePathContainer({ id: 'singlepath' }));
         this.addChild(new MultiPathContainer({ id: 'multipath' }));
-        this.isChild = false;
+        this.handleFunc = undefined;
     }
 
     async canHandle(input) {
@@ -62,20 +62,23 @@ class RootContainer extends ContainerControl {
         ) {
             this.handleFunc = this.handleHelpIntent;
             return true;
+        } else {
+            console.log('something went wrong');
+            this.handleFunc = this.handleInvalidInput;
+            return true;
         }
-        return true;
     }
 
     async handle(input, resultBuilder) {
-        if (this.handleFunc !== undefined) {
-            await this.handleFunc(input, resultBuilder);
-        } else {
-            resultBuilder.addAct(
-                new LiteralContentAct(this, {
-                    promptFragment: 'Invalid input. Can you please repeat ?',
-                })
-            );
-        }
+        await this.handleFunc(input, resultBuilder);
+    }
+
+    async handleInvalidInput(input, resultBuilder) {
+        resultBuilder.addAct(
+            new LiteralContentAct(this, {
+                promptFragment: 'Sorry, I could understand your request. Can you please repeat ?',
+            })
+        );
     }
 
     async handleSessionEndedRequest(input, resultBuilder) {
@@ -135,10 +138,26 @@ class RootManager extends ControlManager {
         const root = new RootContainer({ id: 'root' });
         return root;
     }
+
+    handleInternalError(input, error) {
+        console.log(`Internal error occurred. Error stack:${error.stack}`);
+    }
 }
+
+const ErrorHandler = {
+    canHandle() {
+        return true;
+    },
+    handle(handlerInput, error) {
+        console.log(`~~~~ Error handled: ${error.stack}`);
+        const speakOutput = `Sorry, I had trouble doing what you asked. Please try again.`;
+        return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse();
+    },
+};
 
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(new ControlHandler(new RootManager()))
+    .addErrorHandlers(ErrorHandler)
     .lambda();
 
 // Exported for building interaction model

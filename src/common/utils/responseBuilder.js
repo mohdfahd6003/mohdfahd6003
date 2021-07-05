@@ -30,7 +30,8 @@ function sendResponse(
         Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)['Alexa.Presentation.APL']
     ) {
         try {
-            const displayTemplate = generateDocument(iswelcome);
+            let displayTemplate = {};
+            displayTemplate = generateDocument(iswelcome);
             const dataTemplate = dataBuilder.prepareScreenContent(
                 title,
                 bodyText,

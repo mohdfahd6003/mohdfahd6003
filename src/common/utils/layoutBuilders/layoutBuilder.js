@@ -20,6 +20,7 @@ function welcomePageCreater() {
 }
 function explainTextImageCreator() {
     const explainTextImage = explain.getTextImage();
+    explainTextImage.items = [];
     explainTextImage.items.push(explain.getMainText());
     explainTextImage.items.push(explain.getMainImage());
     return explainTextImage;
@@ -27,12 +28,14 @@ function explainTextImageCreator() {
 
 function explainBodyCoreCreator() {
     const explainBodyCore = explain.getBodyCore();
+    explainBodyCore.items = [];
     explainBodyCore.items.push(explain.getTitle());
     explainBodyCore.items.push(explainTextImageCreator());
     return explainBodyCore;
 }
 function explainBodyWrapCreater() {
     const explainBodyWrap = explain.getBodyWrap();
+    explainBodyWrap.items = [];
     explainBodyWrap.items.push(explainBodyCoreCreator());
     return explainBodyWrap;
 }
