@@ -7,6 +7,7 @@ const BleedControl = require('./controls/cut.control');
 class MultiPathContainerState extends ContainerControlState {
     constructor(props) {
         super(props.id);
+        this.value = undefined;
     }
 }
 
@@ -24,6 +25,11 @@ class MultiPathContainer extends ContainerControl {
     async canHandle(input) {
         if (await this.canHandleByChild(input)) {
             this.handleFunc = this.handleByChild;
+            if (this.state.value === undefined) {
+                this.state.value = 'first';
+            } else if (this.state.value === 'first') {
+                this.state.value = 'second';
+            }
             return true;
         }
         return false;

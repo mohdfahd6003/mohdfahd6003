@@ -1,0 +1,13 @@
+{
+    "type": "Container",
+    "width": "67.96875vw",
+    "items": [
+        {
+            "type": "Text",
+            "text": "${payload.content.primaryText}",
+            "style":"title.explain"
+        }
+    ],
+    "alignItems": "start",
+    "id":"rect.explain.title"
+}
