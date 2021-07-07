@@ -1,0 +1,230 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "1.6",
+        "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+        "settings": {},
+        "theme": "light",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.3.0"
+            },
+            {
+                "name": "alexa-viewport-profiles",
+                "version": "1.2.0"
+            }
+        ],
+        "styles": {
+            "footerText": {
+                "values": [
+                    {
+                        "textAlign": "left",
+                        "fontStyle": "italic",
+                        "fontWeight": "400",
+                        "textAlignVertical": "center",
+                        "opacity": 1,
+                        "color": "#222328",
+                        "height": "12.5vh",
+                        "width": "100vw",
+                        "fontFamily": "Bookerly",
+                        "fontSize": "@fontSizeMedium",
+                        "lineHeight": 1.5
+                    }
+                ]
+            }
+        },
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Container",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "items": [
+                        {
+                            "type": "AlexaBackground",
+                            "backgroundColor": "#FFFFFF"
+                        },
+                        {
+                            "type": "Container",
+                            "height": "12.5vh",
+                            "paddingLeft": "@marginHorizontal",
+                            "paddingRight": "@marginHorizontal",
+                            "minHeight": "12.5vh",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "items": [
+                                        {
+                                            "type": "Container",
+                                            "item": [
+                                                {
+                                                    "type": "Text",
+                                                    "textAlign": "left",
+                                                    "textAlignVertical": "center",
+                                                    "color": "#222328",
+                                                    "fontFamily": "Amazon Ember Display",
+                                                    "text": "${String.toUpperCase('American Heart Association')}",
+                                                    "fontSize": "@fontSizeSmall"
+                                                }
+                                            ],
+                                            "alignItems": "center",
+                                            "direction": "row",
+                                            "justifyContent": "center"
+                                        }
+                                    ],
+                                    "justifyContent": "center"
+                                },
+                                {
+                                    "type": "Container",
+                                    "items": [
+                                        {
+                                            "type": "Image",
+                                            "width": "4.140625vw",
+                                            "height": "8.625vh",
+                                            "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                                            "align": "right"
+                                        }
+                                    ],
+                                    "justifyContent": "center"
+                                }
+                            ],
+                            "direction": "row",
+                            "justifyContent": "spaceBetween"
+                        },
+                        {
+                            "type": "AlexaDivider",
+                            "theme": "light",
+                            "shadowColor": "#00000094",
+                            "shadowHorizontalOffset": "3",
+                            "shadowRadius": "6",
+                            "shadowVerticalOffset": "3"
+                        },
+                        {
+                            "type": "Container",
+                            "width": "100vw",
+                            "height": "75vh",
+                            "paddingLeft": "@marginHorizontal",
+                            "paddingRight": "@marginHorizontal",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "height": "74.5vh",
+                                    "paddingTop": "4.5vh",
+                                    "items": [
+                                        {
+                                            "type": "Container",
+                                            "width": "67.96875vw",
+                                            "items": [
+                                                {
+                                                    "type": "Text",
+                                                    "text": "Warning signs of a heart attack",
+                                                    "fontFamily": "@fontFamilyRomanSans",
+                                                    "lineHeight": "@lineHeightNormal",
+                                                    "letterSpacing": "@letterSpacingNormal",
+                                                    "maxLines": 2,
+                                                    "fontWeight": "500",
+                                                    "textAlign": "left",
+                                                    "fontSize": "@fontSizeLarge",
+                                                    "textAlignVertical": "auto"
+                                                }
+                                            ],
+                                            "justifyContent": "center",
+                                            "alignItems": "start"
+                                        },
+                                        {
+                                            "type": "Container",
+                                            "height": "70.5vh",
+                                            "items": [
+                                                {
+                                                    "type": "Container",
+                                                    "width": "56.875vw",
+                                                    "height": "59.5vh",
+                                                    "paddingTop": "3.75vh",
+                                                    "item": [
+                                                        {
+                                                            "type": "ScrollView",
+                                                            "id": "scrollContent",
+                                                            "height": "54.5vh",
+                                                            "items": [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "text": "Some heart attacks are sudden and intense, but most slowly, with mild pain or discomfort. Call your local emergency number right away if you have any of these heart attack warning signs.<br><br> Other signs may include breaking out in a cold sweat, nausea or lightheadedness. Women also may experience other common symptoms, particularly shortness of breath, nausea, vomiting, and back or jaw pain. You can learn more at www.heart.org/warningsigns. This information is not a substitute for medical advice or treatment, and the A.H.A recommends consultation with your doctor or healthcare professional.",
+                                                                    "fontFamily": "@fontFamilyRomanSans",
+                                                                    "letterSpacing": "@letterSpacingNormal",
+                                                                    "fontWeight": "400",
+                                                                    "textAlign": "left",
+                                                                    "fontSize": "@fontSizeMedium",
+                                                                    "lineHeight": 1.5
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Container",
+                                                    "height": "59.625vh",
+                                                    "paddingTop": "3.75vh",
+                                                    "items": [
+                                                        {
+                                                            "type": "Image",
+                                                            "width": "25.78125vw",
+                                                            "height": "59.5vh",
+                                                            "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/During_a_Heart_Attack.jpg",
+                                                            "scale": "fill",
+                                                            "align": "top",
+                                                            "shadowColor": "#00000094",
+                                                            "shadowHorizontalOffset": "3",
+                                                            "shadowRadius": "6",
+                                                            "shadowVerticalOffset": "3"
+                                                        }
+                                                    ],
+                                                    "alignItems": "end"
+                                                }
+                                            ],
+                                            "direction": "row",
+                                            "justifyContent": "spaceBetween"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "AlexaDivider",
+                            "theme": "light",
+                            "shadowColor": "#00000094",
+                            "shadowHorizontalOffset": "0",
+                            "shadowRadius": "6",
+                            "shadowVerticalOffset": "-3"
+                        },
+                        {
+                            "type": "Container",
+                            "height": "12.5vh",
+                            "minHeight": "12.5vh",
+                            "paddingLeft": "@marginHorizontal",
+                            "paddingRight": "@marginHorizontal",
+                            "items": [
+                                {
+                                    "type": "Frame",
+                                    "item": [
+                                        {
+                                            "type": "Text",
+                                            "style": "footerText",
+                                            "text": "Try “Alexa, how to stop bleeding”"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "layouts": {}
+    },
+    "datasources": {},
+    "sources": {}
+}

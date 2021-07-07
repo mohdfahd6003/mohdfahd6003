@@ -1,8 +1,52 @@
 {
-    "type": "AlexaHeader",
-    "headerBackgroundColor": "transparent",
-    "headerBackButton": true,
-    "headerTitle": "American Heart Association",
-    "headerAttributionImage": "${payload.content.logo}",
-    "id":"rect.explain.header"
-}
+    "type":"Container",
+    "id":"rect.explain.header",
+    "height":"12.5vh",
+    "minHeight":"12.5vh",
+    "paddingLeft":"6.25vw",
+    "paddingRight":"6.25vw",
+    "items":[
+       {
+          "type":"Container",
+          "items":[
+             {
+                "type":"Container",
+                "item":[
+                   {
+                      "type":"Text",
+                      "textAlign":"left",
+                      "textAlignVertical":"center",
+                      "color":"#222328",
+                      "fontFamily":"Amazon Ember Display",
+                      "text":"${String.toUpperCase('American Heart Association')}",
+                      "fontSize":"@fontSizeSmall"
+                   }
+                ],
+                "alignItems":"center",
+                "direction":"row",
+                "justifyContent":"center"
+             }
+          ],
+          "alignItems":"stretch",
+          "justifyContent":"center"
+       },
+       {
+          "type":"Container",
+          "items":[
+             {
+                "type":"Image",
+                "width":"4.140625vw",
+                "height":"8.625vh",
+                "source":"${payload.content.logo}",
+                "align":"right"
+             }
+          ],
+          "justifyContent":"center"
+       }
+    ],
+    "alignItems":"stretch",
+    "direction":"row",
+    "justifyContent":"spaceBetween",
+    "position":"relative",
+    "top":"0"
+ }

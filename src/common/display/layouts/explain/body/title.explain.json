@@ -1,0 +1,21 @@
+{
+    "type":"Container",
+    "id":"rect.explain.title",
+    "width":"67.96875vw",
+    "items":[
+       {
+          "type":"Text",
+          "text":"${payload.content.primaryText}",
+          "fontFamily":"@fontFamilyRomanSans",
+          "lineHeight":"@lineHeightNormal",
+          "letterSpacing":"@letterSpacingNormal",
+          "maxLines":2,
+          "fontWeight":"500",
+          "textAlign":"left",
+          "fontSize":"@fontSizeLarge",
+          "textAlignVertical":"auto"
+       }
+    ],
+    "justifyContent":"center",
+    "alignItems":"start"
+ }

@@ -1,0 +1,8 @@
+{
+    "type":"Container",
+    "id":"rect.explain.bodyWrap",
+    "width":"100vw",
+    "height":"75vh",
+    "paddingLeft":"@marginHorizontal",
+    "paddingRight":"@marginHorizontal"
+ }

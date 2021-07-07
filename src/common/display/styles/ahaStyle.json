@@ -62,12 +62,22 @@
             }
         ]
     },
-    "background.explain":{
-        "values":[
+    "footerText": {
+        "values": [
             {
-                "backgroundColor": "#222328"
+                "textAlign": "left",
+                "fontStyle": "italic",
+                "fontWeight": "400",
+                "textAlignVertical": "center",
+                "opacity": 1,
+                "color": "#222328",
+                "height": "12.5vh",
+                "width": "100vw",
+                "fontFamily": "Bookerly",
+                "fontSize": "@fontSizeMedium",
+                "lineHeight": 1.5
             }
-
         ]
     }
+  
 }

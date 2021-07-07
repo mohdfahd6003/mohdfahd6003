@@ -1,6 +1,20 @@
 {
-    "type": "AlexaFooter",
-    "hintText": "${payload.content.properties.transformedHintText}",
-    "theme": "dark",
-    "id":"rect.explain.footer"
+    "type": "Container",
+    "id":"rect.explain.footer.container",
+    "height": "12.5vh",
+    "minHeight": "12.5vh",
+    "paddingLeft": "@marginHorizontal",
+    "paddingRight": "@marginHorizontal",
+    "items": [
+        {
+            "type": "Frame",
+            "item": [
+                {
+                    "type": "Text",
+                    "style": "footerText",
+                    "text": "${payload.content.properties.transformedHintText}"
+                }
+            ]
+        }
+    ]
 }

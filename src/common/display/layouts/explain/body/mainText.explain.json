@@ -1,0 +1,27 @@
+{
+    "type":"Container",
+    "id":"rect.explain.scrollContainer",
+    "width":"56.875vw",
+    "height":"59.5vh",
+    "paddingTop":"3.75vh",
+    "item":[
+       {
+          "type":"ScrollView",
+          "id":"rect.explain.scroll",
+          "height":"54.5vh",
+          "items":[
+            {
+                "type":"Text",
+                "id":"rect.explain.mainText",
+                "text":"${payload.content.bodyText}",
+                "fontFamily":"@fontFamilyRomanSans",
+                "letterSpacing":"@letterSpacingNormal",
+                "fontWeight":"400",
+                "textAlign":"left",
+                "fontSize":"@fontSizeMedium",
+                "lineHeight":1.5
+            }
+          ]
+       }
+    ]
+}
