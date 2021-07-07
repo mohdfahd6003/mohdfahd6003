@@ -1,0 +1,23 @@
+{
+    "type": "Container",
+    "width": "32.03125vw",
+    "height": "67vh",
+    "paddingLeft": "4.84375vw",
+    "items": [
+        {
+            "type": "AlexaImage",
+            "imageSource": "${payload.content.mainImage}",
+            "imageScale": "fill",
+            "imageAspectRatio": "standard_portrait",
+            "imageHeight": "54.75vh",
+            "imageWidth": "25.78125vw",
+            "id":"rect.explain.image"
+        }
+    ],
+    "alignItems": "stretch",
+    "alignSelf": "center",
+    "position": "relative",
+    "right": "6.25vw",
+    "id":"rect.explain.imageContainer"
+}
+

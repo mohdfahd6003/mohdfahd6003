@@ -1,0 +1,9 @@
+{
+        "type": "Container",
+        "height": "63.18vh",
+        "paddingRight": "4.84375vw",
+        "alignSelf": "auto",
+        "position": "relative",
+        "alignItems": "start",
+        "id":"rect.explain.bodyCore"
+}

@@ -7,6 +7,16 @@ const {
 } = require('./welcomeLayouts');
 
 const { explain } = require('./explainLayouts');
+const { catalogue } = require('./catalogueLayouts');
+const pager = require('../../display/layouts/pager.json');
+
+function commonPagerCreator() {
+    const commonPagerContainer = { ...pager };
+    commonPagerContainer.items = [];
+    commonPagerContainer.items.push(welcomePageCreater());
+    commonPagerContainer.items.push(explainPageCreater());
+    return commonPagerContainer;
+}
 
 function welcomePageCreater() {
     let welcomeRootContainer = {};
@@ -54,7 +64,7 @@ function explainPageCreater() {
 function getRectangleLayout(isWelcome) {
     const rectMainLayout = [];
     if (isWelcome) {
-        rectMainLayout.push(welcomePageCreater());
+        rectMainLayout.push(commonPagerCreator());
     } else {
         rectMainLayout.push(explainPageCreater());
     }
