@@ -1,0 +1,7 @@
+{
+    "type":"Container",
+    "id":"rect.explain.body.textImageContainer",
+    "height":"70.5vh",
+    "direction":"row",
+    "justifyContent":"spaceBetween"
+ }

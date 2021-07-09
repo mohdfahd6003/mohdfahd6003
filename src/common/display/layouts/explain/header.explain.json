@@ -1,8 +1,57 @@
 {
-    "type": "AlexaHeader",
-    "headerBackgroundColor": "transparent",
-    "headerBackButton": true,
-    "headerTitle": "American Heart Association",
-    "headerAttributionImage": "${payload.content.logo}",
-    "id":"rect.explain.header"
-}
+    "type":"Container",
+    "id":"rect.explain.header.outContainer",
+    "height":"12.5vh",
+    "minHeight":"12.5vh",
+    "paddingLeft":"6.25vw",
+    "paddingRight":"6.25vw",
+    "items":[
+       {
+          "type":"Container",
+          "id":"rect.explain.header.headTexWrapContainer" ,
+          "items":[
+             {
+                "type":"Container",
+                "id":"rect.explain.header.headTextContainer",
+                "item":[
+                   {
+                      "type":"Text",
+                      "": "rect.explain.header.headText",
+                      "textAlign":"left",
+                      "textAlignVertical":"center",
+                      "color":"#222328",
+                      "fontFamily":"Amazon Ember Display",
+                      "text":"${String.toUpperCase('American Heart Association')}",
+                      "fontSize":"@fontSizeSmall"
+                   }
+                ],
+                "alignItems":"center",
+                "direction":"row",
+                "justifyContent":"center"
+             }
+          ],
+          "alignItems":"stretch",
+          "justifyContent":"center"
+       },
+       {
+          "type":"Container",
+          "id": "rect.explain.header.logoContainer",
+          "items":[
+             {
+                "type":"Image",
+                "id": "rect.explain.header.logoImage",
+                "width":"4.140625vw",
+                "height":"8.625vh",
+                "source":"${payload.content.logo}",
+                "align":"right"
+             }
+          ],
+          "justifyContent":"center"
+       }
+    ],
+    "alignItems":"stretch",
+    "direction":"row",
+    "justifyContent":"spaceBetween",
+    "position":"relative",
+    "top":"0"
+ }

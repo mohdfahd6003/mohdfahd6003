@@ -1,0 +1,23 @@
+{
+    "type":"Container",
+    "id":"rect.explain.body.imageContainer",
+    "height":"59.625vh",
+    "paddingTop":"3.75vh",
+    "items":[
+       {
+          "type":"Image",
+          "id":"rect.explain.body.image",
+          "width":"25.78125vw",
+          "height":"59.5vh",
+          "source":"${payload.content.mainImage}",
+          "scale":"fill",
+          "align":"top",
+          "shadowColor":"#00000094",
+          "shadowHorizontalOffset":"3",
+          "shadowRadius":"6",
+          "shadowVerticalOffset":"3"
+       }
+    ],
+    "alignItems":"end"
+}
+
