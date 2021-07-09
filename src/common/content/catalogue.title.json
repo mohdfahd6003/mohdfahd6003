@@ -1,0 +1,11 @@
+{
+    "burn.control" : "burns",
+    "cut.control": "bleeding" ,
+    "dehydration.control": "dehydration",
+    "heart.control": "heart attacks",
+    "learncpr.control": "cpr",
+    "nosebleeding.control": "nose bleeds",
+    "poison.control": "poisoning",
+    "stroke.control": "warning signs of stroke",       
+    "choke.control.main" : "choking"
+}

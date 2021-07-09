@@ -12,4 +12,4 @@ Repository for the AHA Alexa skill
 
 ### Who do I talk to?
 
-- Repo owner or admin : AHA- ALEXA team. [Lijoy.George.Consultant@heart.org (Lead), Chinmay.Bhat.Consultant@heart.org (Developer) ]
+- Repo owner or admin : Alexa team @ HEART Bangalore. [Lijoy.George.Consultant@heart.org (Lead), jyothi.r.consultant@heart.org (Product Manager), Chinmay.Bhat.Consultant@heart.org (Developer) sandeep.yadav.consultant@heart.org (Developer) ]
