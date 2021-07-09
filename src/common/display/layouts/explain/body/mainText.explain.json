@@ -1,18 +1,18 @@
 {
     "type":"Container",
-    "id":"rect.explain.scrollContainer",
+    "id":"rect.explain.body.scrollContainer",
     "width":"56.875vw",
     "height":"59.5vh",
     "paddingTop":"3.75vh",
     "item":[
        {
           "type":"ScrollView",
-          "id":"rect.explain.scroll",
+          "id":"rect.explain.body.scroll",
           "height":"54.5vh",
           "items":[
             {
                 "type":"Text",
-                "id":"rect.explain.mainText",
+                "id":"rect.explain.body.mainText",
                 "text":"${payload.content.bodyText}",
                 "fontFamily":"@fontFamilyRomanSans",
                 "letterSpacing":"@letterSpacingNormal",

@@ -1,6 +1,6 @@
 {
     "type":"Container",
-    "id":"rect.explain.header",
+    "id":"rect.explain.header.outContainer",
     "height":"12.5vh",
     "minHeight":"12.5vh",
     "paddingLeft":"6.25vw",
@@ -8,12 +8,15 @@
     "items":[
        {
           "type":"Container",
+          "id":"rect.explain.header.headTexWrapContainer" ,
           "items":[
              {
                 "type":"Container",
+                "id":"rect.explain.header.headTextContainer",
                 "item":[
                    {
                       "type":"Text",
+                      "": "rect.explain.header.headText",
                       "textAlign":"left",
                       "textAlignVertical":"center",
                       "color":"#222328",
@@ -32,9 +35,11 @@
        },
        {
           "type":"Container",
+          "id": "rect.explain.header.logoContainer",
           "items":[
              {
                 "type":"Image",
+                "id": "rect.explain.header.logoImage",
                 "width":"4.140625vw",
                 "height":"8.625vh",
                 "source":"${payload.content.logo}",

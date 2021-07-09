@@ -1,12 +1,12 @@
 {
     "type":"Container",
-    "id":"rect.explain.imageContainer",
+    "id":"rect.explain.body.imageContainer",
     "height":"59.625vh",
     "paddingTop":"3.75vh",
     "items":[
        {
           "type":"Image",
-          "id":"rect.explain.image",
+          "id":"rect.explain.body.image",
           "width":"25.78125vw",
           "height":"59.5vh",
           "source":"${payload.content.mainImage}",

@@ -1,10 +1,11 @@
 {
     "type":"Container",
-    "id":"rect.explain.title",
+    "id":"rect.explain.body.titleContainer",
     "width":"67.96875vw",
     "items":[
        {
           "type":"Text",
+          "id": "rect.explain.body.titleText", 
           "text":"${payload.content.primaryText}",
           "fontFamily":"@fontFamilyRomanSans",
           "lineHeight":"@lineHeightNormal",
