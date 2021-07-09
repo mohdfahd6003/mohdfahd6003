@@ -9,7 +9,7 @@ function generateDocument(isWelcome) {
     document = {
         type: 'APL',
         license:
-            'Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/',
+            'Copyright 2021 Amazon.com,Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/',
         version: '1.6',
         description: 'AHA alexa skill',
         theme: 'light',
