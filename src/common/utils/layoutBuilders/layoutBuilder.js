@@ -15,7 +15,8 @@ function commonPagerCreator() {
     commonPagerContainer.items = [];
     commonPagerContainer.items.push(welcomePageCreater());
     // to be replaced with catalogue page
-    commonPagerContainer.items.push(explainPage.explainPageCreater()); // dummy page
+    commonPagerContainer.items.push(explainPage.explainPageCreater());
+    // replace the page with actual catalogue page
     return commonPagerContainer;
 }
 
