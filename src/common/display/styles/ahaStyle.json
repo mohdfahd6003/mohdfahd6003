@@ -10,18 +10,6 @@
             }
         ]
     },
-    "welcomeText":{
-        "values":[
-            {
-                "fontFamily": "@fontFamilyRomanSans",
-                "fontSize": "8.5vh",
-                "lineHeight": "@lineHeightNormal",
-                "letterSpacing": "@letterSpacingNormal",
-                "fontWeight": "400"        
-
-            }
-        ]
-    },
     "image.header":{
         "values":[
             {
@@ -78,6 +66,67 @@
                 "lineHeight": 1.5
             }
         ]
-    }
+    },
+    "welcomeText":{
+        "values":[
+           {
+              "textAlign":"center",
+              "textAlignVertical":"center",
+              "color":"#222328",
+              "fontSize":"@fontSizeXLarge",
+              "lineHeight":"@lineHeightNormal",
+              "letterSpacing":"@letterSpacingNormal"
+           }
+        ]
+     },
+     "footer":{
+        "values":[
+           {
+              "textAlign":"left",
+              "fontStyle":"italic",
+              "fontWeight":"400",
+              "textAlignVertical":"center",
+              "opacity":1,
+              "color":"#222328",
+              "height":"12.5vh",
+              "width":"100vw",
+              "fontFamily":"Bookerly",
+              "fontSize":"@fontSizeMedium",
+              "letterSpacing":"@letterSpacingNormal",
+              "lineHeight":"1.5"
+           }
+        ]
+     },
+     "imageContainer":{
+        "values":[
+           {
+              "justifyContent":"center",
+              "left":"36vw"
+           }
+        ]
+     },
+     "image":{
+        "values":[
+           {
+              "opacity":1,
+              "align":"right",
+              "scale":"best-fill",
+              "shadowColor":"#000029",
+              "shadowRadius":"25",
+              "shadowVerticalOffset":"3",
+              "shadowHorizontalOffset":"0"
+           }
+        ]
+     },
+     "welcomeTextFrame":{
+        "values":[
+           {
+              "shadowColor":"#000029",
+              "shadowVerticalOffset":"0",
+              "shadowRadius":"15",
+              "shadowHorizontalOffset":"-3"
+           }
+        ]
+     }
   
 }

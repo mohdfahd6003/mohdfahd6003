@@ -1,8 +1,0 @@
-{
-    "type": "Text",
-    "text": "${payload.content.primaryText}",
-    "style": "title",
-    "paddingLeft": "6.25vw",
-    "paddingRight": "6.25vw",
-    "paddingTop": "13.5vh"
-}

@@ -1,7 +1,6 @@
 const {
     getWelcomeBackground,
-    getWelcomeHeader,
-    getWelcomeMain,
+    getWelcomeBody,
     getWelcomeFooter,
     getWelcomeRoot,
 } = require('./welcomeLayouts');
@@ -25,8 +24,7 @@ function welcomePageCreater() {
     welcomeRootContainer = getWelcomeRoot();
     welcomeRootContainer.items = [];
     welcomeRootContainer.items.push(getWelcomeBackground());
-    welcomeRootContainer.items.push(getWelcomeHeader());
-    welcomeRootContainer.items.push(getWelcomeMain());
+    welcomeRootContainer.items.push(getWelcomeBody());
     welcomeRootContainer.items.push(getWelcomeFooter());
     return welcomeRootContainer;
 }
