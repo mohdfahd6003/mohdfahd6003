@@ -1,9 +1,4 @@
-const {
-    getWelcomeBackground,
-    getWelcomeBody,
-    getWelcomeFooter,
-    getWelcomeRoot,
-} = require('./welcomeLayouts');
+const { welcomePage } = require('./welcomeLayouts');
 
 const { catalogue } = require('./catalogueLayouts');
 const pager = require('../../display/layouts/pager.json');
@@ -19,13 +14,22 @@ function commonPagerCreator() {
     return commonPagerContainer;
 }
 
+function welcomePageBodyCreater() {
+    let welcomeBody = {};
+    welcomeBody = welcomePage.getWelcomeBody();
+    welcomeBody.items = [];
+    welcomeBody.items.push(welcomePage.getWelcomeBodyImage());
+    welcomeBody.items.push(welcomePage.getWelcomeBodyWindow());
+    return welcomeBody;
+}
+
 function welcomePageCreater() {
     let welcomeRootContainer = {};
-    welcomeRootContainer = getWelcomeRoot();
+    welcomeRootContainer = welcomePage.getWelcomeRoot();
     welcomeRootContainer.items = [];
-    welcomeRootContainer.items.push(getWelcomeBackground());
-    welcomeRootContainer.items.push(getWelcomeBody());
-    welcomeRootContainer.items.push(getWelcomeFooter());
+    welcomeRootContainer.items.push(welcomePage.getWelcomeBackground());
+    welcomeRootContainer.items.push(welcomePageBodyCreater());
+    welcomeRootContainer.items.push(welcomePage.getWelcomeFooter());
     return welcomeRootContainer;
 }
 

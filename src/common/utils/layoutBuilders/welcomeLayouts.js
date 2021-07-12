@@ -3,6 +3,8 @@ const rectWelcomeBackground = require('../../display/layouts/welcome/background.
 const rectWelcomeFooter = require('../../display/layouts/welcome/footer.welcome.json');
 const rectWelcomeMain = require('../../display/layouts/welcome/main.welcome.json');
 const rectWelcomeRoot = require('../../display/layouts/welcome/rootLayout.welcome.json');
+const rectWelcomeBodyImage = require('../../display/layouts/welcome/bodyImage.welcome.json');
+const rectWelcomeBodyWindow = require('../../display/layouts/welcome/bodyWindow.welcome.json');
 
 function getWelcomeBackground() {
     return rectWelcomeBackground;
@@ -24,10 +26,20 @@ function getWelcomeRoot() {
     return rectWelcomeRoot;
 }
 
-module.exports = {
+function getWelcomeBodyImage() {
+    return rectWelcomeBodyImage;
+}
+
+function getWelcomeBodyWindow() {
+    return rectWelcomeBodyWindow;
+}
+
+exports.welcomePage = {
     getWelcomeBackground,
     getWelcomeBody,
     getWelcomeMain,
     getWelcomeFooter,
     getWelcomeRoot,
+    getWelcomeBodyImage,
+    getWelcomeBodyWindow,
 };
