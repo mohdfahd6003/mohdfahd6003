@@ -14,12 +14,28 @@ function commonPagerCreator() {
     return commonPagerContainer;
 }
 
+function welcomeBodyWindowCoreCreator() {
+    let welcomeBodyWindowCore = {};
+    welcomeBodyWindowCore = welcomePage.getWelcomeBodyWindowCore();
+    welcomeBodyWindowCore.items = [];
+    welcomeBodyWindowCore.items.push(welcomePage.getWelcomeTextWrapFrame());
+    return welcomeBodyWindowCore;
+}
+
+function welcomeBodyWindowCreator() {
+    let welcomeBodyWindowWrap = {};
+    welcomeBodyWindowWrap = welcomePage.getWelcomeBodyWindowWrap();
+    welcomeBodyWindowWrap.items = [];
+    welcomeBodyWindowWrap.items.push(welcomeBodyWindowCoreCreator());
+    return welcomeBodyWindowWrap;
+}
+
 function welcomePageBodyCreater() {
     let welcomeBody = {};
     welcomeBody = welcomePage.getWelcomeBody();
     welcomeBody.items = [];
     welcomeBody.items.push(welcomePage.getWelcomeBodyImage());
-    welcomeBody.items.push(welcomePage.getWelcomeBodyWindow());
+    welcomeBody.items.push(welcomeBodyWindowCreator());
     return welcomeBody;
 }
 
