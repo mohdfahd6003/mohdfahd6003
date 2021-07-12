@@ -14,11 +14,30 @@ function commonPagerCreator() {
     return commonPagerContainer;
 }
 
+function welcomeLogoLineTextContainerCreator() {
+    let welcomeLogoLineTextContainer = {};
+    welcomeLogoLineTextContainer = welcomePage.getWelcomeLogoLineTextContainer();
+    welcomeLogoLineTextContainer.items = [];
+    welcomeLogoLineTextContainer.items.push(welcomePage.getWelcomeLogo());
+    welcomeLogoLineTextContainer.items.push(welcomePage.getWelcomeText());
+    welcomeLogoLineTextContainer.items.push(welcomePage.getWelcomeLine());
+    welcomeLogoLineTextContainer.items.push();
+    welcomeLogoLineTextContainer.items.push();
+}
+
+function welcomeTextWrapFrameCreator() {
+    let welcomeTextWrap = {};
+    welcomeTextWrap = welcomePage.getWelcomeTextWrapFrame();
+    welcomeTextWrap.items = [];
+    welcomeTextWrap.items.push(welcomeLogoLineTextContainerCreator());
+    return welcomeTextWrap;
+}
+
 function welcomeBodyWindowCoreCreator() {
     let welcomeBodyWindowCore = {};
     welcomeBodyWindowCore = welcomePage.getWelcomeBodyWindowCore();
     welcomeBodyWindowCore.items = [];
-    welcomeBodyWindowCore.items.push(welcomePage.getWelcomeTextWrapFrame());
+    welcomeBodyWindowCore.items.push(welcomeTextWrapFrameCreator());
     return welcomeBodyWindowCore;
 }
 

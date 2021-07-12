@@ -1,0 +1,12 @@
+{
+    "type":"Container",
+    "item":[
+       {
+          "type":"Text",
+          "style":"welcomeText",
+          "text":"${payload.content.primaryText}",
+          "textAlignVertical":"center",
+          "textAlign":"center"
+       }
+    ]
+ }
