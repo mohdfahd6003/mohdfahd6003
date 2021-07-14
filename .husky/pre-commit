@@ -2,4 +2,3 @@
 . "$(dirname "$0")/_/husky.sh" 
 echo husky at pre-commit 
 eslint . --ext .js --fix
-

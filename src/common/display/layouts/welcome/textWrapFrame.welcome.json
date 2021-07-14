@@ -1,0 +1,6 @@
+{
+    "type":"Frame",
+    "id":"rect.welcome.textWrapFrame" ,
+    "style":"welcomeTextFrame",
+    "backgroundColor":"#FFFFFF"
+}

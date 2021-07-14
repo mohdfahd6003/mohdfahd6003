@@ -1,0 +1,14 @@
+{
+    "type":"Container",
+    "height":"18.625vh",
+    "items":[
+       {
+          "type":"Image",
+          "width":"6.015625vw",
+          "height":"12.625vh",
+          "source":"${payload.content.logo}"
+       }
+    ],
+    "alignItems":"center",
+    "justifyContent":"center"
+ }

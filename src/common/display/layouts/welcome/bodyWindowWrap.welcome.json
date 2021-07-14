@@ -1,0 +1,10 @@
+{
+   "type":"Container",
+   "grow":1,
+   "alignItems":"start",
+   "shadowColor":"#00000029",
+   "shadowHorizontalOffset":"-3",
+   "shadowVerticalOffset":"0",
+   "shadowRadius":"15",
+   "right":"53.15625vw"
+ }

@@ -1,0 +1,8 @@
+{
+    "type":"Container",
+    "height":"75vh",
+    "paddingLeft":"@marginHorizontal",
+    "alignItems":"center",
+    "direction":"row",
+    "justifyContent":"spaceAround"
+ }

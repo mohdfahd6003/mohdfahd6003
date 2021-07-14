@@ -1,11 +1,4 @@
-const {
-    getWelcomeBackground,
-    getWelcomeHeader,
-    getWelcomeMain,
-    getWelcomeFooter,
-    getWelcomeRoot,
-} = require('./welcomeLayouts');
-
+const { welcomePage } = require('./welcome/build.welcome');
 const { catalogue } = require('./catalogueLayouts');
 const pager = require('../../display/layouts/pager.json');
 const { explainPage } = require('./explain/build.explain');
@@ -13,22 +6,11 @@ const { explainPage } = require('./explain/build.explain');
 function commonPagerCreator() {
     const commonPagerContainer = { ...pager };
     commonPagerContainer.items = [];
-    commonPagerContainer.items.push(welcomePageCreater());
+    commonPagerContainer.items.push(welcomePage.welcomePageCreater());
     // to be replaced with catalogue page
     commonPagerContainer.items.push(explainPage.explainPageCreater());
     // replace the page with actual catalogue page
     return commonPagerContainer;
-}
-
-function welcomePageCreater() {
-    let welcomeRootContainer = {};
-    welcomeRootContainer = getWelcomeRoot();
-    welcomeRootContainer.items = [];
-    welcomeRootContainer.items.push(getWelcomeBackground());
-    welcomeRootContainer.items.push(getWelcomeHeader());
-    welcomeRootContainer.items.push(getWelcomeMain());
-    welcomeRootContainer.items.push(getWelcomeFooter());
-    return welcomeRootContainer;
 }
 
 function getRectangleLayout(isWelcome) {

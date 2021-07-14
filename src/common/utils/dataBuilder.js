@@ -16,16 +16,6 @@ function prepareScreenContent(primaryText, bodyText, mainImage, isWelcome) {
     dataTemplate.content.logo = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
         assets.Images.logo
     }`;
-    if (isWelcome) {
-        dataTemplate.content.background = `https://${
-            configData[process.env.ENVIRONMENT].cloudfront
-        }/${assets.Images['welcome.background']}`;
-    } else {
-        dataTemplate.content.background = `https://${
-            configData[process.env.ENVIRONMENT].cloudfront
-        }/${assets.Images.background}`;
-    }
-
     dataTemplate.content.properties = {};
     dataTemplate.content.properties.hint = getRandomHint();
     dataTemplate.content.transformers = [];

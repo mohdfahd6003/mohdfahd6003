@@ -4,8 +4,8 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
-const helloImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['hello.control']
+const welcomeImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+    assets.Images['welcome.background']
 }`;
 
 const launchData = require('../../common/content/launch.content.json');
@@ -20,14 +20,14 @@ class WelcomeAct extends RequestValueAct {
             input,
             responseBuilder,
             speakText,
-            helloImage,
+            welcomeImage,
             title,
             primaryText + secondaryText + tertiaryText,
             true
         );
     }
 }
-class HelloControl extends Control {
+class WelcomeControl extends Control {
     constructor(props) {
         super(props.id);
     }
@@ -56,4 +56,4 @@ class HelloControl extends Control {
         return false;
     }
 }
-module.exports = HelloControl;
+module.exports = WelcomeControl;
