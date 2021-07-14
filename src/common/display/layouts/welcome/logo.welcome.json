@@ -1,5 +1,6 @@
 {
     "type":"Container",
+    "id":"rect.welcome.logo",
     "height":"18.625vh",
     "items":[
        {

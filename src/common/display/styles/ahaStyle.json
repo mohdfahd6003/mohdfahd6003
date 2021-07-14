@@ -79,7 +79,7 @@
            }
         ]
      },
-     "footer":{
+     "rect.welcome.footer":{
         "values":[
            {
               "textAlign":"left",

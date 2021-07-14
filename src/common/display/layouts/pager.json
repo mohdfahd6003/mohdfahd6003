@@ -11,7 +11,17 @@
                     "duration": 100,
                     "delay": 13000,
                     "when": true
+                },
+                {
+                    "type": "SetValue",
+                    "delay": 500,
+                    "duration":100,
+                    "componentId": "rect.welcome.text",
+                    "property": "text",
+                    "value": "this is updated text.",
+                    "when":true
                 }
+                
             ]
         }
     ],

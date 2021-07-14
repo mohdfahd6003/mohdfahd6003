@@ -1,5 +1,6 @@
 {
    "type":"Container",
+   "id":"rect.welcome.bodyWindowWrap",
    "grow":1,
    "alignItems":"start",
    "shadowColor":"#00000029",

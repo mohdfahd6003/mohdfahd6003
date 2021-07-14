@@ -10,7 +10,7 @@
           "item":[
              {
                 "type":"Text",
-                "style":"footer",
+                "style":"rect.welcome.footer",
                 "text":"${payload.content.properties.transformedHintText}"
              }
           ]
