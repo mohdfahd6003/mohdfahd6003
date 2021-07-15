@@ -4,6 +4,8 @@ const { getRandomHint } = require('./hintBuilder');
 
 const configData = require('../../config.json');
 
+const catalogueTitles = require('../content/catalogue.title.json');
+
 function prepareScreenContent(primaryText, bodyText, mainImage, isWelcome) {
     const dataTemplate = {};
     dataTemplate.content = {};
@@ -24,7 +26,19 @@ function prepareScreenContent(primaryText, bodyText, mainImage, isWelcome) {
         outputName: 'transformedHintText',
         transformer: 'textToHint',
     };
+    if (isWelcome) dataTemplate.pairImageTitle = createCatalogueData();
     return dataTemplate;
+}
+
+function createCatalogueData() {
+    const pairImageTitle = {};
+    const images = assets.Images;
+    Object.keys(catalogueTitles).forEach((element) => {
+        pairImageTitle[catalogueTitles[element]] = `https://${
+            configData[process.env.ENVIRONMENT].cloudfront
+        }/${images[element]}`;
+    });
+    return pairImageTitle;
 }
 
 exports.prepareScreenContent = prepareScreenContent;
