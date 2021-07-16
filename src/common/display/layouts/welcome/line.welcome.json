@@ -1,5 +1,6 @@
 {
     "type":"Container",
+    "id":"rect.welcome.line",
     "item":[
        {
           "type":"Frame",

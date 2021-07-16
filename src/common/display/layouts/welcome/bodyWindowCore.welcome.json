@@ -1,5 +1,6 @@
 {
     "type":"Container",
+    "id":"rect.welcome.bodyWindowCore",
     "width":"46.40625vw",
     "alignItems":"center",
     "justifyContent":"center"

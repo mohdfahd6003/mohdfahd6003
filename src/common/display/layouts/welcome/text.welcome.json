@@ -1,12 +1,15 @@
 {
     "type":"Container",
+    "id":"rect.welcome.textContainer",
     "item":[
        {
           "type":"Text",
+          "id":"rect.welcome.text",
           "style":"welcomeText",
           "text":"${payload.content.primaryText}",
           "textAlignVertical":"center",
           "textAlign":"center"
        }
     ]
+    
  }

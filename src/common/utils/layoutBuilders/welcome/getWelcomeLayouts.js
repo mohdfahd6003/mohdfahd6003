@@ -1,7 +1,6 @@
 const rectWelcomeBody = require('../../../display/layouts/welcome/body.welcome.json');
 const rectWelcomeBackground = require('../../../display/layouts/welcome/background.welcome.json');
 const rectWelcomeFooter = require('../../../display/layouts/welcome/footer.welcome.json');
-const rectWelcomeMain = require('../../../display/layouts/welcome/main.welcome.json');
 const rectWelcomeRoot = require('../../../display/layouts/welcome/rootLayout.welcome.json');
 const rectWelcomeBodyImage = require('../../../display/layouts/welcome/bodyImage.welcome.json');
 const rectWelcomeBodyWindowWrap = require('../../../display/layouts/welcome/bodyWindowWrap.welcome.json');
@@ -18,10 +17,6 @@ function getWelcomeBackground() {
 
 function getWelcomeBody() {
     return rectWelcomeBody;
-}
-
-function getWelcomeMain() {
-    return rectWelcomeMain;
 }
 
 function getWelcomeFooter() {
@@ -67,7 +62,6 @@ function getWelcomeLine() {
 exports.welcome = {
     getWelcomeBackground,
     getWelcomeBody,
-    getWelcomeMain,
     getWelcomeFooter,
     getWelcomeRoot,
     getWelcomeBodyImage,
