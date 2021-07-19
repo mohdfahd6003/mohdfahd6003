@@ -6,6 +6,6 @@
     "learncpr.control": "cpr",
     "nosebleeding.control": "nose bleeds",
     "poison.control": "poisoning",
-    "stroke.control": "warning signs of stroke",       
+    "stroke.control": "strokes",       
     "choke.control.main" : "choking"
 }
