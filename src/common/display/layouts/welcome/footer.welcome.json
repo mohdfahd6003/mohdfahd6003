@@ -5,6 +5,28 @@
     "paddingLeft":"@marginHorizontal",
     "paddingRight":"@marginHorizontal",
     "items":[
+      {
+         "items": [
+             {
+                 "text": "click for heart",
+                 "type": "Text"
+             }
+         ],
+         "onPress": [
+             {
+                 "type": "SendEvent",
+                 "arguments": [
+                     "textWasPressed",
+                     "Send this data to the skill"
+                 ],
+                 "components": [
+                     "myText"
+                 ]
+             }
+         ],
+         "type": "TouchWrapper",
+         "id": "heartControl"
+     },
        {
           "type":"Frame",
           "item":[

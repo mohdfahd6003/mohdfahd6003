@@ -38,11 +38,18 @@ function createCatalogueData() {
     Object.keys(catalogueTitles).forEach((element) => {
         const gridElement = {};
         gridElement.id = element;
-        gridElement.title = catalogueTitles[element];
-        gridElement.image = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+        gridElement.parentId = 0;
+        gridElement.thumbnailSrc = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
             images[element]
         }`;
-        gridElement.sequenceNumber = sequenceNumber++;
+        gridElement.title = catalogueTitles[element];
+        gridElement.imageSrc = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+            images[element]
+        }`;
+        gridElement.sequence = sequenceNumber++;
+        gridElement.description = '';
+        gridElement.subTitle = '';
+        gridElement.hint = '';
         gridData.push(gridElement);
     });
     console.log(gridData);
