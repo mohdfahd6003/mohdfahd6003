@@ -1,0 +1,5 @@
+{
+    "position":"absolute",
+    "type":"Container",
+    "paddingLeft":"@marginHorizontal"
+}

@@ -1,0 +1,9 @@
+{
+    "backgroundColor":"#FFFFFF",
+    "type":"Frame",
+    "width":"46.40625vw",
+    "shadowColor":"#00000029",
+    "shadowRadius":"15",
+    "shadowVerticalOffset":"0",
+    "shadowHorizontalOffset":-3
+ }
