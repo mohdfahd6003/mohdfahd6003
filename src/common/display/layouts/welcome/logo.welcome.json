@@ -1,0 +1,15 @@
+{
+    "items":[
+       {
+          "source":"${payload.content.logo}",
+          "type":"Image",
+          "width":"6.015625vw"
+       }
+    ],
+    "alignItems":"center",
+    "wrap":"noWrap",
+    "type":"Container",
+    "width":"46.40625vw",
+    "paddingTop":"@spacingSmall",
+    "paddingBottom":"@spacingSmall"
+ }

@@ -1,0 +1,17 @@
+{
+    "items":[
+       {
+          "textAlign":"center",
+          "fontSize":"@fontSizeXLarge",
+          "text":"${payload.content.primaryText}",
+          "textAlignVertical":"auto",
+          "type":"Text",
+          "paddingLeft":"3.984375vw",
+          "paddingRight":"3.984375vw"
+       }
+    ],
+    "wrap":"wrap",
+    "type":"Container",
+    "width":"46.40625vw",
+    "paddingBottom":"@spacingSmall"
+ }

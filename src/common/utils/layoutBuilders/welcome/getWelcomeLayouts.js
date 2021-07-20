@@ -4,6 +4,21 @@ const rectWelcomeBox = require('../../../display/layouts/welcome/box.welcome.jso
 const rectWelcomeImageBody = require('../../../display/layouts/welcome/imageBody.welcome.json');
 const rectWelcomeBoxWrapFrame = require('../../../display/layouts/welcome/boxWrapFrame.welcome.json');
 const rectWelcomeBoxContainer = require('../../../display/layouts/welcome/boxContainer.json');
+const rectWelcomeBoxText = require('../../../display/layouts/welcome/text.welcome.json');
+const rectWelcomeBoxLine = require('../../../display/layouts/welcome/line.welcome.json');
+const rectWelcomeBoxLogo = require('../../../display/layouts/welcome/logo.welcome.json');
+
+function getWelcomeLine() {
+    return rectWelcomeBoxLine;
+}
+
+function getWelcomeText() {
+    return rectWelcomeBoxText;
+}
+
+function getWelcomeLogo() {
+    return rectWelcomeBoxLogo;
+}
 
 function getWelcomeBackground() {
     return rectWelcomeBackground;
@@ -36,4 +51,7 @@ exports.welcome = {
     getWelcomeImageBody,
     getWelcomeBoxWrapFrame,
     getWelcomeBoxContainer,
+    getWelcomeLine,
+    getWelcomeLogo,
+    getWelcomeText,
 };
