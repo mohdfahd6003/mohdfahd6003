@@ -5,7 +5,7 @@
           "borderWidth":"2px",
           "item":[
              {
-                "source":"https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
+                "source":"${payload.content.mainImage}",
                 "scale":"best-fill",
                 "type":"Image",
                 "width":"63.984375vw",

@@ -7,7 +7,7 @@
                    {
                       "items":[
                          {
-                            "source":"https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                            "source":"${payload.content.logo}",
                             "type":"Image",
                             "width":"6.015625vw"
                          }
@@ -24,7 +24,7 @@
                          {
                             "textAlign":"center",
                             "fontSize":"@fontSizeXLarge",
-                            "text":"Welcome To American Heart Association",
+                            "text":"${payload.content.primaryText}",
                             "textAlignVertical":"auto",
                             "type":"Text",
                             "paddingLeft":"3.984375vw",

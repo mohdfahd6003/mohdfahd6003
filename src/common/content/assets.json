@@ -12,7 +12,7 @@
         "background": "images/Background.jpg",
         "headerImage":"images/AHA_ASA_Masterbrand",        
         "choke.control.main": "images/Chest_Thrust_AdultFloor.jpg",
-        "welcome.background":"images/Welcome_bg.jpg",
+        "welcome.background":"images/Welcome_background.png",
         "logo": "images/Aha_logo_2x.png"
     },
     "Audio":{
