@@ -25,7 +25,7 @@
              }
          ],
          "type": "TouchWrapper",
-         "id": "heartControl"
+         "id": "heart.control"
      },
        {
           "type":"Frame",

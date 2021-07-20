@@ -52,7 +52,6 @@ function createCatalogueData() {
         gridElement.hint = '';
         gridData.push(gridElement);
     });
-    console.log(gridData);
     catalogueData.itemList = gridData;
     return catalogueData;
 }
