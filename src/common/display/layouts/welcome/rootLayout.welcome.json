@@ -1,5 +1,6 @@
 {
-    "type":"Container",
+    "alignItems":"stretch",
     "id": "rect.welcome.root",
-    "justifyContent":"end"
+    "justifyContent":"center",
+    "type":"Container"
 }
