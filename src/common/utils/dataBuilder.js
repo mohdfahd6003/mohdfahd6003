@@ -26,19 +26,34 @@ function prepareScreenContent(primaryText, bodyText, mainImage, isWelcome) {
         outputName: 'transformedHintText',
         transformer: 'textToHint',
     };
-    if (isWelcome) dataTemplate.pairImageTitle = createCatalogueData();
+    if (isWelcome) dataTemplate.catalogueData = createCatalogueData();
     return dataTemplate;
 }
 
 function createCatalogueData() {
-    const pairImageTitle = {};
+    const catalogueData = {};
+    const gridData = [];
     const images = assets.Images;
+    let sequenceNumber = 1;
     Object.keys(catalogueTitles).forEach((element) => {
-        pairImageTitle[catalogueTitles[element]] = `https://${
-            configData[process.env.ENVIRONMENT].cloudfront
-        }/${images[element]}`;
+        const gridElement = {};
+        gridElement.id = element;
+        gridElement.parentId = 0;
+        gridElement.thumbnailSrc = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+            images[element]
+        }`;
+        gridElement.title = catalogueTitles[element];
+        gridElement.imageSrc = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+            images[element]
+        }`;
+        gridElement.sequence = sequenceNumber++;
+        gridElement.description = '';
+        gridElement.subTitle = '';
+        gridElement.hint = '';
+        gridData.push(gridElement);
     });
-    return pairImageTitle;
+    catalogueData.itemList = gridData;
+    return catalogueData;
 }
 
 exports.prepareScreenContent = prepareScreenContent;
