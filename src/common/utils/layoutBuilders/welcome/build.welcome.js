@@ -3,6 +3,10 @@ const { welcome } = require('./getWelcomeLayouts');
 function boxContainerCreator() {
     let boxContainer = {};
     boxContainer = welcome.getWelcomeBoxContainer();
+    boxContainer.items = [];
+    boxContainer.items.push(welcome.getWelcomeLogo());
+    boxContainer.items.push(welcome.getWelcomeText());
+    boxContainer.items.push(welcome.getWelcomeLine());
     return boxContainer;
 }
 
