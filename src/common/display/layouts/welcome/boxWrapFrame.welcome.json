@@ -1,6 +1,7 @@
 {
     "backgroundColor":"#FFFFFF",
     "type":"Frame",
+    "id": "rect.welcome.boxWrapFrame" ,
     "width":"46.40625vw",
     "shadowColor":"#00000029",
     "shadowRadius":"15",

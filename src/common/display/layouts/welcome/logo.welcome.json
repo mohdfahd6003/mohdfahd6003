@@ -3,6 +3,7 @@
        {
           "source":"${payload.content.logo}",
           "type":"Image",
+          "id":"rect.welcome.logo",
           "width":"6.015625vw"
        }
     ],
@@ -11,5 +12,6 @@
     "type":"Container",
     "width":"46.40625vw",
     "paddingTop":"@spacingSmall",
-    "paddingBottom":"@spacingSmall"
+    "paddingBottom":"@spacingSmall",
+    "id":"rect.welcome.logoContainer"
  }
