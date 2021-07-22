@@ -1,9 +1,0 @@
-{
-    "type":"Container",
-    "id":"rect.welcome.bodyContainer",
-    "height":"75vh",
-    "paddingLeft":"@marginHorizontal",
-    "alignItems":"center",
-    "direction":"row",
-    "justifyContent":"spaceAround"
- }

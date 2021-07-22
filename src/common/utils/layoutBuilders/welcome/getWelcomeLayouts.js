@@ -1,75 +1,57 @@
-const rectWelcomeBody = require('../../../display/layouts/welcome/body.welcome.json');
 const rectWelcomeBackground = require('../../../display/layouts/welcome/background.welcome.json');
-const rectWelcomeFooter = require('../../../display/layouts/welcome/footer.welcome.json');
 const rectWelcomeRoot = require('../../../display/layouts/welcome/rootLayout.welcome.json');
-const rectWelcomeBodyImage = require('../../../display/layouts/welcome/bodyImage.welcome.json');
-const rectWelcomeBodyWindowWrap = require('../../../display/layouts/welcome/bodyWindowWrap.welcome.json');
-const rectWelcomeBodyWindowCore = require('../../../display/layouts/welcome/bodyWindowCore.welcome.json');
-const rectWelcomeTextWrapFrame = require('../../../display/layouts/welcome/textWrapFrame.welcome.json');
-const rectWelcomeLogoLineTextContainer = require('../../../display/layouts/welcome/logoLineTextContainer.welcome.json');
-const rectWelcomeLine = require('../../../display/layouts/welcome/line.welcome.json');
-const rectWelcomeLogo = require('../../../display/layouts/welcome/logo.welcome.json');
-const rectWelcomeText = require('../../../display/layouts/welcome/text.welcome.json');
+const rectWelcomeBox = require('../../../display/layouts/welcome/box.welcome.json');
+const rectWelcomeImageBody = require('../../../display/layouts/welcome/imageBody.welcome.json');
+const rectWelcomeBoxWrapFrame = require('../../../display/layouts/welcome/boxWrapFrame.welcome.json');
+const rectWelcomeBoxContainer = require('../../../display/layouts/welcome/boxContainer.welcome..json');
+const rectWelcomeBoxText = require('../../../display/layouts/welcome/text.welcome.json');
+const rectWelcomeBoxLine = require('../../../display/layouts/welcome/line.welcome.json');
+const rectWelcomeBoxLogo = require('../../../display/layouts/welcome/logo.welcome.json');
+
+function getWelcomeLine() {
+    return rectWelcomeBoxLine;
+}
+
+function getWelcomeText() {
+    return rectWelcomeBoxText;
+}
+
+function getWelcomeLogo() {
+    return rectWelcomeBoxLogo;
+}
 
 function getWelcomeBackground() {
     return rectWelcomeBackground;
-}
-
-function getWelcomeBody() {
-    return rectWelcomeBody;
-}
-
-function getWelcomeFooter() {
-    return rectWelcomeFooter;
 }
 
 function getWelcomeRoot() {
     return rectWelcomeRoot;
 }
 
-function getWelcomeBodyImage() {
-    return rectWelcomeBodyImage;
+function getWelcomeBox() {
+    return rectWelcomeBox;
 }
 
-function getWelcomeBodyWindowWrap() {
-    return rectWelcomeBodyWindowWrap;
+function getWelcomeImageBody() {
+    return rectWelcomeImageBody;
 }
 
-function getWelcomeBodyWindowCore() {
-    return rectWelcomeBodyWindowCore;
+function getWelcomeBoxWrapFrame() {
+    return rectWelcomeBoxWrapFrame;
 }
 
-function getWelcomeTextWrapFrame() {
-    return rectWelcomeTextWrapFrame;
-}
-
-function getWelcomeLogoLineTextContainer() {
-    return rectWelcomeLogoLineTextContainer;
-}
-
-function getWelcomeText() {
-    return rectWelcomeText;
-}
-
-function getWelcomeLogo() {
-    return rectWelcomeLogo;
-}
-
-function getWelcomeLine() {
-    return rectWelcomeLine;
+function getWelcomeBoxContainer() {
+    return rectWelcomeBoxContainer;
 }
 
 exports.welcome = {
     getWelcomeBackground,
-    getWelcomeBody,
-    getWelcomeFooter,
     getWelcomeRoot,
-    getWelcomeBodyImage,
-    getWelcomeBodyWindowWrap,
-    getWelcomeBodyWindowCore,
-    getWelcomeTextWrapFrame,
-    getWelcomeLogoLineTextContainer,
+    getWelcomeBox,
+    getWelcomeImageBody,
+    getWelcomeBoxWrapFrame,
+    getWelcomeBoxContainer,
+    getWelcomeLine,
     getWelcomeLogo,
     getWelcomeText,
-    getWelcomeLine,
 };

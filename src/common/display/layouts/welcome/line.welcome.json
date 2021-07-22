@@ -1,13 +1,6 @@
 {
-    "type":"Container",
+    "backgroundColor":"#C10E21",
+    "type":"Frame",
     "id":"rect.welcome.line",
-    "item":[
-       {
-          "type":"Frame",
-          "height":"1.25vh",
-          "backgroundColor":"#C10E21"
-       }
-    ],
-    "spacing":"3.875vh",
-    "top":"0.0125vh"
+    "height":"1.25vh"
  }

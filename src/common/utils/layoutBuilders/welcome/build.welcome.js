@@ -1,46 +1,29 @@
 const { welcome } = require('./getWelcomeLayouts');
 
-function welcomeLogoLineTextContainerCreator() {
-    let welcomeLogoLineTextContainer = {};
-    welcomeLogoLineTextContainer = welcome.getWelcomeLogoLineTextContainer();
-    welcomeLogoLineTextContainer.items = [];
-    welcomeLogoLineTextContainer.items.push(welcome.getWelcomeLogo());
-    welcomeLogoLineTextContainer.items.push(welcome.getWelcomeText());
-    welcomeLogoLineTextContainer.items.push(welcome.getWelcomeLine());
-    return welcomeLogoLineTextContainer;
+function boxContainerCreator() {
+    let boxContainer = {};
+    boxContainer = welcome.getWelcomeBoxContainer();
+    boxContainer.items = [];
+    boxContainer.items.push(welcome.getWelcomeLogo());
+    boxContainer.items.push(welcome.getWelcomeText());
+    boxContainer.items.push(welcome.getWelcomeLine());
+    return boxContainer;
 }
 
-function welcomeTextWrapFrameCreator() {
-    let welcomeTextWrap = {};
-    welcomeTextWrap = welcome.getWelcomeTextWrapFrame();
-    welcomeTextWrap.items = [];
-    welcomeTextWrap.items.push(welcomeLogoLineTextContainerCreator());
-    return welcomeTextWrap;
+function boxWrapper() {
+    let boxWrap = {};
+    boxWrap = welcome.getWelcomeBoxWrapFrame();
+    boxWrap.items = [];
+    boxWrap.items.push(boxContainerCreator());
+    return boxWrap;
 }
 
-function welcomeBodyWindowCoreCreator() {
-    let welcomeBodyWindowCore = {};
-    welcomeBodyWindowCore = welcome.getWelcomeBodyWindowCore();
-    welcomeBodyWindowCore.items = [];
-    welcomeBodyWindowCore.items.push(welcomeTextWrapFrameCreator());
-    return welcomeBodyWindowCore;
-}
-
-function welcomeBodyWindowCreator() {
-    let welcomeBodyWindowWrap = {};
-    welcomeBodyWindowWrap = welcome.getWelcomeBodyWindowWrap();
-    welcomeBodyWindowWrap.items = [];
-    welcomeBodyWindowWrap.items.push(welcomeBodyWindowCoreCreator());
-    return welcomeBodyWindowWrap;
-}
-
-function welcomeBodyCreater() {
-    let welcomeBody = {};
-    welcomeBody = welcome.getWelcomeBody();
-    welcomeBody.items = [];
-    welcomeBody.items.push(welcome.getWelcomeBodyImage());
-    welcomeBody.items.push(welcomeBodyWindowCreator());
-    return welcomeBody;
+function boxCreator() {
+    let box = {};
+    box = welcome.getWelcomeBox();
+    box.items = [];
+    box.items.push(boxWrapper());
+    return box;
 }
 
 function welcomePageCreater() {
@@ -48,8 +31,8 @@ function welcomePageCreater() {
     welcomeRootContainer = welcome.getWelcomeRoot();
     welcomeRootContainer.items = [];
     welcomeRootContainer.items.push(welcome.getWelcomeBackground());
-    welcomeRootContainer.items.push(welcomeBodyCreater());
-    welcomeRootContainer.items.push(welcome.getWelcomeFooter());
+    welcomeRootContainer.items.push(welcome.getWelcomeImageBody());
+    welcomeRootContainer.items.push(boxCreator());
     return welcomeRootContainer;
 }
 
