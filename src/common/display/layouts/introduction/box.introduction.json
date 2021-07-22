@@ -1,6 +1,69 @@
 {
+    "items":[
+       {
+          "item":[
+             {
+                "item":[
+                   {
+                      "items":[
+                         {
+                            "source":"https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                            "type":"Image",
+                            "accessibilityLabel":"American Heart Association logo",
+                            "width":"4.140625vw",
+                            "height":"8.625vh"
+                         }
+                      ],
+                      "alignItems":"center",
+                      "wrap":"noWrap",
+                      "type":"Container",
+                      "accessibilityLabel":"American Heart Association logo container",
+                      "width":"46.40625vw",
+                      "padding":"@spacingSmall"
+                   },
+                   {
+                      "item":[
+                         {
+                            "textAlign":"center",
+                            "fontSize":"@fontSizeMedium",
+                            "text":"The American Heart Association has been working to reduce disability and deaths caused by heart disease since 1924. Heart disease is the leading cause of death globally, and can cause numerous problems including heart attack or stroke.",
+                            "textAlignVertical":"auto",
+                            "fontFamily":"@fontFamilyRomanSans",
+                            "fontWeight":"@fontWeightLight",
+                            "color":"#222328",
+                            "letterSpacing":"@letterSpacingNormal",
+                            "lineHeight":"@lineHeightNormal",
+                            "id":"introductionText",
+                            "type":"Text",
+                            "paddingBottom":"@spacingSmall",
+                            "accessibilityLabel":"American Heart Association introduction text"
+                         }
+                      ],
+                      "type":"ScrollView",
+                      "height":"@scrollViewHeight",
+                      "paddingLeft":"@spacingSmall",
+                      "paddingRight":"@spacingSmall"
+                   },
+                   {
+                      "backgroundColor":"#C10E21",
+                      "type":"Frame",
+                      "height":"1.25vh"
+                   }
+                ],
+                "justifyContent":"end",
+                "type":"Container"
+             }
+          ],
+          "backgroundColor":"#FFFFFF",
+          "type":"Frame",
+          "width":"46.40625vw",
+          "shadowColor":"#00000029",
+          "shadowRadius":"15",
+          "shadowVerticalOffset":"0",
+          "shadowHorizontalOffset":-3
+       }
+    ],
     "position":"absolute",
-    "id":"rect.welcome.box" ,
     "type":"Container",
     "paddingLeft":"@marginHorizontal"
-}
+ }
