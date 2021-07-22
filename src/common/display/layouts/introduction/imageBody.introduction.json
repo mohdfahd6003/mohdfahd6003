@@ -1,0 +1,31 @@
+{
+    "items":[
+       {
+          "borderColor":"#C10E21",
+          "borderWidth":"2px",
+          "item":[
+             {
+                "source":"${payload.content.mainImage}",
+                "scale":"best-fill",
+                "type":"Image",
+                "width":"63.984375vw",
+                "height":"77.5vh",
+                "id": "rect.welcome.image"
+
+             }
+          ],
+          "type":"Frame",
+          "id": "rect.welcome.imageFrame" ,
+          "width":"64.296875vw",
+          "shadowColor":"#00000029",
+          "shadowHorizontalOffset":"0",
+          "shadowRadius":"25",
+          "shadowVerticalOffset":"3"
+       }
+    ],
+    "alignItems":"end",
+    "id": "rect.welcome.imageBody" ,
+    "justifyContent":"center",
+    "type":"Container",
+    "paddingRight":"@marginHorizontal"
+}
