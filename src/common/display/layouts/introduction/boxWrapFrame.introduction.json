@@ -1,0 +1,10 @@
+{ 
+    "backgroundColor":"#FFFFFF",
+    "type":"Frame",
+    "id": "rect.introduction.boxWrapFrame" ,
+    "width":"46.40625vw",
+    "shadowColor":"#00000029",
+    "shadowRadius":"15",
+    "shadowVerticalOffset":"0",
+    "shadowHorizontalOffset":-3
+ }
