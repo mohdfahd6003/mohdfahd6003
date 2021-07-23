@@ -1,12 +1,12 @@
 const { introduction } = require('./getIntroductionLayouts');
 
-/* function boxContainerCreator() {
+function boxContainerCreator() {
     let boxContainer = {};
     boxContainer = introduction.getIntroductionBoxContainer();
-    boxContainer.items = [];
-    boxContainer.items.push(introduction.getIntroductionLogo());
-    boxContainer.items.push(introduction.getIntroductionText());
-    boxContainer.items.push(introduction.getIntroductionLine());
+    //    boxContainer.items = [];
+    //    boxContainer.items.push(introduction.getIntroductionLogo());
+    //    boxContainer.items.push(introduction.getIntroductionText());
+    //    boxContainer.items.push(introduction.getIntroductionLine());
     return boxContainer;
 }
 
@@ -16,13 +16,13 @@ function boxWrapper() {
     boxWrap.items = [];
     boxWrap.items.push(boxContainerCreator());
     return boxWrap;
-} */
+}
 
 function boxCreator() {
     let box = {};
     box = introduction.getIntroductionBox();
-    // box.items = [];
-    // box.items.push(boxWrapper());
+    box.items = [];
+    box.items.push(boxWrapper());
     return box;
 }
 
