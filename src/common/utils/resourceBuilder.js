@@ -18,6 +18,17 @@ function getResources() {
                 resolution: '.jpg',
             },
         },
+        {
+            dimensions: {
+                scrollViewHeight: '35vh',
+            },
+        },
+        {
+            when: '${@viewportProfile == @tvLandscapeXLarge}',
+            dimensions: {
+                scrollViewHeight: '20vh',
+            },
+        },
     ];
 }
 

@@ -7,7 +7,7 @@
                    {
                       "items":[
                          {
-                            "source":"https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                            "source":"${payload.content.logo}",
                             "type":"Image",
                             "accessibilityLabel":"American Heart Association logo",
                             "width":"4.140625vw",
@@ -26,7 +26,7 @@
                          {
                             "textAlign":"center",
                             "fontSize":"@fontSizeMedium",
-                            "text":"The American Heart Association has been working to reduce disability and deaths caused by heart disease since 1924. Heart disease is the leading cause of death globally, and can cause numerous problems including heart attack or stroke.",
+                            "text":"${payload.content.bodyText}",
                             "textAlignVertical":"auto",
                             "fontFamily":"@fontFamilyRomanSans",
                             "fontWeight":"@fontWeightLight",

@@ -1,41 +1,41 @@
-const { Introduction } = require('./getIntroductionLayouts');
+const { introduction } = require('./getIntroductionLayouts');
 
-function boxContainerCreator() {
+/* function boxContainerCreator() {
     let boxContainer = {};
-    boxContainer = Introduction.getIntroductionBoxContainer();
+    boxContainer = introduction.getIntroductionBoxContainer();
     boxContainer.items = [];
-    boxContainer.items.push(Introduction.getIntroductionLogo());
-    boxContainer.items.push(Introduction.getIntroductionText());
-    boxContainer.items.push(Introduction.getIntroductionLine());
+    boxContainer.items.push(introduction.getIntroductionLogo());
+    boxContainer.items.push(introduction.getIntroductionText());
+    boxContainer.items.push(introduction.getIntroductionLine());
     return boxContainer;
 }
 
 function boxWrapper() {
     let boxWrap = {};
-    boxWrap = Introduction.getIntroductionBoxWrapFrame();
+    boxWrap = introduction.getIntroductionBoxWrapFrame();
     boxWrap.items = [];
     boxWrap.items.push(boxContainerCreator());
     return boxWrap;
-}
+} */
 
 function boxCreator() {
     let box = {};
-    box = Introduction.getIntroductionBox();
-    box.items = [];
-    box.items.push(boxWrapper());
+    box = introduction.getIntroductionBox();
+    // box.items = [];
+    // box.items.push(boxWrapper());
     return box;
 }
 
-function IntroductionPageCreater() {
-    let IntroductionRootContainer = {};
-    IntroductionRootContainer = Introduction.getIntroductionRoot();
-    IntroductionRootContainer.items = [];
-    IntroductionRootContainer.items.push(Introduction.getIntroductionBackground());
-    IntroductionRootContainer.items.push(Introduction.getIntroductionImageBody());
-    IntroductionRootContainer.items.push(boxCreator());
-    return IntroductionRootContainer;
+function introductionPageCreater() {
+    let introductionRootContainer = {};
+    introductionRootContainer = introduction.getIntroductionRoot();
+    introductionRootContainer.items = [];
+    introductionRootContainer.items.push(introduction.getIntroductionBackground());
+    introductionRootContainer.items.push(introduction.getIntroductionImageBody());
+    introductionRootContainer.items.push(boxCreator());
+    return introductionRootContainer;
 }
 
-exports.IntroductionPage = {
-    IntroductionPageCreater,
+exports.introductionPage = {
+    introductionPageCreater,
 };
