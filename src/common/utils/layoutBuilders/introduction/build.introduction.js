@@ -3,10 +3,10 @@ const { introduction } = require('./getIntroductionLayouts');
 function boxContainerCreator() {
     let boxContainer = {};
     boxContainer = introduction.getIntroductionBoxContainer();
-    //    boxContainer.items = [];
-    //    boxContainer.items.push(introduction.getIntroductionLogo());
-    //    boxContainer.items.push(introduction.getIntroductionText());
-    //    boxContainer.items.push(introduction.getIntroductionLine());
+    boxContainer.items = [];
+    boxContainer.items.push(introduction.getIntroductionLogo());
+    boxContainer.items.push(introduction.getIntroductionText());
+    boxContainer.items.push(introduction.getIntroductionLine());
     return boxContainer;
 }
 
