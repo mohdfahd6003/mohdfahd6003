@@ -4,9 +4,9 @@ function boxContainerCreator() {
     let boxContainer = {};
     boxContainer = introduction.getIntroductionBoxContainer();
     boxContainer.items = [];
-    boxContainer.items.push(introduction.getIntroductionLogo());
-    boxContainer.items.push(introduction.getIntroductionText());
-    boxContainer.items.push(introduction.getIntroductionLine());
+    boxContainer.items.push(introduction.getIntroductionBoxLogo());
+    boxContainer.items.push(introduction.getIntroductionBoxText());
+    boxContainer.items.push(introduction.getIntroductionBoxLine());
     return boxContainer;
 }
 
