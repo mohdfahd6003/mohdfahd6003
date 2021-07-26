@@ -4,7 +4,7 @@
     "items": [
         {
             "type": "Text",
-            "text": "${payload.content.primaryText}",
+            "text": "${payload.content.title}",
             "style":"title.explain"
         }
     ],

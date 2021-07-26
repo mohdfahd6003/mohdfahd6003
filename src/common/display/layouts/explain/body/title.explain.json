@@ -6,7 +6,7 @@
        {
           "type":"Text",
           "id": "rect.explain.body.titleText", 
-          "text":"${payload.content.primaryText}",
+          "text":"${payload.content.title}",
           "fontFamily":"@fontFamilyRomanSans",
           "lineHeight":"@lineHeightNormal",
           "letterSpacing":"@letterSpacingNormal",

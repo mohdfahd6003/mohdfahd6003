@@ -10,7 +10,7 @@ function commonPagerCreator() {
     commonPagerContainer.items.push(welcomePage.welcomePageCreater());
     commonPagerContainer.items.push(introductionPage.introductionPageCreater());
     // to be replaced with catalogue page
-    // commonPagerContainer.items.push(explainPage.explainPageCreater());
+    commonPagerContainer.items.push(explainPage.explainPageCreater());
     // replace the page with actual catalogue page
     return commonPagerContainer;
 }
