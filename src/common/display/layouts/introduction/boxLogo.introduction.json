@@ -3,6 +3,7 @@
        {
           "source":"${payload.content.logo}",
           "type":"Image",
+          "id": "rect.introduction.boxLogo" ,
           "accessibilityLabel":"American Heart Association logo",
           "width":"4.140625vw",
           "height":"8.625vh"
@@ -11,6 +12,7 @@
     "alignItems":"center",
     "wrap":"noWrap",
     "type":"Container",
+    "id": "rect.introduction.boxLogoContainer" ,
     "accessibilityLabel":"American Heart Association logo container",
     "width":"46.40625vw",
     "padding":"@spacingSmall"

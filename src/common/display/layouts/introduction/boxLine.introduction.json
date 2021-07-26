@@ -1,5 +1,6 @@
 {
     "backgroundColor":"#C10E21",
     "type":"Frame",
+    "id":"rect.introduction.boxLine",
     "height":"1.25vh"
 }

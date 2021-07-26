@@ -10,13 +10,14 @@
           "color":"#222328",
           "letterSpacing":"@letterSpacingNormal",
           "lineHeight":"@lineHeightNormal",
-          "id":"introductionText",
+          "id":"rect.introduction.boxText",
           "type":"Text",
           "paddingBottom":"@spacingSmall",
           "accessibilityLabel":"American Heart Association introduction text"
        }
     ],
     "type":"ScrollView",
+    "id": "rect.introduction.boxTextScroll" ,
     "height":"@scrollViewHeight",
     "paddingLeft":"@spacingSmall",
     "paddingRight":"@spacingSmall"
