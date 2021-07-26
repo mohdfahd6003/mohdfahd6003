@@ -1,0 +1,24 @@
+{
+    "item":[
+       {
+          "textAlign":"center",
+          "fontSize":"@fontSizeMedium",
+          "text":"${payload.content.bodyText}",
+          "textAlignVertical":"auto",
+          "fontFamily":"@fontFamilyRomanSans",
+          "fontWeight":"@fontWeightLight",
+          "color":"#222328",
+          "letterSpacing":"@letterSpacingNormal",
+          "lineHeight":"@lineHeightNormal",
+          "id":"rect.introduction.boxText",
+          "type":"Text",
+          "paddingBottom":"@spacingSmall",
+          "accessibilityLabel":"American Heart Association introduction text"
+       }
+    ],
+    "type":"ScrollView",
+    "id": "rect.introduction.boxTextScroll" ,
+    "height":"@scrollViewHeight",
+    "paddingLeft":"@spacingSmall",
+    "paddingRight":"@spacingSmall"
+ }

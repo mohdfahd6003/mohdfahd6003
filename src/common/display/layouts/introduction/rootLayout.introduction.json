@@ -1,0 +1,6 @@
+{
+    "alignItems":"stretch",
+    "id": "rect.welcome.root",
+    "justifyContent":"center",
+    "type":"Container"
+}

@@ -1,0 +1,25 @@
+{
+   "items":[
+      {
+         "item":{
+            "imageSource":"${payload.content.mainImage}",
+            "imageScale":"best-fill",
+            "type":"AlexaImage",
+            "id": "rect.introduction.image" ,
+            "imageHeight":"77.5vh",
+            "imageWidth":"63.984375vw",
+            "accessibilityLabel":"American Heart Association home page image"
+         },
+         "borderWidth":"2px",
+         "borderColor":"#C10E21",
+         "type":"Frame",
+         "id": "rect.introduction.imageBodyFrame" ,
+         "width":"64.296875vw"
+      }
+   ],
+   "alignItems":"end",
+   "justifyContent":"center",
+   "type":"Container",
+   "id": "rect.introduction.imageBodyContainer" ,
+   "paddingRight":"@marginHorizontal"
+}

@@ -1,0 +1,6 @@
+{
+    "position":"absolute",
+    "type":"Container",
+    "id": "rect.introduction.box" ,
+    "paddingLeft":"@marginHorizontal"
+ }
