@@ -60,7 +60,7 @@
             "type": "AlexaGridList",
             "backgroundColor": "#F8F8F8",
             "theme": "light",
-            "listItems": "${payload.gridListData.listItemsToShow}",
+            "listItems": "${payload.catalogueData.itemList}",
             "customLayoutName": "Card",
             "listItemHeight": "57vh",
             "imageScale": "best-fill",

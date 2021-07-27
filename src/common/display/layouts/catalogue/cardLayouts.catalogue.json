@@ -19,7 +19,7 @@
                                     {
                                         "item": [
                                             {
-                                                "imageSource": "${data.imageUrl}",
+                                                "imageSource": "${data.imageSrc}",
                                                 "type": "AlexaImage",
                                                 "imageWidth": "@imageWidth",
                                                 "imageHeight": "@imageHeight",
@@ -34,7 +34,7 @@
                                         "height": "33.75vh"
                                     },
                                     {
-                                        "text": "${data.sequenceNumber}. ${data.listItemText}",
+                                        "text": "${data.sequence}. ${data.title}",
                                         "fontSize": "@fontSizeSmall",
                                         "fontWeight": "@fontWeightMedium",
                                         "maxLines": "@cardContentTitleMaxLines",

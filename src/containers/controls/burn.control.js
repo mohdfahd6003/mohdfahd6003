@@ -45,7 +45,7 @@ class BurnControl extends Control {
     canHandle(input) {
         if (
             InputUtil.isIntent(input, 'burnIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burnId')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burncontrol')
         ) {
             return true;
         } else if (this.state.value && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
@@ -60,7 +60,7 @@ class BurnControl extends Control {
         const burnAct = new BurnActMain(this, {});
         if (
             InputUtil.isIntent(input, 'burnIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burnId')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burncontrol')
         ) {
             this.state.value = 'burn';
             burnAct.speakText = burnData.main.speakText;

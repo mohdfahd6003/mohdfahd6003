@@ -38,7 +38,8 @@ class NoseBleeding extends Control {
     canHandle(input) {
         return (
             InputUtil.isIntent(input, 'noseIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'noseBleedId')
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.source.id === 'nosebleedingcontrol')
         );
     }
 

@@ -43,7 +43,7 @@ class CutControl extends Control {
     canHandle(input) {
         if (
             InputUtil.isIntent(input, 'bleedIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'cutId')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'cutcontrol')
         ) {
             return true;
         }
@@ -60,7 +60,7 @@ class CutControl extends Control {
         const cutAct = new CutRequestAct(this, {});
         if (
             InputUtil.isIntent(input, 'bleedIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'cutId')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'cutcontrol')
         ) {
             this.state.value = 'first';
             cutAct.speakText = cutData.main.speakText;

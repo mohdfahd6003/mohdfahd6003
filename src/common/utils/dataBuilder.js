@@ -26,8 +26,8 @@ function prepareScreenContent(title, bodyText, mainImage, isWelcome) {
         outputName: 'transformedHintText',
         transformer: 'textToHint',
     };
-    // if (isWelcome) dataTemplate.catalogueData = createCatalogueData();
-    if (isWelcome) dataTemplate.gridListData = hardCodeGridData();
+    if (isWelcome) dataTemplate.catalogueData = createCatalogueData();
+    // if (isWelcome) dataTemplate.gridListData = hardCodeGridData();
     return dataTemplate;
 }
 

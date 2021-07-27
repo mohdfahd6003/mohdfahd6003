@@ -40,7 +40,7 @@ class HeartControl extends Control {
     canHandle(input) {
         return (
             InputUtil.isIntent(input, 'heartWarningSignsIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'heartAttackId')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'heartcontrol')
         );
     }
 

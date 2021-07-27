@@ -38,7 +38,7 @@ class PoisonControl extends Control {
     canHandle(input) {
         return (
             InputUtil.isIntent(input, 'poisonIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'poisonId')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'poisoncontrol')
         );
     }
 
