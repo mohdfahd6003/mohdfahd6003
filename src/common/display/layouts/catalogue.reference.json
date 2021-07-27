@@ -1,0 +1,413 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "1.6",
+        "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+        "theme": "light",
+        "resources": [
+            {
+                "numbers": {
+                    "numberOfVisibleCards": 3.5,
+                    "spacingBetweenCards": "@spacingLarge",
+                    "imageAspectRatio": 1.1037,
+                    "cardContentHeight": 400,
+                    "cardContentTitleMaxLines": 2
+                },
+                "dimensions": {
+                    "cardContentPadding": "@spacingMedium",
+                    "gridListHeight": "75vh"
+                }
+            },
+            {
+                "when": "${@viewportProfile == @tvLandscapeXLarge}",
+                "numbers": {
+                    "numberOfVisibleCards": 4.5,
+                    "cardContentHeight": 120,
+                    "cardContentTitleMaxLines": 2
+                },
+                "dimensions": {
+                    "cardContentPadding": "@spacingMedium"
+                }
+            },
+            {
+                "when": "${@viewportProfile == @hubRoundSmall}",
+                "numbers": {
+                    "numberOfVisibleCards": 1.25,
+                    "cardContentHeight": 173,
+                    "cardContentTitleMaxLines": 2
+                },
+                "dimensions": {
+                    "gridListHeight": "77.5vh"
+                }
+            },
+            {
+                "when": "${@viewportProfile == @mobileSmall}",
+                "numbers": {
+                    "numberOfVisibleCards": 1.5
+                }
+            },
+            {
+                "when": "${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeSmall || @viewportProfile == @mobileMedium || (@viewportProfile == @mobileSmall)}",
+                "numbers": {
+                    "numberOfVisibleCards": 2.5
+                }
+            },
+            {
+                "when": "${@viewportProfile == @mobileLarge}",
+                "numbers": {
+                    "numberOfVisibleCards": 3.5
+                }
+            },
+            {
+                "dimensions": {
+                    "cardWidth": "${Math.round((viewport.width - @spacingMedium - (@spacingBetweenCards * @numberOfVisibleCards)) / @numberOfVisibleCards)}",
+                    "imageWidth": "${@viewportProfile == @hubRoundSmall ? @cardWidth : 23.28vw }",
+                    "imageHeight": "${@cardWidth / @imageAspectRatio}",
+                    "cardHeight": "${@imageHeight + @cardContentHeight}"
+                }
+            }
+        ],
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.3.0"
+            },
+            {
+                "name": "alexa-viewport-profiles",
+                "version": "1.2.0"
+            }
+        ],
+        "styles": {
+            "footerText": {
+                "values": [
+                    {
+                        "textAlign": "left",
+                        "fontStyle": "italic",
+                        "fontWeight": "400",
+                        "textAlignVertical": "center",
+                        "opacity": 1,
+                        "color": "#222328",
+                        "height": "12.5vh",
+                        "width": "100vw",
+                        "fontFamily": "@fontFamilyRomanSerif",
+                        "fontSize": "@fontSizeMedium",
+                        "lineHeight": 1.5
+                    }
+                ]
+            },
+            "cardFrame": {
+                "values": [
+                    {
+                        "backgroundColor": "#FFFFFF",
+                        "borderRadius": 4,
+                        "shadowVerticalOffset": 3,
+                        "shadowHorizontalOffset": 3,
+                        "shadowColor": "#00000029",
+                        "shadowRadius": 10
+                    },
+                    {
+                        "when": "${state.pressed}",
+                        "backgroundColor": "#fcfcfa"
+                    }
+                ]
+            },
+            "carousel": {
+                "values": [
+                    {
+                        "width": "100%",
+                        "snap": "center",
+                        "height": "@cardHeight",
+                        "paddingTop": "@spacingSmall",
+                        "paddingBottom": "@spacingSmall",
+                        "paddingLeft": "@spacingMedium",
+                        "paddingRight": "@spacingMedium"
+                    }
+                ]
+            }
+        },
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "id": "gridComponent",
+                    "type": "Container",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "items": [
+                        {
+                            "type": "AlexaBackground",
+                            "backgroundColor": "#FFFFFF"
+                        },
+                        {
+                            "type": "Container",
+                            "height": "12.5vh",
+                            "paddingLeft": "@marginHorizontal",
+                            "paddingRight": "@marginHorizontal",
+                            "minHeight": "12.5vh",
+                            "items": [
+                                {
+                                    "when": "${@viewportProfile != @hubRoundSmall}",
+                                    "type": "Container",
+                                    "items": [
+                                        {
+                                            "type": "Container",
+                                            "item": [
+                                                {
+                                                    "type": "Text",
+                                                    "textAlign": "left",
+                                                    "textAlignVertical": "center",
+                                                    "color": "#222328",
+                                                    "fontFamily": "Amazon Ember Display",
+                                                    "text": "${String.toUpperCase('American Heart Association')}",
+                                                    "fontSize": "@fontSizeSmall"
+                                                }
+                                            ],
+                                            "alignItems": "center",
+                                            "direction": "row",
+                                            "justifyContent": "center"
+                                        }
+                                    ],
+                                    "justifyContent": "center"
+                                },
+                                {
+                                    "type": "Container",
+                                    "items": [
+                                        {
+                                            "type": "Image",
+                                            "width": "4.140625vw",
+                                            "height": "8.625vh",
+                                            "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                                            "align": "right"
+                                        }
+                                    ],
+                                    "justifyContent": "center"
+                                }
+                            ],
+                            "direction": "row",
+                            "justifyContent": "${@viewportProfile != @hubRoundSmall ? 'spaceBetween' : 'center'}"
+                        },
+                        {
+                            "type": "AlexaGridList",
+                            "backgroundColor": "#F8F8F8",
+                            "theme": "light",
+                            "listItems": "${payload.gridListData.listItemsToShow}",
+                            "customLayoutName": "Card",
+                            "listItemHeight": "57vh",
+                            "imageScale": "best-fill",
+                            "imageAlignment": "right",
+                            "primaryAction": {
+                                "type": "SendEvent",
+                                "arguments": [
+                                    "ListItemSelected",
+                                    "${ordinal}"
+                                ]
+                            },
+                            "height": "75vh",
+                            "paddingBottom": "@spacingSmall"
+                        },
+                        {
+                            "when": "${@viewportProfile != @hubRoundSmall}",
+                            "type": "AlexaDivider",
+                            "theme": "light",
+                            "shadowColor": "#00000094",
+                            "shadowHorizontalOffset": "3",
+                            "shadowRadius": "6",
+                            "shadowVerticalOffset": "3"
+                        },
+                        {
+                            "when": "${@viewportProfile != @hubRoundSmall}",
+                            "type": "Container",
+                            "height": "12.5vh",
+                            "minHeight": "12.5vh",
+                            "paddingLeft": "@marginHorizontal",
+                            "paddingRight": "@marginHorizontal",
+                            "items": [
+                                {
+                                    "type": "Frame",
+                                    "item": [
+                                        {
+                                            "type": "Text",
+                                            "style": "footerText",
+                                            "text": "Try “Alexa, how to stop bleeding”"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "justifyContent": "start"
+                }
+            ]
+        },
+        "layouts": {
+            "Card": {
+                "item": [
+                    {
+                        "onPress": [
+                            {
+                                "type": "SendEvent",
+                                "arguments": [
+                                    "cardSelected",
+                                    "${data.alias}"
+                                ]
+                            }
+                        ],
+                        "item": [
+                            {
+                                "item": [
+                                    {
+                                        "items": [
+                                            {
+                                                "item": [
+                                                    {
+                                                        "imageSource": "${data.imageUrl}",
+                                                        "type": "AlexaImage",
+                                                        "imageWidth": "@imageWidth",
+                                                        "imageHeight": "@imageHeight",
+                                                        "imageAlignment": "top",
+                                                        "scale": "best-fill",
+                                                        "align": "top",
+                                                        "borderRadius": "4"
+                                                    }
+                                                ],
+                                                "shrink": 1,
+                                                "type": "Container",
+                                                "height": "33.75vh"
+                                            },
+                                            {
+                                                "text": "${data.sequenceNumber}. ${data.listItemText}",
+                                                "fontSize": "@fontSizeSmall",
+                                                "fontWeight": "@fontWeightMedium",
+                                                "maxLines": "@cardContentTitleMaxLines",
+                                                "letterSpacing": "@letterSpacingNormal",
+                                                "color": "#222328",
+                                                "fontFamily": "@fontFamilyRomanSans",
+                                                "textAlignVertical": "center",
+                                                "textAlign": "left",
+                                                "type": "Text",
+                                                "paddingLeft": "@spacingXSmall",
+                                                "paddingRight": "@spacingXSmall",
+                                                "alignSelf": "start"
+                                            },
+                                            {
+                                                "layoutDirection": "LTR",
+                                                "backgroundColor": "#C10E21",
+                                                "borderColor": "#C10E21",
+                                                "borderWidth": "2",
+                                                "type": "Frame",
+                                                "width": "100vw",
+                                                "height": "1.25vh"
+                                            }
+                                        ],
+                                        "alignItems": "center",
+                                        "justifyContent": "spaceBetween",
+                                        "type": "Container",
+                                        "width": "100vw",
+                                        "height": "100vh",
+                                        "paddingTop": "@spacingXSmall"
+                                    }
+                                ],
+                                "type": "Frame",
+                                "inheritParentState": true,
+                                "style": "cardFrame"
+                            }
+                        ],
+                        "type": "TouchWrapper",
+                        "id": "${data.id}",
+                        "paddingBottom": "@spacingLarge",
+                        "paddingRight": "@spacingSmall",
+                        "paddingStart": "@spacingXSmall"
+                        
+                    }
+                ]
+            }
+        },
+        "onMount": {
+            "type": "AnimateItem",
+            "easing": "ease-in-out",
+            "duration": 800,
+            "componentId": "gridComponent",
+            "value": [
+                {
+                    "property": "opacity",
+                    "to": 1
+                },
+                {
+                    "property": "transform",
+                    "from": [
+                        {
+                            "translateY": -500
+                        }
+                    ],
+                    "to": [
+                        {
+                            "translateY": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "datasources": {
+        "gridListData": {
+            "listItemsToShow": [
+                {
+                    "listItemText": "Heart Attacks",
+                    "sequenceNumber": "1",
+                    "id": "heartAttackId",
+                    "imageUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/During_a_Heart_Attack.jpg"
+                },
+                {
+                    "listItemText": "Warning Signs of Stroke",
+                    "sequenceNumber": "2",
+                    "id": "strokeId",
+                    "imageUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/ASA_FAST_Warning_Signs.jpg"
+                },
+                {
+                    "listItemText": "Burns",
+                    "sequenceNumber": "3",
+                    "id": "burnId",
+                    "imageUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/Burn_under_Running_Water_AdultSink.jpg"
+                },
+                {
+                    "listItemText": "Dehydration",
+                    "sequenceNumber": "4",
+                    "imageUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/Dehydration_Water.jpg"
+                },
+                {
+                    "listItemText": "Cut",
+                    "sequenceNumber": "5",
+                    "id": "cutId",
+                    "imageUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/Dressing_Gauze_Pad_3_Adult.jpg"
+                },
+                {
+                    "listItemText": "Nose bleeding",
+                    "sequenceNumber": "6",
+                    "id": "bleedId",
+                    "imageUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/Nose_w_type.jpg"
+                },
+                {
+                    "listItemText": "Poison",
+                    "sequenceNumber": "7",
+                    "id": "poisonId",
+                    "imageUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/Warning_Signs.jpg"
+                },
+                {
+                    "listItemText": "Choke",
+                    "sequenceNumber": "8",
+                    "id": "chokeId",
+                    "imageUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/Chest_Thrust_AdultFloor.jpg"
+                },
+                {
+                    "listItemText": "Learn CPR",
+                    "sequenceNumber": "9",
+                    "id": "cprId",
+                    "imageUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/Fainting_Man.jpg"
+                }
+            ]
+        }
+    },
+    "sources": {}
+}

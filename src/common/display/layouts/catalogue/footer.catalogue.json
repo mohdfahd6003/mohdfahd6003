@@ -1,6 +1,0 @@
-{
-    "type": "AlexaFooter",
-    "hintText": "${payload.content.properties.transformedHintText}",
-    "theme": "dark",
-    "id":"rect.explain.footer"
-}

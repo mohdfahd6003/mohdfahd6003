@@ -1,7 +1,0 @@
-{
-    "type": "Container",
-    "alignItems": "stretch",
-    "direction": "row",
-    "id":"rect.explain.textImageContainer",
-    "paddingTop": "3.75vh"
-}

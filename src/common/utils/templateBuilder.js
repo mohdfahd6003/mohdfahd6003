@@ -4,6 +4,8 @@ const layouts = require('./layoutBuilders/layoutBuilder');
 
 const { getResources } = require('./resourceBuilder');
 
+const { catalogue } = require('./layoutBuilders/catalogueLayouts');
+
 function generateDocument(isWelcome) {
     let document = {};
     document = {
@@ -18,8 +20,17 @@ function generateDocument(isWelcome) {
         settings: getAplConfig(),
         styles: getStyles(),
         resources: getResources(),
+        layouts: getCardLayouts(isWelcome),
     };
     return document;
+}
+
+function getCardLayouts(isWelcome) {
+    let cardLayout = {};
+    if (isWelcome) {
+        cardLayout = catalogue.getcatalogueCard();
+    }
+    return cardLayout;
 }
 
 function getAplConfig() {
@@ -46,20 +57,20 @@ function getStyles() {
     return ahaStyle;
 }
 
-function getLayouts(isWelcome) {
+function getTemplate(isWelcome) {
     const itemArray = [];
-    const layout = {};
-    layout.type = 'Container';
-    layout.item = [];
-    layout.item = layouts.getRectangleLayout(isWelcome);
-    itemArray.push(layout);
+    const firstContainer = {};
+    firstContainer.type = 'Container';
+    firstContainer.item = [];
+    firstContainer.item = layouts.getRectangleLayout(isWelcome);
+    itemArray.push(firstContainer);
     return itemArray;
 }
 function getMainTemplate(isWelcome) {
     let mainTemplate = {};
     mainTemplate = {
         parameters: ['payload'],
-        items: getLayouts(isWelcome),
+        items: getTemplate(isWelcome),
     };
     return mainTemplate;
 }

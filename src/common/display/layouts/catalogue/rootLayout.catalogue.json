@@ -1,7 +1,109 @@
 {
+    "id": "gridComponent",
     "type": "Container",
     "width": "100vw",
     "height": "100vh",
-    "direction": "column",
-    "id":"rect.explain.rootLayout"
+    "items": [
+        {
+            "type": "AlexaBackground",
+            "backgroundColor": "#FFFFFF"
+        },
+        {
+            "type": "Container",
+            "height": "12.5vh",
+            "paddingLeft": "@marginHorizontal",
+            "paddingRight": "@marginHorizontal",
+            "minHeight": "12.5vh",
+            "items": [
+                {
+                    "when": "${@viewportProfile != @hubRoundSmall}",
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "Container",
+                            "item": [
+                                {
+                                    "type": "Text",
+                                    "textAlign": "left",
+                                    "textAlignVertical": "center",
+                                    "color": "#222328",
+                                    "fontFamily": "Amazon Ember Display",
+                                    "text": "${String.toUpperCase('American Heart Association')}",
+                                    "fontSize": "@fontSizeSmall"
+                                }
+                            ],
+                            "alignItems": "center",
+                            "direction": "row",
+                            "justifyContent": "center"
+                        }
+                    ],
+                    "justifyContent": "center"
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "width": "4.140625vw",
+                            "height": "8.625vh",
+                            "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                            "align": "right"
+                        }
+                    ],
+                    "justifyContent": "center"
+                }
+            ],
+            "direction": "row",
+            "justifyContent": "${@viewportProfile != @hubRoundSmall ? 'spaceBetween' : 'center'}"
+        },
+        {
+            "type": "AlexaGridList",
+            "backgroundColor": "#F8F8F8",
+            "theme": "light",
+            "listItems": "${payload.gridListData.listItemsToShow}",
+            "customLayoutName": "Card",
+            "listItemHeight": "57vh",
+            "imageScale": "best-fill",
+            "imageAlignment": "right",
+            "primaryAction": {
+                "type": "SendEvent",
+                "arguments": [
+                    "ListItemSelected",
+                    "${ordinal}"
+                ]
+            },
+            "height": "75vh",
+            "paddingBottom": "@spacingSmall"
+        },
+        {
+            "when": "${@viewportProfile != @hubRoundSmall}",
+            "type": "AlexaDivider",
+            "theme": "light",
+            "shadowColor": "#00000094",
+            "shadowHorizontalOffset": "3",
+            "shadowRadius": "6",
+            "shadowVerticalOffset": "3"
+        },
+        {
+            "when": "${@viewportProfile != @hubRoundSmall}",
+            "type": "Container",
+            "height": "12.5vh",
+            "minHeight": "12.5vh",
+            "paddingLeft": "@marginHorizontal",
+            "paddingRight": "@marginHorizontal",
+            "items": [
+                {
+                    "type": "Frame",
+                    "item": [
+                        {
+                            "type": "Text",
+                            "style": "footerText",
+                            "text": "Try “Alexa, how to stop bleeding”"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "justifyContent": "start"
 }

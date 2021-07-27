@@ -7,10 +7,10 @@ const { introductionPage } = require('./introduction/build.introduction');
 function commonPagerCreator() {
     const commonPagerContainer = { ...pager };
     commonPagerContainer.items = [];
-    commonPagerContainer.items.push(welcomePage.welcomePageCreater());
-    commonPagerContainer.items.push(introductionPage.introductionPageCreater());
+    // commonPagerContainer.items.push(welcomePage.welcomePageCreater());
+    // commonPagerContainer.items.push(introductionPage.introductionPageCreater());
     // to be replaced with catalogue page
-    commonPagerContainer.items.push(explainPage.explainPageCreater());
+    commonPagerContainer.items.push(catalogue.getRoot());
     // replace the page with actual catalogue page
     return commonPagerContainer;
 }

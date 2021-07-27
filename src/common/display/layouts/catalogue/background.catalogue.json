@@ -1,7 +1,0 @@
-{
-    "type": "AlexaBackground",
-    "backgroundImageSource": "${payload.content.mainImage}",
-    "colorOverlay": true,
-    "style":"background.explain",
-    "id":"rect.explain.background"
-}
