@@ -42,7 +42,10 @@ class ChokeControl extends Control {
     }
 
     canHandle(input) {
-        if (InputUtil.isIntent(input, 'chokeIntent')) {
+        if (
+            InputUtil.isIntent(input, 'chokeIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'chokeId')
+        ) {
             return true;
         } else if (this.state && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
             if (String(this.state.value).startsWith('choking')) return true;

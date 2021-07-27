@@ -41,7 +41,10 @@ class CutControl extends Control {
     }
 
     canHandle(input) {
-        if (InputUtil.isIntent(input, 'bleedIntent')) {
+        if (
+            InputUtil.isIntent(input, 'bleedIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'cutId')
+        ) {
             return true;
         }
         if (this.state.value && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {

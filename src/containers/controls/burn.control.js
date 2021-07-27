@@ -58,7 +58,10 @@ class BurnControl extends Control {
 
     handle(input, resultBuilder) {
         const burnAct = new BurnActMain(this, {});
-        if (InputUtil.isIntent(input, 'burnIntent')) {
+        if (
+            InputUtil.isIntent(input, 'burnIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burnId')
+        ) {
             this.state.value = 'burn';
             burnAct.speakText = burnData.main.speakText;
             burnAct.primaryText = burnData.main.primaryText;
