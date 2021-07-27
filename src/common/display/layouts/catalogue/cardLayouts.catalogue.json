@@ -7,7 +7,7 @@
                         "type": "SendEvent",
                         "arguments": [
                             "cardSelected",
-                            "${data.alias}"
+                            "${data.id}"                            
                         ]
                     }
                 ],

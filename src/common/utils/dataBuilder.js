@@ -56,6 +56,7 @@ function hardCodeGridData() {
             {
                 listItemText: 'Dehydration',
                 sequenceNumber: '4',
+                id: 'dehydrationId',
                 imageUrl: 'https://dtzf6dz2qpnrm.cloudfront.net/images/Dehydration_Water.jpg',
             },
             {
