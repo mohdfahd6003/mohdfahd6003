@@ -43,7 +43,10 @@ class BurnControl extends Control {
     }
 
     canHandle(input) {
-        if (InputUtil.isIntent(input, 'burnIntent')) {
+        if (
+            InputUtil.isIntent(input, 'burnIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burnId')
+        ) {
             return true;
         } else if (this.state.value && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
             if (this.state.value === 'burn') return true;

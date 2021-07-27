@@ -43,7 +43,10 @@ class learnCPRControl extends Control {
     }
 
     canHandle(input) {
-        return InputUtil.isIntent(input, 'learnCPRIntent');
+        return (
+            InputUtil.isIntent(input, 'learnCPRIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'cprId')
+        );
     }
 
     handle(input, resultBuilder) {

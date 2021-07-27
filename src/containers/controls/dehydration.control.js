@@ -36,7 +36,10 @@ class Dehydration extends Control {
     }
 
     canHandle(input) {
-        return InputUtil.isIntent(input, 'dehydrationIntent');
+        return (
+            InputUtil.isIntent(input, 'dehydrationIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'dehydrationId')
+        );
     }
 
     handle(input, resultBuilder) {

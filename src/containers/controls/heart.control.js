@@ -38,11 +38,14 @@ class HeartControl extends Control {
     }
 
     canHandle(input) {
-        return InputUtil.isIntent(input, 'heartWarningSignsIntent');
+        return (
+            InputUtil.isIntent(input, 'heartWarningSignsIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'heartAttackId')
+        );
     }
 
     handle(input, resultBuilder) {
-        logger.log({
+        /* logger.log({
             level: 'info',
             message: 'Inside heart',
             requestId: input.request.requestId,
@@ -50,7 +53,7 @@ class HeartControl extends Control {
             intentName: input.request.intent.name,
             locale: input.request.locale,
             timestamp: input.request.timestamp,
-        });
+        }); */
         resultBuilder.addAct(new HeartRequestAct(this, {}));
     }
 

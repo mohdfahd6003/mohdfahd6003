@@ -69,7 +69,7 @@ function hardCodeGridData() {
             {
                 listItemText: 'Nose bleeding',
                 sequenceNumber: '6',
-                id: 'bleedId',
+                id: 'noseBleedId',
                 imageUrl: 'https://dtzf6dz2qpnrm.cloudfront.net/images/Nose_w_type.jpg',
             },
             {

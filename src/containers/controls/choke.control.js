@@ -54,7 +54,10 @@ class ChokeControl extends Control {
 
     handle(input, resultBuilder) {
         const chokeValueAct = new ChokeActMain(this, {});
-        if (InputUtil.isIntent(input, 'chokeIntent')) {
+        if (
+            InputUtil.isIntent(input, 'chokeIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'chokeId')
+        ) {
             this.state.value = 'chokingInfo';
             chokeValueAct.speechText = chokeMainText;
             chokeValueAct.imageUrl = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${

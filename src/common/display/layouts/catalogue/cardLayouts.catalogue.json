@@ -58,7 +58,7 @@
                                         "height": "1.25vh"
                                     }
                                 ],
-                                "alignItems": "center",
+                                "alignItems": "start",
                                 "justifyContent": "spaceBetween",
                                 "type": "Container",
                                 "width": "100vw",
