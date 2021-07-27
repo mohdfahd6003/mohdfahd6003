@@ -3,7 +3,7 @@
        {
           "textAlign":"center",
           "fontSize":"@fontSizeXLarge",
-          "text":"${payload.content.primaryText}",
+          "text":"${payload.content.title}",
           "textAlignVertical":"auto",
           "type":"Text",
           "id":"rect.welcome.text",

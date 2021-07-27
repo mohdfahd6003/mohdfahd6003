@@ -6,10 +6,10 @@ const configData = require('../../config.json');
 
 const catalogueTitles = require('../content/catalogue.title.json');
 
-function prepareScreenContent(primaryText, bodyText, mainImage, isWelcome) {
+function prepareScreenContent(title, bodyText, mainImage, isWelcome) {
     const dataTemplate = {};
     dataTemplate.content = {};
-    dataTemplate.content.primaryText = primaryText;
+    dataTemplate.content.title = title;
     dataTemplate.content.bodyText = bodyText;
     dataTemplate.content.mainImage = mainImage;
     dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
