@@ -1,6 +1,7 @@
 {
     "when": "${@viewportProfile != @hubRoundSmall}",
     "type": "Container",
+    "id":"rect.catalogue.footerContainer",
     "height": "12.5vh",
     "minHeight": "12.5vh",
     "paddingLeft": "@marginHorizontal",
@@ -11,8 +12,9 @@
             "item": [
                 {
                     "type": "Text",
+                    "id":"rect.catalogue.footerText",
                     "style": "footerText",
-                    "text": "Try “Alexa, how to stop bleeding”"
+                    "text": "${payload.content.properties.transformedHintText}"
                 }
             ]
         }

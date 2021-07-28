@@ -1,6 +1,7 @@
 {
     "when": "${@viewportProfile != @hubRoundSmall}",
     "type": "AlexaDivider",
+    "id":"rect.catalogue.dividerDown",
     "theme": "light",
     "shadowColor": "#00000094",
     "shadowHorizontalOffset": "0",

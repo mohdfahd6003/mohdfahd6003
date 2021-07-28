@@ -1,4 +1,5 @@
 {
     "type": "AlexaBackground",
+    "id":"rect.catalogue.background",
     "backgroundColor": "#FFFFFF"
 }
