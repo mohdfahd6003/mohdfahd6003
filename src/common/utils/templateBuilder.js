@@ -4,7 +4,7 @@ const layouts = require('./layoutBuilders/layoutBuilder');
 
 const { getResources } = require('./resourceBuilder');
 
-const { catalogue } = require('./layoutBuilders/catalogueLayouts');
+const { catalogueCard } = require('./layoutBuilders/catalogue/getCard.catalogue');
 
 function generateDocument(isWelcome) {
     let document = {};
@@ -28,7 +28,7 @@ function generateDocument(isWelcome) {
 function getCardLayouts(isWelcome) {
     let cardLayout = {};
     if (isWelcome) {
-        cardLayout = catalogue.getcatalogueCard();
+        cardLayout = catalogueCard.getcatalogueCard();
     }
     return cardLayout;
 }
