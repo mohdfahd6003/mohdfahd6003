@@ -19,7 +19,7 @@ describe('learn CPR  path', () => {
             'How do I do CPR?',
             `${speakTextOne} <audio src="https://${
                 configData[process.env.ENVIRONMENT].cloudfront
-            }/${assets.Audio['learncprControl']}"/> ${speakTextTwo}`
+            }/${assets.Audio.learncprControl}"/> ${speakTextTwo}`
         );
     });
 });
