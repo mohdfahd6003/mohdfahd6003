@@ -9,7 +9,7 @@ const heartData = require('../../common/content/heart.content.json');
 const { speakText, title, primaryText, secondaryText, tertiaryText } = heartData;
 
 const heartImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['heart.control']
+    assets.Images.heartControl
 }`;
 
 const { logger } = require('../../logging/logger');
@@ -40,7 +40,7 @@ class HeartControl extends Control {
     canHandle(input) {
         return (
             InputUtil.isIntent(input, 'heartWarningSignsIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'heartcontrol')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'heartControl')
         );
     }
 

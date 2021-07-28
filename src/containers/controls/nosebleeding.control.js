@@ -5,7 +5,7 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const nosebleedImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['nosebleeding.control']
+    assets.Images.nosebleedingControl
 }`;
 
 const noseBleedData = require('../../common/content/nosebleed.content.json');
@@ -39,7 +39,7 @@ class NoseBleeding extends Control {
         return (
             InputUtil.isIntent(input, 'noseIntent') ||
             (InputUtil.isAPLUserEventWithArgs(input) &&
-                input.request.source.id === 'nosebleedingcontrol')
+                input.request.source.id === 'nosebleedingControl')
         );
     }
 

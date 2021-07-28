@@ -5,7 +5,7 @@ const { InputUtil, Control, RequestValueAct, ControlState } = require('ask-sdk-c
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const burnImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['burn.control']
+    assets.Images.burnControl
 }`;
 
 const burnData = require('../../common/content/burn.content.json');
@@ -45,7 +45,7 @@ class BurnControl extends Control {
     canHandle(input) {
         if (
             InputUtil.isIntent(input, 'burnIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burncontrol')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burnControl')
         ) {
             return true;
         } else if (this.state.value && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
@@ -60,7 +60,7 @@ class BurnControl extends Control {
         const burnAct = new BurnActMain(this, {});
         if (
             InputUtil.isIntent(input, 'burnIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burncontrol')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'burnControl')
         ) {
             this.state.value = 'burn';
             burnAct.speakText = burnData.main.speakText;

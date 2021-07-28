@@ -5,7 +5,7 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const strokeImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['stroke.control']
+    assets.Images.strokeControl
 }`;
 
 const StrokeData = require('../../common/content/strokes.content.json');
@@ -38,7 +38,7 @@ class StrokeControl extends Control {
     canHandle(input) {
         return (
             InputUtil.isIntent(input, 'strokeIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'strokecontrol')
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'strokeControl')
         );
     }
 

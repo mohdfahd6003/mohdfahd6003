@@ -80,7 +80,7 @@ class RootContainer extends ContainerControl {
         console.log(input);
         resultBuilder.addAct(
             new LiteralContentAct(this, {
-                promptFragment: `You have touched grid item=${input.request.source.id} `,
+                promptFragment: `Sorry. I could not understand you request. Say help to get more information. `,
             })
         );
     }
