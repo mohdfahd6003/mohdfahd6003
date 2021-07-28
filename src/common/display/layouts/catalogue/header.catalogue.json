@@ -37,7 +37,7 @@
                     "type": "Image",
                     "width": "4.140625vw",
                     "height": "8.625vh",
-                    "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                    "source": "${payload.content.logo}",
                     "align": "right"
                 }
             ],
