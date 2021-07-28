@@ -1,0 +1,48 @@
+{
+    "type": "Container",
+    "height": "12.5vh",
+    "paddingLeft": "@marginHorizontal",
+    "paddingRight": "@marginHorizontal",
+    "minHeight": "12.5vh",
+    "items": [
+        {
+            "when": "${@viewportProfile != @hubRoundSmall}",
+            "type": "Container",
+            "items": [
+                {
+                    "type": "Container",
+                    "item": [
+                        {
+                            "type": "Text",
+                            "textAlign": "left",
+                            "textAlignVertical": "center",
+                            "color": "#222328",
+                            "fontFamily": "Amazon Ember Display",
+                            "text": "${String.toUpperCase('American Heart Association')}",
+                            "fontSize": "@fontSizeSmall"
+                        }
+                    ],
+                    "alignItems": "center",
+                    "direction": "row",
+                    "justifyContent": "center"
+                }
+            ],
+            "justifyContent": "center"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "Image",
+                    "width": "4.140625vw",
+                    "height": "8.625vh",
+                    "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                    "align": "right"
+                }
+            ],
+            "justifyContent": "center"
+        }
+    ],
+    "direction": "row",
+    "justifyContent": "${@viewportProfile != @hubRoundSmall ? 'spaceBetween' : 'center'}"
+}

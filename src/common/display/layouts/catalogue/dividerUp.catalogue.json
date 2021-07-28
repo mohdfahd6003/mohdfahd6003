@@ -1,0 +1,9 @@
+{
+    "when": "${@viewportProfile != @hubRoundSmall}",
+    "type": "AlexaDivider",
+    "theme": "light",
+    "shadowColor": "#00000094",
+    "shadowHorizontalOffset": "3",
+    "shadowRadius": "6",
+    "shadowVerticalOffset": "3"
+}
