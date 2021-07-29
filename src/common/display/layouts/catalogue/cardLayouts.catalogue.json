@@ -67,6 +67,7 @@
                             }
                         ],
                         "type": "Frame",
+                        "id":"cardFrame",
                         "inheritParentState": true,
                         "style": "cardFrame"
                     }
