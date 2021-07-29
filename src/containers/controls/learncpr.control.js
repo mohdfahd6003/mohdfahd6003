@@ -5,7 +5,7 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const learncprImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['learncpr.control']
+    assets.Images.learncprControl
 }`;
 
 const learncprData = require('../../common/content/learncpr.content.json');
@@ -43,14 +43,18 @@ class learnCPRControl extends Control {
     }
 
     canHandle(input) {
-        return InputUtil.isIntent(input, 'learnCPRIntent');
+        return (
+            InputUtil.isIntent(input, 'learnCPRIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.source.id === 'learncprControl')
+        );
     }
 
     handle(input, resultBuilder) {
         const learncprReq = new LearncprRequestAct(this, {});
         const combinedSpeech = `${speakTextOne} <audio src="https://${
             configData[process.env.ENVIRONMENT].cloudfront
-        }/${assets.Audio['learncpr.control']}"/> ${speakTextTwo}`;
+        }/${assets.Audio.learncprControl}"/> ${speakTextTwo}`;
         learncprReq.speakText = combinedSpeech;
         resultBuilder.addAct(learncprReq);
     }

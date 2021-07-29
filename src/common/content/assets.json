@@ -1,22 +1,22 @@
 {
     "Images": {
-        "burn.control": "images/Burn_under_Running_Water_AdultSink.jpg",
-        "cut.control": "images/Dressing_Gauze_Pad_3_Adult.jpg",
-        "dehydration.control": "images/Dehydration_Water.jpg",
-        "heart.control": "images/During_a_Heart_Attack.jpg",
-        "hello.control": "images/AHA_ASA_Masterbrand.jpg",
-        "learncpr.control": "images/Fainting_Man.jpg",
-        "nosebleeding.control": "images/Nose_w_type.jpg",
-        "poison.control": "images/Warning_Signs.jpg",
-        "stroke.control": "images/ASA_FAST_Warning_Signs.jpg",
+        "burnControl": "images/Burn_under_Running_Water_AdultSink.jpg",
+        "cutControl": "images/Dressing_Gauze_Pad_3_Adult.jpg",
+        "dehydrationControl": "images/Dehydration_Water.jpg",
+        "heartControl": "images/During_a_Heart_Attack.jpg",
+        "helloControl": "images/AHA_ASA_Masterbrand.jpg",
+        "learncprControl": "images/Fainting_Man.jpg",
+        "nosebleedingControl": "images/Nose_w_type.jpg",
+        "poisonControl": "images/Warning_Signs.jpg",
+        "strokeControl": "images/ASA_FAST_Warning_Signs.jpg",
         "background": "images/Background.jpg",
         "headerImage":"images/AHA_ASA_Masterbrand",        
-        "choke.control.main": "images/Chest_Thrust_AdultFloor.jpg",
-        "welcome.background":"images/Welcome_background.png",
+        "chokeControlMain": "images/Chest_Thrust_AdultFloor.jpg",
+        "welcomeBackground":"images/Welcome_background.png",
         "logo": "images/Aha_logo_2x.png"
     },
     "Audio":{
-        "learncpr.control": "audio/110-BPM-Metronome-short.mp3"
+        "learncprControl": "audio/110-BPM-Metronome-short.mp3"
 
     }
 }

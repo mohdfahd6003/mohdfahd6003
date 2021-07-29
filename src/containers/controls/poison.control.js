@@ -5,7 +5,7 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const poisonImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['poison.control']
+    assets.Images.poisonControl
 }`;
 
 const PoisonData = require('../../common/content/poison.content.json');
@@ -36,7 +36,10 @@ class PoisonControl extends Control {
     }
 
     canHandle(input) {
-        return InputUtil.isIntent(input, 'poisonIntent');
+        return (
+            InputUtil.isIntent(input, 'poisonIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'poisonControl')
+        );
     }
 
     handle(input, resultBuilder) {

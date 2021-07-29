@@ -5,7 +5,7 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const welcomeImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['welcome.background']
+    assets.Images.welcomeBackground
 }`;
 
 const launchData = require('../../common/content/launch.content.json');

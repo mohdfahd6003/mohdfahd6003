@@ -1,0 +1,20 @@
+{
+    "type": "AlexaGridList",
+    "id": "gridComponent",
+    "backgroundColor": "#F8F8F8",
+    "theme": "light",
+    "listItems": "${payload.catalogueData.itemList}",
+    "customLayoutName": "Card",
+    "listItemHeight": "57vh",
+    "imageScale": "best-fill",
+    "imageAlignment": "right",
+    "primaryAction": {
+        "type": "SendEvent",
+        "arguments": [
+            "ListItemSelected",
+            "${ordinal}"
+        ]
+    },
+    "height": "75vh",
+    "paddingBottom": "@spacingSmall"
+}

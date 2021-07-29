@@ -42,7 +42,11 @@ class ChokeControl extends Control {
     }
 
     canHandle(input) {
-        if (InputUtil.isIntent(input, 'chokeIntent')) {
+        if (
+            InputUtil.isIntent(input, 'chokeIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.source.id === 'chokeControlMain')
+        ) {
             return true;
         } else if (this.state && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
             if (String(this.state.value).startsWith('choking')) return true;
@@ -54,11 +58,15 @@ class ChokeControl extends Control {
 
     handle(input, resultBuilder) {
         const chokeValueAct = new ChokeActMain(this, {});
-        if (InputUtil.isIntent(input, 'chokeIntent')) {
+        if (
+            InputUtil.isIntent(input, 'chokeIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.source.id === 'chokeControlMain')
+        ) {
             this.state.value = 'chokingInfo';
             chokeValueAct.speechText = chokeMainText;
             chokeValueAct.imageUrl = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-                assets.Images['choke.control.main']
+                assets.Images.chokeControlMain
             }`;
             chokeValueAct.title = 'choking';
             chokeValueAct.primaryText = 'Is the person pregnant? ';

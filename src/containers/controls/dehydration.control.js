@@ -5,7 +5,7 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const dehydrationImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['dehydration.control']
+    assets.Images.dehydrationControl
 }`;
 
 const dehydrationData = require('../../common/content/dehydration.content.json');
@@ -36,7 +36,11 @@ class Dehydration extends Control {
     }
 
     canHandle(input) {
-        return InputUtil.isIntent(input, 'dehydrationIntent');
+        return (
+            InputUtil.isIntent(input, 'dehydrationIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.source.id === 'dehydrationControl')
+        );
     }
 
     handle(input, resultBuilder) {

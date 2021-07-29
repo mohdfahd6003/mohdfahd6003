@@ -62,6 +62,9 @@ class RootContainer extends ContainerControl {
         ) {
             this.handleFunc = this.handleHelpIntent;
             return true;
+        } else if (input.request.type === 'Alexa.Presentation.APL.UserEvent') {
+            this.handleFunc = this.handleTouchEvent;
+            return true;
         } else {
             console.log('something went wrong');
             this.handleFunc = this.handleInvalidInput;
@@ -73,10 +76,20 @@ class RootContainer extends ContainerControl {
         await this.handleFunc(input, resultBuilder);
     }
 
+    async handleTouchEvent(input, resultBuilder) {
+        console.log(input);
+        resultBuilder.addAct(
+            new LiteralContentAct(this, {
+                promptFragment: `Sorry. I could not understand you request. Say help to get more information. `,
+            })
+        );
+    }
+
     async handleInvalidInput(input, resultBuilder) {
         resultBuilder.addAct(
             new LiteralContentAct(this, {
-                promptFragment: 'Sorry, I could understand your request. Can you please repeat ?',
+                promptFragment:
+                    'Sorry, I could not understand your request. Can you please repeat ?',
             })
         );
     }

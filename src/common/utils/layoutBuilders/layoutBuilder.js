@@ -1,5 +1,5 @@
 const { welcomePage } = require('./welcome/build.welcome');
-const { catalogue } = require('./catalogueLayouts');
+const { cataloguePage } = require('./catalogue/build.catalogue');
 const pager = require('../../display/layouts/pager.json');
 const { explainPage } = require('./explain/build.explain');
 const { introductionPage } = require('./introduction/build.introduction');
@@ -9,9 +9,7 @@ function commonPagerCreator() {
     commonPagerContainer.items = [];
     commonPagerContainer.items.push(welcomePage.welcomePageCreater());
     commonPagerContainer.items.push(introductionPage.introductionPageCreater());
-    // to be replaced with catalogue page
-    commonPagerContainer.items.push(explainPage.explainPageCreater());
-    // replace the page with actual catalogue page
+    commonPagerContainer.items.push(cataloguePage.cataloguePageCreater());
     return commonPagerContainer;
 }
 

@@ -127,6 +127,35 @@
               "shadowHorizontalOffset":"-3"
            }
         ]
-     }
+     },
+     "cardFrame": {
+        "values": [
+            {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 4,
+                "shadowVerticalOffset": 3,
+                "shadowHorizontalOffset": 3,
+                "shadowColor": "#00000029",
+                "shadowRadius": 10
+            },
+            {
+                "when": "${state.pressed}",
+                "backgroundColor": "#fcfcfa"
+            }
+        ]
+    },
+    "carousel": {
+        "values": [
+            {
+                "width": "100%",
+                "snap": "center",
+                "height": "@cardHeight",
+                "paddingTop": "@spacingSmall",
+                "paddingBottom": "@spacingSmall",
+                "paddingLeft": "@spacingMedium",
+                "paddingRight": "@spacingMedium"
+            }
+        ]
+    }
   
 }

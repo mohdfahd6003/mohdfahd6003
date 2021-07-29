@@ -5,7 +5,7 @@ const { InputUtil, Control, RequestValueAct } = require('ask-sdk-controls');
 const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const cutImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-    assets.Images['cut.control']
+    assets.Images.cutControl
 }`;
 const cutData = require('../../common/content/cut.content.json');
 
@@ -41,7 +41,10 @@ class CutControl extends Control {
     }
 
     canHandle(input) {
-        if (InputUtil.isIntent(input, 'bleedIntent')) {
+        if (
+            InputUtil.isIntent(input, 'bleedIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'cutControl')
+        ) {
             return true;
         }
         if (this.state.value && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
@@ -55,7 +58,10 @@ class CutControl extends Control {
 
     handle(input, resultBuilder) {
         const cutAct = new CutRequestAct(this, {});
-        if (InputUtil.isIntent(input, 'bleedIntent')) {
+        if (
+            InputUtil.isIntent(input, 'bleedIntent') ||
+            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'cutControl')
+        ) {
             this.state.value = 'first';
             cutAct.speakText = cutData.main.speakText;
             cutAct.primaryText = cutData.main.primaryText;
