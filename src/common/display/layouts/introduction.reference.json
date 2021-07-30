@@ -43,14 +43,16 @@
                         {
                             "items": [
                                 {
-                                    "item": {
-                                        "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
-                                        "imageScale": "best-fill",
-                                        "type": "AlexaImage",
-                                        "imageHeight": "77.5vh",
-                                        "imageWidth": "63.984375vw",
-                                        "accessibilityLabel": "American Heart Association home page image"
-                                    },
+                                    "item": [
+                                        {
+                                            "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
+                                            "imageScale": "best-fill",
+                                            "type": "AlexaImage",
+                                            "imageHeight": "77.5vh",
+                                            "imageWidth": "63.984375vw",
+                                            "accessibilityLabel": "American Heart Association home page image"
+                                        }
+                                    ],
                                     "borderWidth": "2px",
                                     "borderColor": "#C10E21",
                                     "type": "Frame",
@@ -88,25 +90,30 @@
                                                 {
                                                     "item": [
                                                         {
-                                                            "textAlign": "center",
-                                                            "fontSize": "@fontSizeMedium",
-                                                            "text": "The American Heart Association has been working to reduce disability and deaths caused by heart disease since 1924. Heart disease is the leading cause of death globally, and can cause numerous problems including heart attack or stroke.",
-                                                            "textAlignVertical": "auto",
-                                                            "fontFamily": "@fontFamilyRomanSans",
-                                                            "fontWeight": "@fontWeightLight",
-                                                            "color": "#222328",
-                                                            "letterSpacing": "@letterSpacingNormal",
-                                                            "lineHeight": "@lineHeightNormal",
-                                                            "id": "introductionText",
-                                                            "type": "Text",
-                                                            "paddingBottom": "@spacingSmall",
-                                                            "accessibilityLabel": "American Heart Association introduction text"
+                                                            "item": [
+                                                                {
+                                                                    "textAlign": "center",
+                                                                    "fontSize": "@fontSizeMedium",
+                                                                    "text": "The American Heart Association has been working to reduce disability and deaths caused by heart disease since 1924. Heart disease is the leading cause of death globally, and can cause numerous problems including heart attack or stroke.",
+                                                                    "textAlignVertical": "auto",
+                                                                    "fontFamily": "@fontFamilyRomanSans",
+                                                                    "fontWeight": "@fontWeightLight",
+                                                                    "color": "#222328",
+                                                                    "letterSpacing": "@letterSpacingNormal",
+                                                                    "lineHeight": "@lineHeightNormal",
+                                                                    "id": "introductionText",
+                                                                    "type": "Text",
+                                                                    "accessibilityLabel": "American Heart Association introduction text"
+                                                                }
+                                                            ],
+                                                            "type": "ScrollView",
+                                                            "height": "@scrollViewHeight"
                                                         }
                                                     ],
-                                                    "type": "ScrollView",
-                                                    "height": "@scrollViewHeight",
+                                                    "type": "Container",
                                                     "paddingLeft": "@spacingSmall",
-                                                    "paddingRight": "@spacingSmall"
+                                                    "paddingRight": "@spacingSmall",
+                                                    "paddingBottom": "@spacingSmall"
                                                 },
                                                 {
                                                     "backgroundColor": "#C10E21",

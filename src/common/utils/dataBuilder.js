@@ -30,6 +30,16 @@ function prepareScreenContent(title, bodyText, mainImage, isWelcome) {
     return dataTemplate;
 }
 
+function makeCapital(nameString) {
+    if (nameString === 'cpr') return 'CPR';
+    else
+        return nameString
+            .toLowerCase()
+            .split(' ')
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+}
+
 function createCatalogueData() {
     const catalogueData = {};
     const gridData = [];
@@ -42,7 +52,7 @@ function createCatalogueData() {
         gridElement.thumbnailSrc = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
             images[element]
         }`;
-        gridElement.title = catalogueTitles[element];
+        gridElement.title = makeCapital(catalogueTitles[element]);
         gridElement.imageSrc = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
             images[element]
         }`;
