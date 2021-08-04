@@ -1,6 +1,6 @@
 {
-    "alignItems":"stretch",
-    "id": "rect.welcome.root",
-    "justifyContent":"center",
-    "type":"Container"
+    "alignItems": "stretch",
+    "justifyContent": "center",
+    "type": "Container",
+    "id": "rect.welcome.root"
 }
