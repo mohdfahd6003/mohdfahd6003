@@ -1,9 +1,0 @@
-{
-    "alignItems": "center",
-    "wrap": "noWrap",
-    "type": "Container",
-    "id": "rect.welcome.textLogoContainer" ,
-    "width": "46.40625vw",
-    "paddingTop": "@spacingSmall",
-    "paddingBottom": "@spacingSmall"
-}

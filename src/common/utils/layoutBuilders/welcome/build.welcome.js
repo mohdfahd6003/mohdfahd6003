@@ -1,19 +1,11 @@
 const { welcome } = require('./getWelcomeLayouts');
 
-function boxTextLogoContainerCreator() {
-    let boxTextLogoContainer = {};
-    boxTextLogoContainer = welcome.getWelcomeBoxTextLogoContainer();
-    boxTextLogoContainer.items = [];
-    boxTextLogoContainer.items.push(welcome.getWelcomeLogo());
-    boxTextLogoContainer.items.push(welcome.getWelcomeText());
-    return boxTextLogoContainer;
-}
-
 function boxContainerCreator() {
     let boxContainer = {};
     boxContainer = welcome.getWelcomeBoxContainer();
     boxContainer.items = [];
-    boxContainer.items.push(boxTextLogoContainerCreator());
+    boxContainer.items.push(welcome.getWelcomeLogo());
+    boxContainer.items.push(welcome.getWelcomeText());
     boxContainer.items.push(welcome.getWelcomeLine());
     return boxContainer;
 }

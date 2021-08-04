@@ -1,6 +1,15 @@
 {
-   "source": "${payload.content.logo}",
-   "type": "Image",
-   "id":"rect.welcome.logo",
-   "width": "6.015625vw"
+   "items": [
+       {
+           "imageSource": "${payload.content.logo}",
+           "type": "AlexaImage",
+           "imageWidth": "6.015625vw"
+       }
+   ],
+   "alignItems": "center",
+   "wrap": "noWrap",
+   "type": "Container",
+   "width": "46.40625vw",
+   "paddingTop": "@spacingSmall",
+   "paddingBottom": "@spacingSmall"
 }

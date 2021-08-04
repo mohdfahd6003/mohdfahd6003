@@ -7,11 +7,6 @@ const rectWelcomeBoxContainer = require('../../../display/layouts/welcome/boxCon
 const rectWelcomeBoxText = require('../../../display/layouts/welcome/text.welcome.json');
 const rectWelcomeBoxLine = require('../../../display/layouts/welcome/line.welcome.json');
 const rectWelcomeBoxLogo = require('../../../display/layouts/welcome/logo.welcome.json');
-const rectWelcomeBoxTextLogoContainer = require('../../../display/layouts/welcome/textLogoContainer.welcome.json');
-
-function getWelcomeBoxTextLogoContainer() {
-    return rectWelcomeBoxTextLogoContainer;
-}
 
 function getWelcomeLine() {
     return rectWelcomeBoxLine;
@@ -59,5 +54,4 @@ exports.welcome = {
     getWelcomeLine,
     getWelcomeLogo,
     getWelcomeText,
-    getWelcomeBoxTextLogoContainer,
 };

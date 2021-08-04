@@ -1,11 +1,18 @@
 {
-   "textAlign": "center",
-   "fontSize": "@fontSizeXLarge",
-   "text": "${payload.content.title}",
-   "id":"rect.welcome.text",
-   "textAlignVertical": "auto",
-   "type": "Text",
-   "color": "black",
-   "paddingLeft": "3.984375vw",
-   "paddingRight": "3.984375vw"
+   "item": [
+       {
+           "textAlign": "center",
+           "fontSize": "@fontSizeXLarge",
+           "text": "${payload.content.title}",
+           "id":"rect.welcome.text",
+           "textAlignVertical": "center",
+           "color": "#222328",
+           "fontFamily": "@fontFamilyRomanSans",
+           "type": "Text",
+           "paddingLeft": "3.984375vw",
+           "paddingRight": "3.984375vw"
+       }
+   ],
+   "type": "Container",
+   "paddingBottom": "@spacingSmall"
 }

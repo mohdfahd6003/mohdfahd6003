@@ -52,19 +52,9 @@
                                                 {
                                                     "items": [
                                                         {
-                                                            "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
-                                                            "type": "Image",
-                                                            "width": "6.015625vw"
-                                                        },
-                                                        {
-                                                            "textAlign": "center",
-                                                            "fontSize": "@fontSizeXLarge",
-                                                            "text": "Welcome To American Heart Association",
-                                                            "textAlignVertical": "auto",
-                                                            "type": "Text",
-                                                            "color": "black",
-                                                            "paddingLeft": "3.984375vw",
-                                                            "paddingRight": "3.984375vw"
+                                                            "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                                                            "type": "AlexaImage",
+                                                            "imageWidth": "6.015625vw"
                                                         }
                                                     ],
                                                     "alignItems": "center",
@@ -72,6 +62,23 @@
                                                     "type": "Container",
                                                     "width": "46.40625vw",
                                                     "paddingTop": "@spacingSmall",
+                                                    "paddingBottom": "@spacingSmall"
+                                                },
+                                                {
+                                                    "item": [
+                                                        {
+                                                            "textAlign": "center",
+                                                            "fontSize": "@fontSizeXLarge",
+                                                            "text": "Welcome To American Heart Association",
+                                                            "textAlignVertical": "center",
+                                                            "color": "#222328",
+                                                            "fontFamily": "@fontFamilyRomanSans",
+                                                            "type": "Text",
+                                                            "paddingLeft": "3.984375vw",
+                                                            "paddingRight": "3.984375vw"
+                                                        }
+                                                    ],
+                                                    "type": "Container",
                                                     "paddingBottom": "@spacingSmall"
                                                 },
                                                 {
