@@ -4,7 +4,7 @@
         "version": "1.6",
         "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
         "settings": {},
-        "theme": "light",
+        "theme": "dark",
         "import": [
             {
                 "name": "alexa-layouts",
@@ -25,28 +25,17 @@
                     "items": [
                         {
                             "type": "AlexaBackground",
-                            "backgroundColor": "#FFFFFF"
+                            "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
+                            "colorOverlay": true
                         },
                         {
                             "items": [
                                 {
-                                    "borderColor": "#C10E21",
-                                    "borderWidth": "2px",
-                                    "item": [
-                                        {
-                                            "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
-                                            "scale": "best-fill",
-                                            "type": "Image",
-                                            "width": "63.984375vw",
-                                            "height": "77.5vh"
-                                        }
-                                    ],
-                                    "type": "Frame",
+                                    "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
+                                    "scale": "best-fill",
+                                    "type": "Image",
                                     "width": "64.296875vw",
-                                    "shadowColor": "#00000029",
-                                    "shadowHorizontalOffset": "0",
-                                    "shadowRadius": "25",
-                                    "shadowVerticalOffset": "3"
+                                    "height": "77.5vh"
                                 }
                             ],
                             "alignItems": "end",
@@ -66,6 +55,16 @@
                                                             "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
                                                             "type": "Image",
                                                             "width": "6.015625vw"
+                                                        },
+                                                        {
+                                                            "textAlign": "center",
+                                                            "fontSize": "@fontSizeXLarge",
+                                                            "text": "Welcome To American Heart Association",
+                                                            "textAlignVertical": "auto",
+                                                            "type": "Text",
+                                                            "color": "black",
+                                                            "paddingLeft": "3.984375vw",
+                                                            "paddingRight": "3.984375vw"
                                                         }
                                                     ],
                                                     "alignItems": "center",
@@ -73,23 +72,6 @@
                                                     "type": "Container",
                                                     "width": "46.40625vw",
                                                     "paddingTop": "@spacingSmall",
-                                                    "paddingBottom": "@spacingSmall"
-                                                },
-                                                {
-                                                    "items": [
-                                                        {
-                                                            "textAlign": "center",
-                                                            "fontSize": "@fontSizeXLarge",
-                                                            "text": "Welcome To American Heart Association",
-                                                            "textAlignVertical": "auto",
-                                                            "type": "Text",
-                                                            "paddingLeft": "3.984375vw",
-                                                            "paddingRight": "3.984375vw"
-                                                        }
-                                                    ],
-                                                    "wrap": "wrap",
-                                                    "type": "Container",
-                                                    "width": "46.40625vw",
                                                     "paddingBottom": "@spacingSmall"
                                                 },
                                                 {
