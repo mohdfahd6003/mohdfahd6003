@@ -1,19 +1,18 @@
 {
-    "items":[
+   "item": [
        {
-          "textAlign":"center",
-          "fontSize":"@fontSizeXLarge",
-          "text":"${payload.content.title}",
-          "textAlignVertical":"auto",
-          "type":"Text",
-          "id":"rect.welcome.text",
-          "paddingLeft":"3.984375vw",
-          "paddingRight":"3.984375vw"
+           "textAlign": "center",
+           "fontSize": "@fontSizeXLarge",
+           "text": "${payload.content.title}",
+           "id":"rect.welcome.text",
+           "textAlignVertical": "center",
+           "color": "#222328",
+           "fontFamily": "@fontFamilyRomanSans",
+           "type": "Text",
+           "paddingLeft": "3.984375vw",
+           "paddingRight": "3.984375vw"
        }
-    ],
-    "wrap":"wrap",
-    "id":"rect.welcome.textContainer",
-    "type":"Container",
-    "width":"46.40625vw",
-    "paddingBottom":"@spacingSmall"
- }
+   ],
+   "type": "Container",
+   "paddingBottom": "@spacingSmall"
+}
