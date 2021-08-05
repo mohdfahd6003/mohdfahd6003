@@ -12,16 +12,6 @@ const speakText = require('../src/common/content/constants.json');
 
 const heartData = require('../src/common/content/heart.content.json');
 
-const strokeData = require('../src/common/content/strokes.content.json');
-
-const poisonData = require('../src/common/content/poison.content.json');
-
-const cprData = require('../src/common/content/dehydration.content.json');
-
-const dehydrationData = require('../src/common/content/dehydration.content.json');
-
-const nosebleedData = require('../src/common/content/nosebleed.content.json');
-
 waitForDebugger();
 
 describe('event touch path', () => {
