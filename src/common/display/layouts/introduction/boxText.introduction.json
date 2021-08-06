@@ -12,7 +12,7 @@
                     "color": "#222328",
                     "letterSpacing": "@letterSpacingNormal",
                     "lineHeight": "@lineHeightNormal",
-                    "id": "introductionText",
+                    "id": "rect.introduction.boxText",
                     "type": "Text",
                     "accessibilityLabel": "American Heart Association introduction text"
                 }
