@@ -1,19 +1,19 @@
 {
-    "items":[
+   "items": [
        {
-          "source":"${payload.content.logo}",
-          "type":"Image",
-          "id": "rect.introduction.boxLogo" ,
-          "accessibilityLabel":"American Heart Association logo",
-          "width":"4.140625vw",
-          "height":"8.625vh"
+           "imageSource": "${payload.content.logo}",
+           "type": "AlexaImage",
+           "accessibilityLabel": "American Heart Association logo",
+           "imageWidth": "4.140625vw",
+           "imageHeight": "8.625vh",
+           "id": "rect.introduction.boxLogo"
        }
-    ],
-    "alignItems":"center",
-    "wrap":"noWrap",
-    "type":"Container",
-    "id": "rect.introduction.boxLogoContainer" ,
-    "accessibilityLabel":"American Heart Association logo container",
-    "width":"46.40625vw",
-    "padding":"@spacingSmall"
+   ],
+   "alignItems": "center",
+   "wrap": "noWrap",
+   "type": "Container",
+   "id": "rect.introduction.boxLogoContainer" ,
+   "accessibilityLabel": "American Heart Association logo container",
+   "width": "46.40625vw",
+   "padding": "@spacingSmall"
 }

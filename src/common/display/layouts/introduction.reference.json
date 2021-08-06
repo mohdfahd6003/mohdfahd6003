@@ -4,7 +4,7 @@
         "version": "1.6",
         "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
         "settings": {},
-        "theme": "light",
+        "theme": "dark",
         "import": [
             {
                 "name": "alexa-layouts",
@@ -38,25 +38,19 @@
                     "items": [
                         {
                             "type": "AlexaBackground",
-                            "backgroundColor": "#FFFFFF"
+                            "backgroundColor": "#222328",
+                            "colorOverlay": true,
+                            "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png"
                         },
                         {
                             "items": [
                                 {
-                                    "item": [
-                                        {
-                                            "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
-                                            "imageScale": "best-fill",
-                                            "type": "AlexaImage",
-                                            "imageHeight": "77.5vh",
-                                            "imageWidth": "63.984375vw",
-                                            "accessibilityLabel": "American Heart Association home page image"
-                                        }
-                                    ],
-                                    "borderWidth": "2px",
-                                    "borderColor": "#C10E21",
-                                    "type": "Frame",
-                                    "width": "64.296875vw"
+                                    "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
+                                    "imageScale": "best-fill",
+                                    "type": "AlexaImage",
+                                    "imageHeight": "77.5vh",
+                                    "imageWidth": "64.296875vw",
+                                    "accessibilityLabel": "American Heart Association home page image"
                                 }
                             ],
                             "alignItems": "end",
@@ -73,16 +67,18 @@
                                                 {
                                                     "items": [
                                                         {
-                                                            "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
-                                                            "type": "Image",
+                                                            "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                                                            "type": "AlexaImage",
                                                             "accessibilityLabel": "American Heart Association logo",
-                                                            "width": "4.140625vw",
-                                                            "height": "8.625vh"
+                                                            "imageWidth": "4.140625vw",
+                                                            "imageHeight": "8.625vh",
+                                                            "id": "ahaLogo"
                                                         }
                                                     ],
                                                     "alignItems": "center",
                                                     "wrap": "noWrap",
                                                     "type": "Container",
+                                                    "id": "ahaLogoContainer",
                                                     "accessibilityLabel": "American Heart Association logo container",
                                                     "width": "46.40625vw",
                                                     "padding": "@spacingSmall"

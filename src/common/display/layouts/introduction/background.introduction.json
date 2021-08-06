@@ -1,5 +1,7 @@
 {
-    "type":"AlexaBackground",
+    "type": "AlexaBackground",
     "id": "rect.introduction.background", 
-    "backgroundColor":"#FFFFFF"
- }
+    "backgroundColor": "#222328",
+    "colorOverlay": true,
+    "backgroundImageSource": "${payload.content.mainImage}"
+}
