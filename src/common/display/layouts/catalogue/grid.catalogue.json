@@ -14,7 +14,7 @@
             "${ordinal}"
         ]
     },
-    "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/thankful_woman_hand_over_heart@2x.png",
+    "backgroundImageSource": "${payload.content.gridBackground}",
     "backgroundColorOverlay": true,
     "id": "gridComponent",
     "height": "75vh",
