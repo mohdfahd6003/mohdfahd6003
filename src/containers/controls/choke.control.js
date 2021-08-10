@@ -91,7 +91,7 @@ class ChokeControl extends Control {
             if (topic === 'chokingInfo.startCPR') {
                 const combinedSpeech = `${chokeValueAct.speechText} <audio src="https://${
                     configData[process.env.ENVIRONMENT].cloudfront
-                }/${assets.Audio['learncpr.control']}"/> ${chokeData[topic].yes.speechTextTwo}`;
+                }/${assets.Audio.learncprControl}"/> ${chokeData[topic].yes.speechTextTwo}`;
                 chokeValueAct.speechText = combinedSpeech;
             }
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {

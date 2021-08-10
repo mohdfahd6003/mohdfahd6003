@@ -7,7 +7,7 @@
                         "type": "SendEvent",
                         "arguments": [
                             "cardSelected",
-                            "${data.id}" 
+                            "${data.id}"
                         ]
                     }
                 ],
@@ -22,31 +22,40 @@
                                                 "imageSource": "${data.imageSrc}",
                                                 "type": "AlexaImage",
                                                 "imageWidth": "@imageWidth",
-                                                "imageHeight": "@imageHeight",
-                                                "imageAlignment": "top",
-                                                "scale": "best-fill",
-                                                "align": "top",
+                                                "imageHeight": "auto",
+                                                "imageScale": "best-fill",
+                                                "align": "start",
                                                 "borderRadius": "4"
                                             }
                                         ],
                                         "shrink": 1,
+                                        "alignItems": "center",
+                                        "justifyContent": "start",
+                                        "alignSelf": "center",
                                         "type": "Container",
                                         "height": "33.75vh"
                                     },
                                     {
-                                        "text": "${data.sequence}. ${data.title}",
-                                        "fontSize": "@fontSizeSmall",
-                                        "fontWeight": "@fontWeightMedium",
-                                        "maxLines": "@cardContentTitleMaxLines",
-                                        "letterSpacing": "@letterSpacingNormal",
-                                        "color": "#222328",
-                                        "fontFamily": "@fontFamilyRomanSans",
-                                        "textAlignVertical": "center",
-                                        "textAlign": "left",
-                                        "type": "Text",
+                                        "item": [
+                                            {
+                                                "text": "${data.sequence}. ${data.title}",
+                                                "fontSize": "@fontSizeSmall",
+                                                "fontWeight": "@fontWeightMedium",
+                                                "maxLines": "@cardContentTitleMaxLines",
+                                                "letterSpacing": "@letterSpacingNormal",
+                                                "fontFamily": "@fontFamilyRomanSans",
+                                                "textAlignVertical": "center",
+                                                "textAlign": "left",
+                                                "type": "Text",
+                                                "alignSelf": "start"
+                                            }
+                                        ],
+                                        "alignSelf": "start",
+                                        "alignItems": "start",
+                                        "type": "Container",
+                                        "width": "100%",
                                         "paddingLeft": "@spacing2XSmall",
-                                        "paddingRight": "@spacingXSmall",
-                                        "alignSelf": "start"
+                                        "paddingRight": "@spacingXSmall"
                                     },
                                     {
                                         "layoutDirection": "LTR",
@@ -58,16 +67,16 @@
                                         "height": "1.25vh"
                                     }
                                 ],
-                                "alignItems": "center",
+                                "alignItems": "start",
                                 "justifyContent": "spaceBetween",
                                 "type": "Container",
                                 "width": "100%",
                                 "height": "100%",
-                                "paddingTop": "@spacingXSmall"
+                                "paddingTop": "@spacing2XSmall"
                             }
                         ],
+                        "backgroundColor": "#232F3E",
                         "type": "Frame",
-                        "id":"cardFrame",
                         "inheritParentState": true,
                         "style": "cardFrame"
                     }
@@ -75,8 +84,8 @@
                 "type": "TouchWrapper",
                 "id": "${data.id}",
                 "paddingBottom": "@spacingLarge",
-                "paddingRight": "@spacingSmall",
                 "paddingStart": "@spacingXSmall",
+                "paddingRight": "@spacingSmall",
                 "spacing": "@spacingBetweenCards"
             }
         ]

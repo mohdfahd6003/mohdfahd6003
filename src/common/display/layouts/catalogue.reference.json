@@ -3,14 +3,14 @@
         "type": "APL",
         "version": "1.6",
         "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
-        "theme": "light",
+        "theme": "dark",
         "resources": [
             {
                 "numbers": {
                     "numberOfVisibleCards": 3.5,
                     "spacingBetweenCards": "@spacingLarge",
                     "imageAspectRatio": 1.1037,
-                    "cardContentHeight": 400,
+                    "cardContentHeight": 500,
                     "cardContentTitleMaxLines": 2
                 },
                 "dimensions": {
@@ -65,6 +65,12 @@
                     "imageHeight": "${@cardWidth / @imageAspectRatio}",
                     "cardHeight": "${@imageHeight + @cardContentHeight}"
                 }
+            },
+            {
+                "when": "${@viewportProfile == @tvLandscapeXLarge}",
+                "dimensions": {
+                    "imageWidth": "19.5vw"
+                }
             }
         ],
         "import": [
@@ -99,15 +105,14 @@
                 "values": [
                     {
                         "backgroundColor": "#FFFFFF",
-                        "borderRadius": 4,
+                        "borderRadius": 4
+                    },
+                    {
+                        "when": "${state.pressed || state.focused}",
                         "shadowVerticalOffset": 3,
                         "shadowHorizontalOffset": 3,
                         "shadowColor": "#00000029",
                         "shadowRadius": 10
-                    },
-                    {
-                        "when": "${state.pressed}",
-                        "backgroundColor": "#fcfcfa"
                     }
                 ]
             },
@@ -136,71 +141,68 @@
                     "height": "100vh",
                     "items": [
                         {
-                            "type": "AlexaBackground",
-                            "backgroundColor": "#FFFFFF"
+                            "type": "AlexaBackground"
                         },
                         {
-                            "type": "Container",
-                            "height": "12.5vh",
-                            "paddingLeft": "@marginHorizontal",
-                            "paddingRight": "@marginHorizontal",
-                            "minHeight": "12.5vh",
-                            "items": [
+                            "item": [
                                 {
-                                    "when": "${@viewportProfile != @hubRoundSmall}",
-                                    "type": "Container",
                                     "items": [
                                         {
+                                            "when": "${@viewportProfile != @hubRoundSmall}",
                                             "type": "Container",
-                                            "item": [
+                                            "items": [
                                                 {
-                                                    "type": "Text",
-                                                    "textAlign": "left",
-                                                    "textAlignVertical": "center",
-                                                    "color": "#222328",
-                                                    "fontFamily": "Amazon Ember Display",
-                                                    "text": "${String.toUpperCase('American Heart Association')}",
-                                                    "fontSize": "@fontSizeSmall"
+                                                    "type": "Container",
+                                                    "item": [
+                                                        {
+                                                            "textAlign": "left",
+                                                            "textAlignVertical": "center",
+                                                            "fontFamily": "@fontFamilyRomanSans",
+                                                            "text": "${String.toUpperCase('American Heart Association')}",
+                                                            "fontSize": "@fontSizeSmall",
+                                                            "color": "#FFFFFF",
+                                                            "fontWeight": "@fontWeightLight",
+                                                            "type": "Text"
+                                                        }
+                                                    ],
+                                                    "alignItems": "center",
+                                                    "direction": "row",
+                                                    "justifyContent": "center"
                                                 }
                                             ],
-                                            "alignItems": "center",
-                                            "direction": "row",
+                                            "justifyContent": "center"
+                                        },
+                                        {
+                                            "type": "Container",
+                                            "items": [
+                                                {
+                                                    "type": "Image",
+                                                    "width": "4.140625vw",
+                                                    "height": "8.625vh",
+                                                    "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                                                    "align": "right"
+                                                }
+                                            ],
                                             "justifyContent": "center"
                                         }
                                     ],
-                                    "justifyContent": "center"
-                                },
-                                {
+                                    "direction": "row",
+                                    "justifyContent": "${@viewportProfile != @hubRoundSmall ? 'spaceBetween' : 'center'}",
                                     "type": "Container",
-                                    "items": [
-                                        {
-                                            "type": "Image",
-                                            "width": "4.140625vw",
-                                            "height": "8.625vh",
-                                            "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
-                                            "align": "right"
-                                        }
-                                    ],
-                                    "justifyContent": "center"
+                                    "width": "100vw",
+                                    "height": "12.5vh",
+                                    "minHeight": "12.5vh",
+                                    "paddingLeft": "@marginHorizontal",
+                                    "paddingRight": "@marginHorizontal"
                                 }
                             ],
-                            "direction": "row",
-                            "justifyContent": "${@viewportProfile != @hubRoundSmall ? 'spaceBetween' : 'center'}"
-                        },
-                        {
-                            "when": "${@viewportProfile != @hubRoundSmall}",
-                            "type": "AlexaDivider",
-                            "theme": "light",
-                            "shadowColor": "#00000094",
-                            "shadowHorizontalOffset": "3",
-                            "shadowRadius": "6",
-                            "shadowVerticalOffset": "3"
+                            "backgroundColor": "#222328",
+                            "type": "Frame"
                         },
                         {
                             "type": "AlexaGridList",
-                            "id": "gridComponent",
-                            "backgroundColor": "#F8F8F8",
-                            "theme": "light",
+                            "backgroundColor": "##222328",
+                            "theme": "dark",
                             "listItems": "${payload.gridListData.listItemsToShow}",
                             "customLayoutName": "Card",
                             "listItemHeight": "57vh",
@@ -213,37 +215,38 @@
                                     "${ordinal}"
                                 ]
                             },
+                            "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/thankful_woman_hand_over_heart@2x.png",
+                            "backgroundColorOverlay": true,
+                            "id": "gridComponent",
                             "height": "75vh",
                             "paddingBottom": "@spacingSmall"
                         },
                         {
-                            "when": "${@viewportProfile != @hubRoundSmall}",
-                            "type": "AlexaDivider",
-                            "theme": "light",
-                            "shadowColor": "#00000094",
-                            "shadowHorizontalOffset": "0",
-                            "shadowRadius": "6",
-                            "shadowVerticalOffset": "-3"
-                        },
-                        {
-                            "when": "${@viewportProfile != @hubRoundSmall}",
-                            "type": "Container",
-                            "height": "12.5vh",
-                            "minHeight": "12.5vh",
-                            "paddingLeft": "@marginHorizontal",
-                            "paddingRight": "@marginHorizontal",
-                            "items": [
+                            "item": [
                                 {
-                                    "type": "Frame",
-                                    "item": [
+                                    "when": "${@viewportProfile != @hubRoundSmall}",
+                                    "type": "Container",
+                                    "height": "12.5vh",
+                                    "minHeight": "12.5vh",
+                                    "paddingLeft": "@marginHorizontal",
+                                    "paddingRight": "@marginHorizontal",
+                                    "items": [
                                         {
-                                            "type": "Text",
-                                            "style": "footerText",
-                                            "text": "Try “Alexa, how to stop bleeding”"
+                                            "type": "Frame",
+                                            "item": [
+                                                {
+                                                    "text": "Try “Alexa, how to stop bleeding”",
+                                                    "color": "#FFFFFF",
+                                                    "type": "Text",
+                                                    "style": "footerText"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
-                            ]
+                            ],
+                            "backgroundColor": "#222328",
+                            "type": "Frame"
                         }
                     ],
                     "justifyContent": "start"
@@ -274,31 +277,40 @@
                                                         "imageSource": "${data.imageUrl}",
                                                         "type": "AlexaImage",
                                                         "imageWidth": "@imageWidth",
-                                                        "imageHeight": "@imageHeight",
-                                                        "imageAlignment": "top",
-                                                        "scale": "best-fill",
-                                                        "align": "top",
+                                                        "imageHeight": "auto",
+                                                        "imageScale": "best-fill",
+                                                        "align": "start",
                                                         "borderRadius": "4"
                                                     }
                                                 ],
                                                 "shrink": 1,
+                                                "alignItems": "center",
+                                                "justifyContent": "start",
+                                                "alignSelf": "center",
                                                 "type": "Container",
                                                 "height": "33.75vh"
                                             },
                                             {
-                                                "text": "${data.sequenceNumber}. ${data.listItemText}",
-                                                "fontSize": "@fontSizeSmall",
-                                                "fontWeight": "@fontWeightMedium",
-                                                "maxLines": "@cardContentTitleMaxLines",
-                                                "letterSpacing": "@letterSpacingNormal",
-                                                "color": "#222328",
-                                                "fontFamily": "@fontFamilyRomanSans",
-                                                "textAlignVertical": "center",
-                                                "textAlign": "left",
-                                                "type": "Text",
+                                                "item": [
+                                                    {
+                                                        "text": "${data.sequenceNumber}. ${data.listItemText}",
+                                                        "fontSize": "@fontSizeSmall",
+                                                        "fontWeight": "@fontWeightMedium",
+                                                        "maxLines": "@cardContentTitleMaxLines",
+                                                        "letterSpacing": "@letterSpacingNormal",
+                                                        "fontFamily": "@fontFamilyRomanSans",
+                                                        "textAlignVertical": "center",
+                                                        "textAlign": "left",
+                                                        "type": "Text",
+                                                        "alignSelf": "start"
+                                                    }
+                                                ],
+                                                "alignSelf": "start",
+                                                "alignItems": "start",
+                                                "type": "Container",
+                                                "width": "100%",
                                                 "paddingLeft": "@spacing2XSmall",
-                                                "paddingRight": "@spacingXSmall",
-                                                "alignSelf": "start"
+                                                "paddingRight": "@spacingXSmall"
                                             },
                                             {
                                                 "layoutDirection": "LTR",
@@ -310,14 +322,15 @@
                                                 "height": "1.25vh"
                                             }
                                         ],
-                                        "alignItems": "center",
+                                        "alignItems": "start",
                                         "justifyContent": "spaceBetween",
                                         "type": "Container",
                                         "width": "100%",
                                         "height": "100%",
-                                        "paddingTop": "@spacingXSmall"
+                                        "paddingTop": "@spacing2XSmall"
                                     }
                                 ],
+                                "backgroundColor": "#232F3E",
                                 "type": "Frame",
                                 "inheritParentState": true,
                                 "style": "cardFrame"
@@ -326,8 +339,8 @@
                         "type": "TouchWrapper",
                         "id": "${data.id}",
                         "paddingBottom": "@spacingLarge",
-                        "paddingRight": "@spacingSmall",
                         "paddingStart": "@spacingXSmall",
+                        "paddingRight": "@spacingSmall",
                         "spacing": "@spacingBetweenCards"
                     }
                 ]

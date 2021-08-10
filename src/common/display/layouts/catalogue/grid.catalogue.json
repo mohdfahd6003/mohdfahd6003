@@ -1,8 +1,7 @@
 {
     "type": "AlexaGridList",
-    "id": "gridComponent",
-    "backgroundColor": "#F8F8F8",
-    "theme": "light",
+    "backgroundColor": "##222328",
+    "theme": "dark",
     "listItems": "${payload.catalogueData.itemList}",
     "customLayoutName": "Card",
     "listItemHeight": "57vh",
@@ -15,6 +14,9 @@
             "${ordinal}"
         ]
     },
+    "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/thankful_woman_hand_over_heart@2x.png",
+    "backgroundColorOverlay": true,
+    "id": "gridComponent",
     "height": "75vh",
     "paddingBottom": "@spacingSmall"
 }

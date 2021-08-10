@@ -64,6 +64,8 @@
                 "fontFamily": "Bookerly",
                 "fontSize": "@fontSizeMedium",
                 "lineHeight": 1.5
+
+                
             }
         ]
     },
@@ -118,29 +120,18 @@
            }
         ]
      },
-     "welcomeTextFrame":{
-        "values":[
-           {
-              "shadowColor":"#000029",
-              "shadowVerticalOffset":"0",
-              "shadowRadius":"15",
-              "shadowHorizontalOffset":"-3"
-           }
-        ]
-     },
-     "cardFrame": {
+    "cardFrame": {
         "values": [
             {
                 "backgroundColor": "#FFFFFF",
-                "borderRadius": 4,
+                "borderRadius": 4
+            },
+            {
+                "when": "${state.pressed || state.focused}",
                 "shadowVerticalOffset": 3,
                 "shadowHorizontalOffset": 3,
                 "shadowColor": "#00000029",
                 "shadowRadius": 10
-            },
-            {
-                "when": "${state.pressed}",
-                "backgroundColor": "#fcfcfa"
             }
         ]
     },
@@ -156,6 +147,16 @@
                 "paddingRight": "@spacingMedium"
             }
         ]
-    }
+    },
+     "welcomeTextFrame":{
+        "values":[
+           {
+              "shadowColor":"#000029",
+              "shadowVerticalOffset":"0",
+              "shadowRadius":"15",
+              "shadowHorizontalOffset":"-3"
+           }
+        ]
+     }
   
 }
