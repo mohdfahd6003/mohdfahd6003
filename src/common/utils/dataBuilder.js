@@ -26,7 +26,12 @@ function prepareScreenContent(title, bodyText, mainImage, isWelcome) {
         outputName: 'transformedHintText',
         transformer: 'textToHint',
     };
-    if (isWelcome) dataTemplate.catalogueData = createCatalogueData();
+    if (isWelcome) {
+        dataTemplate.content.gridBackground = `https://${
+            configData[process.env.ENVIRONMENT].cloudfront
+        }/${assets.Images.gridBackground}`;
+        dataTemplate.catalogueData = createCatalogueData();
+    }
     return dataTemplate;
 }
 

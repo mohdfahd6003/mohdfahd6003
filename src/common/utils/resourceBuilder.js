@@ -35,7 +35,7 @@ function getResources() {
                 numberOfVisibleCards: 3.5,
                 spacingBetweenCards: '@spacingLarge',
                 imageAspectRatio: 1.1037,
-                cardContentHeight: 400,
+                cardContentHeight: 500,
                 cardContentTitleMaxLines: 2,
             },
             dimensions: {
@@ -91,6 +91,12 @@ function getResources() {
                 imageWidth: '${@viewportProfile == @hubRoundSmall ? @cardWidth : 23.28vw }',
                 imageHeight: '${@cardWidth / @imageAspectRatio}',
                 cardHeight: '${@imageHeight + @cardContentHeight}',
+            },
+        },
+        {
+            when: '${@viewportProfile == @tvLandscapeXLarge}',
+            dimensions: {
+                imageWidth: '19.5vw',
             },
         },
     ];

@@ -6,9 +6,7 @@ function cataloguePageCreater() {
     catalogueRoot.items = [];
     catalogueRoot.items.push(catalogue.getBackground());
     catalogueRoot.items.push(catalogue.getHeader());
-    catalogueRoot.items.push(catalogue.getDividerUp());
     catalogueRoot.items.push(catalogue.getGrid());
-    catalogueRoot.items.push(catalogue.getDividerDown());
     catalogueRoot.items.push(catalogue.getFooter());
     return catalogueRoot;
 }

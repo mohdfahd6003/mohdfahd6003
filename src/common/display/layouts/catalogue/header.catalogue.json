@@ -1,49 +1,64 @@
 {
-    "type": "Container",
-    "id":"rect.catalogue.headerConainer",
-    "height": "12.5vh",
-    "paddingLeft": "@marginHorizontal",
-    "paddingRight": "@marginHorizontal",
-    "minHeight": "12.5vh",
-    "items": [
+    "item": [
         {
-            "when": "${@viewportProfile != @hubRoundSmall}",
-            "type": "Container",
             "items": [
                 {
+                    "when": "${@viewportProfile != @hubRoundSmall}",
                     "type": "Container",
-                    "item": [
+                    "id":"rect.catalogue.headerBandWrapContainer",
+                 
+                    "items": [
                         {
-                            "type": "Text",
-                            "textAlign": "left",
-                            "textAlignVertical": "center",
-                            "color": "#222328",
-                            "fontFamily": "Amazon Ember Display",
-                            "text": "${String.toUpperCase('American Heart Association')}",
-                            "fontSize": "@fontSizeSmall"
+                            "type": "Container",
+                            "item": [
+                                {
+                                    "textAlign": "left",
+                                    "textAlignVertical": "center",
+                                    "fontFamily": "@fontFamilyRomanSans",
+                                    "text": "${String.toUpperCase('American Heart Association')}",
+                                    "fontSize": "@fontSizeSmall",
+                                    "color": "#FFFFFF",
+                                    "fontWeight": "@fontWeightLight",
+                                    "type": "Text",
+                                    "id":"rect.catalogue.headerText"
+                                }
+                            ],
+                            "alignItems": "center",
+                            "direction": "row",
+                            "justifyContent": "center",
+                            "id":"rect.catalogue.headerBandConainer"
                         }
                     ],
-                    "alignItems": "center",
-                    "direction": "row",
+                    "justifyContent": "center"
+                },
+                {
+                    "type": "Container",
+                    "id":"rect.catalogue.headerLogoConainer",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "id":"rect.catalogue.headerLogo",
+                            "width": "4.140625vw",
+                            "height": "8.625vh",
+                            "source": "${payload.content.logo}",
+                            "align": "right"
+                        }
+                    ],
                     "justifyContent": "center"
                 }
             ],
-            "justifyContent": "center"
-        },
-        {
+            "direction": "row",
+            "justifyContent": "${@viewportProfile != @hubRoundSmall ? 'spaceBetween' : 'center'}",
             "type": "Container",
-            "items": [
-                {
-                    "type": "Image",
-                    "width": "4.140625vw",
-                    "height": "8.625vh",
-                    "source": "${payload.content.logo}",
-                    "align": "right"
-                }
-            ],
-            "justifyContent": "center"
+            "id":"rect.catalogue.headerConainer",
+            "width": "100vw",
+            "height": "12.5vh",
+            "minHeight": "12.5vh",
+            "paddingLeft": "@marginHorizontal",
+            "paddingRight": "@marginHorizontal"
         }
     ],
-    "direction": "row",
-    "justifyContent": "${@viewportProfile != @hubRoundSmall ? 'spaceBetween' : 'center'}"
+    "backgroundColor": "#222328",
+    "type": "Frame",
+    "id":"rect.catalogue.headerFrame"
 }
