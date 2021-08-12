@@ -1,0 +1,10 @@
+{
+    "layoutDirection": "LTR",
+    "backgroundColor": "#C10E21",
+    "borderColor": "#C10E21",
+    "borderWidth": "2",
+    "type": "Frame",
+    "id":"rect.card.line",
+    "width": "100vw",
+    "height": "1.25vh"
+}

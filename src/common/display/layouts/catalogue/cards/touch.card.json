@@ -1,0 +1,20 @@
+{
+    "onPress": [
+        {
+            "type": "SendEvent",
+            "arguments": [
+                "cardSelected",
+                "${data.id}"
+            ]
+        }
+    ],
+    "item": [
+    
+    ],
+    "type": "TouchWrapper",
+    "id": "${data.id}",
+    "paddingBottom": "@spacingLarge",
+    "paddingStart": "@spacingXSmall",
+    "paddingRight": "@spacingSmall",
+    "spacing": "@spacingBetweenCards"
+}

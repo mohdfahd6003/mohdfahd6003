@@ -1,0 +1,24 @@
+{
+    "item": [
+        {
+            "text": "${data.sequence}. ${data.title}",
+            "fontSize": "@fontSizeSmall",
+            "fontWeight": "@fontWeightMedium",
+            "maxLines": "@cardContentTitleMaxLines",
+            "letterSpacing": "@letterSpacingNormal",
+            "fontFamily": "@fontFamilyRomanSans",
+            "textAlignVertical": "center",
+            "textAlign": "left",
+            "type": "Text",
+            "id":"rect.card.text",
+            "alignSelf": "start"
+        }
+    ],
+    "alignSelf": "start",
+    "alignItems": "start",
+    "type": "Container",
+    "id":"rect.card.textContainer",
+    "width": "100%",
+    "paddingLeft": "@spacing2XSmall",
+    "paddingRight": "@spacingXSmall"
+}
