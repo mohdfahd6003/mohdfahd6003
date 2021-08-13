@@ -20,19 +20,15 @@ phases:
        chmod 400 ~/.ssh/id_rsa;       
        git config --global url."git@bitbucket.org:".insteadOf https://bitbucket.org/;
        git config --global url."git@bitbucket.org:".insteadOf https://sijos07@bitbucket.org/;
-       #git config --global url."git@github.com:".insteadOf https://github.com/;
+       git config --global url."git@github.com:".insteadOf https://github.com/;
        ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts;
-       #ssh-keyscan github.com >> ~/.ssh/known_hosts;
+       ssh-keyscan github.com >> ~/.ssh/known_hosts;
        git clone -b development git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git;
        cd alexa-skill;
        #Tagging Repository
        git tag Dev-$CODEBUILD_BUILD_NUMBER
        git remote set-url origin git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git
        git push --tags
-       cp -r deploy/ask-states_dev.json .ask/ask-state.json;
-       mv deploy/ask-resources-code-build.json ask-resources.json;
-       ask deploy;
-       cat .ask/ask-states.json;
        fi
      - |-
        if [ "$ENV_NAME" = "qa" ]; then
@@ -46,8 +42,8 @@ phases:
        git clone -b development git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git;
        cd alexa-skill;
        git checkout $GIT_VERSION
-       cp -r deploy/ask-states_qa.json .ask/ask-state.json;
-       mv deploy/ask-resources-code-build.json ask-resources.json;
-       ask deploy;
-       cat .ask/ask-states.json;
        fi
+      - cp -r deploy/ask-states_$ENV_NAME.json .ask/ask-state.json;
+      - mv deploy/ask-resources-code-build.json ask-resources.json;
+      - ask deploy;
+      - cat .ask/ask-states.json;
