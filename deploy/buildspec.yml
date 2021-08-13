@@ -43,7 +43,7 @@ phases:
        cd alexa-skill;
        git checkout $GIT_VERSION
        fi
-      - cp -r deploy/ask-states_$ENV_NAME.json .ask/ask-state.json;
-      - mv deploy/ask-resources-code-build.json ask-resources.json;
-      - ask deploy;
-      - cat .ask/ask-states.json;
+      - cp -r deploy/ask-states_$ENV_NAME.json .ask/ask-state.json
+      - mv deploy/ask-resources-code-build.json ask-resources.json
+      - ask deploy
+      - cat .ask/ask-states.json
