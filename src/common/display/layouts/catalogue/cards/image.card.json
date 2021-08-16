@@ -1,0 +1,21 @@
+{
+    "item": [
+        {
+            "imageSource": "${data.imageSrc}",
+            "type": "AlexaImage",
+            "id":"rect.card.image",
+            "imageWidth": "@imageWidth",
+            "imageHeight": "auto",
+            "imageScale": "best-fill",
+            "align": "start",
+            "borderRadius": "4"
+        }
+    ],
+    "shrink": 1,
+    "alignItems": "center",
+    "justifyContent": "start",
+    "alignSelf": "center",
+    "type": "Container",
+    "id":"rect.card.imageContainer",
+    "height": "33.75vh"
+}
