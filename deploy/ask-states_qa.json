@@ -11,7 +11,7 @@
                                 "bucket": "ask-alexa-skill-alexa-useast1-1623753562240",
                                 "key": "endpoint/build.zip"
                             },
-                            "stackId": "arn:aws:cloudformation:us-east-1:790113021232:stack/ask-american-heart-association-default-skillStack-1623998157438/8bb50ac0-cfff-11eb-b96d-0e3caa6b31bf"
+                            "stackId": "arn:aws:cloudformation:us-east-1:790113021232:stack/ask-aha-qa-default-skillStack-1629095659001/02505ec0-fe5c-11eb-9482-0e51aa6fabf5"
                         }
                     }
                 }
