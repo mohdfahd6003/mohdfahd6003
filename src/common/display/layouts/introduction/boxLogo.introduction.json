@@ -9,11 +9,13 @@
            "id": "rect.introduction.boxLogo"
        }
    ],
-   "alignItems": "center",
+   "alignItems": "start",
    "wrap": "noWrap",
    "type": "Container",
    "id": "rect.introduction.boxLogoContainer" ,
    "accessibilityLabel": "American Heart Association logo container",
    "width": "46.40625vw",
-   "padding": "@spacingSmall"
+   "padding": "@spacingSmall",
+   "paddingLeft": "@logoLeftPadding",
+   "paddingRight": "@logoLeftPadding"
 }

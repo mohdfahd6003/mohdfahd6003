@@ -20,16 +20,32 @@ function getResources() {
         },
         {
             dimensions: {
+                imageWidth: '64.296875vw',
+                logoLeftPadding: '21.234375vw',
+                logoRightPadding: '21.234375vw',
                 scrollViewHeight: '35vh',
             },
         },
         {
             when: '${@viewportProfile == @tvLandscapeXLarge}',
             dimensions: {
-                scrollViewHeight: '20vh',
+                imageWidth: '67vw',
+                scrollViewHeight: '14.5vh',
             },
         },
-
+        {
+            when: '${@viewportProfile == @mobileLarge}',
+            dimensions: {
+                imageWidth: '67vw',
+            },
+        },
+        {
+            when: '${@viewportProfile == @hubLandscapeSmall}',
+            dimensions: {
+                logoLeftPadding: '20.834375vw',
+                logoRightPadding: '21.234375vw',
+            },
+        },
         {
             numbers: {
                 numberOfVisibleCards: 3.5,
