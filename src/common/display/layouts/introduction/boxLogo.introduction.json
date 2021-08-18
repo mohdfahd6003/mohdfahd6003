@@ -18,4 +18,6 @@
    "padding": "@spacingSmall",
    "paddingLeft": "@logoLeftPadding",
    "paddingRight": "@logoLeftPadding"
+
+   
 }

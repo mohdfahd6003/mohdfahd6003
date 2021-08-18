@@ -20,7 +20,7 @@ function getResources() {
         },
         {
             dimensions: {
-                imageWidth: '64.296875vw',
+                introImageWidth: '64.296875vw',
                 logoLeftPadding: '21.234375vw',
                 logoRightPadding: '21.234375vw',
                 scrollViewHeight: '35vh',
@@ -29,14 +29,14 @@ function getResources() {
         {
             when: '${@viewportProfile == @tvLandscapeXLarge}',
             dimensions: {
-                imageWidth: '67vw',
+                introImageWidth: '67vw',
                 scrollViewHeight: '14.5vh',
             },
         },
         {
             when: '${@viewportProfile == @mobileLarge}',
             dimensions: {
-                imageWidth: '67vw',
+                introImageWidth: '67vw',
             },
         },
         {
