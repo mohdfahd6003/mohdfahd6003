@@ -41,3 +41,4 @@ function getWelcomeResource() {
         },
     ];
 }
+exports.getWelcomeResource = getWelcomeResource;
