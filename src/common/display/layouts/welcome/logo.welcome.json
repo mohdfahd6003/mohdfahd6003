@@ -2,14 +2,19 @@
    "items": [
        {
            "imageSource": "${payload.content.logo}",
+           "id":"rect.welcome.logo",
            "type": "AlexaImage",
            "imageWidth": "6.015625vw"
        }
    ],
-   "alignItems": "center",
+   "alignItems": "start",
+   "id":"rect.welcome.logoContainer",
    "wrap": "noWrap",
    "type": "Container",
    "width": "46.40625vw",
    "paddingTop": "@spacingSmall",
-   "paddingBottom": "@spacingSmall"
+   "paddingBottom": "@spacingSmall",
+   "paddingLeft": "@logoLeftPadding",
+   "paddingRight": "@logoLeftPadding"
+
 }

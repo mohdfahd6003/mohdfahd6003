@@ -15,7 +15,47 @@
                 "version": "1.2.0"
             }
         ],
-        "resources": [],
+        "resources": [
+            {
+                "dimensions": {
+                    "logoLeftPadding": "20.234375vw",
+                    "logoRightPadding": "20.234375vw",
+                    "welcomeTextSize": "48px",
+                    "imageWidth": "64.296875vw"
+                }
+            },
+            {
+                "when": "${@viewportProfile == @tvLandscapeXLarge}",
+                "dimensions": {
+                    "imageWidth": "67vw"
+                }
+            },
+            {
+                "when": "${@viewportProfile == @hubLandscapeSmall}",
+                "dimensions": {
+                    "logoLeftPadding": "19.734375vw",
+                    "logoRightPadding": "20.234375vw"
+                }
+            },
+            {
+                "when": "${viewport.width >= 480 && viewport.width < 1023 }",
+                "dimensions": {
+                    "welcomeTextSize": "40px"
+                }
+            },
+            {
+                "when": "${viewport.width >= 1024 && viewport.width < 1280 }",
+                "dimensions": {
+                    "welcomeTextSize": "48px"
+                }
+            },
+            {
+                "when": "${viewport.width >= 1281 && viewport.width < 1920 }",
+                "dimensions": {
+                    "welcomeTextSize": "64px"
+                }
+            }
+        ],
         "mainTemplate": {
             "parameters": [
                 "payload"
@@ -34,7 +74,7 @@
                                     "source": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
                                     "scale": "best-fill",
                                     "type": "Image",
-                                    "width": "64.296875vw",
+                                    "width": "@imageWidth",
                                     "height": "77.5vh"
                                 }
                             ],
@@ -57,28 +97,30 @@
                                                             "imageWidth": "6.015625vw"
                                                         }
                                                     ],
-                                                    "alignItems": "center",
+                                                    "alignItems": "start",
                                                     "wrap": "noWrap",
                                                     "type": "Container",
                                                     "width": "46.40625vw",
                                                     "paddingTop": "@spacingSmall",
-                                                    "paddingBottom": "@spacingSmall"
+                                                    "paddingBottom": "@spacingSmall",
+                                                    "paddingLeft": "@logoLeftPadding",
+                                                    "paddingRight": "@logoLeftPadding"
                                                 },
                                                 {
                                                     "item": [
                                                         {
                                                             "textAlign": "center",
-                                                            "fontSize": "@fontSizeXLarge",
+                                                            "fontSize": "@welcomeTextSize",
                                                             "text": "Welcome To American Heart Association",
                                                             "textAlignVertical": "center",
                                                             "color": "#222328",
                                                             "fontFamily": "@fontFamilyRomanSans",
-                                                            "type": "Text",
-                                                            "paddingLeft": "3.984375vw",
-                                                            "paddingRight": "3.984375vw"
+                                                            "type": "Text"
                                                         }
                                                     ],
                                                     "type": "Container",
+                                                    "paddingLeft": "@spacingSmall",
+                                                    "paddingRight": "@spacingSmall",
                                                     "paddingBottom": "@spacingSmall"
                                                 },
                                                 {
