@@ -18,13 +18,30 @@
         "resources": [
             {
                 "dimensions": {
+                    "imageWidth": "64.296875vw",
+                    "logoLeftPadding": "21.234375vw",
+                    "logoRightPadding": "21.234375vw",
                     "scrollViewHeight": "35vh"
                 }
             },
             {
                 "when": "${@viewportProfile == @tvLandscapeXLarge}",
                 "dimensions": {
-                    "scrollViewHeight": "20vh"
+                    "imageWidth": "67vw",
+                    "scrollViewHeight": "14.5vh"
+                }
+            },
+            {
+                "when": "${@viewportProfile == @mobileLarge}",
+                "dimensions": {
+                    "imageWidth": "67vw"
+                }
+            },
+            {
+                "when": "${@viewportProfile == @hubLandscapeSmall}",
+                "dimensions": {
+                    "logoLeftPadding": "20.834375vw",
+                    "logoRightPadding": "21.234375vw"
                 }
             }
         ],
@@ -49,7 +66,7 @@
                                     "imageScale": "best-fill",
                                     "type": "AlexaImage",
                                     "imageHeight": "77.5vh",
-                                    "imageWidth": "64.296875vw",
+                                    "imageWidth": "@imageWidth",
                                     "accessibilityLabel": "American Heart Association home page image"
                                 }
                             ],
@@ -75,13 +92,15 @@
                                                             "id": "ahaLogo"
                                                         }
                                                     ],
-                                                    "alignItems": "center",
+                                                    "alignItems": "start",
                                                     "wrap": "noWrap",
                                                     "type": "Container",
                                                     "id": "ahaLogoContainer",
                                                     "accessibilityLabel": "American Heart Association logo container",
                                                     "width": "46.40625vw",
-                                                    "padding": "@spacingSmall"
+                                                    "padding": "@spacingSmall",
+                                                    "paddingLeft": "@logoLeftPadding",
+                                                    "paddingRight": "@logoLeftPadding"
                                                 },
                                                 {
                                                     "item": [
