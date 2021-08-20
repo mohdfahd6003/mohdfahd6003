@@ -14,7 +14,7 @@
    "width": "46.40625vw",
    "paddingTop": "@spacingSmall",
    "paddingBottom": "@spacingSmall",
-   "paddingLeft": "@logoLeftPadding",
-   "paddingRight": "@logoLeftPadding"
+   "paddingLeft": "@welcomeLogoLeftPadding",
+   "paddingRight": "@welcomeLogoLeftPadding"
 
 }

@@ -11,7 +11,7 @@ function getWelcomeResource() {
         {
             when: '${@viewportProfile == @tvLandscapeXLarge}',
             dimensions: {
-                imageWidth: '67vw',
+                welcomeImageWidth: '67vw',
             },
         },
         {
