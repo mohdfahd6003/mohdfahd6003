@@ -25,6 +25,7 @@ phases:
        ssh-keyscan github.com >> ~/.ssh/known_hosts;
        git clone -b development git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git;
        cd alexa-skill;
+       sed -i 's/american heart association/aha dev/g' skill-package/interactionModels/custom/en-US.json
        #Tagging Repository
        git tag Dev-$CODEBUILD_BUILD_NUMBER
        git remote set-url origin git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git
@@ -41,6 +42,7 @@ phases:
        #ssh-keyscan github.com >> ~/.ssh/known_hosts;
        git clone -b development git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git;
        cd alexa-skill;
+       sed -i 's/american heart association/aha qa/g' skill-package/interactionModels/custom/en-US.json
        git checkout $GIT_VERSION
        fi
      - cp -r deploy/ask-states_$ENV_NAME.json .ask/ask-state.json
