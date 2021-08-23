@@ -5,7 +5,7 @@
            "id": "rect.welcome.image",
            "scale": "best-fill",
            "type": "Image",
-           "width": "64.296875vw",
+           "width": "@welcomeImageWidth",
            "height": "77.5vh"
        }
    ],
