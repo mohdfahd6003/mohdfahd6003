@@ -43,7 +43,6 @@ function sendResponse(
                 document: displayTemplate,
                 datasources: dataTemplate,
             });
-            // console.log('response', displayTemplate);
         } catch (e) {
             console.log('error', e);
         }
