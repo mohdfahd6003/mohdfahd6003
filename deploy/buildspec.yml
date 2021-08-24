@@ -42,11 +42,15 @@ phases:
        #ssh-keyscan github.com >> ~/.ssh/known_hosts;
        git clone -b development git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git;
        cd alexa-skill;
+       rm -rf .ask/ask-states.json;
+       cp -rf deploy/$ENV_NAME-skill.json skill-package/skill.json;
        sed -i 's/american heart association/heart stg/g' skill-package/interactionModels/custom/en-US.json
        git checkout $GIT_VERSION
        fi
+     #- cp -rf deploy/$ENV_NAME-skill.json skill-package/skill.json
      - cp -r deploy/ask-states_$ENV_NAME.json .ask/ask-states.json
-     - cat .ask/ask-state.json
+     - cat deploy/ask-states_$ENV_NAME.json
+     #- rm -rf .ask/ask-state.json
      - mv deploy/ask-resources-code-build.json ask-resources.json
      - ask deploy
      - cat .ask/ask-states.json
