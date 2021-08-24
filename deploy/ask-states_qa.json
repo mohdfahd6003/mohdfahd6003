@@ -2,7 +2,7 @@
     "askcliStatesVersion": "2020-03-31",
     "profiles": {
         "__ENVIRONMENT_ASK_PROFILE__": {
-            "skillId": "amzn1.ask.skill.94d0fde4-c3e8-4ca7-ae12-083ddde36482",
+            "skillId": "amzn1.ask.skill.eefa9487-e46f-4131-b575-2a8593a6db63",
             "skillInfrastructure": {
                 "@ask-cli/cfn-deployer": {
                     "deployState": {
