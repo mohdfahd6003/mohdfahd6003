@@ -43,6 +43,7 @@ phases:
        git clone -b development git@bitbucket.org:MarkEdwardTresidder/alexa-skill.git;
        cd alexa-skill;
        rm -rf .ask/ask-states.json;
+       cp -rf deploy/$ENV_NAME-skill.json skill-package/skill.json;
        sed -i 's/american heart association/heart stg/g' skill-package/interactionModels/custom/en-US.json
        git checkout $GIT_VERSION
        fi
