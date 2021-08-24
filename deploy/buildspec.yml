@@ -45,9 +45,9 @@ phases:
        sed -i 's/american heart association/heart stg/g' skill-package/interactionModels/custom/en-US.json
        git checkout $GIT_VERSION
        fi
-     #- cp -r deploy/ask-states_$ENV_NAME.json .ask/ask-state.json
-     #- cat .ask/ask-state.json
-     - rm -rf .ask/ask-state.json
+     - cp -r deploy/ask-states_$ENV_NAME.json .ask/ask-state.json
+     - cat deploy/ask-states_$ENV_NAME.json
+     #- rm -rf .ask/ask-state.json
      - mv deploy/ask-resources-code-build.json ask-resources.json
      - ask deploy
      - cat .ask/ask-states.json
