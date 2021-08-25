@@ -3,13 +3,13 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "American heart association skil",
+          "summary": "aha qa",
           "examplePhrases": [
-            "Alexa open  american heart association",
-            "Alexa start  american heart association"
+            "Alexa open  heart stg",
+            "Alexa start  heart stg"
           ],
           "name": "american-heart-association",
-          "description": "Skill by Amercian heart assication"
+          "description": "aha qa"
         }
       },
       "isAvailableWorldwide": true,
