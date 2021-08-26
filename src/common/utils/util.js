@@ -1,33 +1,54 @@
 const {
-    sendResponse,
-    prepareScreenContent,
+    sendRectResponse,
+    sendRoundResponse,
     assets,
-    displayDirective,
     configData,
-    repeatText,
     speakText,
 } = require('./responseBuilder');
 
 process.env.ENVIRONMENT = process.env.ENVIRONMENT ? process.env.ENVIRONMENT : 'dev';
 
 function getShape(input) {
+    let shape;
     try {
-        const { shape } = input.handlerInput.requestEnvelope.context.Viewport;
+        shape = input.handlerInput.requestEnvelope.context.Viewport;
         return shape;
     } catch (e) {
-        const shape = '';
+        shape = 'rectangle';
         return shape;
     }
 }
 
-const displayTemplate = {};
+function sendResponse(input, responseBuilder, primaryText, mainImage, title, bodyText, iswelcome) {
+    const shape = getShape(input);
+    let shapeResponse = {};
+    if (shape === 'round') {
+        shapeResponse = sendRectResponse(
+            input,
+            responseBuilder,
+            primaryText,
+            mainImage,
+            title,
+            bodyText,
+            iswelcome
+        );
+    } else {
+        shapeResponse = sendRectResponse(
+            input,
+            responseBuilder,
+            primaryText,
+            mainImage,
+            title,
+            bodyText,
+            iswelcome
+        );
+    }
+
+    return shapeResponse;
+}
 
 module.exports = {
-    prepareScreenContent,
-    displayDirective,
-    displayTemplate,
     speakText,
-    repeatText,
     configData,
     assets,
     sendResponse,
