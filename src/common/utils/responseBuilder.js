@@ -3,7 +3,7 @@ const speakText = require('../content/constants.json');
 
 const { repeatText } = speakText;
 
-const { generateDocument } = require('./templateBuilder');
+const { generateRectDocument } = require('./templateBuilder');
 
 const assets = require('../content/assets.json');
 
@@ -13,36 +13,63 @@ const displayDirective = 'Alexa.Presentation.APL.RenderDocument';
 
 const configData = require('../../config.json');
 
-function sendRectResponse(
+function createBasic(responseBuilder, primaryText, title, bodyText, mainImage) {
+    responseBuilder.addPromptFragment(primaryText);
+    responseBuilder.addRepromptFragment(repeatText);
+    responseBuilder.withStandardCard(title, bodyText, mainImage, mainImage);
+    return responseBuilder;
+}
+
+function checkForScreen(input) {
+    if (Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)['Alexa.Presentation.APL'])
+        return true;
+    else return false;
+}
+
+function prepareDirective(responseBuilder, displayTemplate, dataTemplate) {
+    responseBuilder.addDirective({
+        type: displayDirective,
+        document: displayTemplate,
+        datasources: dataTemplate,
+    });
+    return responseBuilder;
+}
+
+function sendResponseWithShape(
     input,
     responseBuilder,
     primaryText,
     mainImage,
     title,
     bodyText,
+    shape,
     iswelcome = false
 ) {
-    responseBuilder.addPromptFragment(primaryText);
-    responseBuilder.addRepromptFragment(repeatText);
-    responseBuilder.withStandardCard(title, bodyText, mainImage, mainImage);
+    responseBuilder = createBasic(responseBuilder, primaryText, title, bodyText, mainImage);
 
-    if (
-        Alexa.getSupportedInterfaces(input.handlerInput.requestEnvelope)['Alexa.Presentation.APL']
-    ) {
+    if (checkForScreen(input)) {
         try {
             let displayTemplate = {};
-            displayTemplate = generateDocument(iswelcome);
-            const dataTemplate = dataBuilder.prepareScreenContent(
-                title,
-                bodyText,
-                mainImage,
-                iswelcome
-            );
-            responseBuilder.addDirective({
-                type: displayDirective,
-                document: displayTemplate,
-                datasources: dataTemplate,
-            });
+            let dataTemplate;
+            if (shape === 'round') {
+                displayTemplate = generateRectDocument(iswelcome);
+                dataTemplate = dataBuilder.prepareScreenContent(
+                    title,
+                    bodyText,
+                    mainImage,
+                    iswelcome
+                );
+            } else {
+                displayTemplate = generateRectDocument(iswelcome);
+                dataTemplate = dataBuilder.prepareScreenContent(
+                    title,
+                    bodyText,
+                    mainImage,
+                    iswelcome
+                );
+            }
+
+            responseBuilder = prepareDirective(responseBuilder, displayTemplate, dataTemplate);
         } catch (e) {
             console.log('error', e);
         }
@@ -52,7 +79,7 @@ function sendRectResponse(
 }
 
 module.exports = {
-    sendRectResponse,
+    sendResponseWithShape,
     assets,
     displayDirective,
     configData,

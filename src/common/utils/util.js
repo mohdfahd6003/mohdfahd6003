@@ -1,10 +1,4 @@
-const {
-    sendRectResponse,
-    sendRoundResponse,
-    assets,
-    configData,
-    speakText,
-} = require('./responseBuilder');
+const { sendResponseWithShape, assets, configData, speakText } = require('./responseBuilder');
 
 process.env.ENVIRONMENT = process.env.ENVIRONMENT ? process.env.ENVIRONMENT : 'dev';
 
@@ -22,29 +16,17 @@ function getShape(input) {
 function sendResponse(input, responseBuilder, primaryText, mainImage, title, bodyText, iswelcome) {
     const shape = getShape(input);
     let shapeResponse = {};
-    if (shape === 'round') {
-        console.log('sending round response');
-        shapeResponse = sendRectResponse(
-            input,
-            responseBuilder,
-            primaryText,
-            mainImage,
-            title,
-            bodyText,
-            iswelcome
-        );
-    } else {
-        console.log('sending rectangle response');
-        shapeResponse = sendRectResponse(
-            input,
-            responseBuilder,
-            primaryText,
-            mainImage,
-            title,
-            bodyText,
-            iswelcome
-        );
-    }
+
+    shapeResponse = sendResponseWithShape(
+        input,
+        responseBuilder,
+        primaryText,
+        mainImage,
+        title,
+        bodyText,
+        shape,
+        iswelcome
+    );
 
     return shapeResponse;
 }

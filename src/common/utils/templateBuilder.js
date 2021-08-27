@@ -6,7 +6,7 @@ const { getResources } = require('./resourceBuilder');
 
 const { catalogueCard } = require('./layoutBuilders/catalogue/getCard.catalogue');
 
-function generateDocument(isWelcome) {
+function generateRectDocument(isWelcome) {
     let document = {};
     document = {
         type: 'APL',
@@ -75,4 +75,4 @@ function getMainTemplate(isWelcome) {
     return mainTemplate;
 }
 
-exports.generateDocument = generateDocument;
+exports.generateRectDocument = generateRectDocument;
