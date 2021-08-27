@@ -23,6 +23,7 @@ function sendResponse(input, responseBuilder, primaryText, mainImage, title, bod
     const shape = getShape(input);
     let shapeResponse = {};
     if (shape === 'round') {
+        console.log('sending round response');
         shapeResponse = sendRectResponse(
             input,
             responseBuilder,
@@ -33,6 +34,7 @@ function sendResponse(input, responseBuilder, primaryText, mainImage, title, bod
             iswelcome
         );
     } else {
+        console.log('sending rectangle response');
         shapeResponse = sendRectResponse(
             input,
             responseBuilder,

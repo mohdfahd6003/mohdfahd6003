@@ -13,7 +13,7 @@ const displayDirective = 'Alexa.Presentation.APL.RenderDocument';
 
 const configData = require('../../config.json');
 
-function sendResponse(
+function sendRectResponse(
     input,
     responseBuilder,
     primaryText,
@@ -52,7 +52,7 @@ function sendResponse(
 }
 
 module.exports = {
-    sendResponse,
+    sendRectResponse,
     assets,
     displayDirective,
     configData,
