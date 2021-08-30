@@ -1,23 +1,30 @@
 const { welcomePage } = require('./welcome/build.welcome');
 const { cataloguePage } = require('./catalogue/build.catalogue');
-const pager = require('../../display/layouts/rect/pager.json');
+const rectPager = require('../../display/layouts/rect/pager.rect.json');
+const roundPager = require('../../display/layouts/round/pager.round.json');
 const { explainPage } = require('./explain/build.explain');
 const { introductionPage } = require('./introduction/build.introduction');
 
-function commonPagerCreator() {
-    const commonPagerContainer = { ...pager };
+function rectCommonPagerCreator() {
+    const commonPagerContainer = { ...rectPager };
     commonPagerContainer.items = [];
     commonPagerContainer.items.push(welcomePage.welcomePageCreater());
     commonPagerContainer.items.push(introductionPage.introductionPageCreater());
     commonPagerContainer.items.push(cataloguePage.cataloguePageCreater());
     return commonPagerContainer;
 }
-
+function roundCommonPagerCreator() {
+    const commonPagerContainer = { ...roundPager };
+    commonPagerContainer.items = [];
+    commonPagerContainer.items.push(welcomePage.welcomePageCreater());
+    commonPagerContainer.items.push(cataloguePage.cataloguePageCreater());
+    return commonPagerContainer;
+}
 function getRectangleLayout(isWelcome) {
     const rectMainLayout = [];
     console.log('creating rectangle layout');
     if (isWelcome) {
-        rectMainLayout.push(commonPagerCreator());
+        rectMainLayout.push(rectCommonPagerCreator());
     } else {
         rectMainLayout.push(explainPage.explainPageCreater());
     }
@@ -28,7 +35,7 @@ function getRoundLayout(isWelcome) {
     console.log('creating round layout');
     const roundMainLayout = [];
     if (isWelcome) {
-        roundMainLayout.push(commonPagerCreator());
+        roundMainLayout.push(roundCommonPagerCreator());
     } else {
         roundMainLayout.push(explainPage.explainPageCreater());
     }
