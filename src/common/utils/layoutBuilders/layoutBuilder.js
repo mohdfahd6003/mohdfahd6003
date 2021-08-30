@@ -26,7 +26,7 @@ function getRectangleLayout(isWelcome) {
     if (isWelcome) {
         rectMainLayout.push(rectCommonPagerCreator());
     } else {
-        rectMainLayout.push(explainPage.explainPageCreater());
+        rectMainLayout.push(explainPage.explainPageCreaterRect());
     }
     return rectMainLayout;
 }
@@ -37,7 +37,7 @@ function getRoundLayout(isWelcome) {
     if (isWelcome) {
         roundMainLayout.push(roundCommonPagerCreator());
     } else {
-        roundMainLayout.push(explainPage.explainPageCreater());
+        roundMainLayout.push(explainPage.explainPageCreaterRound());
     }
     return roundMainLayout;
 }
