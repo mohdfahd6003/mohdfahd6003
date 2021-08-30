@@ -1,4 +1,4 @@
-function getWelcomeResource() {
+function getRectWelcomeResource() {
     return [
         {
             dimensions: {
@@ -41,4 +41,4 @@ function getWelcomeResource() {
         },
     ];
 }
-exports.getWelcomeResource = getWelcomeResource;
+exports.getRectWelcomeResource = getRectWelcomeResource;

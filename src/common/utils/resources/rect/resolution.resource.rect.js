@@ -1,4 +1,4 @@
-function getResolutionResource() {
+function getRectResolutionResource() {
     return [
         {
             when: '${viewport.width < 1200}',
@@ -20,4 +20,4 @@ function getResolutionResource() {
         },
     ];
 }
-exports.getResolutionResource = getResolutionResource;
+exports.getRectResolutionResource = getRectResolutionResource;

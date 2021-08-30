@@ -15,6 +15,7 @@ function commonPagerCreator() {
 
 function getRectangleLayout(isWelcome) {
     const rectMainLayout = [];
+    console.log('creating rectangle layout');
     if (isWelcome) {
         rectMainLayout.push(commonPagerCreator());
     } else {
@@ -23,6 +24,18 @@ function getRectangleLayout(isWelcome) {
     return rectMainLayout;
 }
 
+function getRoundLayout(isWelcome) {
+    console.log('creating round layout');
+    const roundMainLayout = [];
+    if (isWelcome) {
+        roundMainLayout.push(commonPagerCreator());
+    } else {
+        roundMainLayout.push(explainPage.explainPageCreater());
+    }
+    return roundMainLayout;
+}
+
 module.exports = {
     getRectangleLayout,
+    getRoundLayout,
 };

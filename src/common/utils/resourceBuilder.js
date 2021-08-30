@@ -1,15 +1,23 @@
-const { getCardResource } = require('./resources/card.resource');
-const { getResolutionResource } = require('./resources/resolution.resource');
-const { getIntroductionResource } = require('./resources/introduction.resource');
-const { getWelcomeResource } = require('./resources/welcome.resource');
+const { getRectCardResource } = require('./resources/rect/card.resource.rect');
+const { getRectResolutionResource } = require('./resources/rect/resolution.resource.rect');
+const { getRectIntroductionResource } = require('./resources/rect/introduction.resource.rect');
+const { getRectWelcomeResource } = require('./resources/rect/welcome.resource.rect');
 
-function getResources() {
+function getRectResources() {
     const allResource = [];
     return allResource
-        .concat(getResolutionResource())
-        .concat(getWelcomeResource())
-        .concat(getIntroductionResource())
-        .concat(getCardResource());
+        .concat(getRectResolutionResource())
+        .concat(getRectWelcomeResource())
+        .concat(getRectIntroductionResource())
+        .concat(getRectCardResource());
+}
+function getRoundResources() {
+    const allResource = [];
+    return allResource
+        .concat(getRectResolutionResource())
+        .concat(getRectWelcomeResource())
+        .concat(getRectIntroductionResource())
+        .concat(getRectCardResource());
 }
 
-exports.getResources = getResources;
+module.exports = { getRectResources, getRoundResources };
