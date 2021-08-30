@@ -1,8 +1,8 @@
-const catalogueRoot = require('../../../display/layouts/catalogue/rootLayout.catalogue.json');
-const catalogueHeader = require('../../../display/layouts/catalogue/header.catalogue.json');
-const catalogueBackground = require('../../../display/layouts/catalogue/background.catalogue.json');
-const catalogueFooter = require('../../../display/layouts/catalogue/footer.catalogue.json');
-const catalogueGrid = require('../../../display/layouts/catalogue/grid.catalogue.json');
+const catalogueRoot = require('../../../display/layouts/rect/catalogue/rootLayout.catalogue.json');
+const catalogueHeader = require('../../../display/layouts/rect/catalogue/header.catalogue.json');
+const catalogueBackground = require('../../../display/layouts/rect/catalogue/background.catalogue.json');
+const catalogueFooter = require('../../../display/layouts/rect/catalogue/footer.catalogue.json');
+const catalogueGrid = require('../../../display/layouts/rect/catalogue/grid.catalogue.json');
 
 function getRoot() {
     return catalogueRoot;

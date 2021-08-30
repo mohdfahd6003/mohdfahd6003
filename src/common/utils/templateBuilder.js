@@ -6,13 +6,32 @@ const { getResources } = require('./resourceBuilder');
 
 const { catalogueCard } = require('./layoutBuilders/catalogue/getCard.catalogue');
 
-function generateDocument(isWelcome) {
+function generateRectDocument(isWelcome) {
     let document = {};
     document = {
         type: 'APL',
         license:
             'Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/',
-        version: '1.6',
+        version: '1.7',
+        description: 'AHA alexa skill',
+        theme: 'dark',
+        import: getImports(),
+        mainTemplate: getMainTemplate(isWelcome),
+        settings: getAplConfig(),
+        styles: getStyles(),
+        resources: getResources(),
+        layouts: getCardLayouts(isWelcome),
+    };
+    return document;
+}
+
+function generateRoundDocument(isWelcome) {
+    let document = {};
+    document = {
+        type: 'APL',
+        license:
+            'Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/',
+        version: '1.7',
         description: 'AHA alexa skill',
         theme: 'dark',
         import: getImports(),
@@ -75,4 +94,4 @@ function getMainTemplate(isWelcome) {
     return mainTemplate;
 }
 
-exports.generateDocument = generateDocument;
+module.exports = { generateRectDocument, generateRoundDocument };

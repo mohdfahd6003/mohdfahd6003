@@ -14,7 +14,21 @@
         "chokeControlMain": "images/Chest_Thrust_AdultFloor.jpg",
         "welcomeBackground":"images/Welcome_background.png",
         "logo": "images/Aha_logo_2x.png",
-        "gridBackground": "images/thankful_woman_hand_over_heart@2x.png"
+        "gridBackground": "images/thankful_woman_hand_over_heart@2x.png",
+        "explainTreatment":{
+            "burnControl": "images/Burn_under_Running_Water_AdultSink.jpg",
+            "cutControl": "images/Dressing_Gauze_Pad_3_Adult.jpg",
+            "dehydrationControl": "images/Dehydration_Water.jpg",
+            "heartControl": "images/During_a_Heart_Attack.jpg",
+            "helloControl": "images/AHA_ASA_Masterbrand.jpg",
+            "learncprControl": "images/Fainting_Man.jpg",
+            "nosebleedingControl": "images/Nose_w_type.jpg",
+            "poisonControl": "images/Warning_Signs.jpg",
+            "strokeControl": "images/ASA_FAST_Warning_Signs.jpg",
+            "background": "images/Background.jpg",
+            "headerImage":"images/AHA_ASA_Masterbrand",        
+            "chokeControlMain": "images/Chest_Thrust_AdultFloor.jpg"
+        }
     },
     "Audio":{
         "learncprControl": "audio/110-BPM-Metronome-short.mp3"

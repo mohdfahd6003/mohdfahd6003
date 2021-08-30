@@ -48,7 +48,7 @@ function makeCapital(nameString) {
 function createCatalogueData() {
     const catalogueData = {};
     const gridData = [];
-    const images = assets.Images;
+    const images = assets.Images.explainTreatment;
     let sequenceNumber = 1;
     Object.keys(catalogueTitles).forEach((element) => {
         const gridElement = {};

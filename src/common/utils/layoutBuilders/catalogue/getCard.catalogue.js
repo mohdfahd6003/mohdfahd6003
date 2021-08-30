@@ -1,10 +1,10 @@
-const cardTouch = require('../../../display/layouts/catalogue/cards/touch.card.json');
-const cardFrame = require('../../../display/layouts/catalogue/cards/frame.card.json');
-const cardCombineContainer = require('../../../display/layouts/catalogue/cards/combineContainer.card.json');
-const cardText = require('../../../display/layouts/catalogue/cards/text.card.json');
-const cardImage = require('../../../display/layouts/catalogue/cards/image.card.json');
-const cardLine = require('../../../display/layouts/catalogue/cards/line.card.json');
-const cardRoot = require('../../../display/layouts/catalogue/cards/root.card.json');
+const cardTouch = require('../../../display/layouts/rect/catalogue/cards/touch.card.json');
+const cardFrame = require('../../../display/layouts/rect/catalogue/cards/frame.card.json');
+const cardCombineContainer = require('../../../display/layouts/rect/catalogue/cards/combineContainer.card.json');
+const cardText = require('../../../display/layouts/rect/catalogue/cards/text.card.json');
+const cardImage = require('../../../display/layouts/rect/catalogue/cards/image.card.json');
+const cardLine = require('../../../display/layouts/rect/catalogue/cards/line.card.json');
+const cardRoot = require('../../../display/layouts/rect/catalogue/cards/root.card.json');
 
 function getCardTouch() {
     return cardTouch;

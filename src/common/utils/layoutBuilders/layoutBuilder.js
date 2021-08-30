@@ -1,6 +1,6 @@
 const { welcomePage } = require('./welcome/build.welcome');
 const { cataloguePage } = require('./catalogue/build.catalogue');
-const pager = require('../../display/layouts/pager.json');
+const pager = require('../../display/layouts/rect/pager.json');
 const { explainPage } = require('./explain/build.explain');
 const { introductionPage } = require('./introduction/build.introduction');
 

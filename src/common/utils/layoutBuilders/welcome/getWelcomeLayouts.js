@@ -1,12 +1,12 @@
-const rectWelcomeBackground = require('../../../display/layouts/welcome/background.welcome.json');
-const rectWelcomeRoot = require('../../../display/layouts/welcome/rootLayout.welcome.json');
-const rectWelcomeBox = require('../../../display/layouts/welcome/box.welcome.json');
-const rectWelcomeImageBody = require('../../../display/layouts/welcome/imageBody.welcome.json');
-const rectWelcomeBoxWrapFrame = require('../../../display/layouts/welcome/boxWrapFrame.welcome.json');
-const rectWelcomeBoxContainer = require('../../../display/layouts/welcome/boxContainer.welcome..json');
-const rectWelcomeBoxText = require('../../../display/layouts/welcome/text.welcome.json');
-const rectWelcomeBoxLine = require('../../../display/layouts/welcome/line.welcome.json');
-const rectWelcomeBoxLogo = require('../../../display/layouts/welcome/logo.welcome.json');
+const rectWelcomeBackground = require('../../../display/layouts/rect/welcome/background.welcome.json');
+const rectWelcomeRoot = require('../../../display/layouts/rect/welcome/rootLayout.welcome.json');
+const rectWelcomeBox = require('../../../display/layouts/rect/welcome/box.welcome.json');
+const rectWelcomeImageBody = require('../../../display/layouts/rect/welcome/imageBody.welcome.json');
+const rectWelcomeBoxWrapFrame = require('../../../display/layouts/rect/welcome/boxWrapFrame.welcome.json');
+const rectWelcomeBoxContainer = require('../../../display/layouts/rect/welcome/boxContainer.welcome..json');
+const rectWelcomeBoxText = require('../../../display/layouts/rect/welcome/text.welcome.json');
+const rectWelcomeBoxLine = require('../../../display/layouts/rect/welcome/line.welcome.json');
+const rectWelcomeBoxLogo = require('../../../display/layouts/rect/welcome/logo.welcome.json');
 
 function getWelcomeLine() {
     return rectWelcomeBoxLine;
