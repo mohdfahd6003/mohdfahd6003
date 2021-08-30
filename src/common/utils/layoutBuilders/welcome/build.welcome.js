@@ -26,7 +26,8 @@ function boxCreator() {
     return box;
 }
 
-function welcomePageCreater() {
+function welcomePageCreaterRect() {
+    console.log('inside rectangle welcome page');
     let welcomeRootContainer = {};
     welcomeRootContainer = welcome.getWelcomeRoot();
     welcomeRootContainer.items = [];
@@ -36,6 +37,17 @@ function welcomePageCreater() {
     return welcomeRootContainer;
 }
 
+function welcomePageCreaterRound() {
+    console.log('inside round welcome page');
+    let welcomeRootContainer = {};
+    welcomeRootContainer = welcome.getWelcomeRoot();
+    welcomeRootContainer.items = [];
+    welcomeRootContainer.items.push(welcome.getWelcomeBackground());
+    welcomeRootContainer.items.push(welcome.getWelcomeImageBody());
+    welcomeRootContainer.items.push(boxCreator());
+    return welcomeRootContainer;
+}
 exports.welcomePage = {
-    welcomePageCreater,
+    welcomePageCreaterRect,
+    welcomePageCreaterRound,
 };

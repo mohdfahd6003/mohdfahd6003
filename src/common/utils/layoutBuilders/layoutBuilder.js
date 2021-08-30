@@ -8,16 +8,16 @@ const { introductionPage } = require('./introduction/build.introduction');
 function rectCommonPagerCreator() {
     const commonPagerContainer = { ...rectPager };
     commonPagerContainer.items = [];
-    commonPagerContainer.items.push(welcomePage.welcomePageCreater());
+    commonPagerContainer.items.push(welcomePage.welcomePageCreaterRect());
     commonPagerContainer.items.push(introductionPage.introductionPageCreater());
-    commonPagerContainer.items.push(cataloguePage.cataloguePageCreater());
+    commonPagerContainer.items.push(cataloguePage.cataloguePageCreaterRect());
     return commonPagerContainer;
 }
 function roundCommonPagerCreator() {
     const commonPagerContainer = { ...roundPager };
     commonPagerContainer.items = [];
-    commonPagerContainer.items.push(welcomePage.welcomePageCreater());
-    commonPagerContainer.items.push(cataloguePage.cataloguePageCreater());
+    commonPagerContainer.items.push(welcomePage.welcomePageCreaterRound());
+    commonPagerContainer.items.push(cataloguePage.cataloguePageCreaterRound());
     return commonPagerContainer;
 }
 function getRectangleLayout(isWelcome) {
