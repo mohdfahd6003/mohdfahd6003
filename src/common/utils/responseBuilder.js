@@ -3,7 +3,7 @@ const speakText = require('../content/constants.json');
 
 const { repeatText } = speakText;
 
-const { generateRectDocument } = require('./templateBuilder');
+const { generateRectDocument, generateRoundDocument } = require('./templateBuilder');
 
 const assets = require('../content/assets.json');
 
@@ -51,8 +51,8 @@ function sendResponseWithShape(
         try {
             let displayTemplate = {};
             let dataTemplate;
-            if (shape === 'round') {
-                displayTemplate = generateRectDocument(iswelcome);
+            if (shape === 'ROUND') {
+                displayTemplate = generateRoundDocument(iswelcome);
                 dataTemplate = dataBuilder.prepareScreenContent(
                     title,
                     bodyText,

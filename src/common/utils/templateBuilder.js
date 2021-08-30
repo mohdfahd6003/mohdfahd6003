@@ -25,6 +25,25 @@ function generateRectDocument(isWelcome) {
     return document;
 }
 
+function generateRoundDocument(isWelcome) {
+    let document = {};
+    document = {
+        type: 'APL',
+        license:
+            'Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/',
+        version: '1.7',
+        description: 'AHA alexa skill',
+        theme: 'dark',
+        import: getImports(),
+        mainTemplate: getMainTemplate(isWelcome),
+        settings: getAplConfig(),
+        styles: getStyles(),
+        resources: getResources(),
+        layouts: getCardLayouts(isWelcome),
+    };
+    return document;
+}
+
 function getCardLayouts(isWelcome) {
     let cardLayout = {};
     if (isWelcome) {
@@ -75,4 +94,4 @@ function getMainTemplate(isWelcome) {
     return mainTemplate;
 }
 
-exports.generateRectDocument = generateRectDocument;
+module.exports = { generateRectDocument, generateRoundDocument };

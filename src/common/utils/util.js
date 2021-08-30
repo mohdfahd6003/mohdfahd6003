@@ -5,7 +5,7 @@ process.env.ENVIRONMENT = process.env.ENVIRONMENT ? process.env.ENVIRONMENT : 'd
 function getShape(input) {
     let shape;
     try {
-        shape = input.handlerInput.requestEnvelope.context.Viewport;
+        shape = input.handlerInput.requestEnvelope.context.Viewport.shape;
         return shape;
     } catch (e) {
         shape = 'rectangle';
