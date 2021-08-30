@@ -6,6 +6,8 @@ const { getRectResources, getRoundResources } = require('./resourceBuilder');
 
 const { catalogueCard } = require('./layoutBuilders/catalogue/getCard.catalogue');
 
+const importList = require('./importBuilder');
+
 function generateRectDocument(isWelcome) {
     let document = {};
     document = {
@@ -57,20 +59,7 @@ function getAplConfig() {
     return settings;
 }
 function getImports() {
-    return [
-        {
-            name: 'alexa-layouts',
-            version: '1.3.0',
-        },
-        {
-            name: 'alexa-styles',
-            version: '1.2.0',
-        },
-        {
-            name: 'alexa-viewport-profiles',
-            version: '1.2.0',
-        },
-    ];
+    return importList.getImportList();
 }
 function getStyles() {
     return ahaStyle;
