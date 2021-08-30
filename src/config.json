@@ -5,6 +5,8 @@
 
     },
     "test":{
+        "s3-bucket":"s3://alexa-skill-s3-aha-qa/",
+        "cloudfront": "d2b5mfngr7fduj.cloudfront.net"
 
     },
     "prod":{
