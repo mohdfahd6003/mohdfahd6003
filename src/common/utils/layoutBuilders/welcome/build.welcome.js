@@ -1,18 +1,19 @@
-const { welcome } = require('./getWelcomeLayouts');
+const { welcomeRect } = require('./getWelcomeRectComponent');
+const { welcomeRound } = require('./getWelcomeRoundComponent');
 
 function boxContainerCreator() {
     let boxContainer = {};
-    boxContainer = welcome.getWelcomeBoxContainer();
+    boxContainer = welcomeRect.getWelcomeBoxContainer();
     boxContainer.items = [];
-    boxContainer.items.push(welcome.getWelcomeLogo());
-    boxContainer.items.push(welcome.getWelcomeText());
-    boxContainer.items.push(welcome.getWelcomeLine());
+    boxContainer.items.push(welcomeRect.getWelcomeLogo());
+    boxContainer.items.push(welcomeRect.getWelcomeText());
+    boxContainer.items.push(welcomeRect.getWelcomeLine());
     return boxContainer;
 }
 
 function boxWrapper() {
     let boxWrap = {};
-    boxWrap = welcome.getWelcomeBoxWrapFrame();
+    boxWrap = welcomeRect.getWelcomeBoxWrapFrame();
     boxWrap.items = [];
     boxWrap.items.push(boxContainerCreator());
     return boxWrap;
@@ -20,7 +21,7 @@ function boxWrapper() {
 
 function boxCreator() {
     let box = {};
-    box = welcome.getWelcomeBox();
+    box = welcomeRect.getWelcomeBox();
     box.items = [];
     box.items.push(boxWrapper());
     return box;
@@ -29,10 +30,10 @@ function boxCreator() {
 function welcomePageCreaterRect() {
     console.log('inside rectangle welcome page');
     let welcomeRootContainer = {};
-    welcomeRootContainer = welcome.getWelcomeRoot();
+    welcomeRootContainer = welcomeRect.getWelcomeRoot();
     welcomeRootContainer.items = [];
-    welcomeRootContainer.items.push(welcome.getWelcomeBackground());
-    welcomeRootContainer.items.push(welcome.getWelcomeImageBody());
+    welcomeRootContainer.items.push(welcomeRect.getWelcomeBackground());
+    welcomeRootContainer.items.push(welcomeRect.getWelcomeImageBody());
     welcomeRootContainer.items.push(boxCreator());
     return welcomeRootContainer;
 }
@@ -40,12 +41,10 @@ function welcomePageCreaterRect() {
 function welcomePageCreaterRound() {
     console.log('inside round welcome page');
     let welcomeRootContainer = {};
-    welcomeRootContainer = welcome.getWelcomeRoot();
+    welcomeRootContainer = welcomeRound.getWelcomeRoot();
     welcomeRootContainer.items = [];
-    welcomeRootContainer.items.push(welcome.getWelcomeBackground());
-    welcomeRootContainer.items.push(welcome.getWelcomeImageBody());
-    welcomeRootContainer.items.push(boxCreator());
-    return welcomeRootContainer;
+    welcomeRootContainer.items.push(welcomeRound.getWelcomeRoundBackground());
+    welcomeRootContainer.items.push(welcomeRound.getWelcomeRoundText());
 }
 exports.welcomePage = {
     welcomePageCreaterRect,

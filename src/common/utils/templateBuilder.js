@@ -6,11 +6,12 @@ const { getRectResources, getRoundResources } = require('./resourceBuilder');
 
 const { catalogueCard } = require('./layoutBuilders/catalogue/getCard.catalogue');
 
+const { roundCustomWelcome } = require('./layoutBuilders/welcome/getCustomWelcome');
+
 const importList = require('./importBuilder');
 
-function generateRectDocument(isWelcome) {
-    let document = {};
-    document = {
+function getCommonDoucment() {
+    return {
         type: 'APL',
         license:
             'Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/',
@@ -18,13 +19,17 @@ function generateRectDocument(isWelcome) {
         description: 'AHA alexa skill',
         theme: 'dark',
         import: getImports(),
-        mainTemplate: getMainTemplate(isWelcome, 'rect'),
         settings: getAplConfig(),
         styles: getStyles(),
-        resources: getRectResources(),
-        layouts: getCardLayouts(isWelcome),
     };
-    return document;
+}
+
+function generateRectDocument(isWelcome) {
+    const rectDocument = getCommonDoucment();
+    rectDocument.mainTemplate = getMainTemplate(isWelcome, 'rect');
+    rectDocument.resources = getRectResources();
+    rectDocument.layouts = getCustomLayouts(isWelcome, 'rect');
+    return rectDocument;
 }
 
 function generateRoundDocument(isWelcome) {
@@ -41,17 +46,19 @@ function generateRoundDocument(isWelcome) {
         settings: getAplConfig(),
         styles: getStyles(),
         resources: getRoundResources(),
-        layouts: getCardLayouts(isWelcome),
+        layouts: getCustomLayouts(isWelcome, 'round'),
     };
     return document;
 }
 
-function getCardLayouts(isWelcome) {
-    let cardLayout = {};
-    if (isWelcome) {
-        cardLayout = catalogueCard.getcatalogueCard();
+function getCustomLayouts(isWelcome, deviceShape) {
+    let customLayout = {};
+    if (deviceShape === 'rect' && isWelcome) {
+        customLayout = catalogueCard.getcatalogueCard();
+    } else if (deviceShape === 'round' && isWelcome) {
+        customLayout = roundCustomWelcome.getRoundWelcomeCustomText();
     }
-    return cardLayout;
+    return customLayout;
 }
 
 function getAplConfig() {
