@@ -22,7 +22,6 @@ function roundCommonPagerCreator() {
 }
 function getRectangleLayout(isWelcome) {
     const rectMainLayout = [];
-    console.log('creating rectangle layout');
     if (isWelcome) {
         rectMainLayout.push(rectCommonPagerCreator());
     } else {
@@ -32,7 +31,6 @@ function getRectangleLayout(isWelcome) {
 }
 
 function getRoundLayout(isWelcome) {
-    console.log('creating round layout');
     const roundMainLayout = [];
     if (isWelcome) {
         roundMainLayout.push(roundCommonPagerCreator());
