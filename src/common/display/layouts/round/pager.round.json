@@ -1,0 +1,21 @@
+{
+    "type": "Pager",
+    "id": "pager",
+    "onMount": [
+        {
+            "type": "Parallel",
+            "commands": [
+                {
+                    "type": "AutoPage",
+                    "componentId": "pager",
+                    "duration": 1000,
+                    "delay": 17000,
+                    "when": true
+                }
+            ]
+        }
+    ],
+    "width": "100%",
+    "height": "100%",
+    "pageDirection": "horizontal"
+}

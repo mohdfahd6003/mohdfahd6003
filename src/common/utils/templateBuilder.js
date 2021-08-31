@@ -2,9 +2,11 @@ const ahaStyle = require('../display/styles/ahaStyle.json');
 
 const layouts = require('./layoutBuilders/layoutBuilder');
 
-const { getResources } = require('./resourceBuilder');
+const { getRectResources, getRoundResources } = require('./resourceBuilder');
 
 const { catalogueCard } = require('./layoutBuilders/catalogue/getCard.catalogue');
+
+const importList = require('./importBuilder');
 
 function generateRectDocument(isWelcome) {
     let document = {};
@@ -16,10 +18,10 @@ function generateRectDocument(isWelcome) {
         description: 'AHA alexa skill',
         theme: 'dark',
         import: getImports(),
-        mainTemplate: getMainTemplate(isWelcome),
+        mainTemplate: getMainTemplate(isWelcome, 'rect'),
         settings: getAplConfig(),
         styles: getStyles(),
-        resources: getResources(),
+        resources: getRectResources(),
         layouts: getCardLayouts(isWelcome),
     };
     return document;
@@ -35,10 +37,10 @@ function generateRoundDocument(isWelcome) {
         description: 'AHA alexa skill',
         theme: 'dark',
         import: getImports(),
-        mainTemplate: getMainTemplate(isWelcome),
+        mainTemplate: getMainTemplate(isWelcome, 'round'),
         settings: getAplConfig(),
         styles: getStyles(),
-        resources: getResources(),
+        resources: getRoundResources(),
         layouts: getCardLayouts(isWelcome),
     };
     return document;
@@ -57,39 +59,27 @@ function getAplConfig() {
     return settings;
 }
 function getImports() {
-    return [
-        {
-            name: 'alexa-layouts',
-            version: '1.3.0',
-        },
-        {
-            name: 'alexa-styles',
-            version: '1.2.0',
-        },
-        {
-            name: 'alexa-viewport-profiles',
-            version: '1.2.0',
-        },
-    ];
+    return importList.getImportList();
 }
 function getStyles() {
     return ahaStyle;
 }
 
-function getTemplate(isWelcome) {
+function getTemplate(isWelcome, deviceShape) {
     const itemArray = [];
     const firstContainer = {};
     firstContainer.type = 'Container';
     firstContainer.item = [];
-    firstContainer.item = layouts.getRectangleLayout(isWelcome);
+    if (deviceShape === 'rect') firstContainer.item = layouts.getRectangleLayout(isWelcome);
+    else firstContainer.item = layouts.getRoundLayout(isWelcome);
     itemArray.push(firstContainer);
     return itemArray;
 }
-function getMainTemplate(isWelcome) {
+function getMainTemplate(isWelcome, deviceShape) {
     let mainTemplate = {};
     mainTemplate = {
         parameters: ['payload'],
-        items: getTemplate(isWelcome),
+        items: getTemplate(isWelcome, deviceShape),
     };
     return mainTemplate;
 }

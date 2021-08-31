@@ -1,4 +1,4 @@
-function getIntrodunctionResource() {
+function getRectIntrodunctionResource() {
     return [
         {
             dimensions: {
@@ -59,4 +59,4 @@ function getIntrodunctionResource() {
     ];
 }
 
-exports.getIntroductionResource = getIntrodunctionResource;
+exports.getRectIntroductionResource = getRectIntrodunctionResource;

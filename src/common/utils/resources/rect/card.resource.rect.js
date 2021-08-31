@@ -1,4 +1,4 @@
-function getCardResource() {
+function getRectCardResource() {
     return [
         {
             numbers: {
@@ -72,4 +72,4 @@ function getCardResource() {
     ];
 }
 
-exports.getCardResource = getCardResource;
+exports.getRectCardResource = getRectCardResource;
