@@ -41,10 +41,10 @@ function welcomePageCreaterRect() {
 function welcomePageCreaterRound() {
     console.log('inside round welcome page');
     let welcomeRootContainer = {};
-    welcomeRootContainer = welcomeRound.getWelcomeRoot();
+    welcomeRootContainer = welcomeRound.getRoundWelcomeRoot();
     welcomeRootContainer.items = [];
-    welcomeRootContainer.items.push(welcomeRound.getWelcomeRoundBackground());
-    welcomeRootContainer.items.push(welcomeRound.getWelcomeRoundText());
+    welcomeRootContainer.items.push(welcomeRound.getRoundWelcomeBackground());
+    welcomeRootContainer.items.push(welcomeRound.getRoundWelcomeText());
 }
 exports.welcomePage = {
     welcomePageCreaterRect,
