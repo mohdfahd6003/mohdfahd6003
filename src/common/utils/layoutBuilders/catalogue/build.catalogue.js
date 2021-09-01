@@ -19,7 +19,6 @@ function cataloguePageCreaterRound() {
     catalogueRoot.items.push(catalogue.getHeader());
     catalogueRoot.items.push(catalogue.getGrid());
     catalogueRoot.items.push(catalogue.getFooter());
-    console.log('grid page content for round', catalogueRoot);
     return catalogueRoot;
 }
 exports.cataloguePage = {
