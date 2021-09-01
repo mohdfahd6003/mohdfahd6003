@@ -45,6 +45,7 @@ function welcomePageCreaterRound() {
     welcomeRootContainer.items = [];
     welcomeRootContainer.items.push(welcomeRound.getRoundWelcomeBackground());
     welcomeRootContainer.items.push(welcomeRound.getRoundWelcomeText());
+    return welcomeRootContainer;
 }
 exports.welcomePage = {
     welcomePageCreaterRect,
