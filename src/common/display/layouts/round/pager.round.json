@@ -1,6 +1,6 @@
 {
     "type": "Pager",
-    "id": "pager",
+    "id": "pagerRound",
     "onMount": [
         {
             "type": "Parallel",

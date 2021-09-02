@@ -16,7 +16,7 @@
                                         "items": [
                                             {
                                                 "type": "AlexaImage",
-                                                "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                                                "imageSource": "${payload.content.logo}",
                                                 "imageAspectRatio": "standard_portrait",
                                                 "imageScale": "best-fill",
                                                 "imageHeight": "101px",
@@ -37,7 +37,7 @@
                                                 "textAlign": "center",
                                                 "fontFamily": "@fontFamilyRomanSans",
                                                 "color": "#222328",
-                                                "text": "Welcome To American Heart Association",
+                                                "text": "${payload.content.title}",
                                                 "fontSize": "40px",
                                                 "fontWeight": "normal",
                                                 "type": "Text"

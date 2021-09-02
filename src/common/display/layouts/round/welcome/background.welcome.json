@@ -1,6 +1,7 @@
 {
         "type": "AlexaBackground",
-        "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
+        "id":"round.welcome.background",
+        "backgroundImageSource": "${payload.content.mainImage}",
         "colorOverlay": true
 }
   

@@ -1,13 +1,15 @@
 {
     "item": [
         {
-            "type": "TextBox"
+            "type": "TextBox",
+            "id":"round.welcome.customTextBox"
         }
     ],
     "direction": "column",
     "justifyContent": "center",
     "alignItems": "center",
     "type": "Container",
+    "id":"round.welcome.textBoxContainer",
     "opacity": 1,
     "width": "100%",
     "height": "100%"
