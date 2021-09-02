@@ -20,9 +20,9 @@ function roundCommonPagerCreator() {
     commonPagerContainer.items.push(cataloguePage.cataloguePageCreaterRound());
     return commonPagerContainer;
 }
-function getRectangleLayout(isWelcome) {
+function getRectangleLayout(turnNumber) {
     const rectMainLayout = [];
-    if (isWelcome) {
+    if (turnNumber === '1') {
         rectMainLayout.push(rectCommonPagerCreator());
     } else {
         rectMainLayout.push(explainPage.explainPageCreaterRect());
@@ -30,9 +30,9 @@ function getRectangleLayout(isWelcome) {
     return rectMainLayout;
 }
 
-function getRoundLayout(isWelcome) {
+function getRoundLayout(turnNumber) {
     const roundMainLayout = [];
-    if (isWelcome) {
+    if (turnNumber === '1') {
         roundMainLayout.push(roundCommonPagerCreator());
     } else {
         roundMainLayout.push(explainPage.explainPageCreaterRound());

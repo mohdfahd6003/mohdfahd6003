@@ -24,27 +24,27 @@ function getCommonDoucment() {
     };
 }
 
-function generateRectDocument(isWelcome) {
+function generateRectDocument(turnNumber) {
     const rectDocument = getCommonDoucment();
-    rectDocument.mainTemplate = getMainTemplate(isWelcome, 'rect');
+    rectDocument.mainTemplate = getMainTemplate(turnNumber, 'rect');
     rectDocument.resources = getRectResources();
-    rectDocument.layouts = getCustomLayouts(isWelcome, 'rect');
+    rectDocument.layouts = getCustomLayouts(turnNumber, 'rect');
     return rectDocument;
 }
 
-function generateRoundDocument(isWelcome) {
+function generateRoundDocument(turnNumber) {
     const roundDocument = getCommonDoucment();
-    roundDocument.mainTemplate = getMainTemplate(isWelcome, 'round');
+    roundDocument.mainTemplate = getMainTemplate(turnNumber, 'round');
     roundDocument.resources = getRoundResources();
-    roundDocument.layouts = getCustomLayouts(isWelcome, 'round');
+    roundDocument.layouts = getCustomLayouts(turnNumber, 'round');
     return roundDocument;
 }
 
-function getCustomLayouts(isWelcome, deviceShape) {
+function getCustomLayouts(turnNumber, deviceShape) {
     let customLayout = {};
-    if (deviceShape === 'rect' && isWelcome) {
+    if (deviceShape === 'rect' && turnNumber === '1') {
         customLayout = catalogueCard.getcatalogueCard();
-    } else if (deviceShape === 'round' && isWelcome) {
+    } else if (deviceShape === 'round' && turnNumber === '1') {
         customLayout = roundCustomWelcome.getRoundWelcomeCustomText();
     }
     return customLayout;
@@ -61,21 +61,21 @@ function getStyles() {
     return ahaStyle;
 }
 
-function getTemplate(isWelcome, deviceShape) {
+function getTemplate(turnNumber, deviceShape) {
     const itemArray = [];
     const firstContainer = {};
     firstContainer.type = 'Container';
     firstContainer.item = [];
-    if (deviceShape === 'rect') firstContainer.item = layouts.getRectangleLayout(isWelcome);
-    else firstContainer.item = layouts.getRoundLayout(isWelcome);
+    if (deviceShape === 'rect') firstContainer.item = layouts.getRectangleLayout(turnNumber);
+    else firstContainer.item = layouts.getRoundLayout(turnNumber);
     itemArray.push(firstContainer);
     return itemArray;
 }
-function getMainTemplate(isWelcome, deviceShape) {
+function getMainTemplate(turnNumber, deviceShape) {
     let mainTemplate = {};
     mainTemplate = {
         parameters: ['payload'],
-        items: getTemplate(isWelcome, deviceShape),
+        items: getTemplate(turnNumber, deviceShape),
     };
     return mainTemplate;
 }
