@@ -33,22 +33,11 @@ function generateRectDocument(isWelcome) {
 }
 
 function generateRoundDocument(isWelcome) {
-    let document = {};
-    document = {
-        type: 'APL',
-        license:
-            'Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/',
-        version: '1.7',
-        description: 'AHA alexa skill',
-        theme: 'dark',
-        import: getImports(),
-        mainTemplate: getMainTemplate(isWelcome, 'round'),
-        settings: getAplConfig(),
-        styles: getStyles(),
-        resources: getRoundResources(),
-        layouts: getCustomLayouts(isWelcome, 'round'),
-    };
-    return document;
+    const roundDocument = getCommonDoucment();
+    roundDocument.mainTemplate = getMainTemplate(isWelcome, 'round');
+    roundDocument.resources = getRoundResources();
+    roundDocument.layouts = getCustomLayouts(isWelcome, 'round');
+    return roundDocument;
 }
 
 function getCustomLayouts(isWelcome, deviceShape) {
