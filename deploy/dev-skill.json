@@ -3,12 +3,12 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "American heart association skil",
+          "summary": "heart dev skill",
           "examplePhrases": [
-            "Alexa open  american heart association",
-            "Alexa start  american heart association"
+            "Alexa open  heart dev",
+            "Alexa start  heart dev"
           ],
-          "name": "american-heart-association",
+          "name": "aha dev",
           "description": "Skill by Amercian heart assication"
         }
       },
