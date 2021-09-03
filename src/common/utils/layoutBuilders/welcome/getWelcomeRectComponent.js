@@ -44,7 +44,7 @@ function getWelcomeBoxContainer() {
     return rectWelcomeBoxContainer;
 }
 
-exports.welcome = {
+exports.welcomeRect = {
     getWelcomeBackground,
     getWelcomeRoot,
     getWelcomeBox,

@@ -1,0 +1,141 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "1.6",
+        "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+        "settings": {},
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.3.0"
+            }
+        ],
+        "resources": [],
+        "styles": {},
+        "onMount": [],
+        "graphics": {},
+        "commands": {},
+        "layouts": {
+            "TextBox": {
+                "parameters": [
+                    "welcomeText"
+                ],
+                "items": [
+                    {
+                        "item": [
+                            {
+                                "backgroundColor": "#FFFFFF",
+                                "items": [
+                                    {
+                                        "alignItems": "start",
+                                        "items": [
+                                            {
+                                                "items": [
+                                                    {
+                                                        "type": "AlexaImage",
+                                                        "imageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png",
+                                                        "imageAspectRatio": "standard_portrait",
+                                                        "imageScale": "best-fill",
+                                                        "imageHeight": "101px",
+                                                        "imageWidth": "77px"
+                                                    }
+                                                ],
+                                                "alignItems": "center",
+                                                "alignSelf": "center",
+                                                "type": "Container",
+                                                "paddingBottom": "16px",
+                                                "paddingTop": "16px",
+                                                "paddingLeft": "16px",
+                                                "paddingRight": "16px"
+                                            },
+                                            {
+                                                "items": [
+                                                    {
+                                                        "textAlign": "center",
+                                                        "fontFamily": "@fontFamilyRomanSans",
+                                                        "color": "#222328",
+                                                        "text": "Welcome To American Heart Association",
+                                                        "fontSize": "40px",
+                                                        "fontWeight": "normal",
+                                                        "type": "Text"
+                                                    }
+                                                ],
+                                                "type": "Container",
+                                                "width": "100%",
+                                                "paddingLeft": "16px",
+                                                "paddingRight": "16px",
+                                                "paddingBottom": "16px"
+                                            },
+                                            {
+                                                "item": {
+                                                    "backgroundColor": "#C10E21",
+                                                    "type": "Frame",
+                                                    "width": "100%",
+                                                    "height": "8px",
+                                                    "alignSelf": "baseline",
+                                                    "position": "relative"
+                                                },
+                                                "alignSelf": "auto",
+                                                "alignItems": "stretch",
+                                                "type": "Container",
+                                                "width": "100%"
+                                            }
+                                        ],
+                                        "justifyContent": "end",
+                                        "type": "Container",
+                                        "width": "100%",
+                                        "height": "100%"
+                                    }
+                                ],
+                                "type": "Frame",
+                                "width": "344px",
+                                "height": "307px"
+                            }
+                        ],
+                        "alignItems": "center",
+                        "direction": "row",
+                        "type": "Container",
+                        "paddingLeft": "64px",
+                        "paddingRight": "64px",
+                        "paddingTop": "87px",
+                        "paddingBottom": "87px"
+                    }
+                ]
+            }
+        },
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Container",
+                    "item": [
+                        {
+                            "type": "AlexaBackground",
+                            "backgroundImageSource": "https://dtzf6dz2qpnrm.cloudfront.net/images/Welcome_background.png",
+                            "colorOverlay": true
+                        },
+                        {
+                            "item": [
+                                {
+                                    "type": "TextBox"
+                                }
+                            ],
+                            "direction": "column",
+                            "justifyContent": "center",
+                            "alignItems": "center",
+                            "type": "Container",
+                            "opacity": 1,
+                            "width": "100%",
+                            "height": "100%"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "datasources": {},
+    "sources": {}
+}

@@ -23,7 +23,7 @@ class WelcomeAct extends RequestValueAct {
             welcomeImage,
             title,
             primaryText + secondaryText + tertiaryText,
-            true
+            '1'
         );
     }
 }

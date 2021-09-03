@@ -43,7 +43,7 @@ function sendResponseWithShape(
     title,
     bodyText,
     shape,
-    iswelcome = false
+    turnNumber = '2'
 ) {
     responseBuilder = createBasic(responseBuilder, primaryText, title, bodyText, mainImage);
 
@@ -52,20 +52,20 @@ function sendResponseWithShape(
             let displayTemplate = {};
             let dataTemplate;
             if (shape === 'ROUND') {
-                displayTemplate = generateRoundDocument(iswelcome);
+                displayTemplate = generateRoundDocument(turnNumber);
                 dataTemplate = dataBuilder.prepareScreenContent(
                     title,
                     bodyText,
                     mainImage,
-                    iswelcome
+                    turnNumber
                 );
             } else {
-                displayTemplate = generateRectDocument(iswelcome);
+                displayTemplate = generateRectDocument(turnNumber);
                 dataTemplate = dataBuilder.prepareScreenContent(
                     title,
                     bodyText,
                     mainImage,
-                    iswelcome
+                    turnNumber
                 );
             }
 

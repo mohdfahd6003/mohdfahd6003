@@ -1,0 +1,88 @@
+{
+    "TextBox": {
+        "parameters": [
+            "welcomeText"
+        ],
+        "items": [
+            {
+                "item": [
+                    {
+                        "backgroundColor": "#FFFFFF",
+                        "items": [
+                            {
+                                "alignItems": "start",
+                                "items": [
+                                    {
+                                        "items": [
+                                            {
+                                                "type": "AlexaImage",
+                                                "imageSource": "${payload.content.logo}",
+                                                "imageAspectRatio": "standard_portrait",
+                                                "imageScale": "best-fill",
+                                                "imageHeight": "101px",
+                                                "imageWidth": "77px"
+                                            }
+                                        ],
+                                        "alignItems": "center",
+                                        "alignSelf": "center",
+                                        "type": "Container",
+                                        "paddingBottom": "16px",
+                                        "paddingTop": "16px",
+                                        "paddingLeft": "16px",
+                                        "paddingRight": "16px"
+                                    },
+                                    {
+                                        "items": [
+                                            {
+                                                "textAlign": "center",
+                                                "fontFamily": "@fontFamilyRomanSans",
+                                                "color": "#222328",
+                                                "text": "${payload.content.title}",
+                                                "fontSize": "40px",
+                                                "fontWeight": "normal",
+                                                "type": "Text"
+                                            }
+                                        ],
+                                        "type": "Container",
+                                        "width": "100%",
+                                        "paddingLeft": "16px",
+                                        "paddingRight": "16px",
+                                        "paddingBottom": "16px"
+                                    },
+                                    {
+                                        "item": {
+                                            "backgroundColor": "#C10E21",
+                                            "type": "Frame",
+                                            "width": "100%",
+                                            "height": "8px",
+                                            "alignSelf": "baseline",
+                                            "position": "relative"
+                                        },
+                                        "alignSelf": "auto",
+                                        "alignItems": "stretch",
+                                        "type": "Container",
+                                        "width": "100%"
+                                    }
+                                ],
+                                "justifyContent": "end",
+                                "type": "Container",
+                                "width": "100%",
+                                "height": "100%"
+                            }
+                        ],
+                        "type": "Frame",
+                        "width": "344px",
+                        "height": "307px"
+                    }
+                ],
+                "alignItems": "center",
+                "direction": "row",
+                "type": "Container",
+                "paddingLeft": "64px",
+                "paddingRight": "64px",
+                "paddingTop": "87px",
+                "paddingBottom": "87px"
+            }
+        ]
+    }
+}

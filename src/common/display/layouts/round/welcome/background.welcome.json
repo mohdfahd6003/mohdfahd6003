@@ -1,0 +1,7 @@
+{
+        "type": "AlexaBackground",
+        "id":"round.welcome.background",
+        "backgroundImageSource": "${payload.content.mainImage}",
+        "colorOverlay": true
+}
+  

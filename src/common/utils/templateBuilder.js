@@ -6,11 +6,12 @@ const { getRectResources, getRoundResources } = require('./resourceBuilder');
 
 const { catalogueCard } = require('./layoutBuilders/catalogue/getCard.catalogue');
 
+const { roundCustomWelcome } = require('./layoutBuilders/welcome/getCustomWelcome');
+
 const importList = require('./importBuilder');
 
-function generateRectDocument(isWelcome) {
-    let document = {};
-    document = {
+function getCommonDoucment() {
+    return {
         type: 'APL',
         license:
             'Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/',
@@ -18,40 +19,35 @@ function generateRectDocument(isWelcome) {
         description: 'AHA alexa skill',
         theme: 'dark',
         import: getImports(),
-        mainTemplate: getMainTemplate(isWelcome, 'rect'),
         settings: getAplConfig(),
         styles: getStyles(),
-        resources: getRectResources(),
-        layouts: getCardLayouts(isWelcome),
     };
-    return document;
 }
 
-function generateRoundDocument(isWelcome) {
-    let document = {};
-    document = {
-        type: 'APL',
-        license:
-            'Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/',
-        version: '1.7',
-        description: 'AHA alexa skill',
-        theme: 'dark',
-        import: getImports(),
-        mainTemplate: getMainTemplate(isWelcome, 'round'),
-        settings: getAplConfig(),
-        styles: getStyles(),
-        resources: getRoundResources(),
-        layouts: getCardLayouts(isWelcome),
-    };
-    return document;
+function generateRectDocument(turnNumber) {
+    const rectDocument = getCommonDoucment();
+    rectDocument.mainTemplate = getMainTemplate(turnNumber, 'rect');
+    rectDocument.resources = getRectResources();
+    rectDocument.layouts = getCustomLayouts(turnNumber, 'rect');
+    return rectDocument;
 }
 
-function getCardLayouts(isWelcome) {
-    let cardLayout = {};
-    if (isWelcome) {
-        cardLayout = catalogueCard.getcatalogueCard();
+function generateRoundDocument(turnNumber) {
+    const roundDocument = getCommonDoucment();
+    roundDocument.mainTemplate = getMainTemplate(turnNumber, 'round');
+    roundDocument.resources = getRoundResources();
+    roundDocument.layouts = getCustomLayouts(turnNumber, 'round');
+    return roundDocument;
+}
+
+function getCustomLayouts(turnNumber, deviceShape) {
+    let customLayout = {};
+    if (deviceShape === 'rect' && turnNumber === '1') {
+        customLayout = catalogueCard.getcatalogueCard();
+    } else if (deviceShape === 'round' && turnNumber === '1') {
+        customLayout = roundCustomWelcome.getRoundWelcomeCustomText();
     }
-    return cardLayout;
+    return customLayout;
 }
 
 function getAplConfig() {
@@ -65,21 +61,21 @@ function getStyles() {
     return ahaStyle;
 }
 
-function getTemplate(isWelcome, deviceShape) {
+function getTemplate(turnNumber, deviceShape) {
     const itemArray = [];
     const firstContainer = {};
     firstContainer.type = 'Container';
     firstContainer.item = [];
-    if (deviceShape === 'rect') firstContainer.item = layouts.getRectangleLayout(isWelcome);
-    else firstContainer.item = layouts.getRoundLayout(isWelcome);
+    if (deviceShape === 'rect') firstContainer.item = layouts.getRectangleLayout(turnNumber);
+    else firstContainer.item = layouts.getRoundLayout(turnNumber);
     itemArray.push(firstContainer);
     return itemArray;
 }
-function getMainTemplate(isWelcome, deviceShape) {
+function getMainTemplate(turnNumber, deviceShape) {
     let mainTemplate = {};
     mainTemplate = {
         parameters: ['payload'],
-        items: getTemplate(isWelcome, deviceShape),
+        items: getTemplate(turnNumber, deviceShape),
     };
     return mainTemplate;
 }
