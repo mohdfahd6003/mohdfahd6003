@@ -7,7 +7,7 @@
             "commands": [
                 {
                     "type": "AutoPage",
-                    "componentId": "pager",
+                    "componentId": "pagerRound",
                     "duration": 1000,
                     "delay": 17000,
                     "when": true
