@@ -1,11 +1,9 @@
 {
     "type": "AlexaTextList",
-    "headerTitle": "${payload.textListData.title}",
-    "headerBackButton": true,
     "headerAttributionImage": "${payload.content.logo}",
-    "backgroundImageSource": "${payload.content.gridBackground}",
-    "listItems": "${payload.catalogueData.itemList}",
+    "backgroundImageSource": "${payload.content.textListBackground}",
+    "listItems": "${payload.textListData.itemList}",
     "touchForward": true,
     "backgroundColorOverlay": true,
-    "id": "plantList"
+    "id": "round.textlist"
 }

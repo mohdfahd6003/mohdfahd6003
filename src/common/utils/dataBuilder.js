@@ -6,7 +6,28 @@ const configData = require('../../config.json');
 
 const catalogueTitles = require('../content/catalogue.title.json');
 
-function prepareScreenContent(title, bodyText, mainImage, isWelcome) {
+function prepareScreenContentRound(title, bodyText, mainImage, turnNumber) {
+    const dataTemplate = {};
+    dataTemplate.content = {};
+    dataTemplate.content.title = title;
+    dataTemplate.content.bodyText = bodyText;
+    dataTemplate.content.mainImage = mainImage;
+    dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+        assets.Images.headerImage
+    }`;
+    dataTemplate.content.logo = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
+        assets.Images.logo
+    }`;
+    if (turnNumber === '1') {
+        dataTemplate.content.textListBackground = `https://${
+            configData[process.env.ENVIRONMENT].cloudfront
+        }/${assets.Images.gridBackground}`;
+        dataTemplate.textListData = createTextListData();
+    }
+    return dataTemplate;
+}
+
+function prepareScreenContentRect(title, bodyText, mainImage, turnNumber) {
     const dataTemplate = {};
     dataTemplate.content = {};
     dataTemplate.content.title = title;
@@ -26,7 +47,7 @@ function prepareScreenContent(title, bodyText, mainImage, isWelcome) {
         outputName: 'transformedHintText',
         transformer: 'textToHint',
     };
-    if (isWelcome) {
+    if (turnNumber === '1') {
         dataTemplate.content.gridBackground = `https://${
             configData[process.env.ENVIRONMENT].cloudfront
         }/${assets.Images.gridBackground}`;
@@ -43,6 +64,23 @@ function makeCapital(nameString) {
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
+}
+
+function createTextListData() {
+    const textListData = {};
+    const textArray = [];
+    let sequenceNumber = 1;
+    Object.keys(catalogueTitles).forEach((element) => {
+        const textElement = {};
+        textElement.id = element;
+        textElement.parentId = 0;
+        textElement.primaryText = makeCapital(catalogueTitles[element]);
+        textElement.sequence = sequenceNumber++;
+        textElement.description = '';
+        textArray.push(textElement);
+    });
+    textListData.itemList = textArray;
+    return textListData;
 }
 
 function createCatalogueData() {
@@ -71,4 +109,4 @@ function createCatalogueData() {
     return catalogueData;
 }
 
-exports.prepareScreenContent = prepareScreenContent;
+exports.dataLib = { prepareScreenContentRect, prepareScreenContentRound };

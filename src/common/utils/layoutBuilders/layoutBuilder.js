@@ -16,7 +16,7 @@ function rectCommonPagerCreator() {
 function roundCommonPagerCreator() {
     const commonPagerContainer = { ...roundPager };
     commonPagerContainer.items = [];
-    commonPagerContainer.items.push(welcomePage.welcomePageCreaterRound());
+    // commonPagerContainer.items.push(welcomePage.welcomePageCreaterRound());
     commonPagerContainer.items.push(cataloguePage.cataloguePageCreaterRound());
     return commonPagerContainer;
 }
