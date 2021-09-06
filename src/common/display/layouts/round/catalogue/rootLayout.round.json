@@ -5,5 +5,13 @@
     "listItems": "${payload.textListData.itemList}",
     "touchForward": true,
     "backgroundColorOverlay": true,
-    "id": "round.textlist"
+    "id": "round.textlist",
+    "primaryAction": {
+        "type": "SendEvent",
+        "arguments": [
+          "ListItemSelected",
+          "${ordinal}",
+          "${data.id}"
+        ]
+      }
 }
