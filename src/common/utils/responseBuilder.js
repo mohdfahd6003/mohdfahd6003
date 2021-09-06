@@ -7,7 +7,7 @@ const { generateRectDocument, generateRoundDocument } = require('./templateBuild
 
 const assets = require('../content/assets.json');
 
-const { dataLib } = require('./dataBuilder');
+const { dataLib } = require('./dataBuilders/dataBuilder');
 
 const displayDirective = 'Alexa.Presentation.APL.RenderDocument';
 

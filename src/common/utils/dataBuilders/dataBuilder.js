@@ -1,31 +1,14 @@
-const assets = require('../content/assets.json');
+const assets = require('../../content/assets.json');
 
-const { getRandomHint } = require('./hintBuilder');
+const { getRandomHint } = require('../hintBuilder');
 
-const configData = require('../../config.json');
+const configData = require('../../../config.json');
 
-const catalogueTitles = require('../content/catalogue.title.json');
+const { makeCapital } = require('./general.data');
 
-function prepareScreenContentRound(title, bodyText, mainImage, turnNumber) {
-    const dataTemplate = {};
-    dataTemplate.content = {};
-    dataTemplate.content.title = title;
-    dataTemplate.content.bodyText = bodyText;
-    dataTemplate.content.mainImage = mainImage;
-    dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-        assets.Images.headerImage
-    }`;
-    dataTemplate.content.logo = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
-        assets.Images.logo
-    }`;
-    if (turnNumber === '1') {
-        dataTemplate.content.textListBackground = `https://${
-            configData[process.env.ENVIRONMENT].cloudfront
-        }/${assets.Images.gridBackground}`;
-        dataTemplate.textListData = createTextListData();
-    }
-    return dataTemplate;
-}
+const catalogueTitles = require('../../content/catalogue.title.json');
+
+const { prepareScreenContentRound } = require('./round.data');
 
 function prepareScreenContentRect(title, bodyText, mainImage, turnNumber) {
     const dataTemplate = {};
@@ -54,33 +37,6 @@ function prepareScreenContentRect(title, bodyText, mainImage, turnNumber) {
         dataTemplate.catalogueData = createCatalogueData();
     }
     return dataTemplate;
-}
-
-function makeCapital(nameString) {
-    if (nameString === 'cpr') return 'CPR';
-    else
-        return nameString
-            .toLowerCase()
-            .split(' ')
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-}
-
-function createTextListData() {
-    const textListData = {};
-    const textArray = [];
-    let sequenceNumber = 1;
-    Object.keys(catalogueTitles).forEach((element) => {
-        const textElement = {};
-        textElement.id = element;
-        textElement.parentId = 0;
-        textElement.primaryText = makeCapital(catalogueTitles[element]);
-        textElement.sequence = sequenceNumber++;
-        textElement.description = '';
-        textArray.push(textElement);
-    });
-    textListData.itemList = textArray;
-    return textListData;
 }
 
 function createCatalogueData() {
