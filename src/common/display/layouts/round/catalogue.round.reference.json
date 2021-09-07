@@ -1,0 +1,120 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "1.7",
+        "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.4.0"
+            }
+        ],
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "AlexaTextList",
+                    "headerTitle": "${payload.textListData.title}",
+                    "headerBackButton": true,
+                    "headerAttributionImage": "${payload.textListData.logoUrl}",
+                    "backgroundImageSource": "${payload.textListData.backgroundImage.sources[0].url}",
+                    "listItems": "${payload.textListData.listItems}",
+                    "touchForward": true,
+                    "backgroundColorOverlay": true,
+                    "id": "plantList"
+                }
+            ]
+        }
+    },
+    "datasources": {
+        "textListData": {
+            "type": "object",
+            "objectId": "textListSample",
+            "backgroundImage": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://dtzf6dz2qpnrm.cloudfront.net/images/thankful_woman_hand_over_heart@2x.png",
+                        "size": "large"
+                    }
+                ]
+            },
+            "title": "Plant Stores Near Me",
+            "listItems": [
+                {
+                    "primaryText": "Peonies & Petals Nursery",
+                    "primaryAction": [
+                        {
+                            "type": "SetValue",
+                            "componentId": "plantList",
+                            "property": "headerTitle",
+                            "value": "${payload.textListData.listItems[0].primaryText} is selected"
+                        }
+                    ]
+                },
+                {
+                    "primaryText": "Ivy Lane Nursery",
+                    "primaryAction": [
+                        {
+                            "type": "SetValue",
+                            "componentId": "plantList",
+                            "property": "headerTitle",
+                            "value": "${payload.textListData.listItems[1].primaryText} is selected"
+                        }
+                    ]
+                },
+                {
+                    "primaryText": "House of Hyacinth",
+                    "primaryAction": [
+                        {
+                            "type": "SetValue",
+                            "componentId": "plantList",
+                            "property": "headerTitle",
+                            "value": "${payload.textListData.listItems[2].primaryText} is selected"
+                        }
+                    ]
+                },
+                {
+                    "primaryText": "Swan Nursery",
+                    "primaryAction": [
+                        {
+                            "type": "SetValue",
+                            "componentId": "plantList",
+                            "property": "headerTitle",
+                            "value": "${payload.textListData.listItems[3].primaryText} is selected"
+                        }
+                    ]
+                },
+                {
+                    "primaryText": "House of Peonies",
+                    "primaryAction": [
+                        {
+                            "type": "SetValue",
+                            "componentId": "plantList",
+                            "property": "headerTitle",
+                            "value": "${payload.textListData.listItems[4].primaryText} is selected"
+                        }
+                    ]
+                },
+                {
+                    "primaryText": "Spruce Nursery",
+                    "primaryAction": [
+                        {
+                            "type": "SetValue",
+                            "componentId": "plantList",
+                            "property": "headerTitle",
+                            "value": "${payload.textListData.listItems[5].primaryText} is selected"
+                        }
+                    ]
+                }
+            ],
+            "logoUrl": "https://dtzf6dz2qpnrm.cloudfront.net/images/Aha_logo_2x.png"
+        }
+    },
+    "sources": {}
+}

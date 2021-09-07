@@ -7,7 +7,7 @@ const { generateRectDocument, generateRoundDocument } = require('./templateBuild
 
 const assets = require('../content/assets.json');
 
-const dataBuilder = require('./dataBuilder');
+const { dataLib } = require('./dataBuilders/dataBuilder');
 
 const displayDirective = 'Alexa.Presentation.APL.RenderDocument';
 
@@ -53,7 +53,7 @@ function sendResponseWithShape(
             let dataTemplate;
             if (shape === 'ROUND') {
                 displayTemplate = generateRoundDocument(turnNumber);
-                dataTemplate = dataBuilder.prepareScreenContent(
+                dataTemplate = dataLib.prepareScreenContentRound(
                     title,
                     bodyText,
                     mainImage,
@@ -61,7 +61,7 @@ function sendResponseWithShape(
                 );
             } else {
                 displayTemplate = generateRectDocument(turnNumber);
-                dataTemplate = dataBuilder.prepareScreenContent(
+                dataTemplate = dataLib.prepareScreenContentRect(
                     title,
                     bodyText,
                     mainImage,

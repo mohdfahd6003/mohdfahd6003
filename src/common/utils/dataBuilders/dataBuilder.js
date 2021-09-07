@@ -1,12 +1,16 @@
-const assets = require('../content/assets.json');
+const assets = require('../../content/assets.json');
 
-const { getRandomHint } = require('./hintBuilder');
+const { getRandomHint } = require('../hintBuilder');
 
-const configData = require('../../config.json');
+const configData = require('../../../config.json');
 
-const catalogueTitles = require('../content/catalogue.title.json');
+const { makeCapital } = require('./general.data');
 
-function prepareScreenContent(title, bodyText, mainImage, isWelcome) {
+const catalogueTitles = require('../../content/catalogue.title.json');
+
+const { prepareScreenContentRound } = require('./round.data');
+
+function prepareScreenContentRect(title, bodyText, mainImage, turnNumber) {
     const dataTemplate = {};
     dataTemplate.content = {};
     dataTemplate.content.title = title;
@@ -26,23 +30,13 @@ function prepareScreenContent(title, bodyText, mainImage, isWelcome) {
         outputName: 'transformedHintText',
         transformer: 'textToHint',
     };
-    if (isWelcome) {
+    if (turnNumber === '1') {
         dataTemplate.content.gridBackground = `https://${
             configData[process.env.ENVIRONMENT].cloudfront
         }/${assets.Images.gridBackground}`;
         dataTemplate.catalogueData = createCatalogueData();
     }
     return dataTemplate;
-}
-
-function makeCapital(nameString) {
-    if (nameString === 'cpr') return 'CPR';
-    else
-        return nameString
-            .toLowerCase()
-            .split(' ')
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
 }
 
 function createCatalogueData() {
@@ -71,4 +65,4 @@ function createCatalogueData() {
     return catalogueData;
 }
 
-exports.prepareScreenContent = prepareScreenContent;
+exports.dataLib = { prepareScreenContentRect, prepareScreenContentRound };

@@ -1,0 +1,16 @@
+{
+    "type": "AlexaTextList",
+    "headerAttributionImage": "${payload.content.logo}",
+    "backgroundImageSource": "${payload.content.textListBackground}",
+    "listItems": "${payload.textListData.itemList}",
+    "backgroundColorOverlay": true,
+    "id": "round.textlist",
+    "primaryAction": {
+        "type": "SendEvent",
+        "arguments": [
+          "ListItemSelected",
+          "${ordinal}",
+          "${data.id}"
+        ]
+      }
+}

@@ -46,7 +46,9 @@ class learnCPRControl extends Control {
         return (
             InputUtil.isIntent(input, 'learnCPRIntent') ||
             (InputUtil.isAPLUserEventWithArgs(input) &&
-                input.request.source.id === 'learncprControl')
+                input.request.source.id === 'learncprControl') ||
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.arguments[2] === 'learncprControl')
         );
     }
 
