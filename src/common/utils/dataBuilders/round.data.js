@@ -18,7 +18,7 @@ function prepareScreenContentRound(title, bodyText, mainImage, turnNumber) {
     if (turnNumber === '1') {
         dataTemplate.content.textListBackground = `https://${
             configData[process.env.ENVIRONMENT].cloudfront
-        }/${assets.Images.gridBackground}`;
+        }/${assets.Images.textListBackground}`;
         dataTemplate.textListData = createTextListData();
     }
     return dataTemplate;
