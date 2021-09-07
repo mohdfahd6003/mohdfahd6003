@@ -3,7 +3,6 @@
     "headerAttributionImage": "${payload.content.logo}",
     "backgroundImageSource": "${payload.content.textListBackground}",
     "listItems": "${payload.textListData.itemList}",
-    "touchForward": true,
     "backgroundColorOverlay": true,
     "id": "round.textlist",
     "primaryAction": {
