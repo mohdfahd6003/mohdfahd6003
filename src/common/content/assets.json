@@ -15,6 +15,7 @@
         "welcomeBackground":"images/Welcome_background.png",
         "logo": "images/Aha_logo_2x.png",
         "gridBackground": "images/thankful_woman_hand_over_heart@2x.png",
+        "textListBackground": "images/thankful_woman_hand_over_heart_round.jpg",
         "explainTreatment":{
             "burnControl": "images/Burn_under_Running_Water_AdultSink.jpg",
             "cutControl": "images/Dressing_Gauze_Pad_3_Adult.jpg",

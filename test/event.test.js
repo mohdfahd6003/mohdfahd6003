@@ -86,8 +86,30 @@ function createTouchEvent(controlId) {
     });
 }
 
+function createTouchEventRound(controlId) {
+    return TestInput.userEvent({
+        type: 'Alexa.Presentation.APL.UserEvent',
+        requestId: '12345',
+        timestamp: '2019-10-04T18:48:22Z',
+        locale: 'en-US',
+        arguments: ['one', 'two', controlId],
+        components: {},
+        source: {
+            type: 'TouchWrapper',
+            handler: 'Press',
+            id: '',
+        },
+        token: '',
+    });
+}
+
 async function testIntentRequest(controlId, responseText) {
     const tester = new SkillTester(new ControlHandler(new RootManager()));
 
     await tester.testTurn('', createTouchEvent(controlId), `A:${responseText.speakText.trim()}`);
+    await tester.testTurn(
+        '',
+        createTouchEventRound(controlId),
+        `A:${responseText.speakText.trim()}`
+    );
 }
