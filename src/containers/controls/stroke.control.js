@@ -38,7 +38,10 @@ class StrokeControl extends Control {
     canHandle(input) {
         return (
             InputUtil.isIntent(input, 'strokeIntent') ||
-            (InputUtil.isAPLUserEventWithArgs(input) && input.request.source.id === 'strokeControl')
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.source.id === 'strokeControl') ||
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.arguments[2] === 'strokeControl')
         );
     }
 

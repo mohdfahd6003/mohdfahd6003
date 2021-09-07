@@ -45,7 +45,9 @@ class ChokeControl extends Control {
         if (
             InputUtil.isIntent(input, 'chokeIntent') ||
             (InputUtil.isAPLUserEventWithArgs(input) &&
-                input.request.source.id === 'chokeControlMain')
+                input.request.source.id === 'chokeControlMain') ||
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.arguments[2] === 'chokeControlMain')
         ) {
             return true;
         } else if (this.state && InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
@@ -61,7 +63,9 @@ class ChokeControl extends Control {
         if (
             InputUtil.isIntent(input, 'chokeIntent') ||
             (InputUtil.isAPLUserEventWithArgs(input) &&
-                input.request.source.id === 'chokeControlMain')
+                input.request.source.id === 'chokeControlMain') ||
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.arguments[2] === 'chokeControlMain')
         ) {
             this.state.value = 'chokingInfo';
             chokeValueAct.speechText = chokeMainText;
