@@ -39,7 +39,9 @@ class Dehydration extends Control {
         return (
             InputUtil.isIntent(input, 'dehydrationIntent') ||
             (InputUtil.isAPLUserEventWithArgs(input) &&
-                input.request.source.id === 'dehydrationControl')
+                input.request.source.id === 'dehydrationControl') ||
+            (InputUtil.isAPLUserEventWithArgs(input) &&
+                input.request.arguments[2] === 'dehydrationControl')
         );
     }
 
