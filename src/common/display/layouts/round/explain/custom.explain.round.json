@@ -1,0 +1,84 @@
+{
+    "AHALogo": {
+        "items": [
+            {
+                "items": [
+                    {
+                        "source": "${payload.content.logo}",
+                        "type": "Image",
+                        "width": "25px",
+                        "height": "33px"
+                    }
+                ],
+                "alignItems": "center",
+                "type": "Container",
+                "paddingTop": "24px",
+                "paddingBottom": "16px"
+            }
+        ]
+    },
+    "AHATitle": {
+        "items": [
+            {
+                "items": [
+                    {
+                        "textAlign": "center",
+                        "textAlignVertical": "center",
+                        "text": "${payload.content.title}",
+                        "fontFamily": "@fontFamilyRomanSans",
+                        "fontSize": "40px",
+                        "fontWeight": "@fontWeightMedium",
+                        "color": "#FFFFFF",
+                        "type": "Text",
+                        "position": "sticky"
+                    }
+                ],
+                "alignItems": "center",
+                "position": "sticky",
+                "type": "Container",
+                "paddingBottom": "16.5px"
+            }
+        ]
+    },
+    "AHAContent": {
+        "items": [
+            {
+                "item": [
+                    {
+                        "item": [
+                            {
+                                "text": "${payload.content.bodyText}",
+                                "textAlign": "center",
+                                "fontSize": "32px",
+                                "color": "#FFFFFF",
+                                "fontFamily": "@fontFamilyRomanSans",
+                                "fontWeight": "300",
+                                "textAlignVertical": "top",
+                                "type": "Text"
+                            }
+                        ],
+                        "type": "ScrollView",
+                        "id": "contentScroll",
+                        "width": "100%",
+                        "height": "63.9vh"
+                    }
+                ],
+                "type": "Container",
+                "paddingLeft": "@spacingLarge",
+                "paddingRight": "@spacingLarge",
+                "paddingTop": "16.5px",
+                "paddingBottom": "@spacingMedium"
+            }
+        ]
+    },
+    "AHADivider": {
+        "items": [
+            {
+                "backgroundColor": "#E3E3E3",
+                "borderColor": "#E3E3E3",
+                "type": "Frame",
+                "height": "1px"
+            }
+        ]
+    }
+}

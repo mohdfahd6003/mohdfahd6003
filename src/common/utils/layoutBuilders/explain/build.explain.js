@@ -1,4 +1,5 @@
 const { explain } = require('./getComponent.explain');
+const { explainRound } = require('./getRound.expain');
 
 function explainTextImageCreator() {
     const explainTextImage = explain.getTextImage();
@@ -39,14 +40,7 @@ function explainPageCreaterRect() {
 function explainPageCreaterRound() {
     console.log('inside explain page of round');
     let explainRoot = {};
-    explainRoot = explain.getRoot();
-    explainRoot.items = [];
-    explainRoot.items.push(explain.getBackground());
-    explainRoot.items.push(explain.getHeader());
-    explainRoot.items.push(explain.getDividerUp());
-    explainRoot.items.push(explainBodyWrapCreater());
-    explainRoot.items.push(explain.getDividerDown());
-    explainRoot.items.push(explain.getFooter());
+    explainRoot = explainRound.getRoundExplainRoot();
     return explainRoot;
 }
 exports.explainPage = {
