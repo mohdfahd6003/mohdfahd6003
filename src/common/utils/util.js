@@ -41,9 +41,17 @@ function sendResponse(
     return shapeResponse;
 }
 
+function fetchIntentForLogging(input) {
+    if (input.request.intent) return input.request.intent.name;
+    else if (input.request.source) return input.request.source.id;
+    else if (input.request.arguments) return input.request.arguments[2];
+    else if (input.request.type === 'LaunchRequest') return input.request.type;
+    else return 'invalid request';
+}
 module.exports = {
     speakText,
     configData,
     assets,
     sendResponse,
+    fetchIntentForLogging,
 };
