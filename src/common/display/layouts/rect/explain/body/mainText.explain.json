@@ -19,7 +19,8 @@
                 "fontWeight":"400",
                 "textAlign":"left",
                 "fontSize":"@fontSizeMedium",
-                "lineHeight":1.5
+                "lineHeight":1.5,
+                "color":"black"
             }
           ]
        }

@@ -13,7 +13,16 @@ function getShape(input) {
     }
 }
 
-function sendResponse(input, responseBuilder, primaryText, mainImage, title, bodyText, turnNumber) {
+function sendResponse(
+    input,
+    responseBuilder,
+    primaryText,
+    mainImage,
+    title,
+    bodyText,
+    shortText = bodyText,
+    turnNumber
+) {
     const shape = getShape(input);
     let shapeResponse = {};
 
@@ -24,6 +33,7 @@ function sendResponse(input, responseBuilder, primaryText, mainImage, title, bod
         mainImage,
         title,
         bodyText,
+        shortText,
         shape,
         turnNumber
     );

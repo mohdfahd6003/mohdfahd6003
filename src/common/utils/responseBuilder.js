@@ -42,10 +42,13 @@ function sendResponseWithShape(
     mainImage,
     title,
     bodyText,
+    shortText,
     shape,
     turnNumber = '2'
 ) {
     responseBuilder = createBasic(responseBuilder, primaryText, title, bodyText, mainImage);
+    console.log('short text is :', shortText);
+    console.log('shape is :', shape);
 
     if (checkForScreen(input)) {
         try {
@@ -63,7 +66,7 @@ function sendResponseWithShape(
                 displayTemplate = generateRectDocument(turnNumber);
                 dataTemplate = dataLib.prepareScreenContentRect(
                     title,
-                    bodyText,
+                    shortText,
                     mainImage,
                     turnNumber
                 );
