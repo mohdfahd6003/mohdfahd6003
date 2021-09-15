@@ -2,11 +2,12 @@ const assets = require('../../content/assets.json');
 const configData = require('../../../config.json');
 const { makeCapital } = require('./general.data');
 const catalogueTitles = require('../../content/catalogue.title.json');
+const mapRoundTitle = require('../../content/roundTitleMap.json');
 
 function prepareScreenContentRound(title, bodyText, mainImage, turnNumber) {
     const dataTemplate = {};
     dataTemplate.content = {};
-    dataTemplate.content.title = title;
+    dataTemplate.content.title = mapRoundTitle[title] ? mapRoundTitle[title] : title;
     dataTemplate.content.bodyText = bodyText;
     dataTemplate.content.mainImage = mainImage;
     dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
