@@ -21,6 +21,7 @@ class ChokeActMain extends RequestValueAct {
         this.secondaryText = undefined;
         this.tertiaryText = undefined;
         this.title = undefined;
+        this.shortText = undefined;
     }
 
     render(input, resultBuilder) {
@@ -30,7 +31,10 @@ class ChokeActMain extends RequestValueAct {
             this.speechText,
             this.imageUrl,
             this.title,
-            this.primaryText + this.secondaryText + this.tertiaryText
+            this.primaryText + this.secondaryText + this.tertiaryText,
+            this.shortText
+                ? this.shortText
+                : this.primaryText + this.secondaryText + this.tertiaryText
         );
     }
 }
@@ -76,6 +80,7 @@ class ChokeControl extends Control {
             chokeValueAct.primaryText = 'Is the person pregnant? ';
             chokeValueAct.secondaryText = '';
             chokeValueAct.tertiaryText = '';
+            chokeValueAct.shortText = chokeValueAct.primaryText;
         } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
             const topic = this.state.value;
             const topicnext = chokeData[topic].yes.continue;
@@ -92,6 +97,7 @@ class ChokeControl extends Control {
             chokeValueAct.primaryText = chokeData[topic].yes.primaryText;
             chokeValueAct.secondaryText = chokeData[topic].yes.secondaryText;
             chokeValueAct.tertiaryText = chokeData[topic].yes.tertiaryText;
+            chokeValueAct.shortText = chokeData[topic].yes.shortText;
             if (topic === 'chokingInfo.startCPR') {
                 const combinedSpeech = `${chokeValueAct.speechText} <audio src="https://${
                     configData[process.env.ENVIRONMENT].cloudfront
@@ -114,6 +120,7 @@ class ChokeControl extends Control {
             chokeValueAct.primaryText = chokeData[topic].no.primaryText;
             chokeValueAct.secondaryText = chokeData[topic].no.secondaryText;
             chokeValueAct.tertiaryText = chokeData[topic].no.tertiaryText;
+            chokeValueAct.shortText = chokeData[topic].no.shortText;
         }
         resultBuilder.addAct(chokeValueAct);
     }
