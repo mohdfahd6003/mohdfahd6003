@@ -4,7 +4,7 @@ const { explainRound } = require('./getRound.expain');
 function explainPageCreaterRect() {
     console.log('inside explain page of rectangle');
     let explainRoot = {};
-    explainRoot = explainRect.getRoot();
+    explainRoot = explainRect.getRootRect();
     return explainRoot;
 }
 
