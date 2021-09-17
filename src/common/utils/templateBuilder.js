@@ -8,9 +8,11 @@ const { catalogueCard } = require('./layoutBuilders/catalogue/getCard.catalogue'
 
 const { roundCustomWelcome } = require('./layoutBuilders/welcome/getCustomWelcome');
 
-const { roundCustomExplain } = require('./layoutBuilders/explain/getCustom.explain');
+const { roundCustomExplain } = require('./layoutBuilders/explain/getCustomRound.explain');
 
 const importList = require('./importBuilder');
+
+const { rectCustomExplain } = require('./layoutBuilders/explain/getCustomRect.explain');
 
 function getCommonDoucment() {
     return {
@@ -46,6 +48,8 @@ function getCustomLayouts(turnNumber, deviceShape) {
     let customLayout = {};
     if (deviceShape === 'rect' && turnNumber === '1') {
         customLayout = catalogueCard.getcatalogueCard();
+    } else if (deviceShape === 'rect' && turnNumber !== '1') {
+        customLayout = rectCustomExplain.getRectExplainCustom();
     } else if (deviceShape === 'round' && turnNumber === '1') {
         customLayout = roundCustomWelcome.getRoundWelcomeCustomText();
     } else if (deviceShape === 'round' && turnNumber !== '1') {
