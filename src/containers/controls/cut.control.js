@@ -17,6 +17,7 @@ class CutRequestAct extends RequestValueAct {
         this.secondaryText = undefined;
         this.tertiaryText = undefined;
         this.title = undefined;
+        this.shortText = undefined;
     }
 
     render(input, responseBuilder) {
@@ -26,7 +27,8 @@ class CutRequestAct extends RequestValueAct {
             this.speakText,
             cutImage,
             this.title,
-            this.primaryText + this.secondaryText + this.tertiaryText
+            this.primaryText + this.secondaryText + this.tertiaryText,
+            this.shortText
         );
     }
 }
@@ -70,6 +72,7 @@ class CutControl extends Control {
             cutAct.secondaryText = cutData.main.secondaryText;
             cutAct.tertiaryText = cutData.main.tertiaryText;
             cutAct.title = cutData.main.title;
+            cutAct.shortText = cutData.main.shortText;
         } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
             let turnNum = 'turn1';
             if (this.state.value === 'second') {
@@ -80,6 +83,7 @@ class CutControl extends Control {
             cutAct.secondaryText = cutData[turnNum].yes.secondaryText;
             cutAct.tertiaryText = cutData[turnNum].yes.tertiaryText;
             cutAct.title = cutData[turnNum].yes.title;
+            cutAct.shortText = cutData[turnNum].yes.shortText;
             this.state.value = undefined;
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
             let turnNum;
@@ -95,6 +99,7 @@ class CutControl extends Control {
             cutAct.secondaryText = cutData[turnNum].no.secondaryText;
             cutAct.tertiaryText = cutData[turnNum].no.tertiaryText;
             cutAct.title = cutData[turnNum].no.title;
+            cutAct.shortText = cutData[turnNum].no.shortText;
         }
         resultBuilder.addAct(cutAct);
     }

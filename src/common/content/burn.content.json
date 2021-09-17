@@ -4,7 +4,8 @@
         "primaryText": "Is the scene safe? ",
         "secondaryText": " ",
         "tertiaryText": " ",
-        "title": "Burns"
+        "title": "Burns",
+        "shortText":"Is the scene safe?"
 
     },
     "yes": {
