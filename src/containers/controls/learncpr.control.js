@@ -17,6 +17,7 @@ const {
     tertiaryText,
     speakTextOne,
     speakTextTwo,
+    shortText,
 } = learncprData;
 
 class LearncprRequestAct extends RequestValueAct {
@@ -32,7 +33,8 @@ class LearncprRequestAct extends RequestValueAct {
             this.speakText,
             learncprImage,
             title,
-            primaryText + secondaryText + tertiaryText
+            primaryText + secondaryText + tertiaryText,
+            shortText
         );
     }
 }

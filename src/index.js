@@ -23,11 +23,13 @@ const {
 const SinglePathContainer = require('./containers/singlepath.container');
 const MultiPathContainer = require('./containers/multipath.container');
 
-const { assets, configData, sendResponse } = require('./common/utils/util');
+const { assets, configData, sendResponse, fetchIntentForLogging } = require('./common/utils/util');
 
 const stopData = require('./common/content/stop.content.json');
 
 const helpData = require('./common/content/help.content.json');
+
+const { logger } = require('./logging/logger');
 
 class RootContainer extends ContainerControl {
     constructor(props) {
@@ -73,6 +75,16 @@ class RootContainer extends ContainerControl {
     }
 
     async handle(input, resultBuilder) {
+        const intentReq = fetchIntentForLogging(input);
+        logger.log({
+            level: 'info',
+            message: 'request from Alexa',
+            requestId: input.request.requestId,
+            intentType: input.request.type,
+            intentName: intentReq,
+            locale: input.request.locale,
+            timestamp: input.request.timestamp,
+        });
         await this.handleFunc(input, resultBuilder);
     }
 

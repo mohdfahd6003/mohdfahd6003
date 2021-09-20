@@ -10,7 +10,7 @@ const dehydrationImage = `https://${configData[process.env.ENVIRONMENT].cloudfro
 
 const dehydrationData = require('../../common/content/dehydration.content.json');
 
-const { speakText, title, primaryText, secondaryText, tertiaryText } = dehydrationData;
+const { speakText, title, primaryText, secondaryText, tertiaryText, shortText } = dehydrationData;
 
 class DehydrationRequestAct extends RequestValueAct {
     constructor(control, payload) {
@@ -25,7 +25,8 @@ class DehydrationRequestAct extends RequestValueAct {
             this.speakText,
             dehydrationImage,
             title,
-            primaryText + secondaryText + tertiaryText
+            primaryText + secondaryText + tertiaryText,
+            shortText
         );
     }
 }

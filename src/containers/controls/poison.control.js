@@ -10,7 +10,7 @@ const poisonImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/$
 
 const PoisonData = require('../../common/content/poison.content.json');
 
-const { speakText, title, primaryText, secondaryText, tertiaryText } = PoisonData;
+const { speakText, title, primaryText, secondaryText, tertiaryText, shortText } = PoisonData;
 
 class PoisoningRequestAct extends RequestValueAct {
     constructor(control, payload) {
@@ -25,7 +25,8 @@ class PoisoningRequestAct extends RequestValueAct {
             this.speakText,
             poisonImage,
             title,
-            primaryText + secondaryText + tertiaryText
+            primaryText + secondaryText + tertiaryText,
+            shortText
         );
     }
 }

@@ -10,7 +10,7 @@ const nosebleedImage = `https://${configData[process.env.ENVIRONMENT].cloudfront
 
 const noseBleedData = require('../../common/content/nosebleed.content.json');
 
-const { speakText, title, primaryText, secondaryText, tertiaryText } = noseBleedData;
+const { speakText, title, primaryText, secondaryText, tertiaryText, shortText } = noseBleedData;
 
 class NosebleedingRequestAct extends RequestValueAct {
     constructor(control, payload) {
@@ -25,7 +25,8 @@ class NosebleedingRequestAct extends RequestValueAct {
             this.speakText,
             nosebleedImage,
             title,
-            primaryText + secondaryText + tertiaryText
+            primaryText + secondaryText + tertiaryText,
+            shortText
         );
     }
 }
