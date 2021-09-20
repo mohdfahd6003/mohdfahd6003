@@ -1,9 +1,9 @@
 {
-    "alignItems": "start",
+    "alignItems": "stretch",
     "justifyContent": "spaceBetween",
     "type": "Container",
-    "id":"rect.card.container",
+    "id": "rect.card.container",
     "width": "100%",
     "height": "100%",
-    "paddingTop": "@spacing2XSmall"
+    "paddingTop": "@gridImagePadding"
 }

@@ -2,19 +2,12 @@
     "onPress": [
         {
             "type": "SendEvent",
-            "arguments": [
-                "cardSelected",
-                "${data.id}"
-            ]
+            "arguments": ["cardSelected", "${data.id}"]
         }
     ],
-    "item": [
-    
-    ],
+    "item": [],
     "type": "TouchWrapper",
     "id": "${data.id}",
-    "paddingBottom": "@spacingLarge",
-    "paddingStart": "@spacingXSmall",
-    "paddingRight": "@spacingSmall",
+    "paddingBottom": "${@viewportProfile == @tvLandscapeXLarge ? 3.75vh : 6.75vh}",
     "spacing": "@spacingBetweenCards"
 }

@@ -4,15 +4,12 @@
     "theme": "dark",
     "listItems": "${payload.catalogueData.itemList}",
     "customLayoutName": "Card",
-    "listItemHeight": "57vh",
+    "listItemHeight": "${@viewportProfile == @tvLandscapeXLarge ? 55vh : 58.9vh}",
     "imageScale": "best-fill",
     "imageAlignment": "right",
     "primaryAction": {
         "type": "SendEvent",
-        "arguments": [
-            "ListItemSelected",
-            "${ordinal}"
-        ]
+        "arguments": ["ListItemSelected", "${ordinal}"]
     },
     "backgroundImageSource": "${payload.content.gridBackground}",
     "backgroundColorOverlay": true,

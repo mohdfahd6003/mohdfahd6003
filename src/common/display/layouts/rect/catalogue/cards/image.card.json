@@ -3,9 +3,9 @@
         {
             "imageSource": "${data.imageSrc}",
             "type": "AlexaImage",
-            "id":"rect.card.image",
+            "id": "rect.card.image",
             "imageWidth": "@imageWidth",
-            "imageHeight": "auto",
+            "imageHeight": "@imageHeight",
             "imageScale": "best-fill",
             "align": "start",
             "borderRadius": "4"
@@ -16,6 +16,8 @@
     "justifyContent": "start",
     "alignSelf": "center",
     "type": "Container",
-    "id":"rect.card.imageContainer",
-    "height": "33.75vh"
+    "width": "100%",
+    "id": "rect.card.imageContainer",
+    "paddingLeft": "@gridImagePadding",
+    "paddingRight": "@gridImagePadding"
 }
