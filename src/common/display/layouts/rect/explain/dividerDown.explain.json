@@ -1,9 +1,0 @@
-{
-    "type": "AlexaDivider",
-    "id":"rect.explain.divider.down",
-    "theme": "light",
-    "shadowColor": "#00000094",
-    "shadowHorizontalOffset": "0",
-    "shadowRadius": "6",
-    "shadowVerticalOffset": "-3"
-}

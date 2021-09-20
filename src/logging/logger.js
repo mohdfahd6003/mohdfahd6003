@@ -36,11 +36,11 @@ const myFormat = printf(
         timestampReq,
         sessionId,
     }) => {
-        return `${timestamp} : ${timestampReq}: ${level}:${requestId}: ${sessionId} :${intentType} : ${intentName} : ${locale}- ${message}- traceeeee : traiceid -${tracer._sentinelTraceId.traceId}:spanId - ${tracer._sentinelTraceId.spanId}:parentSpantId : ${tracer._sentinelTraceId.parentSpanId}`;
+        return `${timestamp} : ${timestampReq}: ${level}:${requestId}: ${sessionId} :${intentType} : ${intentName} : ${locale}- ${message}-traiceid -${tracer._sentinelTraceId.traceId}:spanId - ${tracer._sentinelTraceId.spanId}:parentSpantId : ${tracer._sentinelTraceId.parentSpanId}`;
     }
 );
 
 exports.logger = createLogger({
-    // format: combine(timestamp({ format: 'YYYY:MM:DD HH:mm:ss.SSS' }), myFormat),
+    format: combine(timestamp({ format: 'YYYY:MM:DD HH:mm:ss.SSS' }), myFormat),
     transports: [new transports.Console()],
 });

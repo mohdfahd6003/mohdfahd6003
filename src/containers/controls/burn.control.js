@@ -18,6 +18,7 @@ class BurnActMain extends RequestValueAct {
         this.secondaryText = undefined;
         this.tertiaryText = undefined;
         this.title = undefined;
+        this.shortText = undefined;
     }
 
     render(input, resultBuilder) {
@@ -27,7 +28,8 @@ class BurnActMain extends RequestValueAct {
             this.speakText,
             burnImage,
             this.title,
-            this.primaryText + this.secondaryText + this.tertiaryText
+            this.primaryText + this.secondaryText + this.tertiaryText,
+            this.shortText
         );
     }
 }
@@ -74,6 +76,7 @@ class BurnControl extends Control {
             burnAct.secondaryText = burnData.main.secondaryText;
             burnAct.tertiaryText = burnData.main.tertiaryText;
             burnAct.title = burnData.main.title;
+            burnAct.shortText = burnData.main.shortText;
         } else if (InputUtil.isIntent(input, 'AMAZON.YesIntent')) {
             this.state.value = undefined;
             burnAct.speakText = burnData.yes.speakText;
@@ -81,6 +84,7 @@ class BurnControl extends Control {
             burnAct.secondaryText = burnData.yes.secondaryText;
             burnAct.tertiaryText = burnData.yes.tertiaryText;
             burnAct.title = burnData.yes.title;
+            burnAct.shortText = burnData.yes.shortText;
         } else if (InputUtil.isIntent(input, 'AMAZON.NoIntent')) {
             this.state.value = undefined;
             burnAct.speakText = burnData.no.speakText;
@@ -88,6 +92,7 @@ class BurnControl extends Control {
             burnAct.secondaryText = burnData.no.secondaryText;
             burnAct.tertiaryText = burnData.no.tertiaryText;
             burnAct.title = burnData.no.title;
+            burnAct.shortText = burnData.no.shortText;
         }
         resultBuilder.addAct(burnAct);
     }

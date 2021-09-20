@@ -6,7 +6,7 @@ const { configData, assets, sendResponse } = require('../../common/utils/util');
 
 const heartData = require('../../common/content/heart.content.json');
 
-const { speakText, title, primaryText, secondaryText, tertiaryText } = heartData;
+const { speakText, title, primaryText, secondaryText, tertiaryText, shortText } = heartData;
 
 const heartImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
     assets.Images.heartControl
@@ -27,7 +27,8 @@ class HeartRequestAct extends RequestValueAct {
             this.speakText,
             heartImage,
             title,
-            primaryText + secondaryText + tertiaryText
+            primaryText + secondaryText + tertiaryText,
+            shortText
         );
     }
 }

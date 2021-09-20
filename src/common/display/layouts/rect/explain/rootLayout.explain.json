@@ -1,8 +1,19 @@
 {
     "type": "Container",
-    "width": "100vw",
-    "height": "100vh",
-    "direction": "column",
-    "id":"rect.explain.rootLayout",
-    "justifyContent":"start"
+    "items": [
+        {
+            "type": "AlexaBackground",
+            "backgroundImageSource": "${payload.content.mainImage}",
+            "colorOverlay": true
+        },
+        {
+            "type": "AHAHeader"
+        },
+        {
+            "type": "AHATextImageContainer"
+        },
+        {
+            "type": "AHAFooter"
+        }
+    ]
 }

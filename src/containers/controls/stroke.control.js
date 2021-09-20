@@ -10,7 +10,7 @@ const strokeImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/$
 
 const StrokeData = require('../../common/content/strokes.content.json');
 
-const { speakText, title, primaryText, secondaryText, tertiaryText } = StrokeData;
+const { speakText, title, primaryText, secondaryText, tertiaryText, shortText } = StrokeData;
 
 class StrokeRequestAct extends RequestValueAct {
     constructor(control, payload) {
@@ -25,7 +25,8 @@ class StrokeRequestAct extends RequestValueAct {
             this.speakText,
             strokeImage,
             title,
-            primaryText + secondaryText + tertiaryText
+            primaryText + secondaryText + tertiaryText,
+            shortText
         );
     }
 }

@@ -1,0 +1,177 @@
+{
+    "AHAHeader": {
+        "item": [
+            {
+                "item": [
+                    {
+                        "items": [
+                            {
+                                "type": "Container",
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "item": [
+                                            {
+                                                "textAlign": "left",
+                                                "textAlignVertical": "center",
+                                                "fontFamily": "@fontFamilyRomanSans",
+                                                "text": "${String.toUpperCase('American Heart Association')}",
+                                                "fontSize": "@fontSizeSmall",
+                                                "color": "#FFFFFF",
+                                                "fontWeight": "@fontWeightLight",
+                                                "type": "Text"
+                                            }
+                                        ],
+                                        "alignItems": "center",
+                                        "direction": "row",
+                                        "justifyContent": "center"
+                                    }
+                                ],
+                                "justifyContent": "center"
+                            },
+                            {
+                                "type": "Container",
+                                "items": [
+                                    {
+                                        "type": "Image",
+                                        "width": "4.140625vw",
+                                        "height": "8.625vh",
+                                        "source": "${payload.content.logo}",
+                                        "align": "right"
+                                    }
+                                ],
+                                "justifyContent": "center"
+                            }
+                        ],
+                        "direction": "row",
+                        "justifyContent": "${@viewportProfile != @hubRoundSmall ? 'spaceBetween' : 'center'}",
+                        "type": "Container",
+                        "width": "100vw",
+                        "height": "12.5vh",
+                        "minHeight": "12.5vh",
+                        "paddingLeft": "@marginHorizontal",
+                        "paddingRight": "@marginHorizontal"
+                    }
+                ],
+                "backgroundColor": "#222328",
+                "type": "Frame"
+            }
+        ]
+    },
+    "AHAFooter": {
+        "item": [
+            {
+                "item": [
+                    {
+                        "when": "${@viewportProfile != @hubRoundSmall}",
+                        "type": "Container",
+                        "height": "12.5vh",
+                        "minHeight": "12.5vh",
+                        "paddingLeft": "@marginHorizontal",
+                        "paddingRight": "@marginHorizontal",
+                        "items": [
+                            {
+                                "type": "Frame",
+                                "item": [
+                                    {
+                                        "text": "${payload.content.properties.transformedHintText}",
+                                        "color": "#FFFFFF",
+                                        "type": "Text",
+                                        "style": "footerText"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "backgroundColor": "#222328",
+                "type": "Frame"
+            }
+        ]
+    },
+    "AHATextImageContainer": {
+        "items": [
+            {
+                "items": [
+                    {
+                        "items": [
+                            {
+                                "items": [
+                                    {
+                                        "items": [
+                                            {
+                                                "items": [
+                                                    {
+                                                        "text": "${payload.content.title}",
+                                                        "fontSize": "@titleFontSize",
+                                                        "color": "#FFFFFF",
+                                                        "fontFamily": "@fontFamilyRomanSans",
+                                                        "type": "Text"
+                                                    }
+                                                ],
+                                                "type": "Container"
+                                            },
+                                            {
+                                                "items": [
+                                                    {
+                                                        "text": "${payload.content.bodyText}",
+                                                        "fontSize": "@fontSizeMedium",
+                                                        "fontFamily": "@fontFamilyRomanSans",
+                                                        "fontWeight": "300",
+                                                        "color": "#FFFFFF",
+                                                        "lineHeight": 1.5,
+                                                        "type": "Text"
+                                                    }
+                                                ],
+                                                "alignItems": "stretch",
+                                                "justifyContent": "center",
+                                                "type": "Container",
+                                                "paddingRight": "@spacingSmall",
+                                                "paddingTop": "@spacingSmall"
+                                            }
+                                        ],
+                                        "type": "Container",
+                                        "width": "56.09375vw"
+                                    },
+                                    {
+                                        "items": [
+                                            {
+                                                "type": "AlexaImage",
+                                                "imageSource": "${payload.content.mainImage}",
+                                                "imageRoundedCorner": true,
+                                                "imageScale": "best-fill",
+                                                "imageWidth": "25.78125vw",
+                                                "imageHeight": "${@viewportProfile==@tvLandscapeXLarge ? '' : 60vh}",
+                                                "imageAspectRatio": "${@viewportProfile==@tvLandscapeXLarge ? square : standard_portrait}"
+                                            }
+                                        ],
+                                        "justifyContent": "spaceBetween",
+                                        "alignSelf": "stretch",
+                                        "alignItems": "end",
+                                        "type": "Container"
+                                    }
+                                ],
+                                "direction": "row",
+                                "justifyContent": "spaceBetween",
+                                "type": "Container",
+                                "width": "100%",
+                                "padding": "@spacingSmall"
+                            }
+                        ],
+                        "borderRadius": "4px",
+                        "backgroundColor": "#222328",
+                        "type": "Frame"
+                    }
+                ],
+                "alignItems": "stretch",
+                "justifyContent": "center",
+                "type": "Container",
+                "height": "75vh",
+                "paddingLeft": "@marginHorizontal",
+                "paddingRight": "@marginHorizontal",
+                "paddingBottom": "@spacingMedium",
+                "paddingTop": "@spacingMedium"
+            }
+        ]
+    }
+}
