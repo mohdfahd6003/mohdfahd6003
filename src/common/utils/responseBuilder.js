@@ -47,9 +47,6 @@ function sendResponseWithShape(
     turnNumber = '2'
 ) {
     responseBuilder = createBasic(responseBuilder, primaryText, title, bodyText, mainImage);
-    console.log('short text is :', shortText);
-    console.log('shape is :', shape);
-
     if (checkForScreen(input)) {
         try {
             let displayTemplate = {};
