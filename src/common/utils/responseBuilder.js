@@ -54,11 +54,12 @@ function sendResponseWithShape(
         try {
             let displayTemplate = {};
             let dataTemplate;
+            shortText = shortText || bodyText;
             if (shape === 'ROUND') {
                 displayTemplate = generateRoundDocument(turnNumber);
                 dataTemplate = dataLib.prepareScreenContentRound(
                     title,
-                    bodyText,
+                    shortText,
                     mainImage,
                     turnNumber
                 );
