@@ -8,8 +8,8 @@
                 {
                     "type": "AutoPage",
                     "componentId": "pager",
-                    "duration": 14000,
-                    "delay": 3000,
+                    "duration": 1000,
+                    "delay": 15000,
                     "when": true
                 }
             ]

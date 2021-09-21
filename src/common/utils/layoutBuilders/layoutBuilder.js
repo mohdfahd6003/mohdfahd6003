@@ -9,7 +9,8 @@ function rectCommonPagerCreator() {
     const commonPagerContainer = { ...rectPager };
     commonPagerContainer.items = [];
     commonPagerContainer.items.push(welcomePage.welcomePageCreaterRect());
-    commonPagerContainer.items.push(introductionPage.introductionPageCreater());
+    // --------------Removed as per AS-117 --------------------
+    // commonPagerContainer.items.push(introductionPage.introductionPageCreater());
     commonPagerContainer.items.push(cataloguePage.cataloguePageCreaterRect());
     return commonPagerContainer;
 }
