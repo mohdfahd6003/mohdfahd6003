@@ -10,15 +10,15 @@
             "textAlignVertical": "center",
             "textAlign": "left",
             "type": "Text",
-            "id":"rect.card.text",
+            "id": "rect.card.text",
             "alignSelf": "start"
         }
     ],
     "alignSelf": "start",
     "alignItems": "start",
     "type": "Container",
-    "id":"rect.card.textContainer",
+    "id": "rect.card.textContainer",
     "width": "100%",
-    "paddingLeft": "@spacing2XSmall",
-    "paddingRight": "@spacingXSmall"
+    "paddingLeft": "@gridImagePadding",
+    "paddingRight": "@gridImagePadding"
 }
