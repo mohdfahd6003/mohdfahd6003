@@ -165,7 +165,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.adult",
-            "shortText":"Now, can the infant breathe, cough, or make a sound?"
+            "shortText":"Now, can the person talk, cough, or make a sound?"
         }
     },
     "chokingInfo.infant.breath": {
