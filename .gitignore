@@ -40,9 +40,6 @@ Thumbs.db
 *.exe
 *.war
 
-# VS Code files
-/.vscode/
-
 # ask files
 /.ask/
 ./.ask/

@@ -105,7 +105,7 @@
             "imageUrl": "images/Choking_Sign_Woman.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText": "Good work! Tell her to inform her healthcare provider about this incident. You can get more information at heart.org/first aid."
+            "shortText": "Good work! Tell her to inform her healthcare provider about this incident. You can get more information at heart.org/firstaid."
         },
         "no": {
             "speechText": "Continue giving thrusts until she can talk, cough or make a sound. If she becomes unresponsive, call your local emergency number and begin CPR. I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR. What else can I help you with?",
@@ -165,7 +165,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.adult",
-            "shortText":"Now, can the infant breathe, cough, or make a sound?"
+            "shortText":"Now, can the person talk, cough, or make a sound?"
         }
     },
     "chokingInfo.infant.breath": {
@@ -226,7 +226,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.adult.help",
-            "shortText":"Is the person making the choking sign with their hands around their neck?  "
+            "shortText":"Ask, Are you choking? Can I help you? Did the person nod yes or no?  "
         },
         "no": {
             "speechText": "If the person is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR?  ",
@@ -274,7 +274,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Tell them to inform her healthcare provider about this incident. You can get more information at heart.org/first aid."
+            "shortText":"Tell them to inform her healthcare provider about this incident. You can get more information at heart.org/firstaid."
         },
         "no": {
             "speechText": "Continue giving thrusts until the person can talk, cough or make a sound. If the person becomes unresponsive, call your local emergency number and begin CPR. I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR.  What else can I help you with?",
@@ -298,7 +298,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Take a deep breath and when you can, tell the caregiver to inform the pediatrician about this incident. It's great that you were able to do this. You may want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid"
+            "shortText":"Tell them to inform her healthcare provider about this incident. You can get more information at heart.org/firstaid"
         },
         "no": {
             "speechText": "Turn the infant onto his or her back, supporting the head. Give up to 5 chest thrusts, using 2 fingers of your other hand to push on the center of the chest. Repeat, alternating between 5 back slaps and 5 chest thrusts until the infant can breathe, cough, or cry. If the infant becomes unresponsive, make sure the infant is lying on their back on a firm, flat surface, begin CPR and call your local emergency number.  I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR. I'm going to let you focus now. What else can I help you with? ",
