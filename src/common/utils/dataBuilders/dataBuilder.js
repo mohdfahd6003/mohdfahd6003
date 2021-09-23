@@ -13,7 +13,7 @@ const { prepareScreenContentRound } = require('./round.data');
 function prepareScreenContentRect(title, bodyText, mainImage, turnNumber) {
     const dataTemplate = {};
     dataTemplate.content = {};
-    dataTemplate.content.title = title;
+    dataTemplate.content.title = makeCapital(title);
     dataTemplate.content.bodyText = bodyText;
     dataTemplate.content.mainImage = mainImage;
     dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
