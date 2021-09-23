@@ -7,7 +7,7 @@ const mapRoundTitle = require('../../content/roundTitleMap.json');
 function prepareScreenContentRound(title, bodyText, mainImage, turnNumber) {
     const dataTemplate = {};
     dataTemplate.content = {};
-    dataTemplate.content.title = makeCapital(mapRoundTitle[title] ? mapRoundTitle[title] : title);
+    dataTemplate.content.title = mapRoundTitle[title] ? mapRoundTitle[title] : title;
     dataTemplate.content.bodyText = bodyText;
     dataTemplate.content.mainImage = mainImage;
     dataTemplate.content.headerImage = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
