@@ -76,7 +76,7 @@ class ChokeControl extends Control {
             chokeValueAct.imageUrl = `https://${configData[process.env.ENVIRONMENT].cloudfront}/${
                 assets.Images.chokeControlMain
             }`;
-            chokeValueAct.title = 'choking';
+            chokeValueAct.title = 'Choking';
             chokeValueAct.primaryText = 'Is the person pregnant? ';
             chokeValueAct.secondaryText = '';
             chokeValueAct.tertiaryText = '';

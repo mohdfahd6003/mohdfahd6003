@@ -268,7 +268,7 @@
         "yes": {
             "speechText": "Good work! Take a deep breath. When you can, tell the person to inform his or her healthcare provider about this incident. It's great that you were able to do this. You may want to think about taking an American Heart Association first aid course in case this happens again. You can get more information at heart.org/firstaid.  What else can I help you with?",
             "primaryText": "Good work! ",
-            "secondaryText": "Tell them to inform her healthcare provider about this incident ",
+            "secondaryText": "Tell them to inform his or her healthcare provider about this incident ",
             "tertiaryText": "You can get more information at heart.org/firstaid ",
             "title": "Choking",
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
@@ -298,7 +298,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Tell them to inform her healthcare provider about this incident. You can get more information at heart.org/firstaid"
+            "shortText":"Tell them to inform his or her healthcare provider about this incident. You can get more information at heart.org/firstaid. "
         },
         "no": {
             "speechText": "Turn the infant onto his or her back, supporting the head. Give up to 5 chest thrusts, using 2 fingers of your other hand to push on the center of the chest. Repeat, alternating between 5 back slaps and 5 chest thrusts until the infant can breathe, cough, or cry. If the infant becomes unresponsive, make sure the infant is lying on their back on a firm, flat surface, begin CPR and call your local emergency number.  I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR. I'm going to let you focus now. What else can I help you with? ",
