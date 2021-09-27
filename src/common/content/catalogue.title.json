@@ -1,11 +1,11 @@
 {
+    "heartControl": "heart attacks",
+    "strokeControl": "strokes",      
+    "learncprControl": "cpr",
+    "chokeControlMain" : "choking",
     "burnControl" : "burns",
     "cutControl": "bleeding" ,
-    "dehydrationControl": "dehydration",
-    "heartControl": "heart attacks",
-    "learncprControl": "cpr",
+    "dehydrationControl": "dehydration", 
     "nosebleedingControl": "nose bleeds",
-    "poisonControl": "poisoning",
-    "strokeControl": "strokes",       
-    "chokeControlMain" : "choking"
+    "poisonControl": "poisoning"  
 }
