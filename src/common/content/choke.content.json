@@ -9,10 +9,10 @@
             "imageUrl": "images/Choking_Sign_Woman.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.pregnant",
-            "shortText":"Now, can she talk, cough or make a sound?"
+            "shortText": "Now, can she talk, cough or make a sound?"
         },
         "no": {
-            "speechText": "Is this an infant? ",           
+            "speechText": "Is this an infant? ",
             "primaryText": "Is this an infant? ",
             "secondaryText": " ",
             "tertiaryText": " ",
@@ -20,7 +20,7 @@
             "imageUrl": "images/Choking_Sign_Child.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.infantOrAdult",
-            "shortText":"Is this an infant?"
+            "shortText": "Is this an infant?"
         }
     },
     "chokingInfo.pregnant": {
@@ -33,7 +33,7 @@
             "imageUrl": "images/Choking_Sign_Woman.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"This might be scary but it's okay."
+            "shortText": "This might be scary but it's okay."
         },
         "no": {
             "speechText": "Is she making the choking sign with their hands around her neck? ",
@@ -44,7 +44,7 @@
             "imageUrl": "images/Choking_Sign_Woman.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.pregnant.choking",
-            "shortText":"Is she making the choking sign with their hands around her neck?"
+            "shortText": "Is she making the choking sign with their hands around her neck?"
         }
     },
     "chokingInfo.pregnant.choking": {
@@ -68,7 +68,7 @@
             "imageUrl": "images/Choking_Sign_Woman.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.startCPR",
-            "shortText":"Unresponsive? Call your local emergency number. Begin CPR. Do you need help with CPR? "
+            "shortText": "Unresponsive? Call your local emergency number. Begin CPR. Do you need help with CPR? "
         }
     },
     "chokingInfo.pregnant.help": {
@@ -81,7 +81,7 @@
             "imageUrl": "images/Choking_Sign_Woman.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.pregnant.object",
-            "shortText":"Stand firmly/kneel behind her. Put your arms under the armpits and your hands on the lower half of the breastbone. Pull straight to give chest thrusts."
+            "shortText": "Stand firmly/kneel behind her. Put your arms under the armpits and your hands on the lower half of the breastbone. Pull straight to give chest thrusts."
         },
         "no": {
             "speechText": "Since she doesn't consent to your helping, I suggest calling your local emergency number. Stay with her until advanced help arrives.  What else can I help you with?",
@@ -92,7 +92,7 @@
             "imageUrl": "images/Phone_911.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Call your local emergency number. Stay with her until advanced help."
+            "shortText": "Call your local emergency number. Stay with her until advanced help."
         }
     },
     "chokingInfo.pregnant.object": {
@@ -116,7 +116,7 @@
             "imageUrl": "images/Phone_911.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Call your local emergency number and begin CPR. Continue giving thrusts until she can talk, cough, or make a sound."
+            "shortText": "Call your local emergency number and begin CPR. Continue giving thrusts until she can talk, cough, or make a sound."
         }
     },
     "chokingInfo.startCPR": {
@@ -130,7 +130,7 @@
             "imageUrl": "images/Phone_911.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Call your local emergency number. Push hard and fast in the center of the chest at the rate of 100 to 120 beats per minute."
+            "shortText": "Call your local emergency number. Push hard and fast in the center of the chest at the rate of 100 to 120 beats per minute."
         },
         "no": {
             "speechText": "OK, I'm going to let you concentrate on CPR. Let me know when I can help you again. ",
@@ -141,7 +141,7 @@
             "imageUrl": "images/Choking_Sign_Woman.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Call your local emergency number. "
+            "shortText": "Call your local emergency number. "
         }
     },
     "chokingInfo.infantOrAdult": {
@@ -154,7 +154,7 @@
             "imageUrl": "images/Back Slaps_InfantCube.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.infant.breath",
-            "shortText":"Now, can the infant breathe, cough, or make a sound?"
+            "shortText": "Now, can the infant breathe, cough, or make a sound?"
         },
         "no": {
             "speechText": "Now, can the person talk, cough or make a sound? ",
@@ -165,7 +165,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.adult",
-            "shortText":"Now, can the person talk, cough, or make a sound?"
+            "shortText": "Now, can the person talk, cough, or make a sound?"
         }
     },
     "chokingInfo.infant.breath": {
@@ -178,7 +178,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"This might sound and look scary, but it's okay. It means they have a mild airway block.  Let them continue to cough."
+            "shortText": "This might sound and look scary, but it's okay. It means they have a mild airway block.  Let them continue to cough."
         },
         "no": {
             "speechText": "OK, hold the infant face down on your forearm. Support the infant's head and jaw with your hand. Give up to 5 back slaps with the heel of your other hand, between the infant's shoulder blades. Did the object come out? ",
@@ -189,7 +189,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.infant.object",
-            "shortText":"Hold the infant face down on your forearm. Give up to 5 back slaps with the heel of your other hand, between the infant's shoulder blades."
+            "shortText": "Hold the infant face down on your forearm. Give up to 5 back slaps with the heel of your other hand, between the infant's shoulder blades."
         }
     },
     "chokingInfo.adult": {
@@ -202,7 +202,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"This might be scary but it's okay. It means they have a mild airway block.  Let them continue to cough."
+            "shortText": "This might be scary but it's okay. It means they have a mild airway block.  Let them continue to cough."
         },
         "no": {
             "speechText": "Is the person making the choking sign with their hands around their neck? ",
@@ -213,7 +213,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.adult.chokingSign",
-            "shortText":"Is the person making the choking sign with their hands around their neck?"
+            "shortText": "Is the person making the choking sign with their hands around their neck?"
         }
     },
     "chokingInfo.adult.chokingSign": {
@@ -226,7 +226,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.adult.help",
-            "shortText":"Ask, Are you choking? Can I help you? Did the person nod yes or no?  "
+            "shortText": "Ask, Are you choking? Can I help you? Did the person nod yes or no?  "
         },
         "no": {
             "speechText": "If the person is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR?  ",
@@ -237,7 +237,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.startCPR",
-            "shortText":"If the person is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR?"
+            "shortText": "If the person is unresponsive, call your local emergency number and begin CPR. Do you need help with CPR?"
         }
     },
     "chokingInfo.adult.help": {
@@ -250,7 +250,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": "chokingInfo.adult.object",
-            "shortText":"Wrap your arms around the person's waist so that your fists are in front. Grasp the fist with your other hand, give quick upward thrusts into the abdomen."
+            "shortText": "Wrap your arms around the person's waist so that your fists are in front. Grasp the fist with your other hand, give quick upward thrusts into the abdomen."
         },
         "no": {
             "speechText": "Since the person doesn't consent to your helping, I suggest calling your local emergency number. Stay with them until advanced help arrives.  ",
@@ -261,7 +261,7 @@
             "imageUrl": "images/Phone_911.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Call your local emergency number. Stay with them until advanced help."
+            "shortText": "Call your local emergency number. Stay with them until advanced help."
         }
     },
     "chokingInfo.adult.object": {
@@ -274,7 +274,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Tell them to inform her healthcare provider about this incident. You can get more information at heart.org/firstaid."
+            "shortText": "Tell them to inform his or her healthcare provider about this incident. You can get more information at heart.org/firstaid."
         },
         "no": {
             "speechText": "Continue giving thrusts until the person can talk, cough or make a sound. If the person becomes unresponsive, call your local emergency number and begin CPR. I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR.  What else can I help you with?",
@@ -285,7 +285,7 @@
             "imageUrl": "images/Phone_911.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Call your local emergency number and begin CPR. Continue giving thrusts until she can talk, cough or make a sound."
+            "shortText": "Call your local emergency number and begin CPR. Continue giving thrusts until she can talk, cough or make a sound."
         }
     },
     "chokingInfo.infant.object": {
@@ -298,7 +298,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Tell them to inform his or her healthcare provider about this incident. You can get more information at heart.org/firstaid. "
+            "shortText": "Tell them to inform his or her healthcare provider about this incident. You can get more information at heart.org/firstaid. "
         },
         "no": {
             "speechText": "Turn the infant onto his or her back, supporting the head. Give up to 5 chest thrusts, using 2 fingers of your other hand to push on the center of the chest. Repeat, alternating between 5 back slaps and 5 chest thrusts until the infant can breathe, cough, or cry. If the infant becomes unresponsive, make sure the infant is lying on their back on a firm, flat surface, begin CPR and call your local emergency number.  I hope that it doesn't get that far, but if it happens, let me know. I can help you with CPR. I'm going to let you focus now. What else can I help you with? ",
@@ -309,7 +309,7 @@
             "imageUrl": "images/Universal_Choking_Sign_AdultFloor.jpg",
             "backgroundImage": "backgroundImage",
             "continue": false,
-            "shortText":"Turn the infant onto their back. Give chest thrusts, using 2 fingers. Repeat, alternating between 5 back slaps and 5 chest thrusts until they breathe/cough/cry."
+            "shortText": "Turn the infant onto their back. Give chest thrusts, using 2 fingers. Repeat, alternating between 5 back slaps and 5 chest thrusts until they breathe/cough/cry."
         }
     }
 }
