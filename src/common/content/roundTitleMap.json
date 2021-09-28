@@ -1,11 +1,11 @@
 {
+    "Heart Attack": "Heart Attack",
+    "Warning Signs of a Stroke": "Strokes",       
+    "Learn CPR": "CPR",
+    "Choking" : "Choking",
     "Burns" : "Burns",
     "Bleeding": "Bleeding" ,
     "Dehydration": "Dehydration",
-    "Heart Attack": "Heart Attack",
-    "Learn CPR": "CPR",
     "Nose Bleeds": "Nose Bleeds",
-    "Poisoning": "Poisoning",
-    "Warning Signs of a Stroke": "Strokes",       
-    "Choking" : "Choking"
+    "Poisoning": "Poisoning"
 }
