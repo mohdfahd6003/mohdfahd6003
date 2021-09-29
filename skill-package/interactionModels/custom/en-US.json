@@ -16,7 +16,7 @@
                     "name": "AMAZON.CancelIntent"
                 },
                 {
-                    "name": "MoreOptionsIntent",
+                    "name": "moreOptionsIntent",
                     "slots": [],
                     "samples": [
                         "What are my options",
@@ -89,7 +89,8 @@
                         "Tell me what to do for choking",
                         "What should be done in case of choking",
                         "help me with choking",
-                        "I need assistance for choking"
+                        "I need assistance for choking",
+                        "choking"
                     ]
                 },
                 {
@@ -154,7 +155,8 @@
                         "possible signs of stroke",
                         "help me stroke warning signs",
                         "symptoms of stroke",
-                        "stroke warning signs"
+                        "stroke warning signs",
+                        "strokes"
                     ]
                 }
             ],

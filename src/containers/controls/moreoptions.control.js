@@ -16,7 +16,7 @@ class MoreOptionsControl extends Control {
     }
 
     canHandle(input) {
-        return InputUtil.isIntent(input, 'MoreOptionsIntent');
+        return InputUtil.isIntent(input, 'moreOptionsIntent');
     }
 
     handle(input, resultBuilder) {
