@@ -2,7 +2,7 @@ const Alexa = require('ask-sdk-core');
 
 const { InputUtil, Control, LiteralContentAct } = require('ask-sdk-controls');
 
-const repromptFragment = require('../../common/content/constants.json');
+const { repeatText } = require('../../common/content/constants.json');
 
 const moreOptionsData = require('../../common/content/moreoptions.content.json');
 
@@ -21,7 +21,7 @@ class MoreOptionsControl extends Control {
 
     handle(input, resultBuilder) {
         resultBuilder.addAct(
-            new LiteralContentAct(this, { promptFragment: speakText, repromptFragment })
+            new LiteralContentAct(this, { promptFragment: speakText, repromptFragment: repeatText })
         );
     }
 
