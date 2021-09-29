@@ -7,6 +7,7 @@ const NoseBleedingControl = require('./controls/nosebleeding.control');
 const PoisonControl = require('./controls/poison.control');
 const DehydrationControl = require('./controls/dehydration.control');
 const StrokeControl = require('./controls/stroke.control');
+const MoreOptionsControl = require('./controls/moreoptions.control');
 
 class SinglePathContainerState extends ContainerControlState {
     constructor(props) {
@@ -22,6 +23,7 @@ class SinglePathContainer extends ContainerControl {
         this.state = new SinglePathContainerState({ id: 'singlepathstate' });
 
         this.LaunchControl = new LaunchControl({ id: 'launch' });
+        this.MoreOptionsControl = new MoreOptionsControl({ id: 'moreoptions' });
         this.LearnCPRControl = new LearnCPRControl({ id: 'cpr' });
         this.HeartControl = new HeartControl({ id: 'heart' });
         this.NoseBleedingControl = new NoseBleedingControl({ id: 'nosebleeding' });
@@ -29,6 +31,7 @@ class SinglePathContainer extends ContainerControl {
         this.DehydrationControl = new DehydrationControl({ id: 'dehydration' });
         this.StrokeControl = new StrokeControl({ id: 'stroke' });
         this.addChild(this.LaunchControl);
+        this.addChild(this.MoreOptionsControl);
         this.addChild(this.HeartControl);
         this.addChild(this.LearnCPRControl);
         this.addChild(this.NoseBleedingControl);
