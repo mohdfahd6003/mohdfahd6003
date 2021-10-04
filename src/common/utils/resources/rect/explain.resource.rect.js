@@ -3,6 +3,13 @@ function getRectExplainResource() {
         {
             dimensions: {
                 titleFontSize: '@fontSizeXLarge',
+                explainURLFontSize: '@fontSizeMedium',
+            },
+        },
+        {
+            when: '${@viewportProfile == @hubRoundSmall}',
+            dimensions: {
+                explainURLFontSize: '30px',
             },
         },
         {
