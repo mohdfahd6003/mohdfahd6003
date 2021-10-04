@@ -1,6 +1,6 @@
 {
     "title": "Warning Signs of a Stroke",
-    "shortText": "F.A.S.T – Face Drooping, Arm weakness, Speech Difficulty, Time to call You can learn more at <span fontSize='30px'> www.heart.org/warningsigns.</span>",
+    "shortText": "F.A.S.T – Face Drooping, Arm weakness, Speech Difficulty, Time to call You can learn more at <span fontSize='${@explainURLFontSize}'> www.heart.org/warningsigns.</span>",
     "primaryText": "If you think you are having a stroke, call your local emergency number immediately. ",
     "secondaryText": "",
     "tertiaryText": "You can easily spot the signs of a stroke if you remember the acronym F.A.S.T. The F means face drooping. The A stands for arm weakness. The S stands for speech difficulty. The T stands for Time to call your local emergency number if you see the above warning signs.You can learn more at <b><u> www.heart.org/warningsigns </u></b>. This information is not a substitute for medical advice or treatment, and the AHA recommends consultation with your doctor or healthcare professional. ",
