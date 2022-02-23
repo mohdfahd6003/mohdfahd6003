@@ -1,7 +1,6 @@
 {
     "configurations": [
         
-
         {
             "name": "Debug Alexa Skill (Node.js)",
             "type": "node",
