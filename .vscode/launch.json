@@ -1,16 +1,16 @@
 {
+    "version": "0.2.0",
     "configurations": [
-        
         {
             "name": "Debug Alexa Skill (Node.js)",
-            "type": "node",
+            "type": "pwa-node",
             "request": "launch",
             "program": "${command:ask.debugAdapterPath}",
             "args": [
                 "--accessToken",
                 "${command:ask.accessToken}",
                 "--skillId",
-                "amzn1.ask.skill.94d0fde4-c3e8-4ca7-ae12-083ddde36482",
+                "${command:ask.skillIdFromWorkspace}",
                 "--handlerName",
                 "handler",
                 "--skillEntryFile",
@@ -20,6 +20,8 @@
             ],
             "cwd": "${workspaceFolder}/src"
         },
+        
+        
         {
             "type": "node",
             "request": "launch",
