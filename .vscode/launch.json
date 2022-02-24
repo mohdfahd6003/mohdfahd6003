@@ -19,7 +19,7 @@
                 "--skillEntryFile",
                 "${workspaceFolder}/src/index.js",
                 "--region",
-                "EU"
+                "NA"
             ],
             "cwd": "${workspaceFolder}/src"
         },
