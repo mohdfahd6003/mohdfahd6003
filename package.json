@@ -26,7 +26,7 @@
   "dependencies": {
     "ask-sdk-controls": "^0.2.4",
     "ask-sdk-core": "^2.10.2",
-    "ask-sdk-model": "^1.35.1",
+    "ask-sdk-model": "^1.29.0",
     "lodash": "^4.17.15",
     "typescript": "^4.2.4"
   }
