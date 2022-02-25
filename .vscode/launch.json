@@ -19,11 +19,10 @@
                 "--skillEntryFile",
                 "${workspaceFolder}/src/index.js",
                 "--region",
-                "NA"
+                "FE"
             ],
             "cwd": "${workspaceFolder}/src"
         },
-
         {
             "type": "pwa-node",
             "request": "launch",
