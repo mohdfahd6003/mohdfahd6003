@@ -13,24 +13,16 @@
                 "--accessToken",
                 "${command:ask.accessToken}",
                 "--skillId",
-                "${command:ask.skillIdFromWorkspace}",
+                "amzn1.ask.skill.94d0fde4-c3e8-4ca7-ae12-083ddde36482",
                 "--handlerName",
                 "handler",
                 "--skillEntryFile",
                 "${workspaceFolder}/src/index.js",
                 "--region",
-                "FE"
+                "EU"
             ],
             "cwd": "${workspaceFolder}/src"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${file}"
         }
+        
     ]
 }
